@@ -1,0 +1,3951 @@
+{
+    "lineup": [
+        {
+            "id": "ssb",
+            "header": "assets/images/ssb/header.png",
+            "logo": "assets/images/ssb/logo.png",
+            "amiibo": [
+                {
+                    "id": "ssb_mario",
+                    "image": "assets/images/ssb/mario.png",
+                    "box": "assets/images/ssb/box_mario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mario-amiibo-super-smash-bros-series/",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891657",
+                        "4902370522259"
+                    ]
+                },
+                {
+                    "id": "ssb_peach",
+                    "image": "assets/images/ssb/peach.png",
+                    "box": "assets/images/ssb/box_peach.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/peach-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891688",
+                        "045496352370",
+                        "4902370522266"
+                    ]
+                },
+                {
+                    "id": "ssb_yoshi",
+                    "image": "assets/images/ssb/yoshi.png",
+                    "box": "assets/images/ssb/box_yoshi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/yoshi-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891732",
+                        "045496352387",
+                        "4902370522273"
+                    ]
+                },
+                {
+                    "id": "ssb_donkey_kong",
+                    "image": "assets/images/ssb/donkey_kong.png",
+                    "box": "assets/images/ssb/box_donkey_kong.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/donkey-kong-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891725",
+                        "045496352394",
+                        "4902370522280"
+                    ]
+                },
+                {
+                    "id": "ssb_link",
+                    "image": "assets/images/ssb/link.png",
+                    "box": "assets/images/ssb/box_link.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891701",
+                        "045496352400",
+                        "4902370522297"
+                    ]
+                },
+                {
+                    "id": "ssb_fox",
+                    "image": "assets/images/ssb/fox.png",
+                    "box": "assets/images/ssb/box_fox.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/fox-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891749",
+                        "045496352417",
+                        "4902370522303"
+                    ]
+                },
+                {
+                    "id": "ssb_samus",
+                    "image": "assets/images/ssb/samus.png",
+                    "box": "assets/images/ssb/box_samus.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/samus-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891756",
+                        "045496352424",
+                        "4902370522310"
+                    ]
+                },
+                {
+                    "id": "ssb_wii_fit_trainer",
+                    "image": "assets/images/ssb/wii_fit_trainer.png",
+                    "box": "assets/images/ssb/box_wii_fit_trainer.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/wii-fit-trainer-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891763",
+                        "045496352431",
+                        "4902370522327"
+                    ]
+                },
+                {
+                    "id": "ssb_villager",
+                    "image": "assets/images/ssb/villager.png",
+                    "box": "assets/images/ssb/box_villager.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/villager-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891695",
+                        "045496352448",
+                        "4902370522334"
+                    ]
+                },
+                {
+                    "id": "ssb_pikachu",
+                    "image": "assets/images/ssb/pikachu.png",
+                    "box": "assets/images/ssb/box_pikachu.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pikachu-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891671",
+                        "045496352455",
+                        "4902370522341"
+                    ]
+                },
+                {
+                    "id": "ssb_kirby",
+                    "image": "assets/images/ssb/kirby.png",
+                    "box": "assets/images/ssb/box_kirby.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/kirby-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891718",
+                        "045496352462",
+                        "4902370522358"
+                    ]
+                },
+                {
+                    "id": "ssb_marth",
+                    "image": "assets/images/ssb/marth.png",
+                    "box": "assets/images/ssb/box_marth.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/marth-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-11-21"
+                        },
+                        "EU": {
+                            "release_date": "2014-11-28"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891664",
+                        "045496352479",
+                        "4902370522365"
+                    ]
+                },
+                {
+                    "id": "ssb_zelda",
+                    "image": "assets/images/ssb/zelda.png",
+                    "box": "assets/images/ssb/box_zelda.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/zelda-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-12-14"
+                        },
+                        "EU": {
+                            "release_date": "2014-12-19"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891794",
+                        "045496352486",
+                        "4902370522396"
+                    ]
+                },
+                {
+                    "id": "ssb_diddy_kong",
+                    "image": "assets/images/ssb/diddy_kong.png",
+                    "box": "assets/images/ssb/box_diddy_kong.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/diddy-kong-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-12-14"
+                        },
+                        "EU": {
+                            "release_date": "2014-12-19"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891824",
+                        "045496352493",
+                        "4902370522389"
+                    ]
+                },
+                {
+                    "id": "ssb_luigi",
+                    "image": "assets/images/ssb/luigi.png",
+                    "box": "assets/images/ssb/box_luigi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/luigi-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-12-14"
+                        },
+                        "EU": {
+                            "release_date": "2014-12-19"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891800",
+                        "045496352509",
+                        "4902370522372"
+                    ]
+                },
+                {
+                    "id": "ssb_little_mac",
+                    "image": "assets/images/ssb/little_mac.png",
+                    "box": "assets/images/ssb/box_little_mac.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/little-mac-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-12-14"
+                        },
+                        "EU": {
+                            "release_date": "2014-12-19"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891831",
+                        "045496352516",
+                        "4902370522402"
+                    ]
+                },
+                {
+                    "id": "ssb_pit",
+                    "image": "assets/images/ssb/pit.png",
+                    "box": "assets/images/ssb/box_pit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pit-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-12-14"
+                        },
+                        "EU": {
+                            "release_date": "2014-12-19"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891787",
+                        "045496352523",
+                        "4902370522419"
+                    ]
+                },
+                {
+                    "id": "ssb_captain_falcon",
+                    "image": "assets/images/ssb/captain_falcon.png",
+                    "box": "assets/images/ssb/box_captain_falcon.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/captain-falcon-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2014-12-14"
+                        },
+                        "EU": {
+                            "release_date": "2014-12-19"
+                        },
+                        "JP": {
+                            "release_date": "2014-12-06"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891855",
+                        "045496352530",
+                        "4902370522921"
+                    ]
+                },
+                {
+                    "id": "ssb_rosalina",
+                    "image": "assets/images/ssb/rosalina_luma.png",
+                    "box": "assets/images/ssb/box_rosalina_luma.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/rosalina-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-01-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891916",
+                        "045496352547",
+                        "4902370522990"
+                    ]
+                },
+                {
+                    "id": "ssb_bowser",
+                    "image": "assets/images/ssb/bowser.png",
+                    "box": "assets/images/ssb/box_bowser.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bowser-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-01-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891879",
+                        "045496352554",
+                        "4902370523003"
+                    ]
+                },
+                {
+                    "id": "ssb_lucario",
+                    "image": "assets/images/ssb/lucario.png",
+                    "box": "assets/images/ssb/box_lucario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/lucario-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-01-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891817",
+                        "045496352608",
+                        "4902370522426"
+                    ]
+                },
+                {
+                    "id": "ssb_toon_link",
+                    "image": "assets/images/ssb/toon_link.png",
+                    "box": "assets/images/ssb/box_toon_link.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/toon-link-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-01-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891893",
+                        "045496352578",
+                        "4902370523027"
+                    ]
+                },
+                {
+                    "id": "ssb_sheik",
+                    "image": "assets/images/ssb/sheik.png",
+                    "box": "assets/images/ssb/box_sheik.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/sheik-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-01-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891909",
+                        "045496352585",
+                        "4902370523034"
+                    ]
+                },
+                {
+                    "id": "ssb_ike",
+                    "image": "assets/images/ssb/ike.png",
+                    "box": "assets/images/ssb/box_ike.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ike-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-01-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891923",
+                        "045496352592",
+                        "4902370523041"
+                    ]
+                },
+                {
+                    "id": "ssb_shulk",
+                    "image": "assets/images/ssb/shulk.png",
+                    "box": "assets/images/ssb/box_shulk.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/shulk-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-02-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-02-19"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891947",
+                        "045496352714",
+                        "4902370523362"
+                    ]
+                },
+                {
+                    "id": "ssb_sonic",
+                    "image": "assets/images/ssb/sonic.png",
+                    "box": "assets/images/ssb/box_sonic.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/sonic-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-02-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-02-19"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891985",
+                        "045496352721",
+                        "4902370523379"
+                    ]
+                },
+                {
+                    "id": "ssb_megaman",
+                    "image": "assets/images/ssb/mega_man.png",
+                    "box": "assets/images/ssb/box_mega_man.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mega-man-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-02-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-02-19"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891978",
+                        "045496352738",
+                        "4902370523386"
+                    ]
+                },
+                {
+                    "id": "ssb_king_dedede",
+                    "image": "assets/images/ssb/king_dedede.png",
+                    "box": "assets/images/ssb/box_king_dedede.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/king-dedede-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-02-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891961",
+                        "045496352745",
+                        "4902370523393"
+                    ]
+                },
+                {
+                    "id": "ssb_meta_knight",
+                    "image": "assets/images/ssb/meta_knight.png",
+                    "box": "assets/images/ssb/box_meta_knight.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/meta-knight-amiibo-kirby-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-02-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-02-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-01-22"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891954",
+                        "045496352752",
+                        "4902370523409"
+                    ]
+                },
+                {
+                    "id": "ssb_robin",
+                    "image": "assets/images/ssb/robin.png",
+                    "box": "assets/images/ssb/box_robin.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/robin-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-04-24"
+                        },
+                        "JP": {
+                            "release_date": "2015-04-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892081",
+                        "045496352844",
+                        "4902370527551"
+                    ]
+                },
+                {
+                    "id": "ssb_lucina",
+                    "image": "assets/images/ssb/lucina.png",
+                    "box": "assets/images/ssb/box_lucina.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/lucina-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-04-24"
+                        },
+                        "JP": {
+                            "release_date": "2015-04-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892098",
+                        "045496352851",
+                        "4902370527544"
+                    ]
+                },
+                {
+                    "id": "ssb_wario",
+                    "image": "assets/images/ssb/wario.png",
+                    "box": "assets/images/ssb/box_wario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/wario-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-04-24"
+                        },
+                        "JP": {
+                            "release_date": "2015-04-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892104",
+                        "045496352868",
+                        "4902370527520"
+                    ]
+                },
+                {
+                    "id": "ssb_charizard",
+                    "image": "assets/images/ssb/charizard.png",
+                    "box": "assets/images/ssb/box_charizard.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/charizard-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-04-24"
+                        },
+                        "JP": {
+                            "release_date": "2015-04-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892111",
+                        "045496352875",
+                        "4902370527513"
+                    ]
+                },
+                {
+                    "id": "ssb_ness",
+                    "image": "assets/images/ssb/ness.png",
+                    "box": "assets/images/ssb/box_ness.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ness-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-04-24"
+                        },
+                        "JP": {
+                            "release_date": "2015-04-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892135",
+                        "045496352882",
+                        "4902370527506"
+                    ]
+                },
+                {
+                    "id": "ssb_pacman",
+                    "image": "assets/images/ssb/pac_man.png",
+                    "box": "assets/images/ssb/box_pac_man.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pac-man-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-04-24"
+                        },
+                        "JP": {
+                            "release_date": "2015-04-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892128",
+                        "045496352899",
+                        "4902370527537"
+                    ]
+                },
+                {
+                    "id": "ssb_greninja",
+                    "image": "assets/images/ssb/greninja.png",
+                    "box": "assets/images/ssb/box_greninja.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/greninja-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-05-19"
+                        },
+                        "JP": {
+                            "release_date": "2015-05-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892159",
+                        "045496352912",
+                        "4902370527667"
+                    ]
+                },
+                {
+                    "id": "ssb_jigglypuff",
+                    "image": "assets/images/ssb/jigglypuff.png",
+                    "box": "assets/images/ssb/box_jigglypuff.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/jigglypuff-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-05-19"
+                        },
+                        "JP": {
+                            "release_date": "2015-05-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892142",
+                        "045496352929",
+                        "4902370527674"
+                    ]
+                },
+                {
+                    "id": "ssb_palutena",
+                    "image": "assets/images/ssb/palutena.png",
+                    "box": "assets/images/ssb/box_palutena.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/palutena-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-07-24"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-06-11"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892272",
+                        "045496353018",
+                        "4902370528770"
+                    ]
+                },
+                {
+                    "id": "ssb_dark_pit",
+                    "image": "assets/images/ssb/dark_pit.png",
+                    "box": "assets/images/ssb/box_dark_pit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/dark-pit-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-07-31"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-06-11"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892265",
+                        "045496353025",
+                        "4902370528787"
+                    ]
+                },
+                {
+                    "id": "ssb_zero_suit_samus",
+                    "image": "assets/images/ssb/zero_suit_samus.png",
+                    "box": "assets/images/ssb/box_zero_suit_samus.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/zero-suit-samus-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-06-11"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892258",
+                        "045496353032",
+                        "4902370528763"
+                    ]
+                },
+                {
+                    "id": "ssb_ganondorf",
+                    "image": "assets/images/ssb/ganondorf.png",
+                    "box": "assets/images/ssb/box_ganondorf.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ganondorf-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-06-11"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892289",
+                        "045496353049",
+                        "4902370528794"
+                    ]
+                },
+                {
+                    "id": "ssb_dr_mario",
+                    "image": "assets/images/ssb/dr_mario.png",
+                    "box": "assets/images/ssb/box_dr_mario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/dr-mario-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-17"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-30"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892319",
+                        "045496353056",
+                        "4902370528954"
+                    ]
+                },
+                {
+                    "id": "ssb_bowser_jr",
+                    "image": "assets/images/ssb/bowser_jr.png",
+                    "box": "assets/images/ssb/box_bowser_jr.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bowser-jr-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-17"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-30"
+                        }
+                    },
+                    "barcodes": [
+                        "045496891886",
+                        "045496352561",
+                        "4902370523010"
+                    ]
+                },
+                {
+                    "id": "ssb_pikmin",
+                    "image": "assets/images/ssb/pikmin.png",
+                    "box": "assets/images/ssb/box_pikmin.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pikmin-amiibo-pikmin-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-06-11"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892302",
+                        "045496353063",
+                        "4902370528947"
+                    ]
+                },
+                {
+                    "id": "ssb_mr_game_watch",
+                    "image": "assets/images/ssb/mr_game_watch.png",
+                    "box": "assets/images/ssb/box_mr_game_watch.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mr-game-and-watch-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-09-25"
+                        },
+                        "JP": {
+                            "release_date": "2015-10-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892449",
+                        "045496353070"
+                    ]
+                },
+                {
+                    "id": "ssb_rob_ness",
+                    "image": "assets/images/ssb/rob_nes.png",
+                    "box": "assets/images/ssb/box_rob_nes.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/rob-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-09-25"
+                        },
+                        "JP": {
+                            "release_date": "2015-10-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353094"
+                    ]
+                },
+                {
+                    "id": "ssb_duck_hunt",
+                    "image": "assets/images/ssb/duck_hunt.png",
+                    "box": "assets/images/ssb/box_duck_hunt.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/duck-hunt-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-11"
+                        },
+                        "EU": {
+                            "release_date": "2015-09-25"
+                        },
+                        "JP": {
+                            "release_date": "2015-10-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353087"
+                    ]
+                },
+                {
+                    "id": "ssb_mii_brawler",
+                    "image": "assets/images/ssb/mii_brawler.png",
+                    "box": "assets/images/ssb/box_mii_brawler.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mii-brawler-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-09-25"
+                        },
+                        "JP": {
+                            "release_date": "2015-09-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353100"
+                    ]
+                },
+                {
+                    "id": "ssb_mii_swordfighter",
+                    "image": "assets/images/ssb/mii_swordfighter.png",
+                    "box": "assets/images/ssb/box_mii_swordfighter.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mii-swordfighter-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-09-25"
+                        },
+                        "JP": {
+                            "release_date": "2015-09-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353117"
+                    ]
+                },
+                {
+                    "id": "ssb_mii_gunner",
+                    "image": "assets/images/ssb/mii_gunner.png",
+                    "box": "assets/images/ssb/box_mii_gunner.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mii-gunner-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-01"
+                        },
+                        "EU": {
+                            "release_date": "2015-09-25"
+                        },
+                        "JP": {
+                            "release_date": "2015-09-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353124"
+                    ]
+                },
+                {
+                    "id": "ssb_mewtwo",
+                    "image": "assets/images/ssb/mewtwo.png",
+                    "box": "assets/images/ssb/box_mewtwo.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mewtwo-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-10-23"
+                        },
+                        "JP": {
+                            "release_date": "2015-10-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892418"
+                    ]
+                },
+                {
+                    "id": "ssb_falco",
+                    "image": "assets/images/ssb/falco.png",
+                    "box": "assets/images/ssb/box_falco.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/falco-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-05"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892340"
+                    ]
+                },
+                {
+                    "id": "ssb_lucas",
+                    "image": "assets/images/ssb/lucas.png",
+                    "box": "assets/images/ssb/box_lucas.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/lucas-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-01-22"
+                        },
+                        "EU": {
+                            "release_date": "2016-01-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-12-17"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892715",
+                        "4902370530926",
+                        "737993414285",
+                        "689720201265",
+                        "696573835578",
+                        "696580653509"
+                    ]
+                },
+                {
+                    "id": "ssb_rob_famicom",
+                    "image": "assets/images/ssb/rob_famicom.png",
+                    "box": "assets/images/ssb/box_rob_famicom.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/rob-famicom-colors-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2015-10-29"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892708"
+                    ]
+                },
+                {
+                    "id": "ssb_roy",
+                    "image": "assets/images/ssb/roy.png",
+                    "box": "assets/images/ssb/box_roy.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/roy-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2016-04-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892777",
+                        "045496353445",
+                        "4902370531404"
+                    ]
+                },
+                {
+                    "id": "ssb_ryu",
+                    "image": "assets/images/ssb/ryu.png",
+                    "box": "assets/images/ssb/box_ryu.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ryu-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2016-04-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892760",
+                        "4902370531411"
+                    ]
+                },
+                {
+                    "id": "ssb_cloud",
+                    "image": "assets/images/ssb/cloud.png",
+                    "box": "assets/images/ssb/box_cloud.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/cloud-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893231",
+                        "696231255878"
+                    ]
+                },
+                {
+                    "id": "ssb_cloud_player_2",
+                    "image": "assets/images/ssb/cloud_player_2.png",
+                    "box": "assets/images/ssb/box_cloud_player_2.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/cloud-player-2-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893200"
+                    ]
+                },
+                {
+                    "id": "ssb_corrin",
+                    "image": "assets/images/ssb/corrin.png",
+                    "box": "assets/images/ssb/box_corrin.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/corrin-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893194",
+                        "4902370535341"
+                    ]
+                },
+                {
+                    "id": "ssb_corrin_player_2",
+                    "image": "assets/images/ssb/corrin_player_2.png",
+                    "box": "assets/images/ssb/box_corrin_player_2.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/corrin-player-2-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893224",
+                        "045496380489",
+                        "4902370535372"
+                    ]
+                },
+                {
+                    "id": "ssb_bayonetta",
+                    "image": "assets/images/ssb/bayonetta.png",
+                    "box": "assets/images/ssb/box_bayonetta.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bayonetta-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893248"
+                    ]
+                },
+                {
+                    "id": "ssb_bayonetta_player_2",
+                    "image": "assets/images/ssb/bayonetta_player_2.png",
+                    "box": "assets/images/ssb/box_bayonetta_player_2.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bayonetta-player-2-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893217"
+                    ]
+                },
+                {
+                    "id": "ssb_inkling",
+                    "image": "assets/images/ssb/inkling.png",
+                    "box": "assets/images/ssb/box_inkling.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-12-07"
+                        },
+                        "EU": {
+                            "release_date": "2018-12-07"
+                        },
+                        "JP": {
+                            "release_date": "2018-12-07"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594077"
+                    ]
+                },
+                {
+                    "id": "ssb_ridley",
+                    "image": "assets/images/ssb/ridley.png",
+                    "box": "assets/images/ssb/box_ridley.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ridley-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-12-07"
+                        },
+                        "EU": {
+                            "release_date": "2018-12-07"
+                        },
+                        "JP": {
+                            "release_date": "2018-12-07"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594084",
+                        "045496380700",
+                        "696580641254",
+                        "4902370540550",
+                        "133525313116",
+                        "004549659408",
+                        "689551043584",
+                        "689718569988"
+                    ]
+                },
+                {
+                    "id": "ssb_wolf",
+                    "image": "assets/images/ssb/wolf.png",
+                    "box": "assets/images/ssb/box_wolf.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/wolf-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-12-07"
+                        },
+                        "EU": {
+                            "release_date": "2018-12-07"
+                        },
+                        "JP": {
+                            "release_date": "2018-12-07"
+                        }
+                    },
+                    "barcodes": [
+                        "045496595586",
+                        "045496380717",
+                        "689738653957",
+                        "690000247026",
+                        "690003828239"
+                    ]
+                },
+                {
+                    "id": "ssb_piranha_plant",
+                    "image": "assets/images/ssb/piranha_plant.png",
+                    "box": "assets/images/ssb/box_piranha_plant.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/piranha-plant-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-02-15"
+                        },
+                        "EU": {
+                            "release_date": "2019-02-15"
+                        },
+                        "JP": {
+                            "release_date": "2019-02-15"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370540772",
+                        "692758070895",
+                        "695757001785",
+                        "045496594107"
+                    ]
+                },
+                {
+                    "id": "ssb_king_k_rool",
+                    "image": "assets/images/ssb/king_k_rool.png",
+                    "box": "assets/images/ssb/box_king_k_rool.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/king-k-rool-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-02-15"
+                        },
+                        "EU": {
+                            "release_date": "2019-02-15"
+                        },
+                        "JP": {
+                            "release_date": "2019-02-15"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370540758",
+                        "045496380748",
+                        "045496594121",
+                        "689550378427",
+                        "689720998868",
+                        "695757001792",
+                        "696539349156"
+                    ]
+                },
+                {
+                    "id": "ssb_ice_climbers",
+                    "image": "assets/images/ssb/ice_climbers.png",
+                    "box": "assets/images/ssb/box_ice_climbers.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ice-climbers-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-02-15"
+                        },
+                        "EU": {
+                            "release_date": "2019-02-15"
+                        },
+                        "JP": {
+                            "release_date": "2019-02-15"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594053",
+                        "045496380731",
+                        "4902370540765",
+                        "689720998110",
+                        "689738610233",
+                        "691045726835",
+                        "692623351654",
+                        "692757006215",
+                        "695757001808",
+                        "696230553623",
+                        "696592862210",
+                        "818221168597"
+                    ]
+                },
+                {
+                    "id": "ssb_ken",
+                    "image": "assets/images/ssb/ken.png",
+                    "box": "assets/images/ssb/box_ken.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ken-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-04-12"
+                        },
+                        "EU": {
+                            "release_date": "2019-04-12"
+                        },
+                        "JP": {
+                            "release_date": "2019-04-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594152",
+                        "4902370541472",
+                        "045496380755",
+                        "695757010787"
+                    ]
+                },
+                {
+                    "id": "ssb_young_link",
+                    "image": "assets/images/ssb/young_link.png",
+                    "box": "assets/images/ssb/box_young_link.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/young-link-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-04-11"
+                        },
+                        "EU": {
+                            "release_date": "2019-04-12"
+                        },
+                        "JP": {
+                            "release_date": "2019-04-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594114",
+                        "4902370541458",
+                        "045496380762",
+                        "313041040011",
+                        "695635353845",
+                        "695757010763",
+                        "696231028342",
+                        "7445027851878"
+                    ]
+                },
+                {
+                    "id": "ssb_daisy",
+                    "image": "assets/images/ssb/daisy.png",
+                    "box": "assets/images/ssb/box_daisy.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/daisy-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-04-12"
+                        },
+                        "EU": {
+                            "release_date": "2019-04-12"
+                        },
+                        "JP": {
+                            "release_date": "2019-04-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893590",
+                        "4902370541441",
+                        "695757010770",
+                        "696232985606"
+                    ]
+                },
+                {
+                    "id": "ssb_pokémon_trainer",
+                    "image": "assets/images/ssb/pokémon_trainer.png",
+                    "box": "assets/images/ssb/box_pokémon_trainer.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pokemon-trainer-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-07-26"
+                        },
+                        "EU": {
+                            "release_date": "2019-07-19"
+                        },
+                        "JP": {
+                            "release_date": "2019-07-19"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594091",
+                        "4902370541809"
+                    ]
+                },
+                {
+                    "id": "ssb_pichu",
+                    "image": "assets/images/ssb/pichu.png",
+                    "box": "assets/images/ssb/box_pichu.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pichu-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-07-26"
+                        },
+                        "EU": {
+                            "release_date": "2019-07-19"
+                        },
+                        "JP": {
+                            "release_date": "2019-07-19"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594169",
+                        "4902370541465"
+                    ]
+                },
+                {
+                    "id": "ssb_isabelle",
+                    "image": "assets/images/ssb/isabelle.png",
+                    "box": "assets/images/ssb/box_isabelle.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/isabelle-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-07-26"
+                        },
+                        "EU": {
+                            "release_date": "2019-07-19"
+                        },
+                        "JP": {
+                            "release_date": "2019-07-19"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370541793"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sm",
+            "header": "assets/images/sm/header.jpg",
+            "logo": "assets/images/sm/logo.png",
+            "amiibo": [
+                {
+                    "id": "sm_mario",
+                    "image": "assets/images/sm/mario.png",
+                    "box": "assets/images/sm/box_mario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mario-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496903701",
+                        "045496352769",
+                        "4902370523416"
+                    ]
+                },
+                {
+                    "id": "sm_luigi",
+                    "image": "assets/images/sm/luigi.png",
+                    "box": "assets/images/sm/box_luigi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/luigi-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892012",
+                        "045496352776",
+                        "4902370523423"
+                    ]
+                },
+                {
+                    "id": "sm_peach",
+                    "image": "assets/images/sm/peach.png",
+                    "box": "assets/images/sm/box_peach.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/peach-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892005",
+                        "045496352783",
+                        "4902370523430"
+                    ]
+                },
+                {
+                    "id": "sm_yoshi",
+                    "image": "assets/images/sm/yoshi.png",
+                    "box": "assets/images/sm/box_yoshi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/yoshi-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892029",
+                        "045496352790",
+                        "4902370523447"
+                    ]
+                },
+                {
+                    "id": "sm_toad",
+                    "image": "assets/images/sm/toad.png",
+                    "box": "assets/images/sm/box_toad.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/toad-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892036",
+                        "045496352813",
+                        "4902370523454"
+                    ]
+                },
+                {
+                    "id": "sm_bowser",
+                    "image": "assets/images/sm/bowser.png",
+                    "box": "assets/images/sm/box_bowser.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bowser-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892043",
+                        "045496352806",
+                        "4902370523461"
+                    ]
+                },
+                {
+                    "id": "sm_mario_gold_edition",
+                    "image": "assets/images/sm/mario_gold_edition.png",
+                    "box": "assets/images/sm/box_mario_gold_edition.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mario-gold-edition-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-03-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892050",
+                        "4902370527575"
+                    ]
+                },
+                {
+                    "id": "sm_mario_silver_edition",
+                    "image": "assets/images/sm/mario_silver_edition.png",
+                    "box": "assets/images/sm/box_mario_silver_edition.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mario-silver-edition-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-03-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892067"
+                    ]
+                },
+                {
+                    "id": "sm_wario",
+                    "image": "assets/images/sm/wario.png",
+                    "box": "assets/images/sm/box_wario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/wario-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-10-07"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496380212",
+                        "4902370533521"
+                    ]
+                },
+                {
+                    "id": "sm_waluigi",
+                    "image": "assets/images/sm/waluigi.png",
+                    "box": "assets/images/sm/box_waluigi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/waluigi-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-11-04"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496380212",
+                        "4902370533569"
+                    ]
+                },
+                {
+                    "id": "sm_daisy",
+                    "image": "assets/images/sm/daisy.png",
+                    "box": "assets/images/sm/box_daisy.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/daisy-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-11-04"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892975",
+                        "4902370533552"
+                    ]
+                },
+                {
+                    "id": "sm_rosalina",
+                    "image": "assets/images/sm/rosalina.png",
+                    "box": "assets/images/sm/box_rosalina.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/rosalina-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-11-07"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893002",
+                        "4902370533514"
+                    ]
+                },
+                {
+                    "id": "sm_boo",
+                    "image": "assets/images/sm/boo.png",
+                    "box": "assets/images/sm/box_boo.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/boo-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-11-07"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892999"
+                    ]
+                },
+                {
+                    "id": "sm_donkey_kong",
+                    "image": "assets/images/sm/donkey_kong.png",
+                    "box": "assets/images/sm/box_donkey_kong.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/donkey-kong-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-11-07"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893026",
+                        "4902370522280"
+                    ]
+                },
+                {
+                    "id": "sm_diddy_kong",
+                    "image": "assets/images/sm/diddy_kong.png",
+                    "box": "assets/images/sm/box_diddy_kong.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/diddy-kong-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-11-04"
+                        },
+                        "EU": {
+                            "release_date": "2016-11-07"
+                        },
+                        "JP": {
+                            "release_date": "2016-10-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893033",
+                        "4902370522389"
+                    ]
+                },
+                {
+                    "id": "sm_goomba",
+                    "image": "assets/images/sm/goomba.png",
+                    "box": "assets/images/sm/box_goomba.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/diddy-kong-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-06"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-06"
+                        },
+                        "JP": {
+                            "release_date": "2017-10-05"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893316",
+                        "696231211324"
+                    ]
+                },
+                {
+                    "id": "sm_koopa_troopa",
+                    "image": "assets/images/sm/koopa_troopa.png",
+                    "box": "assets/images/sm/box_koopa_troopa.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/koopa-troopa-amiibo-super-mario-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-06"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-06"
+                        },
+                        "JP": {
+                            "release_date": "2017-10-05"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893323",
+                        "696231211454"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "smo",
+            "header": "assets/images/smo/header.jpg",
+            "logo": "assets/images/smo/logo.png",
+            "amiibo": [
+                {
+                    "id": "smo_mario_wedding_outfit",
+                    "image": "assets/images/smo/mario_wedding_outfit.png",
+                    "box": "assets/images/smo/box_mario_wedding_outfit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mario-wedding-outfit-amiibo-super-mario-odyssey-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-27"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-27"
+                        },
+                        "JP": {
+                            "release_date": "2017-10-27"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893347",
+                        "4902370537475",
+                        "481434904629",
+                        "481434904650"
+                    ]
+                },
+                {
+                    "id": "smo_peach_wedding_outfit",
+                    "image": "assets/images/smo/peach_wedding_outfit.png",
+                    "box": "assets/images/smo/box_peach_wedding_outfit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/peach-wedding-outfit-amiibo-super-mario-odyssey-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-27"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-27"
+                        },
+                        "JP": {
+                            "release_date": "2017-10-27"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893361",
+                        "4902370537482",
+                        "481434904643",
+                        "818223160162",
+                        "689828532704"
+                    ]
+                },
+                {
+                    "id": "smo_bowser_wedding_outfit",
+                    "image": "assets/images/smo/bowser_wedding_outfit.png",
+                    "box": "assets/images/smo/box_bowser_wedding_outfit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bowser-wedding-outfit-amiibo-super-mario-odyssey-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-27"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-27"
+                        },
+                        "JP": {
+                            "release_date": "2017-10-27"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893354",
+                        "481434904636",
+                        "045496380601",
+                        "4902370537499",
+                        "696554198128"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "smb30",
+            "header": "assets/images/smb30/header.jpg",
+            "logo": "assets/images/smb30/logo.png",
+            "amiibo": [
+                {
+                    "id": "smb30_mario_classic_color",
+                    "image": "assets/images/smb30/mario_classic_color.png",
+                    "box": "assets/images/smb30/box_mario_classic_color.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/30th-anniversary-mario-classic-color-amiibo-30th-anniversary-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-10"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-09"
+                        },
+                        "JP": {
+                            "release_date": "2015-09-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892500",
+                        "045496353131",
+                        "715938391129",
+                        "4902370529517",
+                        "4139052217633",
+                        "696231313226",
+                        "4139052216285",
+                        "5711008969491"
+                    ]
+                },
+                {
+                    "id": "smb30_mario_modern_color",
+                    "image": "assets/images/smb30/mario_modern_color.png",
+                    "box": "assets/images/smb30/box_mario_modern_color.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/30th-anniversary-mario-classic-color-amiibo-30th-anniversary-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-09-10"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-09"
+                        },
+                        "JP": {
+                            "release_date": "2015-09-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892517",
+                        "4902370529975",
+                        "045496353155",
+                        "045496353131",
+                        "691039743565",
+                        "4139052211310",
+                        "5711008979940",
+                        "691162889925"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "zld",
+            "header": "assets/images/zld/header.png",
+            "logo": "assets/images/zld/logo.png",
+            "amiibo": [
+                {
+                    "id": "zld_wolf_link",
+                    "image": "assets/images/zld/wolf_link.png",
+                    "box": "assets/images/zld/box_wolf_link.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/wolf-link-amiibo",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-04"
+                        },
+                        "EU": {
+                            "release_date": "2015-03-04"
+                        },
+                        "JP": {
+                            "release_date": "2016-03-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892845",
+                        "4902370531398",
+                        "045496353469",
+                        "886162557480",
+                        "4573451440207"
+                    ]
+                },
+                {
+                    "id": "zld_link_archer",
+                    "image": "assets/images/zld/link_archer.png",
+                    "box": "assets/images/zld/box_link_archer.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-archer-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-03-03"
+                        },
+                        "EU": {
+                            "release_date": "2017-03-03"
+                        },
+                        "JP": {
+                            "release_date": "2017-03-03"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893149",
+                        "4342374382457",
+                        "190403320864",
+                        "686727639114",
+                        "702370534498",
+                        "696577767004"
+                    ]
+                },
+                {
+                    "id": "zld_link_rider",
+                    "image": "assets/images/zld/link_rider.png",
+                    "box": "assets/images/zld/box_link_rider.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-rider-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-03-03"
+                        },
+                        "EU": {
+                            "release_date": "2017-03-03"
+                        },
+                        "JP": {
+                            "release_date": "2017-03-03"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893156",
+                        "686727713869",
+                        "729952889531",
+                        "689830280235",
+                        "691163502021",
+                        "695641302844",
+                        "696393473486",
+                        "696577755957",
+                        "696580122593",
+                        "045496380267",
+                        "4902370534412",
+                        "481434903066"
+                    ]
+                },
+                {
+                    "id": "zld_guardian",
+                    "image": "assets/images/zld/guardian.png",
+                    "box": "assets/images/zld/box_guardian.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/guardian-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-03-03"
+                        },
+                        "EU": {
+                            "release_date": "2017-03-03"
+                        },
+                        "JP": {
+                            "release_date": "2017-03-03"
+                        }
+                    },
+                    "barcodes": [
+                        "190403248243",
+                        "045496893095",
+                        "686727683278",
+                        "045496380274",
+                        "689790224836",
+                        "4334676565348",
+                        "691163500256",
+                        "696230731885",
+                        "696577797438",
+                        "696594331042",
+                        "696597746263",
+                        "705353421723"
+                    ]
+                },
+                {
+                    "id": "zld_zelda",
+                    "image": "assets/images/zld/zelda.png",
+                    "box": "assets/images/zld/box_zelda.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/zelda-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-03-03"
+                        },
+                        "EU": {
+                            "release_date": "2017-03-03"
+                        },
+                        "JP": {
+                            "release_date": "2017-03-03"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893163",
+                        "696577750402"
+                    ]
+                },
+                {
+                    "id": "zld_bokoblin",
+                    "image": "assets/images/zld/bokoblin.png",
+                    "box": "assets/images/zld/box_bokoblin.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/bokoblin-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-03-03"
+                        },
+                        "EU": {
+                            "release_date": "2017-03-03"
+                        },
+                        "JP": {
+                            "release_date": "2017-03-03"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893170",
+                        "045496380281",
+                        "616604995279",
+                        "696545038082",
+                        "818225896809",
+                        "4223238734455",
+                        "691038440885",
+                        "691163504506",
+                        "692619832402",
+                        "695634511871",
+                        "696594765724",
+                        "4902370534498"
+                    ]
+                },
+                {
+                    "id": "zld_revali",
+                    "image": "assets/images/zld/revali.png",
+                    "box": "assets/images/zld/box_revali.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/revali-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-11-10"
+                        },
+                        "EU": {
+                            "release_date": "2017-11-10"
+                        },
+                        "JP": {
+                            "release_date": "2017-11-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893460",
+                        "481434904698",
+                        "692620677238",
+                        "4902370534481",
+                        "696543532919",
+                        "190403238909",
+                        "607169616556",
+                        "689737362874",
+                        "689742976097",
+                        "691163489353",
+                        "696230741235",
+                        "696579674980",
+                        "698453134719"
+                    ]
+                },
+                {
+                    "id": "zld_mipha",
+                    "image": "assets/images/zld/mipha.png",
+                    "box": "assets/images/zld/box_mipha.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mipha-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-11-10"
+                        },
+                        "EU": {
+                            "release_date": "2017-11-10"
+                        },
+                        "JP": {
+                            "release_date": "2017-11-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893453",
+                        "4902370534474",
+                        "692619864588",
+                        "696233507234",
+                        "607169616600",
+                        "140787066681",
+                        "689550476789",
+                        "691163488202",
+                        "696579674911"
+                    ]
+                },
+                {
+                    "id": "zld_daruk",
+                    "image": "assets/images/zld/daruk.png",
+                    "box": "assets/images/zld/box_daruk.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/daruk-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-11-10"
+                        },
+                        "EU": {
+                            "release_date": "2017-11-10"
+                        },
+                        "JP": {
+                            "release_date": "2017-11-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893491",
+                        "481434904667",
+                        "190403238947",
+                        "689742970941",
+                        "691163488592",
+                        "696226196049",
+                        "696579670111",
+                        "818226682739",
+                        "696545038822"
+                    ]
+                },
+                {
+                    "id": "zld_urbosa",
+                    "image": "assets/images/zld/urbosa.png",
+                    "box": "assets/images/zld/box_urbosa.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/urbosa-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-11-10"
+                        },
+                        "EU": {
+                            "release_date": "2017-11-10"
+                        },
+                        "JP": {
+                            "release_date": "2017-11-10"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893477",
+                        "481434904681",
+                        "4902370534467",
+                        "689829166670",
+                        "190403238923",
+                        "607169616563",
+                        "689991942065",
+                        "689997373658",
+                        "691201397640",
+                        "695634512786",
+                        "696579674935",
+                        "818223159265",
+                        "9318113994941"
+                    ]
+                },
+                {
+                    "id": "zld_link_ocarina_of_time",
+                    "image": "assets/images/zld/link_ocarina_of_time.png",
+                    "box": "assets/images/zld/box_link_ocarina_of_time.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-ocarina-of-time-amiibo-30th-anniversary-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893071",
+                        "400056187005",
+                        "4902370534320",
+                        "045496380366"
+                    ]
+                },
+                {
+                    "id": "zld_link_the_legend_of_zelda",
+                    "image": "assets/images/zld/link_the_legend_of_zelda.png",
+                    "box": "assets/images/zld/box_link_the_legend_of_zelda.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-the-legend-of-zelda-amiibo-30th-anniversary-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893088",
+                        "400056186008"
+                    ]
+                },
+                {
+                    "id": "zld_toon_link_the_wind_waker",
+                    "image": "assets/images/zld/toon_link_the_wind_waker.png",
+                    "box": "assets/images/zld/box_toon_link_the_wind_waker.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/toon-link-the-wind-waker-amiibo-30th-anniversary-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893484",
+                        "4902370534375"
+                    ]
+                },
+                {
+                    "id": "zld_zelda_the_wind_waker",
+                    "image": "assets/images/zld/zelda_the_wind_waker.png",
+                    "box": "assets/images/zld/box_zelda_the_wind_waker.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/toon-zelda-the-wind-waker-amiibo-30th-anniversary-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "045496380397",
+                        "4902370534399"
+                    ]
+                },
+                {
+                    "id": "zld_link_majora_s_mask",
+                    "image": "assets/images/zld/link_majora_s_mask.png",
+                    "box": "assets/images/zld/box_link_majora_s_mask.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-majoras-mask-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370534337",
+                        "696582132385",
+                        "607169615276",
+                        "607169617881",
+                        "696233246218",
+                        "045496893125",
+                        "045496380373"
+                    ]
+                },
+                {
+                    "id": "zld_link_twilight_princess",
+                    "image": "assets/images/zld/link_twilight_princess.png",
+                    "box": "assets/images/zld/box_link_twilight_princess.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-twilight-princess-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893101",
+                        "454968931010",
+                        "729952890797",
+                        "696449951807",
+                        "4902370534344"
+                    ]
+                },
+                {
+                    "id": "zld_link_skyward_sword",
+                    "image": "assets/images/zld/link_skyward_sword.png",
+                    "box": "assets/images/zld/box_link_skyward_sword.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-skyward-sword-amiibo-the-legend-of-zelda-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-12-02"
+                        },
+                        "EU": {
+                            "release_date": "2016-12-02"
+                        },
+                        "JP": {
+                            "release_date": "2016-12-01"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370534351",
+                        "045496893132",
+                        "689850156800",
+                        "696233308817",
+                        "689744375973",
+                        "689744379681",
+                        "689792304338",
+                        "696585963160",
+                        "696592333949"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "spl",
+            "header": "assets/images/spl/header.jpg",
+            "logo": "assets/images/spl/logo.png",
+            "amiibo": [
+                {
+                    "id": "spl_inkling_girl_1",
+                    "image": "assets/images/spl/inkling_girl_1.png",
+                    "box": "assets/images/spl/box_inkling_girl_1.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-girl-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-05-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-05-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892173"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_boy_1",
+                    "image": "assets/images/spl/inkling_boy_1.png",
+                    "box": "assets/images/spl/box_inkling_boy_1.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-boy-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-05-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-05-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892166",
+                        "731084401116",
+                        "4902370527810",
+                        "098377383451"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_squid_1",
+                    "image": "assets/images/spl/inkling_squid_1.png",
+                    "box": "assets/images/spl/box_inkling_squid_1.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-squid-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-05-29"
+                        },
+                        "EU": {
+                            "release_date": "2015-05-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-05-28"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370528886",
+                        "045496352974",
+                        "748579476672"
+                    ]
+                },
+                {
+                    "id": "spl_callie",
+                    "image": "assets/images/spl/callie.png",
+                    "box": "assets/images/spl/box_callie.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/callie-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-07-08"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-08"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-07"
+                        }
+                    },
+                    "barcodes": [
+                        "690128290966",
+                        "690141968798",
+                        "691198694562"
+                    ]
+                },
+                {
+                    "id": "spl_marie",
+                    "image": "assets/images/spl/marie.png",
+                    "box": "assets/images/spl/box_marie.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/marie-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-07-08"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-08"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-07"
+                        }
+                    },
+                    "barcodes": [
+                        "045496380120",
+                        "4902370532722",
+                        "689549518537",
+                        "695635467801",
+                        "696596457764"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_girl_2",
+                    "image": "assets/images/spl/inkling_girl_2.png",
+                    "box": "assets/images/spl/box_inkling_girl_2.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-girl-2-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-07-08"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-08"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-07"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892944",
+                        "692761048775",
+                        "696603971474"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_boy_2",
+                    "image": "assets/images/spl/inkling_boy_2.png",
+                    "box": "assets/images/spl/box_inkling_boy_2.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-boy-2-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-07-08"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-08"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-07"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892166",
+                        "4902370527810",
+                        "731084401116",
+                        "689991745857"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_squid_2",
+                    "image": "assets/images/spl/inkling_squid_2.png",
+                    "box": "assets/images/spl/box_inkling_squid_2.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-squid-2-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-07-08"
+                        },
+                        "EU": {
+                            "release_date": "2015-07-08"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-07"
+                        }
+                    },
+                    "barcodes": [
+                        "743181381963"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_girl_3",
+                    "image": "assets/images/spl/inkling_girl_3.png",
+                    "box": "assets/images/spl/box_inkling_girl_3.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-girl-3-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893293",
+                        "696230297466"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_boy_3",
+                    "image": "assets/images/spl/inkling_boy_3.png",
+                    "box": "assets/images/spl/box_inkling_boy_3.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-boy-3-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893286",
+                        "4902370536713"
+                    ]
+                },
+                {
+                    "id": "spl_inkling_squid_3",
+                    "image": "assets/images/spl/inkling_squid_3.png",
+                    "box": "assets/images/spl/box_inkling_squid_3.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/inkling-squid-3-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-21"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-21"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-21"
+                        }
+                    },
+                    "barcodes": [
+                        "04549689330"
+                    ]
+                },
+                {
+                    "id": "spl_pearl",
+                    "image": "assets/images/spl/pearl.png",
+                    "box": "assets/images/spl/box_pearl.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pearl_amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-07-13"
+                        },
+                        "EU": {
+                            "release_date": "2018-07-13"
+                        },
+                        "JP": {
+                            "release_date": "2018-07-13"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370539509",
+                        "696594757095",
+                        "691042371861",
+                        "696227469111",
+                        "696230291761"
+                    ]
+                },
+                {
+                    "id": "spl_marina",
+                    "image": "assets/images/spl/marina.png",
+                    "box": "assets/images/spl/box_marina.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/marina-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-07-13"
+                        },
+                        "EU": {
+                            "release_date": "2018-07-13"
+                        },
+                        "JP": {
+                            "release_date": "2018-07-13"
+                        }
+                    },
+                    "barcodes": [
+                        "696585962989",
+                        "692756994612"
+                    ]
+                },
+                {
+                    "id": "spl_octoling_girl",
+                    "image": "assets/images/spl/octoling_girl.png",
+                    "box": "assets/images/spl/box_octoling_girl.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/octoling-girl-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-12-07"
+                        },
+                        "EU": {
+                            "release_date": "2018-11-09"
+                        },
+                        "JP": {
+                            "release_date": "2018-11-09"
+                        }
+                    },
+                    "barcodes": [
+                        "818208919815",
+                        "696580229537",
+                        "692756988659",
+                        "696580641865"
+                    ]
+                },
+                {
+                    "id": "spl_octoling_boy",
+                    "image": "assets/images/spl/octoling_boy.png",
+                    "box": "assets/images/spl/box_octoling_boy.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/octoling-boy-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-12-07"
+                        },
+                        "EU": {
+                            "release_date": "2018-11-09"
+                        },
+                        "JP": {
+                            "release_date": "2018-11-09"
+                        }
+                    },
+                    "barcodes": [
+                        "818208920965",
+                        "696535305439",
+                        "691200762555",
+                        "692756985177",
+                        "692757053592",
+                        "696232418166",
+                        "2200630044148"
+                    ]
+                },
+                {
+                    "id": "spl_octoling_octopus",
+                    "image": "assets/images/spl/octoling_octopus.png",
+                    "box": "assets/images/spl/box_octoling_octopus.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/octoling-octopus-amiibo-splatoon-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-12-07"
+                        },
+                        "EU": {
+                            "release_date": "2018-11-09"
+                        },
+                        "JP": {
+                            "release_date": "2018-11-09"
+                        }
+                    },
+                    "barcodes": [
+                        "692756987799"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ac",
+            "header": "assets/images/ac/header.jpg",
+            "logo": "assets/images/ac/logo.png",
+            "amiibo": [
+                {
+                    "id": "ac_isabelle_winter_outfit",
+                    "image": "assets/images/ac/isabelle_winter_outfit.png",
+                    "box": "assets/images/ac/box_isabelle_winter_outfit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/isabelle-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892838",
+                        "4902370530407",
+                        "004549689283",
+                        "696594770766",
+                        "689852343291",
+                        "692617448148"
+                    ]
+                },
+                {
+                    "id": "ac_tom_nook",
+                    "image": "assets/images/ac/tom_nook.png",
+                    "box": "assets/images/ac/box_tom_nook.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/tom-nook-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353353",
+                        "045496892609",
+                        "045496353247",
+                        "077344727726",
+                        "191081193566",
+                        "696231284915"
+                    ]
+                },
+                {
+                    "id": "ac_kk",
+                    "image": "assets/images/ac/kk.png",
+                    "box": "assets/images/ac/box_kk.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/kk-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353223",
+                        "4902370530452"
+                    ]
+                },
+                {
+                    "id": "ac_mabel",
+                    "image": "assets/images/ac/mabel.png",
+                    "box": "assets/images/ac/box_mabel.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mabel-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353230",
+                        "045496892586",
+                        "4902370530445",
+                        "696231308178"
+                    ]
+                },
+                {
+                    "id": "ac_digby",
+                    "image": "assets/images/ac/digby.png",
+                    "box": "assets/images/ac/box_digby.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/digby-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892630",
+                        "4902370530414",
+                        "783651335256",
+                        "686727747390",
+                        "691201359938"
+                    ]
+                },
+                {
+                    "id": "ac_lottie",
+                    "image": "assets/images/ac/lottie.png",
+                    "box": "assets/images/ac/box_lottie.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/lottie-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892593",
+                        "045496353261",
+                        "077349813806",
+                        "4902370530438",
+                        "686727742265",
+                        "695757009781"
+                    ]
+                },
+                {
+                    "id": "ac_cyrus",
+                    "image": "assets/images/ac/cyrus.png",
+                    "box": "assets/images/ac/box_cyrus.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/cyrus-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353285",
+                        "4902370530476"
+                    ]
+                },
+                {
+                    "id": "ac_reese",
+                    "image": "assets/images/ac/reese.png",
+                    "box": "assets/images/ac/box_reese.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/reese-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-13"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-20"
+                        },
+                        "JP": {
+                            "release_date": "2015-11-21"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353278",
+                        "4902370530469"
+                    ]
+                },
+                {
+                    "id": "ac_blathers",
+                    "image": "assets/images/ac/blathers.png",
+                    "box": "assets/images/ac/box_blathers.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/blathers-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-01-22"
+                        },
+                        "EU": {
+                            "release_date": "2016-01-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-12-17"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892739",
+                        "045496353339",
+                        "4902370530889",
+                        "7445803075542"
+                    ]
+                },
+                {
+                    "id": "ac_celeste",
+                    "image": "assets/images/ac/celeste.png",
+                    "box": "assets/images/ac/box_celeste.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/celeste-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-01-22"
+                        },
+                        "EU": {
+                            "release_date": "2016-01-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-12-17"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892746",
+                        "045496353346",
+                        "4902370530896",
+                        "7445803078109",
+                        "696230740245",
+                        "696537424473"
+                    ]
+                },
+                {
+                    "id": "ac_resetti",
+                    "image": "assets/images/ac/resetti.png",
+                    "box": "assets/images/ac/box_resetti.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/resetti-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-01-22"
+                        },
+                        "EU": {
+                            "release_date": "2016-01-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-12-17"
+                        }
+                    },
+                    "barcodes": [
+                        "045496353353",
+                        "045496892753",
+                        "4902370530902",
+                        "7445803075559",
+                        "696234289597",
+                        "696399177388"
+                    ]
+                },
+                {
+                    "id": "ac_kicks",
+                    "image": "assets/images/ac/kicks.png",
+                    "box": "assets/images/ac/box_kicks.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/kicks-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-01-22"
+                        },
+                        "EU": {
+                            "release_date": "2016-01-29"
+                        },
+                        "JP": {
+                            "release_date": "2015-12-17"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892722",
+                        "045496353360",
+                        "4902370530919",
+                        "7445803088443",
+                        "689997213992",
+                        "696594780673"
+                    ]
+                },
+                {
+                    "id": "ac_timmy_tommy",
+                    "image": "assets/images/ac/timmy_tommy.png",
+                    "box": "assets/images/ac/box_timmy_tommy.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/timmy-and-tommy-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2016-03-24"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892791",
+                        "760117070005",
+                        "691041794005",
+                        "691198952273"
+                    ]
+                },
+                {
+                    "id": "ac_kapp_n",
+                    "image": "assets/images/ac/kapp_n.png",
+                    "box": "assets/images/ac/box_kapp_n.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/kappn-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2016-03-24"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892784",
+                        "691040210636",
+                        "696391826895",
+                        "696554197329"
+                    ]
+                },
+                {
+                    "id": "ac_rover",
+                    "image": "assets/images/ac/rover.png",
+                    "box": "assets/images/ac/box_rover.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/rover-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2016-03-24"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892807"
+                    ]
+                },
+                {
+                    "id": "ac_isabelle_summer_outfit",
+                    "image": "assets/images/ac/isabelle_summer_outfit.png",
+                    "box": "assets/images/ac/box_isabelle_summer_outfit.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/isabelle-summer-outfit-amiibo-animal-crossing-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-03-18"
+                        },
+                        "EU": {
+                            "release_date": "2016-03-18"
+                        },
+                        "JP": {
+                            "release_date": "2016-03-24"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892616",
+                        "045496353407",
+                        "691164117880",
+                        "689850375454",
+                        "689994233344",
+                        "691041859216"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "yww",
+            "header": "assets/images/yww/header.jpg",
+            "logo": "assets/images/yww/logo.png",
+            "amiibo": [
+                {
+                    "id": "yww_green_yarn_yoshi",
+                    "image": "assets/images/yww/green_yarn_yoshi.png",
+                    "box": "assets/images/yww/box_green_yarn_yoshi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/green-yarn-yoshi-amiibo-yoshis-woolly-world-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-10-16"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-16"
+                        }
+                    },
+                    "barcodes": [
+                        "045496352981",
+                        "045496892241",
+                        "490237052860",
+                        "792458521205",
+                        "4902370529173"
+                    ]
+                },
+                {
+                    "id": "yww_pink_yarn_yoshi",
+                    "image": "assets/images/yww/pink_yarn_yoshi.png",
+                    "box": "assets/images/yww/box_pink_yarn_yoshi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pink-yarn-yoshi-amiibo-yoshis-woolly-world-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-10-16"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-16"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892227",
+                        "045496904395",
+                        "4902370528619",
+                        "045496352998",
+                        "686727660170",
+                        "492070340078",
+                        "696231269165"
+                    ]
+                },
+                {
+                    "id": "yww_light_blue_yarn_yoshi",
+                    "image": "assets/images/yww/light_blue_yarn_yoshi.png",
+                    "box": "assets/images/yww/box_light_blue_yarn_yoshi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/light-blue-yarn-yoshi-amiibo-yoshis-woolly-world-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-10-16"
+                        },
+                        "EU": {
+                            "release_date": "2015-06-26"
+                        },
+                        "JP": {
+                            "release_date": "2015-07-16"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892234",
+                        "045496904388",
+                        "045496353001",
+                        "4902370528626",
+                        "077346297661",
+                        "696576156410",
+                        "348057726819",
+                        "492070340085",
+                        "689788949499",
+                        "689826769379",
+                        "690003103961",
+                        "691163478807",
+                        "691163513362",
+                        "696231261138",
+                        "696594773637"
+                    ]
+                },
+                {
+                    "id": "yww_mega_yarn_yoshi",
+                    "image": "assets/images/yww/mega_yarn_yoshi.png",
+                    "box": "assets/images/yww/box_mega_yarn_yoshi.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mega-yarn-yoshi-amiibo-yoshis-woolly-world-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-11-15"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-27"
+                        },
+                        "JP": {
+                            "release_date": "2015-12-10"
+                        }
+                    },
+                    "barcodes": [
+                        "792458521205",
+                        "045496892562",
+                        "045496353308",
+                        "5054242368287",
+                        "689550584927"
+                    ]
+                },
+                {
+                    "id": "yww_poochy",
+                    "image": "assets/images/yww/poochy.png",
+                    "box": "assets/images/yww/box_poochy.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/poochy-amiibo-yoshis-woolly-world-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-02-03"
+                        },
+                        "EU": {
+                            "release_date": "2017-02-03"
+                        },
+                        "JP": {
+                            "release_date": "2017-01-19"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893187",
+                        "045496380502",
+                        "045496744533",
+                        "689719579061",
+                        "689855572551",
+                        "689989992348",
+                        "691040672496",
+                        "691199804410",
+                        "696583172151",
+                        "686727640585"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "krb",
+            "header": "assets/images/krb/header.jpg",
+            "logo": "assets/images/krb/logo.png",
+            "amiibo": [
+                {
+                    "id": "krb_kirby",
+                    "image": "assets/images/krb/kirby.png",
+                    "box": "assets/images/krb/box_kirby.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/kirby-amiibo-kirby-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-06-10"
+                        },
+                        "EU": {
+                            "release_date": "2016-06-10"
+                        },
+                        "JP": {
+                            "release_date": "2016-04-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892876",
+                        "4902370532548",
+                        "4573451440412"
+                    ]
+                },
+                {
+                    "id": "krb_meta_knight",
+                    "image": "assets/images/krb/meta_knight.png",
+                    "box": "assets/images/krb/box_meta_knight.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/meta-knight-amiibo-kirby-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-06-10"
+                        },
+                        "EU": {
+                            "release_date": "2016-06-10"
+                        },
+                        "JP": {
+                            "release_date": "2016-04-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496380083",
+                        "689995091318",
+                        "045496892883",
+                        "045496891954",
+                        "4902370523409",
+                        "045496352752",
+                        "4902370532555",
+                        "689991929370",
+                        "69262082332",
+                        "738258362891",
+                        "657687452884",
+                        "7195003031991",
+                        "689851314100",
+                        "691060070746"
+                    ]
+                },
+                {
+                    "id": "krb_king_dedede",
+                    "image": "assets/images/krb/king_dedede.png",
+                    "box": "assets/images/krb/box_king_dedede.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/king-dedede-amiibo-kirby-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-06-10"
+                        },
+                        "EU": {
+                            "release_date": "2016-06-10"
+                        },
+                        "JP": {
+                            "release_date": "2016-04-28"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370532562",
+                        "045496892890"
+                    ]
+                },
+                {
+                    "id": "krb_waddle_dee",
+                    "image": "assets/images/krb/waddle_dee.png",
+                    "box": "assets/images/krb/box_waddle_dee.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/waddle-dee-amiibo-kirby-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-06-10"
+                        },
+                        "EU": {
+                            "release_date": "2016-06-10"
+                        },
+                        "JP": {
+                            "release_date": "2016-04-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892906",
+                        "045496380106",
+                        "4902370532579",
+                        "686727680345",
+                        "689850508395",
+                        "689853719118",
+                        "690002745285",
+                        "696554197282",
+                        "4573451440436"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fe",
+            "header": "assets/images/fe/header.jpg",
+            "logo": "assets/images/fe/logo.png",
+            "amiibo": [
+                {
+                    "id": "fe_alm",
+                    "image": "assets/images/fe/alm.png",
+                    "box": "assets/images/fe/box_alm.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/alm-amiibo-fire-emblem-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-05-19"
+                        },
+                        "EU": {
+                            "release_date": "2017-05-19"
+                        },
+                        "JP": {
+                            "release_date": "2017-04-20"
+                        }
+                    },
+                    "barcodes": [
+                        "692762724944"
+                    ]
+                },
+                {
+                    "id": "fe_celica",
+                    "image": "assets/images/fe/celica.png",
+                    "box": "assets/images/fe/box_celica.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/celica-amiibo-fire-emblem-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-05-19"
+                        },
+                        "EU": {
+                            "release_date": "2017-05-19"
+                        },
+                        "JP": {
+                            "release_date": "2017-04-20"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370535457",
+                        "4797532843989",
+                        "045496380526",
+                        "045496380519"
+                    ]
+                },
+                {
+                    "id": "fe_chrom",
+                    "image": "assets/images/fe/chrom.png",
+                    "box": "assets/images/fe/box_chrom.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/chrom-amiibo-fire-emblem-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-20"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-20"
+                        },
+                        "JP": {
+                            "release_date": "2017-09-28"
+                        }
+                    },
+                    "barcodes": [
+                        "04549689339",
+                        "689853369016",
+                        "4902370537291",
+                        "516467402658",
+                        "691200581194",
+                        "692620188086",
+                        "695639389222",
+                        "695757003888",
+                        "696230686703",
+                        "400058973026"
+                    ]
+                },
+                {
+                    "id": "fe_tiki",
+                    "image": "assets/images/fe/tiki.png",
+                    "box": "assets/images/fe/box_tiki.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/tiki-amiibo-fire-emblem-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-10-20"
+                        },
+                        "EU": {
+                            "release_date": "2017-10-20"
+                        },
+                        "JP": {
+                            "release_date": "2017-09-28"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893408",
+                        "4902370537307",
+                        "481434904612"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "mtr",
+            "header": "assets/images/mtr/header.jpg",
+            "logo": "assets/images/mtr/logo.png",
+            "amiibo": [
+                {
+                    "id": "mtr_samus_aran",
+                    "image": "assets/images/mtr/samus_aran.png",
+                    "box": "assets/images/mtr/box_samus_aran.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/samus-aran-amiibo-metroid-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-09-15"
+                        },
+                        "EU": {
+                            "release_date": "2017-09-15"
+                        },
+                        "JP": {
+                            "release_date": "2017-09-15"
+                        }
+                    },
+                    "barcodes": [
+                        "691163610832",
+                        "4902370536829",
+                        "045496380564",
+                        "689990002128"
+                    ]
+                },
+                {
+                    "id": "mtr_metroid",
+                    "image": "assets/images/mtr/metroid.png",
+                    "box": "assets/images/mtr/box_metroid.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/metroid-amiibo-metroid-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-09-15"
+                        },
+                        "EU": {
+                            "release_date": "2017-09-15"
+                        },
+                        "JP": {
+                            "release_date": "2017-09-15"
+                        }
+                    },
+                    "barcodes": [
+                        "692620391776",
+                        "4902370536836",
+                        "045496380571",
+                        "691041785034"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sk",
+            "header": "assets/images/sk/header.jpg",
+            "logo": "assets/images/sk/logo.png",
+            "amiibo": [
+                {
+                    "id": "sk_shovel_knight",
+                    "image": "assets/images/sk/shovel_knight.png",
+                    "box": "assets/images/sk/box_shovel_knight.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/shovel-knight-amiibo-shovel-knight-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-01-08"
+                        },
+                        "EU": {
+                            "release_date": "2016-01-08"
+                        },
+                        "JP": {
+                            "release_date": "2016-06-30"
+                        }
+                    },
+                    "barcodes": [
+                        "5060146462129",
+                        "812303010460",
+                        "4902370533255"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cr",
+            "header": "assets/images/cr/header.jpg",
+            "logo": "assets/images/cr/logo.png",
+            "amiibo": [
+                {
+                    "id": "cr_chibi_robo",
+                    "image": "assets/images/cr/chibi_robo.png",
+                    "box": "assets/images/cr/box_chibi_robo.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/chibi-robo-amiibo-chibi-robo-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2015-10-09"
+                        },
+                        "EU": {
+                            "release_date": "2015-11-06"
+                        },
+                        "JP": {
+                            "release_date": "2015-10-08"
+                        }
+                    },
+                    "barcodes": [
+                        "045496743246",
+                        "045496529239",
+                        "045496892401",
+                        "045496353162",
+                        "045496892814",
+                        "4902370529500",
+                        "689991936682"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bb",
+            "header": "assets/images/bb/header.jpg",
+            "logo": "assets/images/bb/logo.png",
+            "amiibo": [
+                {
+                    "id": "bb_qbby",
+                    "image": "assets/images/bb/qbby.png",
+                    "box": "assets/images/bb/box_qbby.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/anaa/index.html",
+                    "regions": {
+                        "JP": {
+                            "release_date": "2017-02-02"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370535808",
+                        "4902370535396",
+                        "729952889562"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "pkm",
+            "header": "assets/images/pkm/header.jpg",
+            "logo": "assets/images/pkm/logo.png",
+            "amiibo": [
+                {
+                    "id": "pkm_pikmin",
+                    "image": "assets/images/pkm/pikmin.png",
+                    "box": "assets/images/pkm/box_pikmin.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/pikmin-amiibo-pikmin-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2017-07-28"
+                        },
+                        "EU": {
+                            "release_date": "2017-07-28"
+                        },
+                        "JP": {
+                            "release_date": "2017-07-13"
+                        }
+                    },
+                    "barcodes": [
+                        "045496892302",
+                        "045496353063",
+                        "045496893262",
+                        "4902370528947",
+                        "045496380496",
+                        "696231251535",
+                        "690000941559",
+                        "691163494883",
+                        "4902370535402",
+                        "692619876390"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "dpk",
+            "header": "assets/images/dpk/header.jpg",
+            "logo": "assets/images/dpk/logo.png",
+            "amiibo": [
+                {
+                    "id": "dpk_detective_pikachu",
+                    "image": "assets/images/dpk/detective_pikachu.png",
+                    "box": "assets/images/dpk/box_detective_pikachu.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/detective-pikachu-amiibo",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-03-23"
+                        },
+                        "EU": {
+                            "release_date": "2018-03-23"
+                        },
+                        "JP": {
+                            "release_date": "2018-03-23"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893514",
+                        "691038434341",
+                        "045496380632",
+                        "691045465772",
+                        "691045710049",
+                        "691196892250",
+                        "696563610574",
+                        "004549689351",
+                        "696231141317",
+                        "696594759709",
+                        "4902370538533"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "dks",
+            "header": "assets/images/dks/header.jpg",
+            "logo": "assets/images/dks/logo.png",
+            "amiibo": [
+                {
+                    "id": "dks_solaire_of_astora",
+                    "image": "assets/images/dks/solaire_of_astora.png",
+                    "box": "assets/images/dks/box_solaire_of_astora.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/solaire-of-astora-amiibo-dark-souls-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2018-10-19"
+                        },
+                        "EU": {
+                            "release_date": "2018-10-19"
+                        },
+                        "JP": {
+                            "release_date": "2018-10-18"
+                        }
+                    },
+                    "barcodes": [
+                        "722674900720",
+                        "691041977194",
+                        "696580643111",
+                        "4949776461027",
+                        "696573311577",
+                        "651307191832"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "mgmce",
+            "header": "assets/images/mgmce/header.jpg",
+            "logo": "assets/images/mgmce/logo.png",
+            "amiibo": [
+                {
+                    "id": "mgmce_megaman_gold",
+                    "image": "assets/images/mgmce/mega_man_gold.png",
+                    "box": "assets/images/mgmce/box_mega_man_gold.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/mega-man-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2016-02-23"
+                        }
+                    },
+                    "barcodes": [
+                        "013388305247",
+                        "692618026628",
+                        "696393486974"
+                    ]
+                }
+            ]
+        }
+    ]
+}
