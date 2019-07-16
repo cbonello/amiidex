@@ -19,8 +19,9 @@ Secondary screen displaying the Amiibo within a serie.
 - Option to Lock your amiibo collection to prevent unintentional updates.
 - A long press on an amiibo adds/ removes it to/ from your collection.
 - A double click on an amiibo opens the page of this amiibo on the Nintendo website.
-- View of series/ ammibo as list, small icons or large icons.
+- View of series/ amiibo as list, small icons or large icons.
 - Sort of amiibo by name or release date.
+- Scan of amiibo boxes barcode.
 
 ## TODO
 
