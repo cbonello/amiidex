@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 class SearchBar extends StatelessWidget {
   const SearchBar({
     Key key,
-    @required this.amiibo,
+    @required this.amiibo, // List of amiibo to search.
   }) : super(key: key);
 
   final AmiiboList amiibo;
@@ -21,7 +21,7 @@ class SearchBar extends StatelessWidget {
     return SliverFloatingBar(
       floating: true,
       snap: true,
-      title: FlatButton(
+      title: GestureDetector(
         child: Text(
           I18n.of(context).text('collection-search'),
           // TODO(cbonello): use theme color.
@@ -30,7 +30,7 @@ class SearchBar extends StatelessWidget {
             fontSize: 18,
           ),
         ),
-        onPressed: () async {
+        onTap: () async {
           await showSearch(
             context: context,
             delegate: CustomSearchDelegate(

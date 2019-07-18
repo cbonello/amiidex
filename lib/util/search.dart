@@ -3,7 +3,6 @@ import 'package:amiidex/UI/home/widgets/amiibo_actionbar.dart';
 import 'package:amiidex/UI/home/widgets/detail.dart';
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/models/amiibo_list.dart';
-import 'package:amiidex/providers/series_sort.dart';
 import 'package:amiidex/providers/view_as.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:provider/provider.dart';
@@ -42,16 +41,46 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
   }
 
   @override
-  Widget buildResults(BuildContext context) {
-    final AmiiboList suggestions = search(context, query, minLength: 1);
+  Widget buildSuggestions(BuildContext context) {
+    final AmiiboList suggestions = _search(context, query, minLength: 2);
     if (suggestions.isEmpty) {
       return Container();
     }
+    return _displayMatches(suggestions);
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    final AmiiboList results = _search(context, query);
+    if (results.isEmpty) {
+      return Container();
+    }
+    return _displayMatches(results);
+  }
+
+  AmiiboList _search(BuildContext context, String query, {int minLength = 1}) {
+    query = query.trim();
+    if (query.length < minLength) {
+      return AmiiboList();
+    }
+
+    final RegExp regex = _queryToPattern(query);
+    if (regex.pattern.isEmpty) {
+      return AmiiboList();
+    }
+    final List<AmiiboModel> matches = amiibo.where(
+      (AmiiboModel a) {
+        final String name = I18n.of(context).text(a.id);
+        final bool m = regex.hasMatch(name);
+        return m;
+      },
+    ).toList();
+    return AmiiboList.from(matches);
+  }
+
+  Widget _displayMatches(AmiiboList matches) {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
-        ChangeNotifierProvider<SeriesSortProvider>(
-          builder: (_) => SeriesSortProvider(),
-        ),
         ChangeNotifierProvider<ViewAsProvider>(
           builder: (_) => ViewAsProvider(ItemsDisplayed.searches),
         ),
@@ -62,49 +91,12 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
             AmiiboActionBar(),
           ];
         },
-        body: DetailWidget(amiibo: suggestions),
+        body: DetailWidget(amiibo: matches),
       ),
     );
   }
 
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    final AmiiboList suggestions = search(context, query);
-    if (suggestions.isEmpty) {
-      return Container();
-    }
-    return MultiProvider(
-      providers: <SingleChildCloneableWidget>[
-        ChangeNotifierProvider<SeriesSortProvider>(
-          builder: (_) => SeriesSortProvider(),
-        ),
-        ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.searches),
-        ),
-      ],
-      child: DetailWidget(amiibo: suggestions),
-    );
-  }
-
-  AmiiboList search(BuildContext context, String query, {int minLength = 2}) {
-    query = query.trim();
-    if (query.length < minLength) {
-      return AmiiboList();
-    }
-
-    final RegExp regex = _queryToPattern(query);
-    if (regex.pattern.isEmpty) {
-      return AmiiboList();
-    }
-    final List<AmiiboModel> matches = amiibo.where((AmiiboModel a) {
-      final String name = I18n.of(context).text(a.id);
-      final bool m = regex.hasMatch(name);
-      return m;
-    }).toList();
-    return AmiiboList.from(matches);
-  }
-
-  // Transform into regular exression.
+  // Transform query into regular expression.
   RegExp _queryToPattern(String str) {
     final List<String> keywords = str
         .split(' ')
