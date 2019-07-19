@@ -1,6 +1,6 @@
+import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
+import 'package:amiidex/UI/widgets/detail.dart';
 import 'package:flutter/material.dart';
-import 'package:amiidex/UI/home/widgets/amiibo_actionbar.dart';
-import 'package:amiidex/UI/home/widgets/detail.dart';
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/view_as.dart';

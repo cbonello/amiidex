@@ -1,8 +1,8 @@
+import 'package:amiidex/UI/widgets/master.dart';
+import 'package:amiidex/UI/widgets/searchbar.dart';
+import 'package:amiidex/UI/widgets/serie_actionbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/UI/home/widgets/master.dart';
-import 'package:amiidex/UI/home/widgets/searchbar.dart';
-import 'package:amiidex/UI/home/widgets/serie_actionbar.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/series_sort.dart';

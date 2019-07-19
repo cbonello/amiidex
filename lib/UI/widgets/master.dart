@@ -1,7 +1,7 @@
+import 'package:amiidex/UI/widgets/serie_grid_item.dart';
+import 'package:amiidex/UI/widgets/serie_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/UI/home/widgets/serie_grid_item.dart';
-import 'package:amiidex/UI/home/widgets/serie_list_item.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/models/serie_list.dart';

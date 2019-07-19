@@ -1,7 +1,7 @@
+import 'package:amiidex/UI/views/webview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:amiidex/UI/home/views/webview.dart';
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/owned.dart';

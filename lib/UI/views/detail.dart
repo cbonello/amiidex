@@ -1,8 +1,8 @@
+import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
+import 'package:amiidex/UI/widgets/detail.dart';
+import 'package:amiidex/UI/widgets/fab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/UI/home/widgets/amiibo_actionbar.dart';
-import 'package:amiidex/UI/home/widgets/detail.dart';
-import 'package:amiidex/UI/home/widgets/fab.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/models/serie_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';

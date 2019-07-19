@@ -1,5 +1,5 @@
+import 'package:amiidex/UI/views/detail.dart';
 import 'package:flutter/material.dart';
-import 'package:amiidex/UI/home/views/detail.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/models/serie_list.dart';
 import 'package:amiidex/providers/owned.dart';

@@ -1,8 +1,7 @@
+import 'package:amiidex/UI/widgets/pie_chart.dart';
+import 'package:amiidex/UI/widgets/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/UI/home/widgets/amiibo_actionbar.dart';
-import 'package:amiidex/UI/home/widgets/detail.dart';
-import 'package:amiidex/UI/home/widgets/searchbar.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
@@ -10,11 +9,9 @@ import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/providers/view_as.dart';
 import 'package:amiidex/services/assets.dart';
-import 'package:amiidex/util/i18n.dart';
 import 'package:provider/provider.dart';
-import 'package:sprintf/sprintf.dart';
 
-class OwnedView extends StatelessWidget {
+class StatisticsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
@@ -27,10 +24,15 @@ class OwnedView extends StatelessWidget {
 
     final AssetsService assetsService = locator<AssetsService>();
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final AmiiboList ownedAmiibo = AmiiboList();
+    final AmiiboList missedAmiibo =
+        AmiiboList.from(assetsService.amiiboLineup.amiibo);
     for (String id in ownedProvider.ownedAmiiboIds) {
-      ownedAmiibo.add(assetsService.amiiboLineup.getAmiiboById(id));
+      missedAmiibo.remove(assetsService.amiiboLineup.getAmiiboById(id));
     }
+
+    final double ownedCount = ownedProvider.ownedCount.toDouble();
+    final double missingCount =
+        assetsService.amiiboLineup.amiiboCount.toDouble() - ownedCount;
 
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
@@ -38,7 +40,7 @@ class OwnedView extends StatelessWidget {
           builder: (_) => AmiiboSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.owned),
+          builder: (_) => ViewAsProvider(ItemsDisplayed.missing),
         ),
       ],
       child: Padding(
@@ -46,15 +48,15 @@ class OwnedView extends StatelessWidget {
         child: NestedScrollView(
           controller: _controller,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            final AssetsService assetsService = locator<AssetsService>();
+
             return <Widget>[
-              SearchBar(amiibo: ownedAmiibo),
-              AmiiboActionBar(),
+              SearchBar(amiibo: assetsService.amiiboLineup.amiibo),
             ];
           },
-          body: DetailWidget(
-            amiibo: ownedAmiibo,
-            helpMessageDelegate: (String amiiboName) => sprintf(
-                I18n.of(context).text('owned-removed'), <String>[amiiboName]),
+          body: OwnedMissingPieChart(
+            ownedCount: ownedCount,
+            missingCount: missingCount,
           ),
         ),
       ),

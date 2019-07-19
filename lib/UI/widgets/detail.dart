@@ -1,7 +1,7 @@
+import 'package:amiidex/UI/widgets/amiibo_grid_item.dart';
+import 'package:amiidex/UI/widgets/amiibo_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/UI/home/widgets/amiibo_grid_item.dart';
-import 'package:amiidex/UI/home/widgets/amiibo_list_item.dart';
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';

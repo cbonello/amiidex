@@ -1,5 +1,5 @@
+import 'package:amiidex/UI/widgets/actionbar_bottomsheet_item.dart';
 import 'package:flutter/material.dart';
-import 'package:amiidex/UI/home/widgets/actionbar_bottomsheet_item.dart';
 import 'package:amiidex/models/region.dart';
 import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/util/i18n.dart';
