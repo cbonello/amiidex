@@ -275,7 +275,7 @@ flutter:
     - assets/images/ssb/box_peach.png
     - assets/images/ssb/box_pichu.png
     - assets/images/ssb/box_pikachu.png
-    - assets/images/ssb/box_pikmin.png
+    - assets/images/ssb/box_olimar.png
     - assets/images/ssb/box_piranha_plant.png
     - assets/images/ssb/box_pit.png
     - assets/images/ssb/box_pokémon_trainer.png
@@ -349,7 +349,7 @@ flutter:
     - assets/images/ssb/peach.png
     - assets/images/ssb/pichu.png
     - assets/images/ssb/pikachu.png
-    - assets/images/ssb/pikmin.png
+    - assets/images/ssb/olimar.png
     - assets/images/ssb/piranha_plant.png
     - assets/images/ssb/pit.png
     - assets/images/ssb/pokémon_trainer.png
