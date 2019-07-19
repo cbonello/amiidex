@@ -334,7 +334,7 @@ class _I18nFrFR extends I18n {
       'webview-title': 'Nintendo',
       'webview-no-back-history': 'Pas d\'historique',
       'webview-no-forward-history': 'Pas d\'historique',
-      'stats-amiibo-count': 'Nuombre d\'amiibo: %d',
+      'stats-amiibo-count': 'Nombre d\'amiibo: %d',
       'piechart-owned': 'Possédé (%d)',
       'piechart-missing': 'Manquant (%d)',
       'ssb': 'Super Smash Bros.',
