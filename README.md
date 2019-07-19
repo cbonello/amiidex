@@ -4,9 +4,13 @@
 
 ## Screenshots
 
-Main screen | Amiibo Screen
+Main Screen | Amiibo Screen
 --- | ---
 ![Main screen](/docs/master.png?raw=true "Main screen") | ![Amiibo screen](/docs/detail.png?raw=true "Amiibo screen")
+
+Statistics Screen | Settings Screen
+--- | ---
+![Statistics screen](/docs/stats.png?raw=true "Statistics screen") | ![Settings screen](/docs/settings.png?raw=true "Settings screen")
 
 ## Features 
 
