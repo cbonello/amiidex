@@ -171,6 +171,17 @@ class __ItemState extends State<_Item> {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
+                  I18n.of(context).text(widget.amiibo.serieId),
+                  style: TextStyle(
+                    color: itemCardData.color,
+                    fontSize: 16.0,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
                   widget.amiibo.wasReleasedInRegion(regionProvider.regionId)
                       ? DateFormat.yMMMd(
                           Localizations.localeOf(context).toString(),
