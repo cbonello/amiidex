@@ -1,18 +1,14 @@
 # AmiiDex
 
-An app to manage your Nintendo Amiibo collection and to answer a critical question I personnaly had in shops selling Amiibo: Do I already own those Amiibo? There are more than 150 Amiibo and it is sometimes difficult to remember those you do own or don't.
+"AmiiDex" is an unofficial app for amiibo collectors and is intended to be used for informational and educational purposes only. "AmiiDex" is in not affiliated with Nintendo. amiibo is a registered trademark of Nintendo. All items, names and other aspects are trademarked and owned by their respective owners. 
 
 ## Screenshots
 
-Main screen displaying the Amiibo series.
+Main screen | Amiibo Screen
+--- | ---
+![Main screen](/docs/master.png?raw=true "Main screen") | ![Amiibo screen](/docs/detail.png?raw=true "Amiibo screen")
 
-![Main screen](/docs/master.png?raw=true "Main screen")
-
-Secondary screen displaying the Amiibo within a serie.
-
-![Amiibo screen](/docs/detail.png?raw=true "Amiibo screen")
-
-## Features
+## Features 
 
 - Support for English and French languages.
 - Support for light and dark themes.
@@ -21,7 +17,7 @@ Secondary screen displaying the Amiibo within a serie.
 - A double click on an amiibo opens the page of this amiibo on the Nintendo website.
 - View of series/ amiibo as list, small icons or large icons.
 - Sort of amiibo by name or release date.
-- Scan of amiibo boxes barcode.
+- Scan of amiibo boxes barcode to quickly add new amiibo to yur collection.
 
 ## TODO
 
