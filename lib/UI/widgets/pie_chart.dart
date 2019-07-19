@@ -108,13 +108,8 @@ class OwnedMissingPieChart extends StatelessWidget {
       );
     }
 
-    return Container(
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: pie(),
-        ),
-      ),
+    return Center(
+      child: pie(),
     );
   }
 }

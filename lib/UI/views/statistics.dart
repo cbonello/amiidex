@@ -1,5 +1,6 @@
 import 'package:amiidex/UI/widgets/pie_chart.dart';
 import 'package:amiidex/UI/widgets/searchbar.dart';
+import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
@@ -10,6 +11,7 @@ import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/providers/view_as.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:provider/provider.dart';
+import 'package:sprintf/sprintf.dart';
 
 class StatisticsView extends StatelessWidget {
   @override
@@ -54,9 +56,27 @@ class StatisticsView extends StatelessWidget {
               SearchBar(amiibo: assetsService.amiiboLineup.amiibo),
             ];
           },
-          body: OwnedMissingPieChart(
-            ownedCount: ownedCount,
-            missingCount: missingCount,
+          body: Column(
+            children: <Widget>[
+              const SizedBox(height: 50.0),
+              Text(
+                sprintf(
+                  I18n.of(context).text('stats-amiibo-count'),
+                  <int>[
+                    assetsService.amiiboLineup.amiiboCount,
+                  ],
+                ),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xff505050),
+                ),
+              ),
+              OwnedMissingPieChart(
+                ownedCount: ownedCount,
+                missingCount: missingCount,
+              ),
+            ],
           ),
         ),
       ),
