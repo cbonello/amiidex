@@ -7,7 +7,7 @@ class RegionProvider with ChangeNotifier {
   RegionProvider() {
     _region = storageService.getRegion();
     if (RegionName.keys.contains(_region) == false) {
-      _region = DefaultRegion;
+      _region = DefaultRegionId;
     }
   }
 
@@ -18,7 +18,7 @@ class RegionProvider with ChangeNotifier {
   String get regionName => RegionName[_region];
 
   set regionId(String regionId) {
-    assert(RegionType.contains(regionId));
+    assert(RegionIds.contains(regionId));
     _region = regionId;
     storageService.setRegion(_region);
     notifyListeners();

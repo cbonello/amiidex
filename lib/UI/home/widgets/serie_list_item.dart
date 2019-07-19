@@ -14,7 +14,7 @@ class SerieListItem extends StatelessWidget {
     @required this.serie,
   }) : super(key: key);
 
-  final SerieList series;
+  final SeriesList series;
   final SerieModel serie;
 
   @override

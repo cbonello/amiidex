@@ -22,7 +22,7 @@ Future<void> showRegionsBottomSheet(
               title: Text(I18n.of(context).text('actionbar-region-title')),
             ),
             const Divider(height: 8),
-            for (String regionId in RegionType)
+            for (String regionId in RegionIds)
               ActionBarBottomSheetItem(
                 displayIcon: false,
                 leading: null,

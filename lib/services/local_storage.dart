@@ -24,7 +24,7 @@ class LocalStorageService {
   }
 
   String getRegion() {
-    return _preferences.getString('region') ?? DefaultRegion;
+    return _preferences.getString('region') ?? DefaultRegionId;
   }
 
   Future<bool> setRegion(String region) {

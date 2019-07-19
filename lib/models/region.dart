@@ -1,10 +1,8 @@
-import 'dart:collection';
-
 import 'package:meta/meta.dart';
 
-const List<String> RegionType = <String>['NA', 'EU', 'JP'];
+const List<String> RegionIds = <String>['NA', 'EU', 'JP'];
 
-const String DefaultRegion = 'NA';
+const String DefaultRegionId = 'NA';
 
 const Map<String, String> RegionName = <String, String>{
   'EU': 'actionbar-region-europe',
@@ -27,32 +25,4 @@ class RegionModel {
 
   final String name;
   final DateTime releaseDate;
-}
-
-class RegionsModel {
-  RegionsModel(this._regions);
-
-  factory RegionsModel.fromJson(Map<String, dynamic> json) {
-    final Map<String, RegionModel> regions = <String, RegionModel>{};
-    for (String r in RegionName.keys) {
-      if (json[r] != null) {
-        regions[r] = RegionModel.fromJson(RegionName[r], json[r]);
-      }
-    }
-
-    return RegionsModel(regions);
-  }
-
-  final Map<String, RegionModel> _regions;
-
-  UnmodifiableMapView<String, RegionModel> get regions =>
-      UnmodifiableMapView<String, RegionModel>(_regions);
-
-  bool isDefined(String regionId) {
-    return region(regionId) != null;
-  }
-
-  RegionModel region(String regionId) {
-    return regions.containsKey(regionId) ? regions[regionId] : null;
-  }
 }

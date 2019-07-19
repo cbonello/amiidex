@@ -18,7 +18,7 @@ class DetailView extends StatefulWidget {
     @required this.serie,
   }) : super(key: key);
 
-  final SerieList series;
+  final SeriesList series;
   final SerieModel serie;
 
   @override
@@ -88,10 +88,7 @@ class _DetailViewState extends State<DetailView> {
                   floating: false,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
-                    background: Image.asset(
-                      serie.header,
-                      fit: BoxFit.cover,
-                    ),
+                    background: serie.header,
                   ),
                   actions: <Widget>[
                     Padding(

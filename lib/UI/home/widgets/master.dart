@@ -22,7 +22,7 @@ class MasterWidget extends StatelessWidget {
     final SeriesSortProvider sortProvider =
         Provider.of<SeriesSortProvider>(context);
     final ViewAsProvider viewAsProvider = Provider.of<ViewAsProvider>(context);
-    final SerieList series = assetsService.amiiboLineup.series;
+    final SeriesList series = assetsService.amiiboLineup.series;
 
     // _controller.addListener(() {
     //   if (_controller.position.userScrollDirection == ScrollDirection.forward) {

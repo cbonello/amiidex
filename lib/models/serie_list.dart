@@ -9,21 +9,21 @@ enum SeriesSortOrder {
   name_descending,
 }
 
-class SerieList extends ListBase<SerieModel> {
-  SerieList() {
+class SeriesList extends ListBase<SerieModel> {
+  SeriesList() {
     _list = <SerieModel>[];
   }
 
-  factory SerieList.fromJson(List<dynamic> series) {
-    final SerieList l = SerieList();
+  factory SeriesList.fromJson(List<dynamic> series) {
+    final SeriesList l = SeriesList();
     for (dynamic s in series) {
       l.add(SerieModel.fromJson(s));
     }
     return l;
   }
 
-  factory SerieList.from(Iterable<SerieModel> elements) {
-    final SerieList l = SerieList()..addAll(elements);
+  factory SeriesList.from(Iterable<SerieModel> elements) {
+    final SeriesList l = SeriesList()..addAll(elements);
     return l;
   }
 

@@ -26,7 +26,7 @@ class LineupModel {
   final Map<String, SerieModel> _series;
   final Map<String, AmiiboModel> _amiibo;
 
-  SerieList get series => SerieList.from(_series.values);
+  SeriesList get series => SeriesList.from(_series.values);
 
   SerieModel getSerieById(String id) {
     assert(_series.containsKey(id));

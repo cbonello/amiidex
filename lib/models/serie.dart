@@ -19,7 +19,7 @@ class SerieModel {
     final AmiiboList amiibo = AmiiboList.fromJson(json['id'], json['amiibo']);
     final SerieModel serie = SerieModel(
       json['id'],
-      json['header'],
+      Image.asset(json['header'], fit: BoxFit.cover),
       Image.asset(json['logo']),
       amiibo,
     );
@@ -28,8 +28,7 @@ class SerieModel {
   }
 
   final String id;
-  final String header;
-  final Image logo;
+  final Image header, logo;
   final AmiiboList _amiibo;
 
   AmiiboList get amiibo => AmiiboList.from(_amiibo);
