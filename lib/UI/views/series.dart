@@ -10,7 +10,7 @@ import 'package:amiidex/providers/view_as.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:provider/provider.dart';
 
-class CollectionView extends StatelessWidget {
+class SeriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);

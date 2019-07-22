@@ -1,7 +1,7 @@
-import 'package:amiidex/UI/views/collection.dart';
 import 'package:amiidex/UI/views/missing.dart';
 import 'package:amiidex/UI/views/owned.dart';
 import 'package:amiidex/UI/views/privacy.dart';
+import 'package:amiidex/UI/views/series.dart';
 import 'package:amiidex/UI/views/settings.dart';
 import 'package:amiidex/UI/views/statistics.dart';
 import 'package:amiidex/UI/widgets/bottom_navbar.dart';
@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
   bool showFAB = true;
   int _currentIndex = 0;
   final List<Widget> _views = <Widget>[
-    CollectionView(),
+    SeriesView(),
     OwnedView(),
     MissingView(),
     StatisticsView(),
