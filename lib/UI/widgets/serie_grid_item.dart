@@ -55,20 +55,20 @@ class SerieGridItem extends StatelessWidget {
                     ),
                   ],
                   // TODO(cbonello): Theme dependent.
-                  color: Colors.white,
+                  color: itemCardData.backgroundColor,
                 ),
               ),
             ),
             LayoutId(
               id: 'text-background-box1',
               child: Container(
-                color: itemCardData.backgroundColor1,
+                color: itemCardData.ownedColor,
               ),
             ),
             LayoutId(
               id: 'text-background-box2',
               child: Container(
-                color: itemCardData.backgroundColor2,
+                color: itemCardData.missedColor,
               ),
             ),
             LayoutId(

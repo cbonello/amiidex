@@ -82,7 +82,7 @@ class __ItemState extends State<_Item> {
                       spreadRadius: 3.0,
                     ),
                   ],
-                  color: Colors.white,
+                  color: itemCardData.backgroundColor,
                 ),
               ),
               Positioned(
@@ -107,8 +107,8 @@ class __ItemState extends State<_Item> {
                 bottomRight: Radius.circular(6.0),
               ),
               color: ownedProvider.isOwned(widget.amiibo.id)
-                  ? itemCardData.backgroundColor2
-                  : itemCardData.backgroundColor1,
+                  ? itemCardData.missedColor
+                  : itemCardData.ownedColor,
             ),
           ),
         ),
@@ -145,7 +145,7 @@ class __ItemState extends State<_Item> {
               foregroundDecoration: ownedProvider.isOwned(widget.amiibo.id)
                   ? null
                   : BoxDecoration(
-                      color: Colors.grey,
+                      color: itemCardData.saturationColor,
                       backgroundBlendMode: BlendMode.saturation,
                     ),
               child: Center(child: widget.amiibo.image),

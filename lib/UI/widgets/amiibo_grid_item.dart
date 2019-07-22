@@ -49,7 +49,7 @@ class AmiiboGridItem extends StatelessWidget {
                         spreadRadius: 3.0,
                       ),
                     ],
-                    color: Colors.white,
+                    color: itemCardData.backgroundColor,
                   ),
                 ),
                 Positioned(
@@ -69,8 +69,8 @@ class AmiiboGridItem extends StatelessWidget {
             id: 'text-background-box',
             child: Container(
               color: ownedProvider.isOwned(amiibo.id)
-                  ? itemCardData.backgroundColor2
-                  : itemCardData.backgroundColor1,
+                  ? itemCardData.missedColor
+                  : itemCardData.ownedColor,
             ),
           ),
           LayoutId(
@@ -100,13 +100,14 @@ class AmiiboGridItem extends StatelessWidget {
                 }
               },
               child: Container(
-                  foregroundDecoration: ownedProvider.isOwned(amiibo.id)
-                      ? null
-                      : BoxDecoration(
-                          color: Colors.grey,
-                          backgroundBlendMode: BlendMode.saturation,
-                        ),
-                  child: amiibo.image),
+                foregroundDecoration: ownedProvider.isOwned(amiibo.id)
+                    ? null
+                    : BoxDecoration(
+                        color: itemCardData.saturationColor,
+                        backgroundBlendMode: BlendMode.saturation,
+                      ),
+                child: amiibo.image,
+              ),
             ),
           ),
           LayoutId(

@@ -80,7 +80,7 @@ class _Item extends StatelessWidget {
                 ),
               ],
               // TODO(cbonello): Theme dependent.
-              color: Colors.white,
+              color: itemCardData.backgroundColor,
             ),
           ),
         ),
@@ -93,8 +93,8 @@ class _Item extends StatelessWidget {
                 bottomRight: Radius.circular(6.0),
               ),
               color: (ownedProvider.ownedInSerie(serie) == serie.amiibo.length)
-                  ? itemCardData.backgroundColor2
-                  : itemCardData.backgroundColor1,
+                  ? itemCardData.missedColor
+                  : itemCardData.ownedColor,
             ),
           ),
         ),

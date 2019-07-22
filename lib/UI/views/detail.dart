@@ -110,17 +110,18 @@ class _DetailViewState extends State<DetailView> {
                 AmiiboActionBar(),
               ];
             },
-            body: PageView(
-              controller: _pageController,
-              onPageChanged: (int index) {
-                setState(() {
-                  _index = index;
-                });
-              },
-              children: <Widget>[
-                for (SerieModel serie in widget.series)
-                  DetailWidget(amiibo: serie.amiibo),
-              ],
+            body: Container(
+              // color: Colors.pink,
+              child: PageView(
+                controller: _pageController,
+                onPageChanged: (int index) {
+                  setState(() => _index = index);
+                },
+                children: <Widget>[
+                  for (SerieModel serie in widget.series)
+                    DetailWidget(amiibo: serie.amiibo),
+                ],
+              ),
             ),
           ),
           floatingActionButton: const FABScan(),
