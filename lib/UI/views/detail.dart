@@ -111,7 +111,7 @@ class _DetailViewState extends State<DetailView> {
               ];
             },
             body: Container(
-              // color: Colors.black,
+              color: Theme.of(context).canvasColor,
               child: PageView(
                 controller: _pageController,
                 onPageChanged: (int index) {

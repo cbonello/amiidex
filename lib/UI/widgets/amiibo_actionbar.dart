@@ -109,6 +109,7 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.all(12.0),
+        color: Theme.of(context).canvasColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
