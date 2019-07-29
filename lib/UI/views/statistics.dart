@@ -66,11 +66,7 @@ class StatisticsView extends StatelessWidget {
                     assetsService.amiiboLineup.amiiboCount,
                   ],
                 ),
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xff505050),
-                ),
+                style: Theme.of(context).textTheme.title,
               ),
               OwnedMissingPieChart(
                 ownedCount: ownedCount,

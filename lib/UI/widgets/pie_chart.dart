@@ -86,6 +86,7 @@ class OwnedMissingPieChart extends StatelessWidget {
                       ownedCount.toInt(),
                     ],
                   ),
+                  textColor: Theme.of(context).textTheme.title.color,
                   isSquare: true,
                 ),
               const SizedBox(
@@ -100,6 +101,7 @@ class OwnedMissingPieChart extends StatelessWidget {
                       missingCount.toInt(),
                     ],
                   ),
+                  textColor: Theme.of(context).textTheme.title.color,
                   isSquare: true,
                 ),
             ],
