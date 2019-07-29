@@ -8,31 +8,16 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final PackageInfoService info = locator<PackageInfoService>();
     return Drawer(
-      child: Column(
+      child: ListView(
+        padding: EdgeInsets.zero,
         children: <Widget>[
-          Container(
-            color: Colors.white, //.grey[600],
-            height: 215.0,
-            child: Stack(
-              children: <Widget>[
-                Image.asset('assets/images/logo_drawer.png'),
-                const Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Text(
-                      'amiidex',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 64.0,
-                        fontFamily: 'bauhaus',
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          DrawerHeader(
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.zero,
+            child:
+                Image.asset('assets/images/logo_drawer.png', fit: BoxFit.fill),
           ),
-          const Divider(height: 10, color: Colors.black),
+          // const Divider(height: 10, color: Colors.black),
           ListTile(
             leading: Icon(
               Icons.settings,
