@@ -66,8 +66,7 @@ class AmiiboGridItem extends StatelessWidget {
                 context,
                 MaterialPageRoute<void>(
                   maintainState: true,
-                  builder: (BuildContext context) =>
-                      WebsiteView(url: amiibo.url),
+                  builder: (_) => WebsiteView(url: amiibo.url),
                 ),
               ),
               onLongPress: () async {

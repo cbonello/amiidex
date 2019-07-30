@@ -105,8 +105,7 @@ class __ItemState extends State<_Item> {
               context,
               MaterialPageRoute<void>(
                 maintainState: true,
-                builder: (BuildContext context) =>
-                    WebsiteView(url: widget.amiibo.url),
+                builder: (_) => WebsiteView(url: widget.amiibo.url),
               ),
             ),
             onLongPress: () async {
