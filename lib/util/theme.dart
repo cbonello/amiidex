@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-const Color _lightPrimaryColor = Colors.white; //Colors.grey[300];
+const Color _lightPrimaryColor = Colors.white;
 final Color _lightPrimaryColorLight = Colors.grey[200];
 final Color _lightPrimaryColorDark = Colors.grey[600];
 const Color _lightSecondaryColor = Color(0xFF218AE6);
-// const Color _lightSecondaryColorLight = Color(0xFF6BB9FF);
 const Color _lightSecondaryColorDark = Color(0xFF005EB3);
 
 final Color _darkPrimaryColor = Colors.grey[300];
-// final Color _darkPrimaryColorLight = Colors.grey[200];
 final Color _darkPrimaryColorDark = Colors.grey[600];
 const Color _darkSecondaryColor = Color(0xFF009BEB);
-// final Color _darkSecondaryColorLight = Colors.teal[100];
 const Color _darkSecondaryColorDark = Color(0xFF009BEB);
 
 class ActionBarThemeData {
@@ -19,21 +16,15 @@ class ActionBarThemeData {
 
   final ThemeData data;
 
-  Color get color => (data.brightness == Brightness.light)
-      ? Colors.black
-      : _lightSecondaryColor; //_darkSecondaryColorDark;
+  Color get color => _lightSecondaryColor;
 
-  Color get iconColor => (data.brightness == Brightness.light)
-      ? Colors.black
-      : _lightSecondaryColor; //_darkSecondaryColorDark;
+  Color get iconColor => _lightSecondaryColor;
 
-  Color get selectedItemColor => (data.brightness == Brightness.light)
-      ? _lightSecondaryColorDark
-      : _lightSecondaryColorDark; //_darkSecondaryColorLight;
+  Color get selectedItemColor => _lightSecondaryColorDark;
 
   Color get selectedItemBackgroundColor => (data.brightness == Brightness.light)
       ? Colors.blue[50]
-      : Colors.blue[100]; //_darkSecondaryColorDark;
+      : Colors.blue[100];
 }
 
 class ItemCardThemeData {
@@ -41,22 +32,15 @@ class ItemCardThemeData {
 
   final ThemeData data;
 
-  Color get color =>
-      (data.brightness == Brightness.light) ? Colors.white : Colors.white;
+  Color get color => Colors.white;
 
-  Color get backgroundColor =>
-      (data.brightness == Brightness.light) ? Colors.blue[50] : Colors.blue[50];
+  Color get backgroundColor => Colors.blue[50];
 
-  Color get saturationColor =>
-      (data.brightness == Brightness.light) ? Colors.blue[50] : Colors.blue[50];
+  Color get saturationColor => Colors.blue[50];
 
-  Color get ownedColor => (data.brightness == Brightness.light)
-      ? const Color(0xFFE60012)
-      : const Color(0xFFE60012);
+  Color get ownedColor => const Color(0xFFE60012);
 
-  Color get missedColor => (data.brightness == Brightness.light)
-      ? const Color(0xFF44B035)
-      : const Color(0xFF44B035);
+  Color get missedColor => const Color(0xFF44B035);
 }
 
 class BottomNavBarThemeData {
@@ -66,13 +50,9 @@ class BottomNavBarThemeData {
 
   Color get backgroundColor => data.canvasColor;
 
-  Color get selectedItemColor => (data.brightness == Brightness.light)
-      ? _lightSecondaryColor
-      : _lightSecondaryColor; //_darkSecondaryColorLight;
+  Color get selectedItemColor => _lightSecondaryColor;
 
-  Color get unselectedItemColor => (data.brightness == Brightness.light)
-      ? Colors.grey[500]
-      : Colors.grey[500]; //_darkSecondaryColorDark;
+  Color get unselectedItemColor => Colors.grey[500];
 }
 
 class CircularProgressIndicatorThemeData {
@@ -80,13 +60,9 @@ class CircularProgressIndicatorThemeData {
 
   final ThemeData data;
 
-  Color get color => (data.brightness == Brightness.light)
-      ? const Color(0xFF009BEB)
-      : const Color(0xFF009BEB);
+  Color get color => const Color(0xFF009BEB);
 }
 
-// https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=E0E0E0&secondary.color=1565C0
-// https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=E0E0E0&secondary.color=218ae6
 ThemeData buildTheme(Brightness brightness) {
   ThemeData base;
   if (brightness == Brightness.dark) {
@@ -99,17 +75,10 @@ ThemeData buildTheme(Brightness brightness) {
         secondaryVariant: _lightSecondaryColorDark,
         surface: Colors.blue[50],
         background: Colors.black,
-        // error: ,
         onPrimary: _darkSecondaryColor,
         onSecondary: Colors.white,
         onSurface: Colors.black,
-        // onBackground : ,
-        // onError : ,
       ),
-      // primaryColor: _darkPrimaryColor,
-      // primaryColorLight: _darkPrimaryColorLight,
-      // primaryColorDark: _darkPrimaryColorDark,
-      // accentColor: _darkSecondaryColor,
       textTheme: base.textTheme.copyWith(
         headline: const TextStyle(
           color: _lightSecondaryColor,
@@ -127,29 +96,13 @@ ThemeData buildTheme(Brightness brightness) {
           color: _lightSecondaryColor,
         ),
         caption: const TextStyle(
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
       toggleableActiveColor: const Color(0xFF009BEB),
       iconTheme: const IconThemeData(
         color: _lightSecondaryColor,
       ),
-      // appBarTheme: AppBarTheme(
-      //   brightness: brightness,
-      //   elevation: 0.0,
-      //   iconTheme: IconThemeData(
-      //     color: Colors.grey[500],
-      //   ),
-      //   actionsIconTheme: IconThemeData(
-      //     color: Colors.grey[500],
-      //   ),
-      //   textTheme: TextTheme(
-      //     headline: TextStyle(
-      //       color: _darkSecondaryColorDark,
-      //     ),
-      //   ),
-      // ),
-      // For showSearch().
       primaryIconTheme: const IconThemeData(
         color: _darkSecondaryColorDark,
       ),
