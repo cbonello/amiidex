@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PrivacyView extends StatelessWidget {
   Future<String> _loadAsset(BuildContext context) async {
@@ -32,6 +33,11 @@ class PrivacyView extends StatelessWidget {
                     .headline
                     .copyWith(fontSize: 18.0),
               ),
+              onTapLink: (String url) async {
+                if (await canLaunch(url)) {
+                  await launch(url);
+                }
+              },
             );
           },
         ),
