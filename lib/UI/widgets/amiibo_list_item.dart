@@ -68,34 +68,20 @@ class __ItemState extends State<_Item> {
       children: <Widget>[
         LayoutId(
           id: 'image-background-box',
-          child: Stack(
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(6.0),
-                  ),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: Colors.grey[300],
-                      blurRadius: 6.0,
-                      spreadRadius: 3.0,
-                    ),
-                  ],
-                  color: itemCardData.backgroundColor,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(6.0),
+              ),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.grey[300],
+                  blurRadius: 6.0,
+                  spreadRadius: 3.0,
                 ),
-              ),
-              Positioned(
-                top: 10.0,
-                left: 10.0,
-                child: ownedProvider.isOwned(widget.amiibo.id)
-                    ? const Icon(
-                        Icons.check,
-                        color: Color(0xFF5CA0E5),
-                      )
-                    : Container(),
-              ),
-            ],
+              ],
+              color: itemCardData.backgroundColor,
+            ),
           ),
         ),
         LayoutId(
