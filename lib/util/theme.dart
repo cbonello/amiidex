@@ -45,10 +45,10 @@ class ItemCardThemeData {
       (data.brightness == Brightness.light) ? Colors.white : Colors.white;
 
   Color get backgroundColor =>
-      (data.brightness == Brightness.light) ? Colors.white : Colors.blue[50];
+      (data.brightness == Brightness.light) ? Colors.blue[50] : Colors.blue[50];
 
   Color get saturationColor =>
-      (data.brightness == Brightness.light) ? Colors.grey : Colors.blue[50];
+      (data.brightness == Brightness.light) ? Colors.blue[50] : Colors.blue[50];
 
   Color get ownedColor => (data.brightness == Brightness.light)
       ? const Color(0xFFE60012)
@@ -150,7 +150,7 @@ ThemeData buildTheme(Brightness brightness) {
       //   ),
       // ),
       // For showSearch().
-      primaryIconTheme: IconThemeData(
+      primaryIconTheme: const IconThemeData(
         color: _darkSecondaryColorDark,
       ),
       buttonTheme: ButtonThemeData(
