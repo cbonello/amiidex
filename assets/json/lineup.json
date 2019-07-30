@@ -1121,6 +1121,7 @@
                         }
                     },
                     "barcodes": [
+                        "045496353193",
                         "045496892418"
                     ]
                 },
@@ -1445,6 +1446,7 @@
                         }
                     },
                     "barcodes": [
+                        "045496380724",
                         "4902370540772",
                         "692758070895",
                         "695757001785",
@@ -1599,6 +1601,7 @@
                         }
                     },
                     "barcodes": [
+                        "045496380809",
                         "045496594091",
                         "4902370541809"
                     ]
@@ -1961,6 +1964,7 @@
                         }
                     },
                     "barcodes": [
+                        "045496380243",
                         "045496893033",
                         "4902370533545"
                     ]
@@ -1969,7 +1973,7 @@
                     "id": "sm_goomba",
                     "image": "assets/images/sm/goomba.png",
                     "box": "assets/images/sm/box_goomba.png",
-                    "url": "https://www.nintendo.com/amiibo/detail/diddy-kong-amiibo-super-mario-series",
+                    "url": "https://www.nintendo.com/amiibo/detail/goomba-amiibo-super-mario-series",
                     "regions": {
                         "NA": {
                             "release_date": "2017-10-06"
