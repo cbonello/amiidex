@@ -61,9 +61,9 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
 
     Future<void> _sortModalBottomSheet(AmiiboSortOrder current) async {
       await showModalBottomSheet<void>(
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.all(Radius.circular(6.0)),
-        // ),
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+        ),
         context: context,
         builder: (BuildContext bc) {
           return Container(
