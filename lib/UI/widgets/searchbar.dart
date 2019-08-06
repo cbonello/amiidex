@@ -24,13 +24,7 @@ class SearchBar extends StatelessWidget {
       title: GestureDetector(
         child: Text(
           I18n.of(context).text('collection-search'),
-          // TODO(cbonello): use theme color.
           style: Theme.of(context).textTheme.subhead,
-
-          // TextStyle(
-          //   color: Colors.grey[500],
-          //   fontSize: 18,
-          // ),
         ),
         onTap: () async {
           await showSearch(
