@@ -2964,6 +2964,31 @@
                         "692756987799"
                     ]
                 }
+            ],
+            "value_packs": [
+                {
+                    "id": "spl_bdl_pearl_marina",
+                    "box": "assets/images/spl/box_bdl_pearl_marina.png",
+                    "amiibo": [
+                        "spl_pearl",
+                        "spl_marina"
+                    ],
+                    "barcodes": [
+                        "045496380649"
+                    ]
+                },
+                {
+                    "id": "spl_bdl_octoling_boy_girl_octopus",
+                    "box": "assets/images/spl/box_bdl_octoling_boy_girl_octopus.png",
+                    "amiibo": [
+                        "spl_octoling_boy",
+                        "spl_octoling_girl",
+                        "spl_octoling_octopus"
+                    ],
+                    "barcodes": [
+                        "045496380656"
+                    ]
+                }
             ]
         },
         {

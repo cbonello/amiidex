@@ -1,15 +1,16 @@
-import 'package:barcode_scan/barcode_scan.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:amiidex/main.dart';
+import 'package:amiidex/UI/widgets/amiibo_box.dart';
 import 'package:amiidex/models/amiibo.dart';
-import 'package:amiidex/models/amiibo_list.dart';
+import 'package:amiidex/models/amiibo_box.dart';
+import 'package:amiidex/main.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:amiidex/util/dialogs.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -25,8 +26,8 @@ class FABScan extends StatelessWidget {
       visible: fabVisibility.isVisible && lockProvider.isOpened,
       child: FloatingActionButton(
         child: const Icon(Icons.camera_enhance),
-        onPressed: () async {
-          await scan(context);
+        onPressed: () {
+          scan(context);
         },
       ),
     );
@@ -61,10 +62,10 @@ class FABScan extends StatelessWidget {
   ) async {
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
     final AssetsService assetsService = locator<AssetsService>();
-    final AmiiboList l = assetsService.amiiboLineup.matchBarcode(barcode);
+    final AmiiboBoxModel box = assetsService.amiiboLineup.matchBarcode(barcode);
 
     // Unknown barcode?
-    if (l.isEmpty) {
+    if (box == null) {
       await errorDialog(
         context,
         Text(I18n.of(context).text('fab-scan-error-dialog-title')),
@@ -80,9 +81,9 @@ class FABScan extends StatelessWidget {
       return;
     }
 
-    // TODO(cbonello): add support for boxes with more than one amiibo.
-    assert(l.length == 1);
-    final bool isOwned = ownedProvider.isOwned(l[0].id);
+    final bool isOwned = box.amiibo
+        .map<bool>((AmiiboModel a) => ownedProvider.isOwned(a.id))
+        .reduce((bool v, bool e) => v && e);
 
     final bool add = await showDialog<bool>(
       context: context,
@@ -102,38 +103,11 @@ class FABScan extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20.0),
-                Container(
-                  height: 200.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      for (AmiiboModel a in l)
-                        AspectRatio(
-                          aspectRatio: 1.0,
-                          child: a.box,
-                        ),
-                    ],
-                  ),
-                ),
+                AmiiboWidget(box: box),
                 const SizedBox(height: 15.0),
-                Text(
-                  sprintf(
-                    I18n.of(context).text('fab-scan-amiibo-name'),
-                    <String>[I18n.of(context).text(l[0].id)],
-                  ),
-                ),
-                Text(
-                  sprintf(
-                    I18n.of(context).text(
-                      isOwned
-                          ? 'fab-scan-amiibo-status-owned'
-                          : 'fab-scan-amiibo-status-not-owned',
-                    ),
-                    <String>[I18n.of(context).text(l[0].id)],
-                  ),
-                ),
-                if (isOwned == false) const SizedBox(height: 10.0),
-                if (isOwned == false)
+                if (isOwned)
+                  Text(I18n.of(context).text('fab-scan-add-dialog-owned'))
+                else
                   Text(I18n.of(context).text('fab-scan-add-dialog-add')),
               ],
             ),
@@ -154,8 +128,8 @@ class FABScan extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop(true);
                 },
-              ),
-            if (isOwned)
+              )
+            else
               RaisedButton(
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('ok-button')),
@@ -169,7 +143,7 @@ class FABScan extends StatelessWidget {
     );
 
     if (add) {
-      l.forEach(ownedProvider.setOwned);
+      box.amiibo.forEach(ownedProvider.setOwned);
     }
   }
 }

@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/models/lineup.dart';
+import 'package:amiidex/models/serie.dart';
+import 'package:amiidex/models/value_pack.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -19,10 +21,18 @@ void main() {
     final LineupModel lineup = LineupModel.fromJson(json);
     final List<String> allBarcodes = <String>[];
 
-    for (AmiiboModel a in lineup.amiibo) {
-      for (String b in a.barcodes) {
-        expect(allBarcodes.contains(b), isFalse);
-        allBarcodes.add(b);
+    for (SerieModel s in lineup.series) {
+      for (AmiiboModel a in s.amiibo) {
+        for (String b in a.barcodes) {
+          expect(allBarcodes.contains(b), isFalse);
+          allBarcodes.add(b);
+        }
+      }
+      for (ValuePackModel v in s.valuePacks) {
+        for (String b in v.barcodes) {
+          expect(allBarcodes.contains(b), isFalse);
+          allBarcodes.add(b);
+        }
       }
     }
   });

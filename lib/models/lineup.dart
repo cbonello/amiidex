@@ -1,4 +1,5 @@
 import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/models/amiibo_box.dart';
 import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/models/serie_list.dart';
@@ -42,13 +43,13 @@ class LineupModel {
     return _amiibo[id];
   }
 
-  AmiiboList matchBarcode(String barcode) {
-    for (AmiiboModel a in amiibo) {
-      final bool match = a.matchBarcode(barcode);
-      if (match) {
-        return AmiiboList.from(<AmiiboModel>[a]);
+  AmiiboBoxModel matchBarcode(String barcode) {
+    for (SerieModel s in series) {
+      final AmiiboBoxModel match = s.matchBarcode(barcode);
+      if (match != null) {
+        return match;
       }
     }
-    return AmiiboList();
+    return null;
   }
 }

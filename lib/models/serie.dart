@@ -1,3 +1,6 @@
+import 'package:amiidex/models/amiibo_box.dart';
+import 'package:amiidex/models/value_pack.dart';
+import 'package:amiidex/models/value_pack_list.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/models/amiibo_list.dart';
@@ -8,6 +11,7 @@ class SerieModel {
     this.header,
     this.logo,
     this._amiibo,
+    this._valuePacks,
   );
 
   factory SerieModel.fromJson(Map<String, dynamic> json) {
@@ -17,11 +21,16 @@ class SerieModel {
     assert(json['amiibo'] != null);
 
     final AmiiboList amiibo = AmiiboList.fromJson(json['id'], json['amiibo']);
+    final ValuePackList valuePacks = json['value_packs'] != null
+        ? ValuePackList.fromJson(json['id'], json['value_packs'])
+        : ValuePackList();
+
     final SerieModel serie = SerieModel(
       json['id'],
       Image.asset(json['header'], fit: BoxFit.cover),
       Image.asset(json['logo']),
       amiibo,
+      valuePacks,
     );
 
     return serie;
@@ -30,13 +39,24 @@ class SerieModel {
   final String id;
   final Image header, logo;
   final AmiiboList _amiibo;
+  final ValuePackList _valuePacks;
 
   AmiiboList get amiibo => AmiiboList.from(_amiibo);
 
-  AmiiboModel matchBarcode(String barcode) {
+  ValuePackList get valuePacks => ValuePackList.from(_valuePacks);
+
+  AmiiboBoxModel matchBarcode(String barcode) {
     for (AmiiboModel a in _amiibo) {
       if (a.matchBarcode(barcode)) {
-        return a;
+        return AmiiboBoxModel.fromAmiibo(a);
+      }
+    }
+    for (ValuePackModel v in _valuePacks) {
+      if (v.matchBarcode(barcode)) {
+        return AmiiboBoxModel.fromValuePack(
+          v,
+          v.amiibo.map<AmiiboModel>((String id) => _amiibo.getAmiiboById(id)),
+        );
       }
     }
     return null;

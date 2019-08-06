@@ -24,8 +24,8 @@ class AmiiboList extends ListBase<AmiiboModel> {
     return l;
   }
 
-  factory AmiiboList.from(Iterable<AmiiboModel> elements) {
-    final AmiiboList l = AmiiboList()..addAll(elements);
+  factory AmiiboList.from(Iterable<AmiiboModel> a) {
+    final AmiiboList l = AmiiboList()..addAll(a);
     return l;
   }
 
@@ -52,6 +52,12 @@ class AmiiboList extends ListBase<AmiiboModel> {
 
   @override
   void addAll(Iterable<AmiiboModel> iterable) => _list.addAll(iterable);
+
+  AmiiboModel getAmiiboById(String id) {
+    final int idx = _list.indexWhere((AmiiboModel a) => a.id == id);
+    assert(idx != -1);
+    return _list[idx];
+  }
 
   void sortByNameRegion(
     BuildContext context,

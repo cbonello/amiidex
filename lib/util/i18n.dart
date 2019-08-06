@@ -64,6 +64,7 @@ class _I18nEnUS extends I18n {
       'drawer-about': 'About',
       'drawer-about-copyright': 'Copyright © 2019, C. Bonello',
       'fab-scan-add-dialog-title': 'Add amiibo',
+      'fab-scan-add-dialog-owned': 'No new amiibo!',
       'fab-scan-add-dialog-add': 'Add amiibo to collection?',
       'fab-scan-barcode': 'Barcode: %s',
       'fab-scan-amiibo-name': 'Name: %s',
@@ -318,6 +319,7 @@ class _I18nFrFR extends I18n {
       'drawer-about': 'A propos',
       'drawer-about-copyright': 'Copyright © 2019, C. Bonello',
       'fab-scan-add-dialog-title': 'Ajouter amiibo',
+      'fab-scan-add-dialog-owned': 'Aucun nouvel amiibo n\'a été détecté !',
       'fab-scan-add-dialog-add':
           'Voulez-vous ajouter l\'amiibo à votre collection ?',
       'fab-scan-barcode': 'Code barre: %s',

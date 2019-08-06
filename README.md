@@ -21,13 +21,11 @@ Statistics Screen | Settings Screen
 - A double click on an amiibo opens the page of this amiibo on the Nintendo website.
 - View of series/ amiibo as list, small icons or large icons.
 - Sort of amiibo by name or release date.
-- Scan of amiibo boxes barcode to quickly add new amiibo to your collection.
+- Scan of amiibo-boxes barcode to quickly add new amiibo to your collection.
 
 ## TODO
 
-- Complete dark theme support.
 - Add support for tablets.
-- Add support for bundle Amibbo boxes (boxes with more than one Amiibo) during barcodes scanning.
 - Add tests.
 - Setup of Codemagic.
 
