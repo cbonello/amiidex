@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/services/package_info.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -17,7 +18,6 @@ class DrawerWidget extends StatelessWidget {
             child:
                 Image.asset('assets/images/logo_drawer.png', fit: BoxFit.fill),
           ),
-          // const Divider(height: 10, color: Colors.black),
           ListTile(
             leading: Icon(
               Icons.settings,
@@ -33,6 +33,28 @@ class DrawerWidget extends StatelessWidget {
             ),
             title: Text(I18n.of(context).text('drawer-privacy')),
             onTap: () => Navigator.popAndPushNamed(context, '/privacy'),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.code,
+              color: Theme.of(context).iconTheme.color,
+            ),
+            title: Text(I18n.of(context).text('drawer-github-source-code')),
+            onTap: () {
+              Navigator.pop(context);
+              url_launcher.launch('https://github.com/cbonello/amiidex');
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.bug_report,
+              color: Theme.of(context).iconTheme.color,
+            ),
+            title: Text(I18n.of(context).text('drawer-github-issue')),
+            onTap: () {
+              Navigator.pop(context);
+              url_launcher.launch('https://github.com/cbonello/amiidex/issues');
+            },
           ),
           ListTile(
             leading: Icon(
