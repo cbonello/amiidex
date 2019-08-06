@@ -137,6 +137,7 @@ class SettingsViewState extends State<SettingsView> {
   Future<bool> _resetDialog(BuildContext context) async {
     return await showDialog<bool>(
       context: context,
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(I18n.of(context).text('settings-collection-reset')),
