@@ -65,7 +65,7 @@ class AmiiboGridItem extends StatelessWidget {
               onDoubleTap: () async => Navigator.push(
                 context,
                 MaterialPageRoute<void>(
-                  maintainState: true,
+                  maintainState: false,
                   builder: (_) => WebsiteView(url: amiibo.url),
                 ),
               ),

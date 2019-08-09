@@ -104,7 +104,7 @@ class __ItemState extends State<_Item> {
             onDoubleTap: () async => Navigator.push(
               context,
               MaterialPageRoute<void>(
-                maintainState: true,
+                maintainState: false,
                 builder: (_) => WebsiteView(url: widget.amiibo.url),
               ),
             ),
