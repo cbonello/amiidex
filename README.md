@@ -26,8 +26,9 @@ Statistics Screen | Settings Screen
 ## TODO
 
 - Add support for tablets.
-- Add tests.
-- Setup of Codemagic.
+
+## Issues and Feedback
+Please file [issues](https://github.com/cbonello/amiidex/issues) to send feedback or report a bug. Thank you!
 
 ## License
 
