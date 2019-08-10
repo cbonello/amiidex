@@ -78,7 +78,7 @@ class LocalStorageService {
     final String label = '$items'.split('.').last; // Enum to string.
     DisplayType type;
     try {
-      final int v = _preferences.getInt('${label}_view_as') ?? 0;
+      final int v = _preferences.getInt('${label}_view_as') ?? 1;
       type = DisplayType.values[v];
     } catch (_) {
       return DisplayType.grid_small;
