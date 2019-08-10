@@ -105,14 +105,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool showFAB = true;
-  int _currentIndex = 0;
+  int _currentIndex;
   final List<Widget> _views = <Widget>[
     SeriesView(),
     OwnedView(),
     MissingView(),
     StatisticsView(),
   ];
+
+  @override
+  void initState() {
+    _currentIndex = 0;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
