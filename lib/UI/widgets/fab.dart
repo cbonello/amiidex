@@ -115,6 +115,7 @@ class FABScan extends StatelessWidget {
           actions: <Widget>[
             if (isOwned == false)
               RaisedButton(
+                color: const Color(0xFF218AE6),
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('cancel-button')),
                 onPressed: () {
@@ -123,6 +124,7 @@ class FABScan extends StatelessWidget {
               ),
             if (isOwned == false)
               RaisedButton(
+                color: const Color(0xFF218AE6),
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('add-button')),
                 onPressed: () {
@@ -131,6 +133,7 @@ class FABScan extends StatelessWidget {
               )
             else
               RaisedButton(
+                color: const Color(0xFF218AE6),
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('ok-button')),
                 onPressed: () {

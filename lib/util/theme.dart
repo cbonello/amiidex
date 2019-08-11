@@ -166,7 +166,6 @@ ThemeData buildTheme(Brightness brightness) {
       primaryIconTheme: const IconThemeData(
         color: _lightSecondaryColorDark,
       ),
-      buttonColor: const Color(0xFFE60012),
       buttonTheme: ButtonThemeData(
         textTheme: ButtonTextTheme.normal,
       ),
