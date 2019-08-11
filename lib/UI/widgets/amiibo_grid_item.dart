@@ -75,8 +75,9 @@ class AmiiboGridItem extends StatelessWidget {
                     Scaffold.of(context).removeCurrentSnackBar();
                     Scaffold.of(context).showSnackBar(
                       SnackBar(
-                        content: Text(helpMessageDelegate(
-                            I18n.of(context).text(amiibo.id))),
+                        content: Text(
+                          helpMessageDelegate(I18n.of(context).text(amiibo.id)),
+                        ),
                       ),
                     );
                   }
@@ -116,12 +117,13 @@ class AmiiboGridItem extends StatelessWidget {
                     amiibo.wasReleasedInRegion(regionProvider.regionId)
                         ? DateFormat.yMMMd(
                             Localizations.localeOf(context).toString(),
-                          ).format(amiibo.releaseDate(regionProvider.regionId))
+                          ).format(
+                            amiibo.releaseDate(regionProvider.regionId),
+                          )
                         : 'N/A',
                     style: TextStyle(
                       color: itemCardData.color,
-                      fontSize: 12.0,
-                      // fontWeight: FontWeight.bold,
+                      fontSize: 11.0,
                     ),
                   ),
                 ],
