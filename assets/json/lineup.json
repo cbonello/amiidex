@@ -1650,6 +1650,74 @@
                         "045496380793",
                         "4902370541793"
                     ]
+                },
+                {
+                    "id": "ssb_squirtle",
+                    "image": "assets/images/ssb/squirtle.png",
+                    "box": "assets/images/ssb/box_squirtle.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/squirtle-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-09-20"
+                        },
+                        "JP": {
+                            "release_date": "2019-09-20"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370542585",
+                        "045496893613"
+                    ]
+                },
+                {
+                    "id": "ssb_link_awakening",
+                    "image": "assets/images/ssb/link_awakening.png",
+                    "box": "assets/images/ssb/box_link_awakening.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/link-amiibo-the-legend-of-zelda-links-awakening-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-09-20"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893675"
+                    ]
+                },
+                {
+                    "id": "ssb_ivysaur",
+                    "image": "assets/images/ssb/ivysaur.png",
+                    "box": "assets/images/ssb/box_ivysaur.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/ivysaur-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-09-20"
+                        },
+                        "JP": {
+                            "release_date": "2019-09-20"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370542578",
+                        "045496893620"
+                    ]
+                },
+                {
+                    "id": "ssb_snake",
+                    "image": "assets/images/ssb/snake.png",
+                    "box": "assets/images/ssb/box_snake.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/snake-amiibo-super-smash-bros-series",
+                    "regions": {
+                        "NA": {
+                            "release_date": "2019-09-20"
+                        },
+                        "JP": {
+                            "release_date": "2019-09-20"
+                        }
+                    },
+                    "barcodes": [
+                        "4902370541816",
+                        "045496594060"
+                    ]
                 }
             ]
         },

@@ -249,11 +249,13 @@ flutter:
     - assets/images/ssb/box_ike.png
     - assets/images/ssb/box_inkling.png
     - assets/images/ssb/box_isabelle.png
+    - assets/images/ssb/box_ivysaur.png
     - assets/images/ssb/box_jigglypuff.png
     - assets/images/ssb/box_ken.png
     - assets/images/ssb/box_king_dedede.png
     - assets/images/ssb/box_king_k_rool.png
     - assets/images/ssb/box_kirby.png
+    - assets/images/ssb/box_link_awakening.png
     - assets/images/ssb/box_link.png
     - assets/images/ssb/box_little_mac.png
     - assets/images/ssb/box_lucario.png
@@ -289,7 +291,9 @@ flutter:
     - assets/images/ssb/box_samus.png
     - assets/images/ssb/box_sheik.png
     - assets/images/ssb/box_shulk.png
+    - assets/images/ssb/box_snake.png
     - assets/images/ssb/box_sonic.png
+    - assets/images/ssb/box_squirtle.png
     - assets/images/ssb/box_toon_link.png
     - assets/images/ssb/box_villager.png
     - assets/images/ssb/box_wario.png
@@ -323,11 +327,13 @@ flutter:
     - assets/images/ssb/ike.png
     - assets/images/ssb/inkling.png 
     - assets/images/ssb/isabelle.png
+    - assets/images/ssb/ivysaur.png
     - assets/images/ssb/jigglypuff.png
     - assets/images/ssb/ken.png
     - assets/images/ssb/king_dedede.png
     - assets/images/ssb/king_k_rool.png
     - assets/images/ssb/kirby.png
+    - assets/images/ssb/link_awakening.png
     - assets/images/ssb/link.png
     - assets/images/ssb/little_mac.png
     - assets/images/ssb/lucario.png
@@ -363,7 +369,9 @@ flutter:
     - assets/images/ssb/samus.png
     - assets/images/ssb/sheik.png
     - assets/images/ssb/shulk.png
+    - assets/images/ssb/snake.png
     - assets/images/ssb/sonic.png
+    - assets/images/ssb/squirtle.png
     - assets/images/ssb/toon_link.png
     - assets/images/ssb/villager.png
     - assets/images/ssb/wario.png
