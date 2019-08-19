@@ -81,7 +81,6 @@ class SettingsViewState extends State<SettingsView> {
                             }
                           }
                         : null,
-                    textColor: Colors.white,
                     child: Text(
                       I18n.of(context).text('settings-collection-reset'),
                     ),

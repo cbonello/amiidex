@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 const Color _lightPrimaryColor = Colors.white;
 final Color _lightPrimaryColorLight = Colors.grey[200];
-final Color _lightPrimaryColorDark = Colors.grey[600];
 const Color _lightSecondaryColor = Color(0xFF218AE6);
 const Color _lightSecondaryColorDark = Color(0xFF005EB3);
 
@@ -92,9 +91,6 @@ ThemeData buildTheme(Brightness brightness) {
         body1: const TextStyle(
           color: _lightSecondaryColor,
         ),
-        body2: const TextStyle(
-          color: _lightSecondaryColor,
-        ),
         caption: const TextStyle(
           color: Colors.white,
         ),
@@ -117,16 +113,23 @@ ThemeData buildTheme(Brightness brightness) {
   } else {
     base = ThemeData.light();
     base = base.copyWith(
-      primaryColor: _lightPrimaryColor,
-      primaryColorLight: _lightPrimaryColorLight,
-      primaryColorDark: _lightPrimaryColorDark,
-      accentColor: _lightSecondaryColor,
+      colorScheme: ColorScheme.light(
+        primary: _lightPrimaryColor,
+        primaryVariant: _lightPrimaryColorLight,
+        secondary: _lightSecondaryColor,
+        secondaryVariant: _lightSecondaryColorDark,
+        surface: Colors.blue[50],
+        background: Colors.white,
+        onPrimary: _darkSecondaryColor,
+        onSecondary: Colors.black,
+        onSurface: Colors.black,
+      ),
       textTheme: base.textTheme.copyWith(
         headline: const TextStyle(
           color: _lightSecondaryColorDark,
         ),
-        display4: TextStyle(
-          color: Colors.grey[500],
+        subhead: TextStyle(
+          color: Colors.black38,
         ),
         subtitle: const TextStyle(
           color: _lightSecondaryColorDark,
@@ -134,35 +137,35 @@ ThemeData buildTheme(Brightness brightness) {
         body1: const TextStyle(
           color: Color(0xFF1F4882),
         ),
-        body2: const TextStyle(
-          color: Color(0xFF1F4882),
-        ),
         caption: const TextStyle(
           color: Colors.black,
         ),
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        focusColor: Colors.pink,
+      ),
       iconTheme: const IconThemeData(
         color: _lightSecondaryColor,
       ),
-      appBarTheme: AppBarTheme(
-        brightness: brightness,
-        elevation: 0.0,
-        iconTheme: const IconThemeData(
-          color: _lightSecondaryColorDark,
-        ),
-        actionsIconTheme: const IconThemeData(
-          color: _lightSecondaryColorDark,
-        ),
-        textTheme: TextTheme(
-          title: const TextStyle(
-            color: Colors.black,
-            fontSize: 18.0,
-          ),
-          headline: TextStyle(
-            color: Colors.grey[600],
-          ),
-        ),
-      ),
+      // appBarTheme: AppBarTheme(
+      //   brightness: brightness,
+      //   elevation: 0.0,
+      //   iconTheme: const IconThemeData(
+      //     color: _lightSecondaryColorDark,
+      //   ),
+      //   actionsIconTheme: const IconThemeData(
+      //     color: _lightSecondaryColorDark,
+      //   ),
+      //   textTheme: TextTheme(
+      //     title: const TextStyle(
+      //       color: Colors.black,
+      //       fontSize: 18.0,
+      //     ),
+      //     headline: TextStyle(
+      //       color: Colors.grey[600],
+      //     ),
+      //   ),
+      // ),
       primaryIconTheme: const IconThemeData(
         color: _lightSecondaryColorDark,
       ),

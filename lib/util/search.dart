@@ -33,9 +33,7 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
     return <IconButton>[
       IconButton(
         icon: const Icon(Icons.clear),
-        onPressed: () {
-          query = '';
-        },
+        onPressed: () => query = '',
       ),
     ];
   }
