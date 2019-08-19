@@ -20,7 +20,7 @@ Future<void> _reportError(dynamic error, dynamic stackTrace) async {
   }
 }
 
-final GetIt locator = GetIt();
+final GetIt locator = GetIt.instance;
 
 Future<void> setupLocator() async {
   final LocalStorageService iLocalStorageService =

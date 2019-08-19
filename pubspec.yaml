@@ -14,7 +14,7 @@ dependencies:
   floating_search_bar: ^0.2.0
   flutter_i18n: ^0.6.3
   flutter_markdown: ^0.2.0
-  get_it: ^1.0.3+2
+  get_it: ^2.0.1
   intl: ^0.15.8
   package_info: ^0.4.0+5
   provider: ^3.0.0+1
