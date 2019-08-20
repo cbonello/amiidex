@@ -49,7 +49,7 @@ class SerieGridItem extends StatelessWidget {
                   ),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                      color: Colors.grey[200],
+                      color: itemCardData.shadowColor,
                       blurRadius: 6.0,
                       spreadRadius: 3.0,
                     ),

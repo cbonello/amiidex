@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 
-const Color _lightPrimaryColor = Colors.white;
-final Color _lightPrimaryColorLight = Colors.grey[200];
-const Color _lightSecondaryColor = Color(0xFF218AE6);
-const Color _lightSecondaryColorDark = Color(0xFF005EB3);
-
-final Color _darkPrimaryColor = Colors.grey[300];
-final Color _darkPrimaryColorDark = Colors.grey[600];
-const Color _darkSecondaryColor = Color(0xFF009BEB);
-const Color _darkSecondaryColorDark = Color(0xFF009BEB);
+const Color lightBlueColor = Color(0xFF218AE6);
+const Color darkBlueColor = Color(0xFF005EB3);
+const Color redColor = Color(0xFFE60012);
+const Color greenColor = Color(0xFF44B035);
+final Color lightGrey = Colors.grey[300];
+final Color darkGrey = Colors.grey[600];
 
 class ActionBarThemeData {
   const ActionBarThemeData({@required this.data});
 
   final ThemeData data;
 
-  Color get color => _lightSecondaryColor;
+  Color get color => lightBlueColor;
 
-  Color get iconColor => _lightSecondaryColor;
+  Color get iconColor => lightBlueColor;
 
-  Color get selectedItemColor => _lightSecondaryColorDark;
+  Color get selectedItemColor => darkBlueColor;
 
   Color get selectedItemBackgroundColor => (data.brightness == Brightness.light)
       ? Colors.blue[50]
@@ -35,6 +32,10 @@ class ItemCardThemeData {
 
   Color get backgroundColor => Colors.blue[50];
 
+  Color get shadowColor => (data.brightness == Brightness.light)
+      ? Colors.grey[300]
+      : Colors.grey[600];
+
   Color get saturationColor => Colors.blue[50];
 
   Color get ownedColor => const Color(0xFFE60012);
@@ -47,9 +48,7 @@ class BottomNavBarThemeData {
 
   final ThemeData data;
 
-  Color get backgroundColor => data.canvasColor;
-
-  Color get selectedItemColor => _lightSecondaryColor;
+  Color get selectedItemColor => lightBlueColor;
 
   Color get unselectedItemColor => Colors.grey[500];
 }
@@ -59,7 +58,8 @@ class CircularProgressIndicatorThemeData {
 
   final ThemeData data;
 
-  Color get color => const Color(0xFF009BEB);
+  // WebView.
+  Color get color => lightBlueColor;
 }
 
 ThemeData buildTheme(Brightness brightness) {
@@ -68,112 +68,62 @@ ThemeData buildTheme(Brightness brightness) {
     base = ThemeData.dark();
     base = base.copyWith(
       colorScheme: ColorScheme.dark(
-        primary: _darkPrimaryColor,
-        primaryVariant: _darkPrimaryColorDark,
-        secondary: _darkSecondaryColor,
-        secondaryVariant: _lightSecondaryColorDark,
-        surface: Colors.blue[50],
-        background: Colors.black,
-        onPrimary: _darkSecondaryColor,
-        onSecondary: Colors.white,
-        onSurface: Colors.black,
+        primary: lightBlueColor,
+        primaryVariant: darkBlueColor,
+        secondary: lightBlueColor,
+        secondaryVariant: darkBlueColor,
       ),
-      textTheme: base.textTheme.copyWith(
-        headline: const TextStyle(
-          color: _lightSecondaryColor,
-        ),
-        subhead: TextStyle(
-          color: Colors.blue[100],
-        ),
-        subtitle: const TextStyle(
-          color: _lightSecondaryColor,
-        ),
-        body1: const TextStyle(
-          color: _lightSecondaryColor,
-        ),
-        caption: const TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      toggleableActiveColor: const Color(0xFF009BEB),
+      // Radio buttons (Settings page).
+      toggleableActiveColor: lightBlueColor,
+      // Appbar and drawer icons.
       iconTheme: const IconThemeData(
-        color: _lightSecondaryColor,
+        color: lightBlueColor,
       ),
+      // WebView icons.
       primaryIconTheme: const IconThemeData(
-        color: _darkSecondaryColorDark,
-      ),
+        color: lightBlueColor,
+      ), // Buttons of showAboutDialog.
       buttonTheme: ButtonThemeData(
-        buttonColor: const Color(0xFF009BEB),
+        buttonColor: lightBlueColor,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
-        backgroundColor: Color(0xFF009BEB),
       ),
     );
   } else {
     base = ThemeData.light();
     base = base.copyWith(
       colorScheme: ColorScheme.light(
-        primary: _lightPrimaryColor,
-        primaryVariant: _lightPrimaryColorLight,
-        secondary: _lightSecondaryColor,
-        secondaryVariant: _lightSecondaryColorDark,
-        surface: Colors.blue[50],
-        background: Colors.white,
-        onPrimary: _darkSecondaryColor,
-        onSecondary: Colors.black,
-        onSurface: Colors.black,
+        secondary: lightBlueColor,
+        secondaryVariant: darkBlueColor,
       ),
-      textTheme: base.textTheme.copyWith(
-        headline: const TextStyle(
-          color: _lightSecondaryColorDark,
-        ),
-        subhead: TextStyle(
-          color: Colors.black38,
-        ),
-        subtitle: const TextStyle(
-          color: _lightSecondaryColorDark,
-        ),
-        body1: const TextStyle(
-          color: Color(0xFF1F4882),
-        ),
-        caption: const TextStyle(
-          color: Colors.black,
+      appBarTheme: const AppBarTheme(
+        brightness: Brightness.light,
+        color: Colors.white,
+        elevation: 2.0,
+        iconTheme: IconThemeData(color: lightBlueColor),
+        actionsIconTheme: IconThemeData(color: lightBlueColor),
+        textTheme: TextTheme(
+          title: TextStyle(color: Colors.black, fontSize: 18.0),
+          headline: TextStyle(color: Colors.black),
         ),
       ),
-      inputDecorationTheme: InputDecorationTheme(
-        focusColor: Colors.pink,
-      ),
+      // Radio buttons (Settings page).
+      toggleableActiveColor: lightBlueColor,
+      // Appbar and drawer icons.
       iconTheme: const IconThemeData(
-        color: _lightSecondaryColor,
+        color: lightBlueColor,
       ),
-      // appBarTheme: AppBarTheme(
-      //   brightness: brightness,
-      //   elevation: 0.0,
-      //   iconTheme: const IconThemeData(
-      //     color: _lightSecondaryColorDark,
-      //   ),
-      //   actionsIconTheme: const IconThemeData(
-      //     color: _lightSecondaryColorDark,
-      //   ),
-      //   textTheme: TextTheme(
-      //     title: const TextStyle(
-      //       color: Colors.black,
-      //       fontSize: 18.0,
-      //     ),
-      //     headline: TextStyle(
-      //       color: Colors.grey[600],
-      //     ),
-      //   ),
-      // ),
+      // WebView icons.
       primaryIconTheme: const IconThemeData(
-        color: _lightSecondaryColorDark,
-      ),
+        color: lightBlueColor,
+      ), // Buttons of showAboutDialog.
       buttonTheme: ButtonThemeData(
-        textTheme: ButtonTextTheme.normal,
+        textTheme: ButtonTextTheme.primary,
+        buttonColor: lightBlueColor,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Color(0xFF009BEB),
+        foregroundColor: Colors.white,
       ),
     );
   }

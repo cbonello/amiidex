@@ -42,7 +42,7 @@ class AmiiboGridItem extends StatelessWidget {
                 ),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                    color: Colors.grey[400],
+                    color: itemCardData.shadowColor,
                     blurRadius: 6.0,
                     spreadRadius: 3.0,
                   ),

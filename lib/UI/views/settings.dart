@@ -6,10 +6,6 @@ import 'package:amiidex/util/i18n.dart';
 import 'package:provider/provider.dart';
 
 class SettingsView extends StatefulWidget {
-  const SettingsView({Key key, this.title = 'Settings'}) : super(key: key);
-
-  final String title;
-
   @override
   SettingsViewState createState() => SettingsViewState();
 }
@@ -25,12 +21,15 @@ class SettingsViewState extends State<SettingsView> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     final PreferredLanguageProvider languageProvider =
         Provider.of<PreferredLanguageProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        iconTheme: theme.appBarTheme.iconTheme,
+        title: Text(I18n.of(context).text('drawer-settings')),
       ),
       body: ListView(
         children: <Widget>[
@@ -41,7 +40,8 @@ class SettingsViewState extends State<SettingsView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Expanded(
-                    child: Text(I18n.of(context).text('settings-language'))),
+                  child: Text(I18n.of(context).text('settings-language')),
+                ),
                 Expanded(
                   flex: 2,
                   child: DropdownButton<Locale>(
@@ -53,9 +53,7 @@ class SettingsViewState extends State<SettingsView> {
                       for (Locale l in I18n.delegate.supportedLocales)
                         DropdownMenuItem<Locale>(
                           value: l,
-                          child: Text(
-                            I18n.of(context).text(l.toString()),
-                          ),
+                          child: Text(I18n.of(context).text(l.toString())),
                         )
                     ],
                   ),

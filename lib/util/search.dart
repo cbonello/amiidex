@@ -14,12 +14,20 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
 
   @override
   ThemeData appBarTheme(BuildContext context) {
+    assert(context != null);
     final ThemeData theme = Theme.of(context);
-    return theme;
+    assert(theme != null);
+    return theme.copyWith(
+      primaryColor: theme.appBarTheme.color,
+      primaryIconTheme: theme.appBarTheme.iconTheme,
+      primaryColorBrightness: theme.brightness,
+      primaryTextTheme: theme.appBarTheme.textTheme,
+    );
   }
 
   @override
   Widget buildLeading(BuildContext context) {
+    assert(context != null);
     return IconButton(
       icon: const Icon(Icons.arrow_back),
       onPressed: () {
@@ -30,6 +38,7 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
 
   @override
   List<Widget> buildActions(BuildContext context) {
+    assert(context != null);
     return <IconButton>[
       IconButton(
         icon: const Icon(Icons.clear),
@@ -40,6 +49,7 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    assert(context != null);
     final AmiiboList suggestions = _search(context, query, minLength: 2);
     if (suggestions.isEmpty) {
       return Container();
@@ -49,6 +59,7 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
 
   @override
   Widget buildResults(BuildContext context) {
+    assert(context != null);
     final AmiiboList results = _search(context, query);
     if (results.isEmpty) {
       return Container();
@@ -57,6 +68,7 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
   }
 
   AmiiboList _search(BuildContext context, String query, {int minLength = 1}) {
+    assert(context != null);
     query = query.trim();
     if (query.length < minLength) {
       return AmiiboList();

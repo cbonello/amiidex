@@ -77,7 +77,7 @@ class _ApplicationState extends State<Application> {
                 case '/':
                   return _buildRoute(settings, HomePage());
                 case '/settings':
-                  return _buildRoute(settings, const SettingsView());
+                  return _buildRoute(settings, SettingsView());
                 case '/privacy':
                   return _buildRoute(settings, PrivacyView());
                 default:

@@ -75,7 +75,7 @@ class __ItemState extends State<_Item> {
               ),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Colors.grey[300],
+                  color: itemCardData.shadowColor,
                   blurRadius: 6.0,
                   spreadRadius: 3.0,
                 ),

@@ -9,53 +9,53 @@ import 'package:provider/provider.dart';
 class SearchBar extends StatelessWidget {
   const SearchBar({
     Key key,
-    @required this.amiibo, // List of amiibo to search.
+    @required this.amiibo, // List of amiibo that can be searched for.
   }) : super(key: key);
 
   final AmiiboList amiibo;
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
     final LockProvider lockProvider = Provider.of<LockProvider>(context);
 
     return SliverFloatingBar(
       floating: true,
       snap: true,
+      leading: IconButton(
+        icon: Icon(Icons.menu, color: themeData.iconTheme.color),
+        onPressed: () => Scaffold.of(context).openDrawer(),
+      ),
       title: GestureDetector(
         child: Text(
           I18n.of(context).text('collection-search'),
-          style: Theme.of(context).textTheme.subhead,
+          style: themeData.textTheme.subhead,
         ),
         onTap: () async {
           await showSearch(
             context: context,
-            delegate: CustomSearchDelegate(
-              amiibo,
-            ),
+            delegate: CustomSearchDelegate(amiibo),
           );
         },
       ),
       trailing: InkWell(
+        // Color must be explicitly set for light theme...
         child: lockProvider.isLocked
-            ? const Icon(Icons.lock)
-            : const Icon(Icons.lock_open),
+            ? Icon(Icons.lock, color: themeData.iconTheme.color)
+            : Icon(Icons.lock_open, color: themeData.iconTheme.color),
         onTap: () {
           if (lockProvider.isLocked) {
             Scaffold.of(context).removeCurrentSnackBar();
             Scaffold.of(context).showSnackBar(
               SnackBar(
-                content: Text(
-                  I18n.of(context).text('collection-locked'),
-                ),
+                content: Text(I18n.of(context).text('collection-locked')),
               ),
             );
           } else {
             Scaffold.of(context).removeCurrentSnackBar();
             Scaffold.of(context).showSnackBar(
               SnackBar(
-                content: Text(
-                  I18n.of(context).text('collection-unlocked'),
-                ),
+                content: Text(I18n.of(context).text('collection-unlocked')),
               ),
             );
           }
