@@ -79,7 +79,6 @@ class _Item extends StatelessWidget {
                   spreadRadius: 3.0,
                 ),
               ],
-              // TODO(cbonello): Theme dependent.
               color: itemCardData.backgroundColor,
             ),
           ),

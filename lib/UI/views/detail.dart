@@ -1,6 +1,7 @@
 import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
 import 'package:amiidex/UI/widgets/detail.dart';
 import 'package:amiidex/UI/widgets/fab.dart';
+import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/models/serie.dart';
@@ -83,18 +84,24 @@ class _DetailViewState extends State<DetailView> {
               return <Widget>[
                 SliverAppBar(
                   centerTitle: true,
-                  title: serie.logo,
+                  title: ExcludeSemantics(child: serie.logo),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: serie.header,
+                  flexibleSpace: ExcludeSemantics(
+                    child: FlexibleSpaceBar(
+                      background: serie.header,
+                    ),
                   ),
                   actions: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(right: 15.0),
                       child: IconButton(
-                        icon: const Icon(Icons.search),
+                        icon: Icon(
+                          Icons.search,
+                          semanticLabel:
+                              I18n.of(context).text('collection-search'),
+                        ),
                         onPressed: () async {
                           await showSearch(
                             context: context,

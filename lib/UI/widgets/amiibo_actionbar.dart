@@ -70,14 +70,19 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
             child: Wrap(
               children: <Widget>[
                 ListTile(
-                  title:
-                      Text(I18n.of(context).text('amiibo-actionbar-sort-by')),
+                  title: Text(
+                    I18n.of(context).text('amiibo-actionbar-sort-by'),
+                    semanticsLabel:
+                        I18n.of(context).text('sm-amiibo-actionbar-sort-by'),
+                  ),
                 ),
                 const Divider(height: 8),
                 ActionBarBottomSheetItem(
                   displayIcon: isNameSort(current),
                   leading: sortIcons[current.index],
                   title: sortLabels[AmiiboSortOrder.name_ascending.index],
+                  semanticLabel:
+                      I18n.of(context).text('sm-actionbar-sort-name'),
                   selected: isNameSort(current),
                   onTap: () {
                     sortProvider.order = isNameSort(current)
@@ -91,6 +96,8 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
                   leading: sortIcons[current.index],
                   title:
                       sortLabels[AmiiboSortOrder.release_date_ascending.index],
+                  semanticLabel:
+                      I18n.of(context).text('sm-actionbar-sort-release-date'),
                   selected: isReleaseDateSort(current),
                   onTap: () {
                     sortProvider.order = isReleaseDateSort(current)
@@ -116,9 +123,15 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
             InkWell(
               child: Row(
                 children: <Widget>[
-                  Text(
-                    sortLabels[sortProvider.order.index],
-                    style: Theme.of(context).textTheme.body1,
+                  Semantics(
+                    label: I18n.of(context).text('amiibo-actionbar-sort-by'),
+                    button: true,
+                    child: ExcludeSemantics(
+                      child: Text(
+                        sortLabels[sortProvider.order.index],
+                        style: Theme.of(context).textTheme.body1,
+                      ),
+                    ),
                   ),
                   const SizedBox(width: 5),
                   Icon(
@@ -137,15 +150,27 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
               },
             ),
             InkWell(
-              child: Text(I18n.of(context).text(regionProvider.regionName)),
+              child: Semantics(
+                label: I18n.of(context).text('actionbar-region-title'),
+                button: true,
+                child: ExcludeSemantics(
+                    child:
+                        Text(I18n.of(context).text(regionProvider.regionName))),
+              ),
               onTap: () {
                 showRegionsBottomSheet(context, regionProvider.regionId);
               },
             ),
             InkWell(
-              child: Icon(
-                Icons.view_list,
-                color: actionBarData.iconColor,
+              child: Semantics(
+                label: I18n.of(context).text('actionbar-viewas-title'),
+                button: true,
+                child: ExcludeSemantics(
+                  child: Icon(
+                    Icons.view_list,
+                    color: actionBarData.iconColor,
+                  ),
+                ),
               ),
               onTap: () {
                 showViewAsBottomSheet(context, viewAsProvider.viewAs);

@@ -7,13 +7,14 @@ class ActionBarBottomSheetItem extends StatelessWidget {
     @required this.displayIcon,
     @required this.leading,
     @required this.title,
+    this.semanticLabel,
     @required this.selected,
     @required this.onTap,
   }) : super(key: key);
 
   final bool displayIcon;
   final IconData leading;
-  final String title;
+  final String title, semanticLabel;
   final bool selected;
   final Function onTap;
 
@@ -55,6 +56,7 @@ class ActionBarBottomSheetItem extends StatelessWidget {
               : null,
           title: Text(
             title,
+            semanticsLabel: semanticLabel,
             style: TextStyle(
               color: selected
                   ? actionBarData.selectedItemColor

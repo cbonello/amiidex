@@ -25,7 +25,10 @@ class FABScan extends StatelessWidget {
     return Visibility(
       visible: fabVisibility.isVisible && lockProvider.isOpened,
       child: FloatingActionButton(
-        child: const Icon(Icons.camera_enhance),
+        child: Icon(
+          Icons.camera_enhance,
+          semanticLabel: I18n.of(context).text('sm-fab-scan'),
+        ),
         onPressed: () {
           scan(context);
         },

@@ -105,41 +105,46 @@ class AmiiboGridItem extends StatelessWidget {
                         color: itemCardData.saturationColor,
                         backgroundBlendMode: BlendMode.saturation,
                       ),
-                child: amiibo.image,
+                child: Semantics(
+                  label: I18n.of(context).text(amiibo.id),
+                  button: true,
+                  child: ExcludeSemantics(child: amiibo.image),
+                ),
               ),
             ),
           ),
           LayoutId(
             id: 'caption',
-            child: Padding(
-              padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-              child: ListView(
-                shrinkWrap: true,
-                children: <Widget>[
-                  Text(
-                    I18n.of(context).text(amiibo.id),
-                    style: TextStyle(
-                      color: itemCardData.color,
-                      fontWeight: FontWeight.bold,
+            child: ExcludeSemantics(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                child: ListView(
+                  semanticChildCount: 2,
+                  children: <Widget>[
+                    Text(
+                      I18n.of(context).text(amiibo.id),
+                      style: TextStyle(
+                        color: itemCardData.color,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    semanticsLabel: I18n.of(context).text(amiibo.id),
-                  ),
-                  Text(
-                    amiibo.wasReleasedInRegion(regionProvider.regionId)
-                        ? DateFormat.yMMMd(
-                            Localizations.localeOf(context).toString(),
-                          ).format(
-                            amiibo.releaseDate(regionProvider.regionId),
-                          )
-                        : 'N/A',
-                    style: TextStyle(
-                      color: itemCardData.color,
-                      fontSize: 11.0,
+                    Text(
+                      amiibo.wasReleasedInRegion(regionProvider.regionId)
+                          ? DateFormat.yMMMd(
+                              Localizations.localeOf(context).toString(),
+                            ).format(
+                              amiibo.releaseDate(regionProvider.regionId),
+                            )
+                          : 'N/A',
+                      style: TextStyle(
+                        color: itemCardData.color,
+                        fontSize: 11.0,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -60,6 +60,7 @@ class _ApplicationState extends State<Application> {
               Provider.of<PreferredLanguageProvider>(context);
           return MaterialApp(
             title: 'AmiiDex',
+            // showSemanticsDebugger: true,
             locale: languageProvider.locale,
             debugShowCheckedModeBanner: false,
             localizationsDelegates: <LocalizationsDelegate<dynamic>>[

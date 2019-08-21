@@ -23,7 +23,11 @@ class SearchBar extends StatelessWidget {
       floating: true,
       snap: true,
       leading: IconButton(
-        icon: Icon(Icons.menu, color: themeData.iconTheme.color),
+        icon: Icon(
+          Icons.menu,
+          color: themeData.iconTheme.color,
+          semanticLabel: I18n.of(context).text('sm-drawer'),
+        ),
         onPressed: () => Scaffold.of(context).openDrawer(),
       ),
       title: GestureDetector(
@@ -41,8 +45,16 @@ class SearchBar extends StatelessWidget {
       trailing: InkWell(
         // Color must be explicitly set for light theme...
         child: lockProvider.isLocked
-            ? Icon(Icons.lock, color: themeData.iconTheme.color)
-            : Icon(Icons.lock_open, color: themeData.iconTheme.color),
+            ? Icon(
+                Icons.lock,
+                color: themeData.iconTheme.color,
+                semanticLabel: I18n.of(context).text('sm-collection-locked'),
+              )
+            : Icon(
+                Icons.lock_open,
+                color: themeData.iconTheme.color,
+                semanticLabel: I18n.of(context).text('sm-collection-unlocked'),
+              ),
         onTap: () {
           if (lockProvider.isLocked) {
             Scaffold.of(context).removeCurrentSnackBar();

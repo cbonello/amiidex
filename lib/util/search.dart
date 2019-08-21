@@ -29,7 +29,10 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
   Widget buildLeading(BuildContext context) {
     assert(context != null);
     return IconButton(
-      icon: const Icon(Icons.arrow_back),
+      icon: Icon(
+        Icons.arrow_back,
+        semanticLabel: I18n.of(context).text('sm-back'),
+      ),
       onPressed: () {
         close(context, null);
       },
@@ -41,7 +44,10 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
     assert(context != null);
     return <IconButton>[
       IconButton(
-        icon: const Icon(Icons.clear),
+        icon: Icon(
+          Icons.clear,
+          semanticLabel: I18n.of(context).text('sm-clear'),
+        ),
         onPressed: () => query = '',
       ),
     ];

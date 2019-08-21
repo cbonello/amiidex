@@ -56,15 +56,17 @@ class OwnedMissingPieChart extends StatelessWidget {
               Expanded(
                 child: AspectRatio(
                   aspectRatio: 1.2,
-                  child: FlChart(
-                    chart: PieChart(
-                      PieChartData(
-                        borderData: FlBorderData(
-                          show: false,
+                  child: ExcludeSemantics(
+                    child: FlChart(
+                      chart: PieChart(
+                        PieChartData(
+                          borderData: FlBorderData(
+                            show: false,
+                          ),
+                          sectionsSpace: 0,
+                          centerSpaceRadius: 40,
+                          sections: showingSections,
                         ),
-                        sectionsSpace: 0,
-                        centerSpaceRadius: 40,
-                        sections: showingSections,
                       ),
                     ),
                   ),
@@ -82,9 +84,7 @@ class OwnedMissingPieChart extends StatelessWidget {
                   color: const Color(0xFF44B035),
                   text: sprintf(
                     I18n.of(context).text('piechart-owned'),
-                    <int>[
-                      ownedCount.toInt(),
-                    ],
+                    <int>[ownedCount.toInt()],
                   ),
                   textColor: Theme.of(context).textTheme.title.color,
                   isSquare: true,
@@ -97,9 +97,7 @@ class OwnedMissingPieChart extends StatelessWidget {
                   color: const Color(0xFFE60012),
                   text: sprintf(
                     I18n.of(context).text('piechart-missing'),
-                    <int>[
-                      missingCount.toInt(),
-                    ],
+                    <int>[missingCount.toInt()],
                   ),
                   textColor: Theme.of(context).textTheme.title.color,
                   isSquare: true,

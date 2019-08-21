@@ -1,4 +1,5 @@
 import 'package:amiidex/UI/views/detail.dart';
+import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/models/serie_list.dart';
@@ -54,7 +55,6 @@ class SerieGridItem extends StatelessWidget {
                       spreadRadius: 3.0,
                     ),
                   ],
-                  // TODO(cbonello): Theme dependent.
                   color: itemCardData.backgroundColor,
                 ),
               ),
@@ -86,6 +86,7 @@ class SerieGridItem extends StatelessWidget {
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.clip,
+                  semanticsLabel: I18n.of(context).text(serie.id),
                 ),
               ),
             ),
