@@ -78,7 +78,7 @@ class _I18nEnUS extends I18n {
       'cancel-button': 'Cancel',
       'add-button': 'Add',
       'ok-button': 'OK',
-      'error-dialog-title': 'Erreur',
+      'error-dialog-title': 'Error',
       'webview-title': 'Nintendo',
       'webview-no-back-history': 'No back history item',
       'webview-no-forward-history': 'No forward history item',
