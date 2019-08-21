@@ -7,6 +7,9 @@ const Color greenColor = Color(0xFF44B035);
 final Color lightGrey = Colors.grey[300];
 final Color darkGrey = Colors.grey[600];
 
+const Color OwnedColor = greenColor;
+const Color MissingColor = redColor;
+
 class ActionBarThemeData {
   const ActionBarThemeData({@required this.data});
 

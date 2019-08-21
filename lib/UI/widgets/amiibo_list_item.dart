@@ -153,7 +153,7 @@ class __ItemState extends State<_Item> {
         LayoutId(
           id: 'caption',
           child: Padding(
-            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,6 +167,7 @@ class __ItemState extends State<_Item> {
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
+                  semanticsLabel: I18n.of(context).text(widget.amiibo.id),
                 ),
                 Text(
                   I18n.of(context).text(widget.amiibo.serieId),
@@ -189,7 +190,6 @@ class __ItemState extends State<_Item> {
                   style: TextStyle(
                     color: itemCardData.color,
                     fontSize: 14.0,
-                    // fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
@@ -222,7 +222,9 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
         BoxConstraints.expand(width: textBackgroundWidth, height: size.height),
       );
       positionChild(
-          'text-background-box', Offset(size.width - textBackgroundWidth, 0));
+        'text-background-box',
+        Offset(size.width - textBackgroundWidth, -1),
+      );
     }
 
     if (hasChild('image')) {
@@ -231,21 +233,22 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
         BoxConstraints.loose(Size(imageWidth, imageHeight)),
       );
       positionChild(
-          'image',
-          Offset(((size.width - textBackgroundWidth) - img.width) / 2,
-              (size.height - img.height) / 2.0));
+        'image',
+        Offset(((size.width - textBackgroundWidth) - img.width) / 2,
+            (size.height - img.height) / 2.0),
+      );
     }
 
     if (hasChild('caption')) {
-      final double height = size.height * 0.9;
+      final double height = size.height * 0.95;
       layoutChild(
         'caption',
         BoxConstraints(maxWidth: textBackgroundWidth, maxHeight: height),
       );
       positionChild(
-          'caption',
-          Offset(
-              size.width - textBackgroundWidth, (size.height - height) / 2.0));
+        'caption',
+        Offset(size.width - textBackgroundWidth, (size.height - height) / 2.0),
+      );
     }
   }
 

@@ -113,9 +113,8 @@ class AmiiboGridItem extends StatelessWidget {
             id: 'caption',
             child: Padding(
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ListView(
+                shrinkWrap: true,
                 children: <Widget>[
                   Text(
                     I18n.of(context).text(amiibo.id),
@@ -125,6 +124,7 @@ class AmiiboGridItem extends StatelessWidget {
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
+                    semanticsLabel: I18n.of(context).text(amiibo.id),
                   ),
                   Text(
                     amiibo.wasReleasedInRegion(regionProvider.regionId)

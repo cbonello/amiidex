@@ -81,6 +81,7 @@ class FABScan extends StatelessWidget {
       return;
     }
 
+    // Are all amiboo in box owned?
     final bool isOwned = box.amiibo
         .map<bool>((AmiiboModel a) => ownedProvider.isOwned(a.id))
         .reduce((bool v, bool e) => v && e);
@@ -102,7 +103,7 @@ class FABScan extends StatelessWidget {
                     <String>[barcode],
                   ),
                 ),
-                const SizedBox(height: 20.0),
+                const SizedBox(height: 10.0),
                 AmiiboWidget(box: box),
                 const SizedBox(height: 15.0),
                 if (isOwned)
@@ -113,27 +114,23 @@ class FABScan extends StatelessWidget {
             ),
           ),
           actions: <Widget>[
-            if (isOwned == false)
+            if (isOwned == false) ...<Widget>[
               RaisedButton(
-                color: const Color(0xFF218AE6),
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('cancel-button')),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
               ),
-            if (isOwned == false)
               RaisedButton(
-                color: const Color(0xFF218AE6),
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('add-button')),
                 onPressed: () {
                   Navigator.of(context).pop(true);
                 },
               )
-            else
+            ] else
               RaisedButton(
-                color: const Color(0xFF218AE6),
                 textColor: Colors.white,
                 child: Text(I18n.of(context).text('ok-button')),
                 onPressed: () {

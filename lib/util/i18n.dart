@@ -70,8 +70,9 @@ class _I18nEnUS extends I18n {
       'fab-scan-add-dialog-add': 'Add amiibo to collection?',
       'fab-scan-barcode': 'Barcode: %s',
       'fab-scan-amiibo-name': 'Name: %s',
-      'fab-scan-amiibo-status-owned': 'Status: Owned',
-      'fab-scan-amiibo-status-not-owned': 'Status: Not owned',
+      'fab-scan-amiibo-status': 'Status: ',
+      'fab-scan-amiibo-status-owned': 'Owned',
+      'fab-scan-amiibo-status-not-owned': 'Not owned',
       'fab-scan-error-dialog-title': 'Barcode Scan',
       'fab-scan-unknown-barcode':
           'Scanned barcode %s does not correspond to a known amiibo box.',
@@ -333,8 +334,9 @@ class _I18nFrFR extends I18n {
           'Voulez-vous ajouter l\'amiibo à votre collection ?',
       'fab-scan-barcode': 'Code barre: %s',
       'fab-scan-amiibo-name': 'Nom: %s',
-      'fab-scan-amiibo-status-owned': 'Status: possédé',
-      'fab-scan-amiibo-status-not-owned': 'Status: manquant',
+      'fab-scan-amiibo-status': 'Status: ',
+      'fab-scan-amiibo-status-owned': 'Possédé',
+      'fab-scan-amiibo-status-not-owned': 'Manquant',
       'fab-scan-error-dialog-title': 'Code-barres',
       'fab-scan-unknown-barcode':
           'Le code-barres scanné %s ne correspond pas à un amiibo reconnu par AmiiDex.',

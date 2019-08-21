@@ -19,7 +19,6 @@ Future<void> okDialog(
         ),
         actions: <Widget>[
           RaisedButton(
-            color: const Color(0xFF218AE6),
             textColor: Colors.white,
             child: Text(I18n.of(context).text('ok-button')),
             onPressed: () {
