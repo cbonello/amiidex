@@ -19,7 +19,7 @@ dependencies:
   get_it: ^2.0.1
   intl: ^0.15.8
   package_info: ^0.4.0+6
-  provider: ^3.0.0+1
+  provider: ^3.1.0
   shared_preferences: ^0.5.3+4
   sprintf: ^4.0.2
   url_launcher: ^5.1.1
