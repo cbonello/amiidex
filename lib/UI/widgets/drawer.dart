@@ -1,7 +1,9 @@
+import 'package:amiidex/util/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/services/package_info.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:sprintf/sprintf.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 class DrawerWidget extends StatelessWidget {
@@ -40,9 +42,9 @@ class DrawerWidget extends StatelessWidget {
               color: Theme.of(context).iconTheme.color,
             ),
             title: Text(I18n.of(context).text('drawer-github-source-code')),
-            onTap: () {
+            onTap: () async {
               Navigator.pop(context);
-              url_launcher.launch('https://github.com/cbonello/amiidex');
+              _launchURL(context, 'https://github.com/cbonello/amiidex');
             },
           ),
           ListTile(
@@ -51,9 +53,9 @@ class DrawerWidget extends StatelessWidget {
               color: Theme.of(context).iconTheme.color,
             ),
             title: Text(I18n.of(context).text('drawer-github-issue')),
-            onTap: () {
+            onTap: () async {
               Navigator.pop(context);
-              url_launcher.launch('https://github.com/cbonello/amiidex/issues');
+              _launchURL(context, 'https://github.com/cbonello/amiidex/issues');
             },
           ),
           ListTile(
@@ -80,5 +82,24 @@ class DrawerWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _launchURL(BuildContext context, String url) async {
+    if (await url_launcher.canLaunch(url)) {
+      await url_launcher.launch(url);
+    } else {
+      errorDialog(
+        context,
+        Text(I18n.of(context).text('error-dialog-title')),
+        <Widget>[
+          Text(
+            sprintf(
+              I18n.of(context).text('error-url-launch'),
+              <String>[url],
+            ),
+          )
+        ],
+      );
+    }
   }
 }
