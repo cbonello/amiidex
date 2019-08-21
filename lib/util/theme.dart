@@ -94,6 +94,8 @@ ThemeData buildTheme(Brightness brightness) {
     base = ThemeData.light();
     base = base.copyWith(
       colorScheme: ColorScheme.light(
+        primary: lightBlueColor,
+        primaryVariant: darkBlueColor,
         secondary: lightBlueColor,
         secondaryVariant: darkBlueColor,
       ),
