@@ -1,3 +1,4 @@
+import 'package:amiidex/providers/lock.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/providers/owned.dart';
@@ -25,6 +26,7 @@ class SettingsViewState extends State<SettingsView> {
     final PreferredLanguageProvider languageProvider =
         Provider.of<PreferredLanguageProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
+    final LockProvider lockProvider = Provider.of<LockProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -67,18 +69,21 @@ class SettingsViewState extends State<SettingsView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Expanded(
-                    child: Text(I18n.of(context).text('settings-collection'))),
+                  child: Text(I18n.of(context).text('settings-collection')),
+                ),
                 Expanded(
                   flex: 2,
                   child: RaisedButton(
-                    onPressed: ownedProvider.ownedCount > 0
-                        ? () async {
-                            final bool reset = await _resetDialog(context);
-                            if (reset) {
-                              ownedProvider.reset();
-                            }
-                          }
-                        : null,
+                    onPressed:
+                        // Cannot reset collection if it is locked.
+                        lockProvider.isOpened && ownedProvider.ownedCount > 0
+                            ? () async {
+                                final bool reset = await _resetDialog(context);
+                                if (reset) {
+                                  ownedProvider.reset();
+                                }
+                              }
+                            : null,
                     child: Text(
                       I18n.of(context).text('settings-collection-reset'),
                     ),
@@ -147,16 +152,19 @@ class SettingsViewState extends State<SettingsView> {
           actions: <Widget>[
             RaisedButton(
               textColor: Colors.white,
-              child: Text(I18n.of(context)
-                  .text('settings-collection-reset-cancel-button')),
+              child: Text(
+                I18n.of(context)
+                    .text('settings-collection-reset-cancel-button'),
+              ),
               onPressed: () {
                 Navigator.of(context).pop(false);
               },
             ),
             RaisedButton(
               textColor: Colors.white,
-              child: Text(I18n.of(context)
-                  .text('settings-collection-reset-reset-button')),
+              child: Text(
+                I18n.of(context).text('settings-collection-reset-reset-button'),
+              ),
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
