@@ -1,4 +1,4 @@
-import 'package:amiidex/UI/views/webview.dart';
+import 'package:amiidex/util/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -9,6 +9,8 @@ import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:amiidex/util/theme.dart';
 import 'package:provider/provider.dart';
+import 'package:sprintf/sprintf.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 class AmiiboListItem extends StatelessWidget {
   const AmiiboListItem({
@@ -101,13 +103,24 @@ class __ItemState extends State<_Item> {
         LayoutId(
           id: 'image',
           child: GestureDetector(
-            onDoubleTap: () async => Navigator.push(
-              context,
-              MaterialPageRoute<void>(
-                maintainState: false,
-                builder: (_) => WebsiteView(url: widget.amiibo.url),
-              ),
-            ),
+            onDoubleTap: () async {
+              if (await url_launcher.canLaunch(widget.amiibo.url)) {
+                await url_launcher.launch(widget.amiibo.url);
+              } else {
+                errorDialog(
+                  context,
+                  Text(I18n.of(context).text('error-dialog-title')),
+                  <Widget>[
+                    Text(
+                      sprintf(
+                        I18n.of(context).text('error-url-launch'),
+                        <String>[widget.amiibo.url],
+                      ),
+                    )
+                  ],
+                );
+              }
+            },
             onLongPress: () async {
               if (lockProvider.isOpened) {
                 if (widget.helpMessageDelegate != null) {
