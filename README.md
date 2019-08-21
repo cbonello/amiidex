@@ -1,16 +1,20 @@
 # AmiiDex
 
-"AmiiDex" is an unofficial app for amiibo collectors and is intended to be used for informational and educational purposes only. "AmiiDex" is in not affiliated with Nintendo. amiibo is a registered trademark of Nintendo. All items, names and other aspects are trademarked and owned by their respective owners. 
+AmiiDex is the easiest app to manage your Nintendo Amiibo collection.
+
+AmiiDex is an unofficial app for amiibo collectors and is intended to be used for informational and educational purposes only.
+AmiiDex is fully compliant with all US copyright laws and is protected under 'fair use'.
+AmiiDex is in not affiliated with Nintendo. amiibo is a registered trademark of Nintendo. All items, names and other aspects are trademarked and owned by their respective owners. 
 
 ## Screenshots
 
-Main Screen | Amiibo Screen
+Main Screen  (Dark Theme) | Amiibo Screen (Light Theme)
 --- | ---
-![Main screen](/docs/master.png?raw=true "Main screen") | ![Amiibo screen](/docs/detail.png?raw=true "Amiibo screen")
+![Collection Screen](/docs/master.png?raw=true "Collection Screen") | ![Amiibo Screen](/docs/detail.png?raw=true "Amiibo Screen")
 
-Statistics Screen | Settings Screen
+Statistics Screen (Light Theme) | Settings Screen (Light Theme)
 --- | ---
-![Statistics screen](/docs/stats.png?raw=true "Statistics screen") | ![Settings screen](/docs/settings.png?raw=true "Settings screen")
+![Statistics Screen](/docs/stats.png?raw=true "Statistics Screen") | ![Settings Screen](/docs/settings.png?raw=true "Settings Screen")
 
 ## Features 
 
@@ -22,10 +26,6 @@ Statistics Screen | Settings Screen
 - View of series/ amiibo as list, small icons or large icons.
 - Sort of amiibo by name or release date.
 - Scan of amiibo-boxes barcode to quickly add new amiibo to your collection.
-
-## TODO
-
-- Add support for tablets.
 
 ## Issues and Feedback
 Please file [issues](https://github.com/cbonello/amiidex/issues) to send feedback or report a bug. Thank you!
