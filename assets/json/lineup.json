@@ -3466,6 +3466,17 @@
                     "barcodes": [
                         "045496892579"
                     ]
+                },
+                {
+                    "id": "ac_bdl_digby_isabelle_winter_outfit",
+                    "box": "assets/images/ac/box_bdl_digby_isabelle_winter_outfit.png",
+                    "amiibo": [
+                        "ac_digby",
+                        "ac_isabelle_winter_outfit"
+                    ],
+                    "barcodes": [
+                        "045496334994"
+                    ]
                 }
             ]
         },
