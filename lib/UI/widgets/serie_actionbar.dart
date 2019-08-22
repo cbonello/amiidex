@@ -23,23 +23,29 @@ class SerieActionBar extends StatelessWidget {
 
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.only(
+          left: 26.0,
+          top: 12.0,
+          right: 18.0,
+          bottom: 12.0,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             InkWell(
               child: Row(
                 children: <Widget>[
                   Text(
                     I18n.of(context).text('actionbar-sort-name'),
-                    style: Theme.of(context).textTheme.body1,
+                    style: Theme.of(context).textTheme.subhead,
                   ),
-                  const SizedBox(width: 5),
+                  const SizedBox(width: 2.0),
                   Icon(
                     sortProvider.order == SeriesSortOrder.name_ascending
                         ? Icons.arrow_upward
                         : Icons.arrow_downward,
-                    size: 15,
+                    size: 22,
                     color: actionBarData.iconColor,
                   )
                 ],
@@ -49,15 +55,31 @@ class SerieActionBar extends StatelessWidget {
               },
             ),
             InkWell(
-              child: Text(I18n.of(context).text(regionProvider.regionName)),
+              child: Semantics(
+                label: I18n.of(context).text('actionbar-region-title'),
+                button: true,
+                child: ExcludeSemantics(
+                  child: Text(
+                    I18n.of(context).text(regionProvider.regionName),
+                    style: Theme.of(context).textTheme.subhead,
+                  ),
+                ),
+              ),
               onTap: () {
                 showRegionsBottomSheet(context, regionProvider.regionId);
               },
             ),
             InkWell(
-              child: Icon(
-                Icons.view_list,
-                color: actionBarData.iconColor,
+              child: Semantics(
+                label: I18n.of(context).text('actionbar-viewas-title'),
+                button: true,
+                child: ExcludeSemantics(
+                  child: Icon(
+                    Icons.view_list,
+                    size: 26,
+                    color: actionBarData.iconColor,
+                  ),
+                ),
               ),
               onTap: () {
                 showViewAsBottomSheet(context, viewAsProvider.viewAs);
