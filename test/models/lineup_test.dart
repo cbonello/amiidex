@@ -35,5 +35,21 @@ void main() {
         }
       }
     }
+
+    expect(allBarcodes.length == lineup.amiiboCount, isTrue);
+  });
+
+  test('Value packs should record valid amiibo IDs', () async {
+    final File file = File('assets/json/lineup.json');
+    final Map<String, dynamic> json = jsonDecode(await file.readAsString());
+    final LineupModel lineup = LineupModel.fromJson(json);
+
+    for (SerieModel s in lineup.series) {
+      for (ValuePackModel v in s.valuePacks) {
+        for (String a in v.amiibo) {
+          expect(() => lineup.getAmiiboById(a), returnsNormally);
+        }
+      }
+    }
   });
 }
