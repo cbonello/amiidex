@@ -84,7 +84,10 @@ class _DetailViewState extends State<DetailView> {
               return <Widget>[
                 SliverAppBar(
                   centerTitle: true,
-                  title: ExcludeSemantics(child: serie.logo),
+                  title: Semantics(
+                    label: I18n.of(context).text('sm-detail-logo'),
+                    child: serie.logo,
+                  ),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
