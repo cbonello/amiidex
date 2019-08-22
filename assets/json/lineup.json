@@ -3049,6 +3049,18 @@
                     ]
                 },
                 {
+                    "id": "spl_bdl_inkling_boy_girl_squid",
+                    "box": "assets/images/spl/box_bdl_inkling_boy_girl_squid.png",
+                    "amiibo": [
+                        "spl_inkling_boy_1",
+                        "spl_inkling_girl_1",
+                        "spl_inkling_squid_1"
+                    ],
+                    "barcodes": [
+                        "045496892197"
+                    ]
+                },
+                {
                     "id": "spl_bdl_octoling_boy_girl_octopus",
                     "box": "assets/images/spl/box_bdl_octoling_boy_girl_octopus.png",
                     "amiibo": [
