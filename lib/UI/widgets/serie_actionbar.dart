@@ -24,31 +24,40 @@ class SerieActionBar extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.only(
-          left: 26.0,
-          top: 12.0,
-          right: 18.0,
-          bottom: 12.0,
+          left: 14.0,
+          top: 14.0,
+          right: 10.0,
+          bottom: 14.0,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             InkWell(
-              child: Row(
-                children: <Widget>[
-                  Text(
-                    I18n.of(context).text('actionbar-sort-name'),
-                    style: Theme.of(context).textTheme.subhead,
+              child: Semantics(
+                label: I18n.of(context).text('amiibo-actionbar-sort-by'),
+                button: true,
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Row(
+                    children: <Widget>[
+                      ExcludeSemantics(
+                        child: Text(
+                          I18n.of(context).text('actionbar-sort-name'),
+                          style: Theme.of(context).textTheme.subhead,
+                        ),
+                      ),
+                      const SizedBox(width: 2.0),
+                      Icon(
+                        sortProvider.order == SeriesSortOrder.name_ascending
+                            ? Icons.arrow_upward
+                            : Icons.arrow_downward,
+                        size: 22,
+                        color: actionBarData.iconColor,
+                      )
+                    ],
                   ),
-                  const SizedBox(width: 2.0),
-                  Icon(
-                    sortProvider.order == SeriesSortOrder.name_ascending
-                        ? Icons.arrow_upward
-                        : Icons.arrow_downward,
-                    size: 22,
-                    color: actionBarData.iconColor,
-                  )
-                ],
+                ),
               ),
               onTap: () {
                 sortProvider.toggleSortOrder();
@@ -58,10 +67,13 @@ class SerieActionBar extends StatelessWidget {
               child: Semantics(
                 label: I18n.of(context).text('actionbar-region-title'),
                 button: true,
-                child: ExcludeSemantics(
-                  child: Text(
-                    I18n.of(context).text(regionProvider.regionName),
-                    style: Theme.of(context).textTheme.subhead,
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: ExcludeSemantics(
+                    child: Text(
+                      I18n.of(context).text(regionProvider.regionName),
+                      style: Theme.of(context).textTheme.subhead,
+                    ),
                   ),
                 ),
               ),
@@ -73,11 +85,14 @@ class SerieActionBar extends StatelessWidget {
               child: Semantics(
                 label: I18n.of(context).text('actionbar-viewas-title'),
                 button: true,
-                child: ExcludeSemantics(
-                  child: Icon(
-                    Icons.view_list,
-                    size: 26,
-                    color: actionBarData.iconColor,
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: ExcludeSemantics(
+                    child: Icon(
+                      Icons.view_list,
+                      size: 26,
+                      color: actionBarData.iconColor,
+                    ),
                   ),
                 ),
               ),
