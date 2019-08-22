@@ -3440,6 +3440,20 @@
                         "691041859216"
                     ]
                 }
+            ],
+            "value_packs": [
+                {
+                    "id": "ac_bdl_cyrus_kk_reese",
+                    "box": "assets/images/ac/box_bdl_cyrus_kk_reese.png",
+                    "amiibo": [
+                        "ac_cyrus",
+                        "ac_kk",
+                        "ac_reese"
+                    ],
+                    "barcodes": [
+                        "045496892579"
+                    ]
+                }
             ]
         },
         {

@@ -37,6 +37,7 @@ class AmiiboWidget extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Text(
                       I18n.of(context).text('fab-scan-amiibo-status'),
