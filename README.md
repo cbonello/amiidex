@@ -10,15 +10,11 @@ AmiiDex is an unofficial app for amiibo collectors and is intended to be used fo
 AmiiDex is fully compliant with all US copyright laws and is protected under 'fair use'.
 AmiiDex is in not affiliated with Nintendo. amiibo is a registered trademark of Nintendo. All items, names and other aspects are trademarked and owned by their respective owners. 
 
-## Screenshots
+## Get the App
 
-Main Screen  (Dark Theme) | Amiibo Screen (Light Theme)
---- | ---
-![Collection Screen](/docs/master.png?raw=true "Collection Screen") | ![Amiibo Screen](/docs/detail.png?raw=true "Amiibo Screen")
+Click on the image below to download 
 
-Statistics Screen (Light Theme) | Settings Screen (Light Theme)
---- | ---
-![Statistics Screen](/docs/stats.png?raw=true "Statistics Screen") | ![Settings Screen](/docs/settings.png?raw=true "Settings Screen")
+<a href='https://play.google.com/store/apps/details?id=com.happytracebook.amiidex'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="250"/></a>
 
 ## Features 
 
@@ -31,11 +27,35 @@ Statistics Screen (Light Theme) | Settings Screen (Light Theme)
 - Sort of amiibo by name or release date.
 - Scan of amiibo-boxes barcode to quickly add new amiibo to your collection.
 
-## Issues and Feedback
-Please file [issues](https://github.com/cbonello/amiidex/issues) to send feedback or report a bug. Thank you!
+## App Screenshots
+
+Main Screen  (Dark Theme) | Amiibo Screen (Light Theme)
+--- | ---
+![Collection Screen](/docs/master.png?raw=true "Collection Screen") | ![Amiibo Screen](/docs/detail.png?raw=true "Amiibo Screen")
+
+Statistics Screen (Light Theme) | Settings Screen (Light Theme)
+--- | ---
+![Statistics Screen](/docs/stats.png?raw=true "Statistics Screen") | ![Settings Screen](/docs/settings.png?raw=true "Settings Screen")
+
+## Learn More on Flutter
+[Official Flutter documentation](https://flutter.dev/docs)
+
+[Flutter youtube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw)
+
+## Created & Maintained by
+[Christophe Bonello](https://github.com/cbonello)
+([LinkedIn](https://www.linkedin.com/in/christophe-bonello))
+([Play Store](https://play.google.com/store/apps/dev?id=8132747096160291479))
+
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/cbonello/amiidex/blob/master/LICENSE)
+
+## Contribution Guidelines
+This project is a fully open source project, and contributions are welcome. Information on how to get started can be found aint the [contributor's guide](https://github.com/cbonello/amiidex/blob/master/CONTRIBUTING.md).
 
 ## License
 
+```
 Copyright (c) 2019 Christophe Bonello
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,3 +75,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
