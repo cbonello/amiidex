@@ -1,28 +1,35 @@
+import 'package:amiidex/UI/widgets/flag.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-const List<String> RegionIds = <String>['NA', 'EU', 'JP'];
+// TODO(cbonello): Use enum.
+const List<String> RegionIds = <String>['AMER', 'APAC', 'EMEA'];
 
-const String DefaultRegionId = 'NA';
+const String DefaultRegionId = 'AMER';
 
 const Map<String, String> RegionName = <String, String>{
-  'EU': 'actionbar-region-europe',
-  'JP': 'actionbar-region-japan',
-  'NA': 'actionbar-region-north-america',
+  'AMER': 'actionbar-region-north-america',
+  'APAC': 'actionbar-region-japan',
+  'EMEA': 'actionbar-region-europe',
 };
 
 class RegionModel {
   const RegionModel({
-    @required this.name,
+    @required this.id,
     @required this.releaseDate,
   });
 
-  factory RegionModel.fromJson(String name, Map<String, dynamic> json) {
+  factory RegionModel.fromJson(String id, Map<String, dynamic> json) {
+    assert(json['release_date'] != null);
+
     return RegionModel(
-      name: name,
+      id: id,
       releaseDate: DateTime.parse(json['release_date']),
     );
   }
 
-  final String name;
+  final String id;
   final DateTime releaseDate;
+
+  Widget get flag => Flag(region: id);
 }
