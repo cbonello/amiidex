@@ -1,6 +1,6 @@
 name: amiidex
 description: An app to manage a Nintendo Amiibo collection.
-version: 1.0.0+7
+version: 1.0.0+8
 author: Christophe Bonello
 homepage: https://github.com/cbonello/amiidex
 
@@ -89,6 +89,7 @@ flutter:
     - assets/images/ac/tom_nook.png
     - assets/images/bb/header.jpg
     - assets/images/bb/logo.png
+    - assets/images/bb/box_qbby.png
     - assets/images/bb/qbby.png
     - assets/images/cr/header.jpg
     - assets/images/cr/logo.png
