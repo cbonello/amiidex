@@ -45,10 +45,11 @@ Statistics Screen (Light Theme) | Settings Screen (Light Theme)
 ## Created & Maintained by
 [Christophe Bonello](https://github.com/cbonello)
 ([LinkedIn](https://www.linkedin.com/in/christophe-bonello))
+([Twitter](https://twitter.com/chbonello))
 ([Play Store](https://play.google.com/store/apps/dev?id=8132747096160291479))
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
-[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/cbonello/amiidex/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-purple)](https://github.com/cbonello/amiidex/blob/master/LICENSE)
 
 ## Contribution Guidelines
 This project is a fully open source project, and contributions are welcome. Information on how to get started can be found in the [contributor's guide](https://github.com/cbonello/amiidex/blob/master/CONTRIBUTING.md).
