@@ -1,7 +1,6 @@
-import 'package:amiidex/models/amiibo_list.dart';
-import 'package:amiidex/models/region.dart';
-import 'package:amiidex/models/serie_list.dart';
+import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/lock.dart';
+import 'package:amiidex/providers/series_sort.dart';
 import 'package:amiidex/providers/view_as.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,17 +22,40 @@ class LocalStorageService {
     return _preferences.setString('preferred_language', lang);
   }
 
-  String getRegion() {
-    return _preferences.getString('region') ?? DefaultRegionId;
+  bool getDisplaySplashScreen() {
+    return _preferences.getBool('display_plash_screen') ?? false;
   }
 
-  Future<bool> setRegion(String region) {
-    return _preferences.setString('region', region);
+  Future<bool> setDisplaySplashScreen(bool display) {
+    return _preferences.setBool('display_plash_screen', display);
+  }
+
+  String getRegion(String dft) {
+    try {
+      return _preferences.getString('region') ?? dft;
+    } catch (_) {
+      return dft;
+    }
+  }
+
+  Future<bool> setRegion(String id) {
+    return _preferences.setString('region', id);
+  }
+
+  String getRegionIndicator(String id, String dflt) {
+    try {
+      return _preferences.getString('${id}_indicator') ?? dflt;
+    } catch (_) {
+      return dflt;
+    }
+  }
+
+  Future<bool> setRegionIndicator(String id, String code) {
+    return _preferences.setString('${id}_indicator', code);
   }
 
   LockStatus getLockStatus() {
     final int val = _preferences.getInt('lock_status');
-
     if (val == null) {
       return LockStatus.opened;
     }
@@ -50,7 +72,7 @@ class LocalStorageService {
       final int v = _preferences.getInt('series_sort') ?? 0;
       sort = SeriesSortOrder.values[v];
     } catch (_) {
-      return SeriesSortOrder.name_ascending;
+      sort = SeriesSortOrder.name_ascending;
     }
     return sort;
   }
@@ -65,7 +87,7 @@ class LocalStorageService {
       final int v = _preferences.getInt('amiibo_sort') ?? 0;
       sort = AmiiboSortOrder.values[v];
     } catch (_) {
-      return AmiiboSortOrder.name_ascending;
+      sort = AmiiboSortOrder.name_ascending;
     }
     return sort;
   }
@@ -81,7 +103,7 @@ class LocalStorageService {
       final int v = _preferences.getInt('${label}_view_as') ?? 1;
       type = DisplayType.values[v];
     } catch (_) {
-      return DisplayType.grid_small;
+      type = DisplayType.grid_small;
     }
     return type;
   }
@@ -96,7 +118,7 @@ class LocalStorageService {
     try {
       owned = _preferences.getStringList('owned') ?? <String>[];
     } catch (_) {
-      return <String>[];
+      owned = <String>[];
     }
     return owned;
   }

@@ -1,4 +1,11 @@
+import 'dart:collection';
+
+import 'package:amiidex/main.dart';
+import 'package:amiidex/models/country.dart';
 import 'package:amiidex/providers/lock.dart';
+import 'package:amiidex/providers/region_indicators.dart';
+import 'package:amiidex/services/assets.dart';
+import 'package:amiidex/services/local_storage.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/providers/owned.dart';
@@ -12,10 +19,14 @@ class SettingsView extends StatefulWidget {
 }
 
 class SettingsViewState extends State<SettingsView> {
+  final LocalStorageService localStorageService =
+      locator<LocalStorageService>();
+  bool displaySplashScreen;
   Brightness _brightness;
 
   @override
   void initState() {
+    displaySplashScreen = localStorageService.getDisplaySplashScreen();
     _brightness = DynamicTheme.of(context).brightness;
     super.initState();
   }
@@ -27,6 +38,9 @@ class SettingsViewState extends State<SettingsView> {
         Provider.of<PreferredLanguageProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
     final LockProvider lockProvider = Provider.of<LockProvider>(context);
+    final RegionIndicatorsProvider regionIndicatorsProvider =
+        Provider.of<RegionIndicatorsProvider>(context);
+    final AssetsService assetsService = locator<AssetsService>();
 
     return Scaffold(
       appBar: AppBar(
@@ -37,7 +51,7 @@ class SettingsViewState extends State<SettingsView> {
         children: <Widget>[
           ListTile(title: Text(I18n.of(context).text('settings-general'))),
           Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 20.0),
+            padding: const EdgeInsets.only(left: 30.0, right: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -64,7 +78,7 @@ class SettingsViewState extends State<SettingsView> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 20.0),
+            padding: const EdgeInsets.only(left: 30.0, right: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -92,45 +106,84 @@ class SettingsViewState extends State<SettingsView> {
               ],
             ),
           ),
+          ListTile(
+            title: Text(I18n.of(context).text('settings-splash-screen')),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 18.0, right: 20.0),
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Checkbox(
+                  value: displaySplashScreen,
+                  onChanged: (bool display) {
+                    localStorageService.setDisplaySplashScreen(display);
+                    setState(() => displaySplashScreen = display);
+                  },
+                ),
+                Text(
+                  I18n.of(context).text('settings-splash-screen-display'),
+                ),
+              ],
+            ),
+          ),
           ListTile(title: Text(I18n.of(context).text('settings-theme'))),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(I18n.of(context).text('settings-light-theme')),
-                Radio<Brightness>(
-                  value: Brightness.light,
-                  groupValue: _brightness,
-                  onChanged: (Brightness newBrightness) {
-                    setState(() {
-                      _brightness = newBrightness;
-                    });
-                    DynamicTheme.of(context).setBrightness(newBrightness);
-                  },
-                ),
-              ],
-            ),
+          LabeledRadio<Brightness>(
+            label: I18n.of(context).text('settings-light-theme'),
+            padding: const EdgeInsets.only(left: 18.0, right: 20.0),
+            value: Brightness.light,
+            groupValue: _brightness,
+            onChanged: (Brightness newBrightness) {
+              setState(() {
+                _brightness = newBrightness;
+              });
+              DynamicTheme.of(context).setBrightness(newBrightness);
+            },
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(I18n.of(context).text('settings-dark-theme')),
-                Radio<Brightness>(
-                  value: Brightness.dark,
-                  groupValue: _brightness,
-                  onChanged: (Brightness newBrightness) {
-                    setState(() {
-                      _brightness = newBrightness;
-                    });
-                    DynamicTheme.of(context).setBrightness(newBrightness);
-                  },
-                ),
-              ],
-            ),
+          LabeledRadio<Brightness>(
+            label: I18n.of(context).text('settings-dark-theme'),
+            padding: const EdgeInsets.only(left: 18.0, right: 20.0),
+            value: Brightness.dark,
+            groupValue: _brightness,
+            onChanged: (Brightness newBrightness) {
+              setState(() {
+                _brightness = newBrightness;
+              });
+              DynamicTheme.of(context).setBrightness(newBrightness);
+            },
           ),
+          ListTile(
+            title: Text(I18n.of(context).text('settings-region-indicator')),
+          ),
+          for (String regionId in assetsService.config.regions.keys)
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0, right: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    flex: 3,
+                    child: Text(
+                      I18n.of(context).text(regionId),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  const SizedBox(width: 2.0),
+                  Expanded(
+                    flex: 4,
+                    child: CountryPickerDropdown(
+                      countries:
+                          assetsService.config.countriesInRegion(regionId),
+                      value: regionIndicatorsProvider.indicators[regionId],
+                      onChanged: (CountryModel c) {
+                        regionIndicatorsProvider.indicator(regionId, c.lKey);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
         ],
       ),
     );
@@ -172,6 +225,85 @@ class SettingsViewState extends State<SettingsView> {
           ],
         );
       },
+    );
+  }
+}
+
+class LabeledRadio<T> extends StatelessWidget {
+  const LabeledRadio({
+    @required this.label,
+    @required this.padding,
+    @required this.groupValue,
+    @required this.value,
+    this.onChanged,
+  });
+
+  final String label;
+  final EdgeInsets padding;
+  final T groupValue;
+  final T value;
+  final Function onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        if (value != groupValue) {
+          onChanged(value);
+        }
+      },
+      child: Padding(
+        padding: padding,
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Radio<T>(
+              groupValue: groupValue,
+              value: value,
+              onChanged: (T newValue) => onChanged(newValue),
+            ),
+            Text(label),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CountryPickerDropdown extends StatefulWidget {
+  CountryPickerDropdown({
+    Key key,
+    @required this.countries,
+    this.value,
+    @required this.onChanged,
+  })  : assert(countries != null && countries.isNotEmpty),
+        super(key: key);
+
+  final UnmodifiableListView<CountryModel> countries;
+  final String value;
+  final ValueChanged<CountryModel> onChanged;
+
+  @override
+  _CountryPickerDropdownState createState() => _CountryPickerDropdownState();
+}
+
+class _CountryPickerDropdownState extends State<CountryPickerDropdown> {
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<CountryModel>(
+      value: widget.countries
+          .firstWhere((CountryModel c) => c.lKey == widget.value),
+      onChanged: (CountryModel c) {
+        widget.onChanged(c);
+      },
+      items: <DropdownMenuItem<CountryModel>>[
+        for (CountryModel c in widget.countries)
+          DropdownMenuItem<CountryModel>(
+            value: c,
+            child: c.label(context),
+          )
+      ],
+      isExpanded: true,
     );
   }
 }

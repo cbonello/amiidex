@@ -1,8 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:amiidex/main.dart';
-import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/services/local_storage.dart';
+import 'package:flutter/material.dart';
 
+enum AmiiboSortOrder {
+  name_ascending,
+  name_descending,
+  release_date_ascending,
+  release_date_descending,
+}
+
+// Sort options to display amiibo.
 class AmiiboSortProvider with ChangeNotifier {
   AmiiboSortProvider() {
     _order = storageService.getAmiiboSort();
@@ -13,7 +21,7 @@ class AmiiboSortProvider with ChangeNotifier {
 
   AmiiboSortOrder get order => _order;
 
-  set order(AmiiboSortOrder order) {
+  void setOrder(BuildContext context, AmiiboSortOrder order, String regionId) {
     _order = order;
     storageService.setAmiiboSort(_order);
     notifyListeners();

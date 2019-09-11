@@ -1,24 +1,24 @@
 import 'package:amiidex/UI/widgets/actionbar_bottomsheet_item.dart';
+import 'package:amiidex/main.dart';
+import 'package:amiidex/providers/region_indicators.dart';
+import 'package:amiidex/providers/selected_region.dart';
+import 'package:amiidex/services/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
-import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/providers/view_as.dart';
-import 'package:amiidex/util/actionbar_region_bottomsheet.dart';
 import 'package:amiidex/util/actionbar_viewas_bottomsheet.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:amiidex/util/theme.dart';
 import 'package:provider/provider.dart';
 
-class AmiiboActionBar extends StatefulWidget {
-  @override
-  _AmiiboActionBarState createState() => _AmiiboActionBarState();
-}
-
-class _AmiiboActionBarState extends State<AmiiboActionBar> {
+class AmiiboActionBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final RegionProvider regionProvider = Provider.of<RegionProvider>(context);
+    final AssetsService assetsService = locator<AssetsService>();
+    final SelectedRegionProvider regionProvider =
+        Provider.of<SelectedRegionProvider>(context);
+    final RegionIndicatorsProvider regionIndicatorsProvider =
+        Provider.of<RegionIndicatorsProvider>(context);
     final AmiiboSortProvider sortProvider =
         Provider.of<AmiiboSortProvider>(context);
     final ViewAsProvider viewAsProvider = Provider.of<ViewAsProvider>(context);
@@ -61,8 +61,8 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
 
     Future<void> _sortModalBottomSheet(AmiiboSortOrder current) async {
       await showModalBottomSheet<void>(
-        shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12.0)),
         ),
         context: context,
         builder: (BuildContext bc) {
@@ -85,9 +85,12 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
                       I18n.of(context).text('sm-actionbar-sort-name'),
                   selected: isNameSort(current),
                   onTap: () {
-                    sortProvider.order = isNameSort(current)
-                        ? reverseSort[current.index]
-                        : AmiiboSortOrder.name_ascending;
+                    sortProvider.setOrder(
+                        context,
+                        isNameSort(current)
+                            ? reverseSort[current.index]
+                            : AmiiboSortOrder.name_ascending,
+                        regionProvider.regionId);
                     Navigator.pop<void>(context);
                   },
                 ),
@@ -100,9 +103,13 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
                       I18n.of(context).text('sm-actionbar-sort-release-date'),
                   selected: isReleaseDateSort(current),
                   onTap: () {
-                    sortProvider.order = isReleaseDateSort(current)
-                        ? reverseSort[current.index]
-                        : AmiiboSortOrder.release_date_ascending;
+                    sortProvider.setOrder(
+                      context,
+                      isReleaseDateSort(current)
+                          ? reverseSort[current.index]
+                          : AmiiboSortOrder.release_date_ascending,
+                      regionProvider.regionId,
+                    );
                     Navigator.pop<void>(context);
                   },
                 ),
@@ -115,12 +122,7 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
 
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.only(
-          left: 14.0,
-          top: 14.0,
-          right: 10.0,
-          bottom: 14.0,
-        ),
+        padding: const EdgeInsets.only(left: 4.0),
         color: Theme.of(context).canvasColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,7 +133,12 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
                 label: I18n.of(context).text('amiibo-actionbar-sort-by'),
                 button: true,
                 child: Padding(
-                  padding: const EdgeInsets.all(14.0),
+                  padding: const EdgeInsets.only(
+                    left: 10.0,
+                    top: 14.0,
+                    right: 14.0,
+                    bottom: 14.0,
+                  ),
                   child: Row(
                     children: <Widget>[
                       ExcludeSemantics(
@@ -163,11 +170,28 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
                 label: I18n.of(context).text('actionbar-region-title'),
                 button: true,
                 child: Padding(
-                  padding: const EdgeInsets.all(14.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: ExcludeSemantics(
-                    child: Text(
-                      I18n.of(context).text(regionProvider.regionName),
-                      style: Theme.of(context).textTheme.subhead,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: lightBlueColor,
+                            ),
+                          ),
+                          child: regionIndicatorsProvider.flag(
+                            regionProvider.regionId,
+                          ),
+                        ),
+                        const SizedBox(width: 5.0),
+                        Text(
+                          I18n.of(context).text(assetsService.config
+                              .regions[regionProvider.regionId].lKeyShort),
+                          style: Theme.of(context).textTheme.subhead,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -200,4 +224,45 @@ class _AmiiboActionBarState extends State<AmiiboActionBar> {
       ),
     );
   }
+}
+
+Future<void> showRegionsBottomSheet(
+  BuildContext context,
+  String current,
+) async {
+  final AssetsService assetsService = locator<AssetsService>();
+  final SelectedRegionProvider regionProvider =
+      Provider.of<SelectedRegionProvider>(context);
+  final RegionIndicatorsProvider regionIndicatorsProvider =
+      Provider.of<RegionIndicatorsProvider>(context);
+
+  await showModalBottomSheet<void>(
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+    ),
+    context: context,
+    builder: (BuildContext bc) {
+      return SingleChildScrollView(
+        child: Wrap(
+          children: <Widget>[
+            ListTile(
+              title: Text(I18n.of(context).text('actionbar-region-title')),
+            ),
+            const Divider(height: 8),
+            for (String regionId in assetsService.config.regions.keys)
+              ActionBarBottomSheetItem(
+                displayIcon: false,
+                titleIcon: regionIndicatorsProvider.flag(regionId),
+                title: I18n.of(context).text(regionId),
+                selected: current == regionId,
+                onTap: () {
+                  regionProvider.regionId = regionId;
+                  Navigator.pop<void>(context);
+                },
+              ),
+          ],
+        ),
+      );
+    },
+  );
 }

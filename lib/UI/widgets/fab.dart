@@ -1,7 +1,7 @@
 import 'package:amiidex/UI/widgets/amiibo_box.dart';
+import 'package:amiidex/main.dart';
 import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/models/amiibo_box.dart';
-import 'package:amiidex/main.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/owned.dart';
@@ -14,8 +14,8 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sprintf/sprintf.dart';
 
-class FABScan extends StatelessWidget {
-  const FABScan({Key key}) : super(key: key);
+class FABWdiget extends StatelessWidget {
+  const FABWdiget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class FABScan extends StatelessWidget {
   ) async {
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
     final AssetsService assetsService = locator<AssetsService>();
-    final AmiiboBoxModel box = assetsService.amiiboLineup.matchBarcode(barcode);
+    final AmiiboBoxModel box = assetsService.config.matchBarcode(barcode);
 
     // Unknown barcode?
     if (box == null) {
@@ -85,8 +85,8 @@ class FABScan extends StatelessWidget {
     }
 
     // Are all amiboo in box owned?
-    final bool isOwned = box.amiibo
-        .map<bool>((AmiiboModel a) => ownedProvider.isOwned(a.id))
+    final bool isOwned = box.amiibos
+        .map<bool>((AmiiboModel a) => ownedProvider.isOwned(a.lKey))
         .reduce((bool v, bool e) => v && e);
 
     final bool add = await showDialog<bool>(
@@ -107,7 +107,7 @@ class FABScan extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10.0),
-                AmiiboWidget(box: box),
+                AmiiboBoxWidget(box: box),
                 const SizedBox(height: 15.0),
                 if (isOwned)
                   Text(I18n.of(context).text('fab-scan-add-dialog-owned'))
@@ -146,7 +146,7 @@ class FABScan extends StatelessWidget {
     );
 
     if (add) {
-      box.amiibo.forEach(ownedProvider.setOwned);
+      box.amiibos.forEach(ownedProvider.setOwned);
     }
   }
 }

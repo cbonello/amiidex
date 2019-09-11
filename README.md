@@ -4,7 +4,7 @@ Picture this. You are in a shop in front of a rack full of Nintendo amiibo and t
 
 There is just one small problem though. Which ones do you own, and which ones do you miss? 
 
-I have been there and that's why I created Amiidex. It is the easiest app to manage your Nintendo Amiibo collection and it has a unique feature: it allows you to scan amiibo boxes barcodes to quickly find whether you own an amiibo.
+I have been there and that's why I created Amiidex. It manages your Nintendo Amiibo collection easily and it has a unique feature: it allows you to scan amiibo boxes barcodes to quickly find whether you own an amiibo.
 
 AmiiDex is an unofficial app for amiibo collectors and is intended to be used for informational and educational purposes only.
 AmiiDex is fully compliant with all US copyright laws and is protected under 'fair use'.
@@ -21,21 +21,30 @@ Click on the image below to download
 - Support for English and French languages.
 - Support for light and dark themes.
 - Option to Lock your amiibo collection to prevent unintentional updates.
-- A long press on an amiibo adds/ removes it to/ from your collection.
-- A double click on an amiibo opens the page of this amiibo on the Nintendo website.
+- A single tap on an amiibo opens the amiibo detail page.
+- A double tap on an amiibo opens the page of this amiibo on the Nintendo website.
+- A long tap on an amiibo adds/ removes it to/ from your collection.
 - View of series/ amiibo as list, small icons or large icons.
 - Sort of amiibo by name or release date.
 - Scan of amiibo-boxes barcode to quickly add new amiibo to your collection.
 
 ## App Screenshots
 
-Main Screen  (Dark Theme) | Amiibo Screen (Light Theme)
+Series Screen  (Dark Theme) | Series Screen (Light Theme)
 --- | ---
-![Collection Screen](/docs/master.png?raw=true "Collection Screen") | ![Amiibo Screen](/docs/detail.png?raw=true "Amiibo Screen")
+![Series Screen](/docs/dark_master.png?raw=true "Series Screen") | ![Series Screen](/docs/light_master.png?raw=true "Series Screen")
 
-Statistics Screen (Light Theme) | Settings Screen (Light Theme)
+Amiibo by Serie Screen (Dark Theme) | Amiibo by Serie Screen (Light Theme)
 --- | ---
-![Statistics Screen](/docs/stats.png?raw=true "Statistics Screen") | ![Settings Screen](/docs/settings.png?raw=true "Settings Screen")
+![Amiibo Screen](/docs/dark_detail.png?raw=true "Amiibo Screen") | ![Amiibo Screen](/docs/light_detail.png?raw=true "Amiibo Screen")
+
+Stats Screen (Dark Theme) | Stats Screen (Light Theme)
+--- | ---
+![Stats Screen](/docs/dark_stats.png?raw=true "Stats Screen") | ![Stats Screen](/docs/light_stats.png?raw=true "Stats Screen")
+
+Settings Screen (Dark Theme) | Settings Screen (Light Theme)
+--- | ---
+![Settings Screen](/docs/dark_settings.png?raw=true "Settings Screen") | ![Settings Screen](/docs/light_settings.png?raw=true "Settings Screen")
 
 ## Learn More on Flutter
 [Official Flutter documentation](https://flutter.dev/docs)

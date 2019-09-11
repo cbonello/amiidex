@@ -1,10 +1,12 @@
-import 'package:amiidex/UI/widgets/pie_chart.dart';
-import 'package:amiidex/UI/widgets/searchbar.dart';
+import 'dart:collection';
+
+import 'package:amiidex/UI/widgets/owned_missing_pie_chart.dart';
+import 'package:amiidex/UI/widgets/search_bar.dart';
+import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
-import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/owned.dart';
@@ -26,15 +28,9 @@ class StatisticsView extends StatelessWidget {
 
     final AssetsService assetsService = locator<AssetsService>();
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final AmiiboList missedAmiibo =
-        AmiiboList.from(assetsService.amiiboLineup.amiibo);
-    for (String id in ownedProvider.ownedAmiiboIds) {
-      missedAmiibo.remove(assetsService.amiiboLineup.getAmiiboById(id));
-    }
-
     final double ownedCount = ownedProvider.ownedCount.toDouble();
     final double missingCount =
-        assetsService.amiiboLineup.amiiboCount.toDouble() - ownedCount;
+        assetsService.config.amiibos.length.toDouble() - ownedCount;
 
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
@@ -51,9 +47,12 @@ class StatisticsView extends StatelessWidget {
           controller: _controller,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             final AssetsService assetsService = locator<AssetsService>();
-
             return <Widget>[
-              SearchBar(amiibo: assetsService.amiiboLineup.amiibo),
+              SearchBar(
+                amiibo: UnmodifiableListView<AmiiboModel>(
+                  assetsService.config.amiiboList,
+                ),
+              ),
             ];
           },
           body: Column(
@@ -63,7 +62,7 @@ class StatisticsView extends StatelessWidget {
                 sprintf(
                   I18n.of(context).text('stats-amiibo-count'),
                   <int>[
-                    assetsService.amiiboLineup.amiiboCount,
+                    assetsService.config.amiibos.length,
                   ],
                 ),
                 style: Theme.of(context).textTheme.title,

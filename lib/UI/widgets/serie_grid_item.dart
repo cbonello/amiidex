@@ -1,10 +1,12 @@
-import 'package:amiidex/UI/views/detail.dart';
+import 'dart:collection';
+
+import 'package:amiidex/UI/views/amiibos_by_serie.dart';
+import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
-import 'package:amiidex/models/serie.dart';
-import 'package:amiidex/models/serie_list.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/util/theme.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class SerieGridItem extends StatelessWidget {
@@ -14,7 +16,7 @@ class SerieGridItem extends StatelessWidget {
     @required this.serie,
   }) : super(key: key);
 
-  final SeriesList series;
+  final UnmodifiableListView<SerieModel> series;
   final SerieModel serie;
 
   @override
@@ -24,16 +26,19 @@ class SerieGridItem extends StatelessWidget {
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
 
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute<void>(
-          maintainState: true,
-          builder: (BuildContext context) => DetailView(
-            series: series,
-            serie: serie,
+      onTap: () async {
+        await SystemSound.play(SystemSoundType.click);
+        Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            maintainState: true,
+            builder: (BuildContext context) => AmiibosBySerieView(
+              series: series,
+              serie: serie,
+            ),
           ),
-        ),
-      ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: CustomMultiChildLayout(
@@ -44,10 +49,10 @@ class SerieGridItem extends StatelessWidget {
               id: 'image-background-box',
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(6.0),
-                    topRight: Radius.circular(6.0),
-                  ),
+                  // borderRadius: const BorderRadius.only(
+                  //   topLeft: Radius.circular(6.0),
+                  //   topRight: Radius.circular(6.0),
+                  // ),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                       color: itemCardData.shadowColor,
@@ -79,14 +84,14 @@ class SerieGridItem extends StatelessWidget {
               id: 'caption',
               child: Center(
                 child: Text(
-                  '${ownedProvider.ownedInSerie(serie)}/${serie.amiibo.length}',
+                  '${ownedProvider.ownedInSerie(serie)}/${serie.amiibos.length}',
                   style: TextStyle(
                     color: itemCardData.color,
                     fontWeight: FontWeight.bold,
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.clip,
-                  semanticsLabel: I18n.of(context).text(serie.id),
+                  semanticsLabel: I18n.of(context).text(serie.lKey),
                 ),
               ),
             ),

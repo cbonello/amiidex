@@ -1,6 +1,6 @@
 name: amiidex
 description: An app to manage a Nintendo Amiibo collection.
-version: 1.0.0+8
+version: 1.1.0
 author: Christophe Bonello
 homepage: https://github.com/cbonello/amiidex
 
@@ -18,6 +18,7 @@ dependencies:
   flutter_markdown: ^0.2.0
   get_it: ^2.0.1
   intl: ^0.15.8
+  launch_review: ^2.0.0
   package_info: ^0.4.0+6
   provider: ^3.1.0
   shared_preferences: ^0.5.3+4
@@ -32,6 +33,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.7.2+1
+  mockito: ^4.1.0
 
 flutter_icons:
   android: launcher_icon
@@ -49,8 +51,50 @@ flutter:
           weight: 700
 
   assets:
+    - assets/json/config.json
+    - assets/text/privacy.md
     - assets/images/logo_app.png
     - assets/images/logo_drawer.png
+    - assets/images/splash/controller_dark.png
+    - assets/images/splash/controller_light.png
+    - assets/images/splash/mario.png
+    - assets/images/regions/ar.png
+    - assets/images/regions/at.png
+    - assets/images/regions/au.png
+    - assets/images/regions/be.png
+    - assets/images/regions/br.png
+    - assets/images/regions/ca.png
+    - assets/images/regions/ch.png
+    - assets/images/regions/cl.png
+    - assets/images/regions/co.png
+    - assets/images/regions/cz.png
+    - assets/images/regions/de.png
+    - assets/images/regions/dk.png
+    - assets/images/regions/es.png
+    - assets/images/regions/eu.png
+    - assets/images/regions/fi.png
+    - assets/images/regions/fr.png
+    - assets/images/regions/gb.png
+    - assets/images/regions/gr.png
+    - assets/images/regions/hk.png
+    - assets/images/regions/hu.png
+    - assets/images/regions/ie.png
+    - assets/images/regions/il.png
+    - assets/images/regions/it.png
+    - assets/images/regions/jp.png
+    - assets/images/regions/kr.png
+    - assets/images/regions/mx.png
+    - assets/images/regions/nl.png
+    - assets/images/regions/no.png
+    - assets/images/regions/nz.png
+    - assets/images/regions/pe.png
+    - assets/images/regions/pl.png
+    - assets/images/regions/pt.png
+    - assets/images/regions/ru.png
+    - assets/images/regions/se.png
+    - assets/images/regions/tw.png
+    - assets/images/regions/us.png
+    - assets/images/regions/za.png
     - assets/images/ac/header.jpg
     - assets/images/ac/logo.png
     - assets/images/ac/box_blathers.png
@@ -260,7 +304,6 @@ flutter:
     - assets/images/ssb/box_king_dedede.png
     - assets/images/ssb/box_king_k_rool.png
     - assets/images/ssb/box_kirby.png
-    - assets/images/ssb/box_link_awakening.png
     - assets/images/ssb/box_link.png
     - assets/images/ssb/box_little_mac.png
     - assets/images/ssb/box_lucario.png
@@ -338,7 +381,6 @@ flutter:
     - assets/images/ssb/king_dedede.png
     - assets/images/ssb/king_k_rool.png
     - assets/images/ssb/kirby.png
-    - assets/images/ssb/link_awakening.png
     - assets/images/ssb/link.png
     - assets/images/ssb/little_mac.png
     - assets/images/ssb/lucario.png
@@ -386,7 +428,7 @@ flutter:
     - assets/images/ssb/young_link.png
     - assets/images/ssb/zelda.png
     - assets/images/ssb/zero_suit_samus.png
-    - assets/images/zld/header.png
+    - assets/images/zld/header.jpg
     - assets/images/zld/logo.png
     - assets/images/zld/box_bokoblin.png
     - assets/images/zld/box_daruk.png
@@ -398,6 +440,7 @@ flutter:
     - assets/images/zld/box_urbosa.png
     - assets/images/zld/box_wolf_link.png
     - assets/images/zld/box_zelda.png
+    - assets/images/zld/box_link_awakening.png
     - assets/images/zld/box_link_majora_s_mask.png
     - assets/images/zld/box_link_ocarina_of_time.png
     - assets/images/zld/box_link_skyward_sword.png
@@ -415,6 +458,7 @@ flutter:
     - assets/images/zld/urbosa.png
     - assets/images/zld/wolf_link.png
     - assets/images/zld/zelda.png
+    - assets/images/zld/link_awakening.png
     - assets/images/zld/link_majora_s_mask.png
     - assets/images/zld/link_ocarina_of_time.png
     - assets/images/zld/link_skyward_sword.png
@@ -434,5 +478,3 @@ flutter:
     - assets/images/yww/mega_yarn_yoshi.png
     - assets/images/yww/pink_yarn_yoshi.png
     - assets/images/yww/poochy.png
-    - assets/json/lineup.json
-    - assets/text/privacy.md

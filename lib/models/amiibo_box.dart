@@ -1,31 +1,35 @@
+import 'dart:collection';
+
 import 'package:amiidex/models/amiibo.dart';
-import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/models/value_pack.dart';
 import 'package:flutter/material.dart';
 
 class AmiiboBoxModel {
-  const AmiiboBoxModel(
-    this.id,
-    this.box,
-    this.amiibo,
-  );
-
-  factory AmiiboBoxModel.fromAmiibo(AmiiboModel a) {
-    return AmiiboBoxModel(
-      a.id,
-      a.box,
-      AmiiboList.from(<AmiiboModel>[a]),
-    );
+  // A box with only one amiibo.
+  AmiiboBoxModel.fromAmiibo(AmiiboModel amiibo) : assert(amiibo != null) {
+    _lKey = amiibo.lKey;
+    _box = amiibo.box;
+    _amiibo = <AmiiboModel>[amiibo];
   }
 
-  factory AmiiboBoxModel.fromValuePack(
-    ValuePackModel v,
-    Iterable<AmiiboModel> l,
-  ) {
-    return AmiiboBoxModel(v.id, v.box, AmiiboList.from(l));
+  // A Value-pack box.
+  AmiiboBoxModel.fromValuePack(
+    ValuePackModel valuePack,
+    List<AmiiboModel> amiibo,
+  )   : assert(valuePack != null),
+        assert(amiibo != null) {
+    _lKey = valuePack.lKey;
+    _box = valuePack.box;
+    _amiibo = amiibo;
   }
 
-  final String id;
-  final Image box;
-  final AmiiboList amiibo;
+  String _lKey;
+  Image _box;
+  List<AmiiboModel> _amiibo;
+
+  String get lKey => _lKey;
+  Image get box => _box;
+
+  UnmodifiableListView<AmiiboModel> get amiibos =>
+      UnmodifiableListView<AmiiboModel>(_amiibo);
 }

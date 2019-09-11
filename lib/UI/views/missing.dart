@@ -1,10 +1,12 @@
+import 'dart:collection';
+
 import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
-import 'package:amiidex/UI/widgets/detail.dart';
-import 'package:amiidex/UI/widgets/searchbar.dart';
+import 'package:amiidex/UI/widgets/amiibos.dart';
+import 'package:amiidex/UI/widgets/search_bar.dart';
+import 'package:amiidex/models/amiibo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
-import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/owned.dart';
@@ -27,10 +29,10 @@ class MissingView extends StatelessWidget {
 
     final AssetsService assetsService = locator<AssetsService>();
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final AmiiboList missedAmiibo =
-        AmiiboList.from(assetsService.amiiboLineup.amiibo);
+    final List<AmiiboModel> missedAmiibo =
+        List<AmiiboModel>.from(assetsService.config.amiibos.values);
     for (String id in ownedProvider.ownedAmiiboIds) {
-      missedAmiibo.remove(assetsService.amiiboLineup.getAmiiboById(id));
+      missedAmiibo.remove(assetsService.config.amiibo(id));
     }
 
     return MultiProvider(
@@ -48,12 +50,14 @@ class MissingView extends StatelessWidget {
           controller: _controller,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
-              SearchBar(amiibo: missedAmiibo),
+              SearchBar(
+                amiibo: UnmodifiableListView<AmiiboModel>(missedAmiibo),
+              ),
               AmiiboActionBar(),
             ];
           },
-          body: DetailWidget(
-            amiibo: missedAmiibo,
+          body: AmiibosWidget(
+            amiibos: missedAmiibo,
             helpMessageDelegate: (String amiiboName) => sprintf(
                 I18n.of(context).text('missing-added'), <String>[amiiboName]),
           ),

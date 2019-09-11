@@ -1,10 +1,12 @@
+import 'dart:collection';
+
 import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
-import 'package:amiidex/UI/widgets/detail.dart';
-import 'package:amiidex/UI/widgets/searchbar.dart';
+import 'package:amiidex/UI/widgets/amiibos.dart';
+import 'package:amiidex/UI/widgets/search_bar.dart';
+import 'package:amiidex/models/amiibo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
-import 'package:amiidex/models/amiibo_list.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/owned.dart';
@@ -27,9 +29,9 @@ class OwnedView extends StatelessWidget {
 
     final AssetsService assetsService = locator<AssetsService>();
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final AmiiboList ownedAmiibo = AmiiboList();
+    final List<AmiiboModel> ownedAmiibo = <AmiiboModel>[];
     for (String id in ownedProvider.ownedAmiiboIds) {
-      ownedAmiibo.add(assetsService.amiiboLineup.getAmiiboById(id));
+      ownedAmiibo.add(assetsService.config.amiibo(id));
     }
 
     return MultiProvider(
@@ -47,12 +49,12 @@ class OwnedView extends StatelessWidget {
           controller: _controller,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
-              SearchBar(amiibo: ownedAmiibo),
+              SearchBar(amiibo: UnmodifiableListView<AmiiboModel>(ownedAmiibo)),
               AmiiboActionBar(),
             ];
           },
-          body: DetailWidget(
-            amiibo: ownedAmiibo,
+          body: AmiibosWidget(
+            amiibos: ownedAmiibo,
             helpMessageDelegate: (String amiiboName) => sprintf(
                 I18n.of(context).text('owned-removed'), <String>[amiiboName]),
           ),

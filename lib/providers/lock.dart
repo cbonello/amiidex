@@ -7,6 +7,8 @@ enum LockStatus {
   locked,
 }
 
+// Lock/ Unlock of amiibo collection. A locked collection cannot be
+// updated.
 class LockProvider with ChangeNotifier {
   LockProvider() {
     _status = storageService.getLockStatus();

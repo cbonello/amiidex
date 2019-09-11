@@ -1,11 +1,11 @@
+import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/providers/selected_region.dart';
 import 'package:amiidex/util/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/owned.dart';
-import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:amiidex/util/theme.dart';
 import 'package:provider/provider.dart';
@@ -61,7 +61,8 @@ class __ItemState extends State<_Item> {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     final ItemCardThemeData itemCardData = ItemCardThemeData(data: themeData);
-    final RegionProvider regionProvider = Provider.of<RegionProvider>(context);
+    final SelectedRegionProvider regionProvider =
+        Provider.of<SelectedRegionProvider>(context);
     final LockProvider lockProvider = Provider.of<LockProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
 
@@ -94,7 +95,7 @@ class __ItemState extends State<_Item> {
                 topRight: Radius.circular(6.0),
                 bottomRight: Radius.circular(6.0),
               ),
-              color: ownedProvider.isOwned(widget.amiibo.id)
+              color: ownedProvider.isOwned(widget.amiibo.lKey)
                   ? itemCardData.missedColor
                   : itemCardData.ownedColor,
             ),
@@ -103,6 +104,14 @@ class __ItemState extends State<_Item> {
         LayoutId(
           id: 'image',
           child: GestureDetector(
+            onTap: () async {
+              await SystemSound.play(SystemSoundType.click);
+              Navigator.pushNamed(
+                context,
+                '/amiibo',
+                arguments: widget.amiibo,
+              );
+            },
             onDoubleTap: () async {
               if (await url_launcher.canLaunch(widget.amiibo.url)) {
                 await url_launcher.launch(widget.amiibo.url);
@@ -129,24 +138,27 @@ class __ItemState extends State<_Item> {
                     SnackBar(
                       content: Text(
                         widget.helpMessageDelegate(
-                          I18n.of(context).text(widget.amiibo.id),
+                          I18n.of(context).text(widget.amiibo.lKey),
                         ),
                       ),
                     ),
                   );
                 }
                 await SystemSound.play(SystemSoundType.click);
-                ownedProvider.toggleAmiiboOwnership(widget.amiibo.id);
+                ownedProvider.toggleAmiiboOwnership(widget.amiibo.lKey);
               }
             },
             child: Container(
-              foregroundDecoration: ownedProvider.isOwned(widget.amiibo.id)
+              foregroundDecoration: ownedProvider.isOwned(widget.amiibo.lKey)
                   ? null
                   : BoxDecoration(
                       color: itemCardData.saturationColor,
                       backgroundBlendMode: BlendMode.saturation,
                     ),
-              child: Center(child: widget.amiibo.image),
+              child: Center(
+                child:
+                    Hero(tag: widget.amiibo.lKey, child: widget.amiibo.image),
+              ),
             ),
           ),
         ),
@@ -159,7 +171,7 @@ class __ItemState extends State<_Item> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  I18n.of(context).text(widget.amiibo.id),
+                  I18n.of(context).text(widget.amiibo.lKey),
                   style: TextStyle(
                     color: itemCardData.color,
                     fontSize: 16.0,
@@ -167,7 +179,7 @@ class __ItemState extends State<_Item> {
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  semanticsLabel: I18n.of(context).text(widget.amiibo.id),
+                  semanticsLabel: I18n.of(context).text(widget.amiibo.lKey),
                 ),
                 Text(
                   I18n.of(context).text(widget.amiibo.serieId),

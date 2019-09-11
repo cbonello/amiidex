@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+// FAB is hidden when scrolling up, and displayed when scrolling down.
 class FABVisibility with ChangeNotifier {
   FABVisibility() {
     _visible = true;

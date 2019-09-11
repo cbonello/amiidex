@@ -1,21 +1,28 @@
+import 'package:amiidex/UI/views/amiibo.dart';
 import 'package:amiidex/UI/views/missing.dart';
 import 'package:amiidex/UI/views/owned.dart';
 import 'package:amiidex/UI/views/privacy.dart';
 import 'package:amiidex/UI/views/series.dart';
 import 'package:amiidex/UI/views/settings.dart';
+import 'package:amiidex/UI/views/splash.dart';
 import 'package:amiidex/UI/views/statistics.dart';
 import 'package:amiidex/UI/widgets/bottom_navbar.dart';
 import 'package:amiidex/UI/widgets/drawer.dart';
 import 'package:amiidex/UI/widgets/fab.dart';
+import 'package:amiidex/main.dart';
+import 'package:amiidex/models/config.dart';
+import 'package:amiidex/providers/region_indicators.dart';
+import 'package:amiidex/providers/selected_region.dart';
+import 'package:amiidex/services/assets.dart';
+import 'package:amiidex/services/local_storage.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/providers/preferred_language.dart';
-import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/providers/view_as.dart';
 import 'package:amiidex/util/theme.dart';
 import 'package:provider/provider.dart';
@@ -33,17 +40,17 @@ class _ApplicationState extends State<Application> {
         ChangeNotifierProvider<PreferredLanguageProvider>(
           builder: (_) => PreferredLanguageProvider(),
         ),
-        ChangeNotifierProvider<RegionProvider>(
-          builder: (_) => RegionProvider(),
+        ChangeNotifierProvider<RegionIndicatorsProvider>(
+          builder: (_) => RegionIndicatorsProvider(),
+        ),
+        ChangeNotifierProvider<SelectedRegionProvider>(
+          builder: (_) => SelectedRegionProvider(),
         ),
         ChangeNotifierProvider<LockProvider>(
           builder: (_) => LockProvider(),
         ),
         ChangeNotifierProvider<OwnedProvider>(
           builder: (_) => OwnedProvider(),
-        ),
-        ChangeNotifierProvider<AmiiboSortProvider>(
-          builder: (_) => AmiiboSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
           builder: (_) => ViewAsProvider(ItemsDisplayed.searches),
@@ -58,34 +65,55 @@ class _ApplicationState extends State<Application> {
         themedWidgetBuilder: (BuildContext context, ThemeData theme) {
           final PreferredLanguageProvider languageProvider =
               Provider.of<PreferredLanguageProvider>(context);
-          return MaterialApp(
-            title: 'AmiiDex',
-            // showSemanticsDebugger: true,
-            locale: languageProvider.locale,
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: <LocalizationsDelegate<dynamic>>[
-              languageProvider.i18n,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-            ],
-            supportedLocales: languageProvider.i18n.supportedLocales,
-            localeResolutionCallback: languageProvider.i18n
-                .resolution(fallback: languageProvider.locale),
-            theme: theme,
-            initialRoute: '/',
-            onGenerateRoute: (RouteSettings settings) {
-              switch (settings.name) {
-                case '/':
-                  return _buildRoute(settings, HomePage());
-                case '/settings':
-                  return _buildRoute(settings, SettingsView());
-                case '/privacy':
-                  return _buildRoute(settings, PrivacyView());
-                default:
-                  assert(false);
-                  return null;
+          return GestureDetector(
+            // See https://flutter360.dev/dismiss-keyboard-form-lose-focus/
+            onTap: () {
+              final FocusScopeNode currentFocus = FocusScope.of(context);
+              if (!currentFocus.hasPrimaryFocus) {
+                currentFocus.unfocus();
               }
             },
+            child: MaterialApp(
+              title: 'AmiiDex',
+              // showSemanticsDebugger: true,
+              locale: languageProvider.locale,
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+                languageProvider.i18n,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+              supportedLocales: languageProvider.i18n.supportedLocales,
+              localeResolutionCallback: languageProvider.i18n
+                  .resolution(fallback: languageProvider.locale),
+              theme: theme,
+              initialRoute: '/',
+              onGenerateRoute: (RouteSettings settings) {
+                switch (settings.name) {
+                  case '/':
+                    final LocalStorageService storageService =
+                        locator<LocalStorageService>();
+                    if (storageService.getDisplaySplashScreen()) {
+                      return _buildRoute(settings, SplashView());
+                    }
+                    final Widget view = LoadLineupView();
+                    return _buildRoute(settings, view);
+                  case '/home':
+                    return _buildRoute(
+                        settings, HomeView(config: settings.arguments));
+                  case '/settings':
+                    return _buildRoute(settings, SettingsView());
+                  case '/privacy':
+                    return _buildRoute(settings, PrivacyView());
+                  case '/amiibo':
+                    return _buildRoute(
+                        settings, AmiiboView(amiibo: settings.arguments));
+                  default:
+                    assert(false);
+                    return null;
+                }
+              },
+            ),
           );
         },
       ),
@@ -100,13 +128,35 @@ class _ApplicationState extends State<Application> {
   }
 }
 
-class HomePage extends StatefulWidget {
+class LoadLineupView extends StatelessWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  Widget build(BuildContext context) {
+    return FutureBuilder<ConfigModel>(
+      future: loadConfig(),
+      builder: (BuildContext context, AsyncSnapshot<ConfigModel> snapshot) {
+        if (snapshot.hasData) {
+          return HomeView(config: snapshot.data);
+        }
+        return Container();
+      },
+    );
+  }
 }
 
-class _HomePageState extends State<HomePage> {
-  int _currentIndex;
+class HomeView extends StatefulWidget {
+  const HomeView({Key key, @required this.config})
+      : assert(config != null),
+        super(key: key);
+
+  final ConfigModel config;
+
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  bool configInitialized;
+  int currentIndex;
   final List<Widget> _views = <Widget>[
     SeriesView(),
     OwnedView(),
@@ -116,31 +166,46 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    _currentIndex = 0;
+    configInitialized = false;
+    currentIndex = 0;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    if (configInitialized == false) {
+      final AssetsService assetsService = locator<AssetsService>();
+      assetsService.config = widget.config;
+      final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(
+        context,
+        listen: false,
+      );
+      ownedProvider.init(assetsService.config.seriesMap.values.toList());
+      final RegionIndicatorsProvider regionIndicatorsProvider =
+          Provider.of<RegionIndicatorsProvider>(context, listen: false);
+      regionIndicatorsProvider.init();
+      configInitialized = true;
+    }
+
     return SafeArea(
       child: Scaffold(
         drawer: DrawerWidget(),
         body: IndexedStack(
-          index: _currentIndex,
+          index: currentIndex,
           children: _views,
         ),
         bottomNavigationBar: BottomNavbar(
-          currentIndex: _currentIndex,
+          currentIndex: currentIndex,
           onTap: (int index) {
             setState(() {
               final FABVisibility fabVisibility =
-                  Provider.of<FABVisibility>(context);
+                  Provider.of<FABVisibility>(context, listen: false);
               fabVisibility.visible = true;
-              _currentIndex = index;
+              currentIndex = index;
             });
           },
         ),
-        floatingActionButton: const FABScan(),
+        floatingActionButton: const FABWdiget(),
       ),
     );
   }

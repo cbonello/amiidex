@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:amiidex/util/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/services/package_info.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:launch_review/launch_review.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
@@ -17,8 +20,14 @@ class DrawerWidget extends StatelessWidget {
           DrawerHeader(
             margin: EdgeInsets.zero,
             padding: EdgeInsets.zero,
-            child:
-                Image.asset('assets/images/logo_drawer.png', fit: BoxFit.fill),
+            child: Semantics(
+              label: I18n.of(context).text('sm-header-logo'),
+              header: true,
+              child: Image.asset(
+                'assets/images/logo_drawer.png',
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
           ListTile(
             leading: Icon(
@@ -35,6 +44,21 @@ class DrawerWidget extends StatelessWidget {
             ),
             title: Text(I18n.of(context).text('drawer-privacy')),
             onTap: () => Navigator.popAndPushNamed(context, '/privacy'),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.shop,
+              color: Theme.of(context).iconTheme.color,
+            ),
+            title: Text(
+              I18n.of(context).text(
+                Platform.isAndroid ? 'drawer-google-play' : 'drawer-app-store',
+              ),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              LaunchReview.launch();
+            },
           ),
           ListTile(
             leading: Icon(

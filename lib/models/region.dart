@@ -1,35 +1,36 @@
-import 'package:amiidex/UI/widgets/flag.dart';
-import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'dart:collection';
 
-// TODO(cbonello): Use enum.
-const List<String> RegionIds = <String>['AMER', 'APAC', 'EMEA'];
-
-const String DefaultRegionId = 'AMER';
-
-const Map<String, String> RegionName = <String, String>{
-  'AMER': 'actionbar-region-north-america',
-  'APAC': 'actionbar-region-japan',
-  'EMEA': 'actionbar-region-europe',
-};
+import 'package:amiidex/models/country.dart';
 
 class RegionModel {
-  const RegionModel({
-    @required this.id,
-    @required this.releaseDate,
-  });
-
-  factory RegionModel.fromJson(String id, Map<String, dynamic> json) {
-    assert(json['release_date'] != null);
-
-    return RegionModel(
-      id: id,
-      releaseDate: DateTime.parse(json['release_date']),
-    );
+  RegionModel.fromJson(Map<String, dynamic> json)
+      : assert(json['lkey'] != null),
+        assert(json['lkey_short'] != null),
+        assert(json['default_country'] != null),
+        assert(json['countries'] != null) {
+    _lKey = json['lkey'];
+    _lKeyShort = json['lkey_short'];
+    _defaultCountry = json['default_country'];
+    final Map<String, CountryModel> countries = <String, CountryModel>{};
+    json['countries'].forEach((dynamic country) {
+      final CountryModel c = CountryModel.fromJson(_lKey, country);
+      assert(countries.containsKey(c.lKey) == false);
+      countries[c.lKey] = c;
+    });
+    assert(countries.containsKey(_defaultCountry));
+    _countries.addAll(countries.values);
   }
 
-  final String id;
-  final DateTime releaseDate;
+  String _lKey, _lKeyShort;
+  String _defaultCountry;
+  // To display the list of countries associated with a region in the settings
+  // view.
+  final List<CountryModel> _countries = <CountryModel>[];
 
-  Widget get flag => Flag(region: id);
+  String get lKey => _lKey;
+  String get lKeyShort => _lKeyShort;
+  String get defaultCountry => _defaultCountry;
+
+  UnmodifiableListView<CountryModel> get countries =>
+      UnmodifiableListView<CountryModel>(_countries);
 }

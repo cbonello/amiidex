@@ -1,6 +1,9 @@
+import 'dart:collection';
+
 import 'package:amiidex/UI/widgets/master.dart';
-import 'package:amiidex/UI/widgets/searchbar.dart';
+import 'package:amiidex/UI/widgets/search_bar.dart';
 import 'package:amiidex/UI/widgets/serie_actionbar.dart';
+import 'package:amiidex/models/amiibo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
@@ -15,6 +18,7 @@ class SeriesView extends StatelessWidget {
   Widget build(BuildContext context) {
     final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
     final ScrollController _controller = ScrollController();
+    final AssetsService assetsService = locator<AssetsService>();
 
     _controller.addListener(
       () => fabVisibility.visible =
@@ -37,11 +41,15 @@ class SeriesView extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             final AssetsService assetsService = locator<AssetsService>();
             return <Widget>[
-              SearchBar(amiibo: assetsService.amiiboLineup.amiibo),
+              SearchBar(
+                amiibo: UnmodifiableListView<AmiiboModel>(
+                  assetsService.config.amiiboList,
+                ),
+              ),
               SerieActionBar(),
             ];
           },
-          body: MasterWidget(),
+          body: MasterWidget(series: assetsService.config.serieList),
         ),
       ),
     );

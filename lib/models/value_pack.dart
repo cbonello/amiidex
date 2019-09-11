@@ -3,46 +3,35 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 
 class ValuePackModel {
-  const ValuePackModel(
-    this.id,
-    this.box,
-    this.serieId,
-    this._amiibo,
-    this._barcodes,
-  );
-
-  factory ValuePackModel.fromJson(String serieId, Map<String, dynamic> json) {
-    assert(json['id'] != null);
-    assert(json['box'] != null);
-    assert(json['amiibo'] != null);
-    assert(json['barcodes'] != null);
-
-    return ValuePackModel(
-      json['id'],
-      Image.asset(json['box']),
-      serieId,
-      json['amiibo'].cast<String>(),
-      json['barcodes'].cast<String>(),
-    );
+  ValuePackModel.fromJson(String serieId, Map<String, dynamic> json)
+      : assert(json['lkey'] != null),
+        assert(json['box'] != null),
+        assert(json['amiibo'] != null),
+        assert(json['barcodes'] != null) {
+    _lKey = json['lkey'];
+    _box = json['box'];
+    _serieId = serieId;
+    _amiibo = json['amiibo'].cast<String>();
+    assert(_amiibo.isNotEmpty);
+    _barcodes = json['barcodes'].cast<String>();
+    assert(_barcodes.isNotEmpty);
   }
 
-  final String id;
-  final Image box;
-  final String serieId;
-  final List<String> _barcodes, _amiibo;
+  String _lKey, _box, _serieId;
+  List<String> _amiibo = <String>[];
+  List<String> _barcodes = <String>[];
 
-  bool matchBarcode(String barcode) {
-    for (String b in _barcodes) {
-      if (b == barcode) {
-        return true;
-      }
-    }
-    return false;
-  }
+  String get lKey => _lKey;
+  Image get box => Image.asset(_box);
+  String get serieId => _serieId;
+
+  UnmodifiableListView<String> get amiibos =>
+      UnmodifiableListView<String>(_amiibo);
 
   UnmodifiableListView<String> get barcodes =>
       UnmodifiableListView<String>(_barcodes);
 
-  UnmodifiableListView<String> get amiibo =>
-      UnmodifiableListView<String>(_amiibo);
+  bool matchBarcode(String barcode) {
+    return _barcodes.contains(barcode);
+  }
 }

@@ -1,49 +1,57 @@
-import 'package:amiidex/models/amiibo_box.dart';
-import 'package:amiidex/models/value_pack.dart';
-import 'package:amiidex/models/value_pack_list.dart';
-import 'package:flutter/material.dart';
+import 'dart:collection';
+
 import 'package:amiidex/models/amiibo.dart';
-import 'package:amiidex/models/amiibo_list.dart';
+import 'package:amiidex/models/amiibo_box.dart';
+import 'package:amiidex/models/region.dart';
+import 'package:amiidex/models/value_pack.dart';
+import 'package:flutter/material.dart';
 
 class SerieModel {
-  const SerieModel(
-    this.id,
-    this.header,
-    this.logo,
-    this._amiibo,
-    this._valuePacks,
-  );
-
-  factory SerieModel.fromJson(Map<String, dynamic> json) {
-    assert(json['id'] != null);
-    assert(json['header'] != null);
-    assert(json['logo'] != null);
-    assert(json['amiibo'] != null);
-
-    final AmiiboList amiibo = AmiiboList.fromJson(json['id'], json['amiibo']);
-    final ValuePackList valuePacks = json['value_packs'] != null
-        ? ValuePackList.fromJson(json['id'], json['value_packs'])
-        : ValuePackList();
-
-    final SerieModel serie = SerieModel(
-      json['id'],
-      Image.asset(json['header'], fit: BoxFit.cover),
-      Image.asset(json['logo']),
-      amiibo,
-      valuePacks,
-    );
-
-    return serie;
+  SerieModel.fromJson(UnmodifiableMapView<String, RegionModel> regions,
+      Map<String, dynamic> json)
+      : assert(json['lkey'] != null),
+        assert(json['header'] != null),
+        assert(json['logo'] != null),
+        assert(json['amiibo'] != null) {
+    _lKey = json['lkey'];
+    _header = Image.asset(json['header'], fit: BoxFit.cover);
+    _logo = Image.asset(json['logo']);
+    json['amiibo'].forEach((dynamic amiibo) {
+      final AmiiboModel a = AmiiboModel.fromJson(regions, _lKey, amiibo);
+      _amiibo.add(a);
+    });
+    final List<String> valuePackIds = <String>[];
+    if (json['value_packs'] != null) {
+      json['value_packs'].forEach((dynamic valuePack) {
+        final ValuePackModel v = ValuePackModel.fromJson(_lKey, valuePack);
+        assert(valuePackIds.contains(v) == false);
+        _valuePacks.add(v);
+      });
+    }
   }
 
-  final String id;
-  final Image header, logo;
-  final AmiiboList _amiibo;
-  final ValuePackList _valuePacks;
+  String _lKey;
+  Image _header, _logo;
+  final List<AmiiboModel> _amiibo = <AmiiboModel>[];
+  final List<ValuePackModel> _valuePacks = <ValuePackModel>[];
 
-  AmiiboList get amiibo => AmiiboList.from(_amiibo);
+  String get lKey => _lKey;
+  Image get header => _header;
+  Image get logo => _logo;
 
-  ValuePackList get valuePacks => ValuePackList.from(_valuePacks);
+  List<AmiiboModel> get amiiboList => List<AmiiboModel>.from(_amiibo.toList());
+
+  UnmodifiableListView<AmiiboModel> get amiibos =>
+      UnmodifiableListView<AmiiboModel>(_amiibo);
+
+  AmiiboModel amiibo(String id) {
+    final int idx = _amiibo.indexWhere((AmiiboModel a) => a.lKey == id);
+    assert(idx != -1);
+    return _amiibo[idx];
+  }
+
+  UnmodifiableListView<ValuePackModel> get valuePacks =>
+      UnmodifiableListView<ValuePackModel>(_valuePacks);
 
   AmiiboBoxModel matchBarcode(String barcode) {
     for (AmiiboModel a in _amiibo) {
@@ -55,7 +63,11 @@ class SerieModel {
       if (v.matchBarcode(barcode)) {
         return AmiiboBoxModel.fromValuePack(
           v,
-          v.amiibo.map<AmiiboModel>((String id) => _amiibo.getAmiiboById(id)),
+          // We assume that value-packs only contain amiibo from the same serie,
+          // which is true so far.
+          v.amiibos
+              .map<AmiiboModel>((String amiiboId) => amiibo(amiiboId))
+              .toList(),
         );
       }
     }

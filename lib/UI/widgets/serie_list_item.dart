@@ -1,10 +1,12 @@
-import 'package:amiidex/UI/views/detail.dart';
-import 'package:flutter/material.dart';
+import 'dart:collection';
+
+import 'package:amiidex/UI/views/amiibos_by_serie.dart';
 import 'package:amiidex/models/serie.dart';
-import 'package:amiidex/models/serie_list.dart';
+import 'package:flutter/material.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:amiidex/util/theme.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class SerieListItem extends StatelessWidget {
@@ -14,22 +16,25 @@ class SerieListItem extends StatelessWidget {
     @required this.serie,
   }) : super(key: key);
 
-  final SeriesList series;
+  final UnmodifiableListView<SerieModel> series;
   final SerieModel serie;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () async => Navigator.push(
-        context,
-        MaterialPageRoute<void>(
-          maintainState: true,
-          builder: (BuildContext context) => DetailView(
-            series: series,
-            serie: serie,
+      onTap: () async {
+        await SystemSound.play(SystemSoundType.click);
+        Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            maintainState: true,
+            builder: (BuildContext context) => AmiibosBySerieView(
+              series: series,
+              serie: serie,
+            ),
           ),
-        ),
-      ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Row(
@@ -69,9 +74,9 @@ class _Item extends StatelessWidget {
           id: 'image-background-box',
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(6.0),
-              ),
+              // borderRadius: const BorderRadius.all(
+              //   Radius.circular(6.0),
+              // ),
               boxShadow: <BoxShadow>[
                 BoxShadow(
                   color: itemCardData.shadowColor,
@@ -87,11 +92,11 @@ class _Item extends StatelessWidget {
           id: 'text-background-box',
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(6.0),
-                bottomRight: Radius.circular(6.0),
-              ),
-              color: (ownedProvider.ownedInSerie(serie) == serie.amiibo.length)
+              // borderRadius: const BorderRadius.only(
+              //   topRight: Radius.circular(6.0),
+              //   bottomRight: Radius.circular(6.0),
+              // ),
+              color: (ownedProvider.ownedInSerie(serie) == serie.amiibos.length)
                   ? itemCardData.missedColor
                   : itemCardData.ownedColor,
             ),
@@ -112,7 +117,7 @@ class _Item extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  I18n.of(context).text(serie.id),
+                  I18n.of(context).text(serie.lKey),
                   style: TextStyle(
                     color: itemCardData.color,
                     fontWeight: FontWeight.bold,
@@ -121,7 +126,7 @@ class _Item extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  '${ownedProvider.ownedInSerie(serie)} / ${serie.amiibo.length}',
+                  '${ownedProvider.ownedInSerie(serie)} / ${serie.amiibos.length}',
                   style: TextStyle(
                     color: itemCardData.color,
                     fontWeight: FontWeight.bold,

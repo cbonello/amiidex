@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:amiidex/models/serie_list.dart';
-import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/providers/series_sort.dart';
 import 'package:amiidex/providers/view_as.dart';
-import 'package:amiidex/util/actionbar_region_bottomsheet.dart';
 import 'package:amiidex/util/actionbar_viewas_bottomsheet.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:amiidex/util/theme.dart';
@@ -12,7 +9,6 @@ import 'package:provider/provider.dart';
 class SerieActionBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final RegionProvider regionProvider = Provider.of<RegionProvider>(context);
     final SeriesSortProvider sortProvider =
         Provider.of<SeriesSortProvider>(context);
     final ViewAsProvider viewAsProvider = Provider.of<ViewAsProvider>(context);
@@ -23,12 +19,7 @@ class SerieActionBar extends StatelessWidget {
 
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.only(
-          left: 14.0,
-          top: 14.0,
-          right: 10.0,
-          bottom: 14.0,
-        ),
+        padding: const EdgeInsets.only(left: 4.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,24 +54,24 @@ class SerieActionBar extends StatelessWidget {
                 sortProvider.toggleSortOrder();
               },
             ),
-            InkWell(
-              child: Semantics(
-                label: I18n.of(context).text('actionbar-region-title'),
-                button: true,
-                child: Padding(
-                  padding: const EdgeInsets.all(14.0),
-                  child: ExcludeSemantics(
-                    child: Text(
-                      I18n.of(context).text(regionProvider.regionName),
-                      style: Theme.of(context).textTheme.subhead,
-                    ),
-                  ),
-                ),
-              ),
-              onTap: () {
-                showRegionsBottomSheet(context, regionProvider.regionId);
-              },
-            ),
+            // InkWell(
+            //   child: Semantics(
+            //     label: I18n.of(context).text('actionbar-region-title'),
+            //     button: true,
+            //     child: Padding(
+            //       padding: const EdgeInsets.all(14.0),
+            //       child: ExcludeSemantics(
+            //         child: Text(
+            //           I18n.of(context).text(regionProvider.regionId),
+            //           style: Theme.of(context).textTheme.subhead,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            //   onTap: () {
+            //     showRegionsBottomSheet(context, regionProvider.regionId);
+            //   },
+            // ),
             InkWell(
               child: Semantics(
                 label: I18n.of(context).text('actionbar-viewas-title'),

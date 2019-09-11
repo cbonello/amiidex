@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sprintf/sprintf.dart';
 
-class AmiiboWidget extends StatelessWidget {
-  const AmiiboWidget({Key key, @required this.box}) : super(key: key);
+class AmiiboBoxWidget extends StatelessWidget {
+  const AmiiboBoxWidget({Key key, @required this.box}) : super(key: key);
 
   final AmiiboBoxModel box;
 
@@ -25,14 +25,14 @@ class AmiiboWidget extends StatelessWidget {
       child: PageView(
         children: <Widget>[
           box.box,
-          for (AmiiboModel a in box.amiibo)
+          for (AmiiboModel a in box.amiibos)
             Column(
               children: <Widget>[
                 Container(height: 200, child: a.image),
                 Text(
                   sprintf(
                     I18n.of(context).text('fab-scan-amiibo-name'),
-                    <String>[I18n.of(context).text(a.id)],
+                    <String>[I18n.of(context).text(a.lKey)],
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -46,14 +46,14 @@ class AmiiboWidget extends StatelessWidget {
                     Text(
                       sprintf(
                         I18n.of(context).text(
-                          ownedProvider.isOwned(a.id)
+                          ownedProvider.isOwned(a.lKey)
                               ? 'fab-scan-amiibo-status-owned'
                               : 'fab-scan-amiibo-status-not-owned',
                         ),
-                        <String>[I18n.of(context).text(a.id)],
+                        <String>[I18n.of(context).text(a.lKey)],
                       ),
                       style: TextStyle(
-                        color: ownedProvider.isOwned(a.id)
+                        color: ownedProvider.isOwned(a.lKey)
                             ? OwnedColor
                             : MissingColor,
                       ),

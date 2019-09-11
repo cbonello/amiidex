@@ -16,6 +16,7 @@ enum ItemsDisplayed {
   owned,
 }
 
+// Display option (list or grid) for series and amiibo.
 class ViewAsProvider with ChangeNotifier {
   ViewAsProvider(this.itemsLabel) {
     _viewAs = storageService.getViewAs(itemsLabel);

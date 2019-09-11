@@ -1,11 +1,11 @@
+import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/providers/selected_region.dart';
 import 'package:amiidex/util/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:amiidex/models/amiibo.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/owned.dart';
-import 'package:amiidex/providers/region.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:amiidex/util/theme.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +26,8 @@ class AmiiboGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     final ItemCardThemeData itemCardData = ItemCardThemeData(data: themeData);
-    final RegionProvider regionProvider = Provider.of<RegionProvider>(context);
+    final SelectedRegionProvider regionProvider =
+        Provider.of<SelectedRegionProvider>(context);
     final LockProvider lockProvider = Provider.of<LockProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
 
@@ -39,9 +40,9 @@ class AmiiboGridItem extends StatelessWidget {
             id: 'image-background-box',
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(6.0),
-                ),
+                // borderRadius: const BorderRadius.all(
+                //   Radius.circular(6.0),
+                // ),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                     color: itemCardData.shadowColor,
@@ -56,7 +57,7 @@ class AmiiboGridItem extends StatelessWidget {
           LayoutId(
             id: 'text-background-box',
             child: Container(
-              color: ownedProvider.isOwned(amiibo.id)
+              color: ownedProvider.isOwned(amiibo.lKey)
                   ? itemCardData.missedColor
                   : itemCardData.ownedColor,
             ),
@@ -64,6 +65,14 @@ class AmiiboGridItem extends StatelessWidget {
           LayoutId(
             id: 'image',
             child: GestureDetector(
+              onTap: () async {
+                await SystemSound.play(SystemSoundType.click);
+                Navigator.pushNamed(
+                  context,
+                  '/amiibo',
+                  arguments: amiibo,
+                );
+              },
               onDoubleTap: () async {
                 if (await url_launcher.canLaunch(amiibo.url)) {
                   await url_launcher.launch(amiibo.url);
@@ -89,26 +98,29 @@ class AmiiboGridItem extends StatelessWidget {
                     Scaffold.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          helpMessageDelegate(I18n.of(context).text(amiibo.id)),
+                          helpMessageDelegate(
+                              I18n.of(context).text(amiibo.lKey)),
                         ),
                       ),
                     );
                   }
                   await SystemSound.play(SystemSoundType.click);
-                  ownedProvider.toggleAmiiboOwnership(amiibo.id);
+                  ownedProvider.toggleAmiiboOwnership(amiibo.lKey);
                 }
               },
               child: Container(
-                foregroundDecoration: ownedProvider.isOwned(amiibo.id)
+                foregroundDecoration: ownedProvider.isOwned(amiibo.lKey)
                     ? null
                     : BoxDecoration(
                         color: itemCardData.saturationColor,
                         backgroundBlendMode: BlendMode.saturation,
                       ),
                 child: Semantics(
-                  label: I18n.of(context).text(amiibo.id),
+                  label: I18n.of(context).text(amiibo.lKey),
                   button: true,
-                  child: ExcludeSemantics(child: amiibo.image),
+                  child: ExcludeSemantics(
+                    child: Hero(tag: amiibo.lKey, child: amiibo.image),
+                  ),
                 ),
               ),
             ),
@@ -122,7 +134,7 @@ class AmiiboGridItem extends StatelessWidget {
                   semanticChildCount: 2,
                   children: <Widget>[
                     Text(
-                      I18n.of(context).text(amiibo.id),
+                      I18n.of(context).text(amiibo.lKey),
                       style: TextStyle(
                         color: itemCardData.color,
                         fontWeight: FontWeight.bold,

@@ -5,8 +5,9 @@ class ActionBarBottomSheetItem extends StatelessWidget {
   const ActionBarBottomSheetItem({
     Key key,
     @required this.displayIcon,
-    @required this.leading,
+    this.leading,
     @required this.title,
+    this.titleIcon,
     this.semanticLabel,
     @required this.selected,
     @required this.onTap,
@@ -14,6 +15,7 @@ class ActionBarBottomSheetItem extends StatelessWidget {
 
   final bool displayIcon;
   final IconData leading;
+  final Widget titleIcon;
   final String title, semanticLabel;
   final bool selected;
   final Function onTap;
@@ -31,7 +33,7 @@ class ActionBarBottomSheetItem extends StatelessWidget {
       ),
       child: Container(
         margin: const EdgeInsets.only(
-          left: 10.0,
+          left: 20.0,
         ),
         decoration: selected
             ? BoxDecoration(
@@ -54,14 +56,28 @@ class ActionBarBottomSheetItem extends StatelessWidget {
                       : Colors.transparent,
                 )
               : null,
-          title: Text(
-            title,
-            semanticsLabel: semanticLabel,
-            style: TextStyle(
-              color: selected
-                  ? actionBarData.selectedItemColor
-                  : actionBarData.color,
-            ),
+          title: Row(
+            children: <Widget>[
+              titleIcon != null
+                  ? Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: titleIcon,
+                    )
+                  : Container(),
+              // To prevent text overflow and allow wrapping.
+              Expanded(
+                child: Text(
+                  title,
+                  semanticsLabel: semanticLabel,
+                  style: TextStyle(
+                    color: selected
+                        ? actionBarData.selectedItemColor
+                        : actionBarData.color,
+                  ),
+                  maxLines: 2,
+                ),
+              ),
+            ],
           ),
           selected: selected,
           onTap: onTap,

@@ -4,6 +4,7 @@ import 'package:amiidex/main.dart';
 import 'package:amiidex/services/local_storage.dart';
 import 'package:amiidex/util/i18n.dart';
 
+// Language displayed in UI.
 class PreferredLanguageProvider with ChangeNotifier {
   PreferredLanguageProvider() {
     _locale = storageService.getPreferredLanguage();

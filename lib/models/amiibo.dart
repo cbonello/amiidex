@@ -1,66 +1,59 @@
-import 'package:amiidex/models/region_list.dart';
-import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
+import 'dart:collection';
+
 import 'package:amiidex/models/region.dart';
+import 'package:amiidex/models/release.dart';
+import 'package:flutter/material.dart';
 
 class AmiiboModel {
-  const AmiiboModel(
-    this.id,
-    this.image,
-    this.box,
-    this.serieId,
-    this.url,
-    this._regions,
-    this._barcodes,
-  );
-
-  factory AmiiboModel.fromJson(String serieId, Map<String, dynamic> json) {
-    assert(json['id'] != null);
-    assert(json['image'] != null);
-    assert(json['box'] != null);
-    assert(json['url'] != null);
-    assert(json['regions'] != null);
-    assert(json['barcodes'] != null);
-
-    return AmiiboModel(
-      json['id'],
-      Image.asset(json['image']),
-      Image.asset(json['box']),
-      serieId,
-      json['url'],
-      RegionsList.fromJson(json['regions']),
-      json['barcodes'].cast<String>(),
-    );
+  AmiiboModel.fromJson(
+    UnmodifiableMapView<String, RegionModel> regions,
+    String serieId,
+    Map<String, dynamic> json,
+  )   : assert(json['lkey'] != null && json['lkey'] is String),
+        assert(json['image'] != null && json['image'] is String),
+        assert(json['box'] != null && json['box'] is String),
+        assert(json['url'] != null && json['url'] is String),
+        assert(json['releases'] != null && json['releases'] is Map),
+        assert(json['barcodes'] != null) {
+    _lKey = json['lkey'];
+    _image = Image.asset(json['image']);
+    _box = json['box'];
+    _serieId = serieId;
+    _url = json['url'];
+    json['releases'].forEach((String regionId, dynamic release) {
+      assert(regions.containsKey(regionId));
+      final ReleaseModel r = ReleaseModel.fromJson(release);
+      _releases[regionId] = r;
+    });
+    _barcodes = json['barcodes'].cast<String>();
   }
 
-  final String id;
-  final Image image, box;
-  final String serieId, url;
-  final RegionsList _regions;
-  final List<String> _barcodes;
+  String _lKey, _box, _serieId, _url;
+  Image _image;
+  final Map<String, ReleaseModel> _releases = <String, ReleaseModel>{};
+  List<String> _barcodes;
 
-  bool matchBarcode(String barcode) {
-    for (String b in _barcodes) {
-      if (b == barcode) {
-        return true;
-      }
-    }
-    return false;
-  }
+  String get lKey => _lKey;
+  Image get image => _image;
+  // Not used frequently so not cached by default.
+  Image get box => Image.asset(_box);
+  String get serieId => _serieId;
+  String get url => _url;
 
-  RegionModel region(String regionId) {
-    return _regions.region(regionId);
-  }
+  UnmodifiableMapView<String, ReleaseModel> get releases =>
+      UnmodifiableMapView<String, ReleaseModel>(_releases);
 
-  bool wasReleasedInRegion(String regionId) =>
-      _regions.regions.containsKey(regionId);
+  bool wasReleasedInRegion(String regionId) => _releases.containsKey(regionId);
+
   DateTime releaseDate(String regionId) {
-    assert(_regions.regions.containsKey(regionId));
-    return _regions.regions[regionId].releaseDate;
+    assert(wasReleasedInRegion(regionId));
+    return _releases[regionId].releaseDate;
   }
-
-  UnmodifiableMapView<String, RegionModel> get regions => _regions.regions;
 
   UnmodifiableListView<String> get barcodes =>
       UnmodifiableListView<String>(_barcodes);
+
+  bool matchBarcode(String barcode) {
+    return _barcodes.contains(barcode);
+  }
 }
