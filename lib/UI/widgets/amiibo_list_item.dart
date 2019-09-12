@@ -156,8 +156,7 @@ class __ItemState extends State<_Item> {
                       backgroundBlendMode: BlendMode.saturation,
                     ),
               child: Center(
-                child:
-                    Hero(tag: widget.amiibo.lKey, child: widget.amiibo.image),
+                child: widget.amiibo.image,
               ),
             ),
           ),

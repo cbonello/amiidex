@@ -119,7 +119,7 @@ class AmiiboGridItem extends StatelessWidget {
                   label: I18n.of(context).text(amiibo.lKey),
                   button: true,
                   child: ExcludeSemantics(
-                    child: Hero(tag: amiibo.lKey, child: amiibo.image),
+                    child: amiibo.image,
                   ),
                 ),
               ),

@@ -56,10 +56,7 @@ class AmiiboViewState extends State<AmiiboView> {
                           child: Column(
                             children: <Widget>[
                               widget.amiibo.box,
-                              Hero(
-                                tag: widget.amiibo.lKey,
-                                child: widget.amiibo.image,
-                              ),
+                              widget.amiibo.image,
                             ],
                           ),
                         ),
