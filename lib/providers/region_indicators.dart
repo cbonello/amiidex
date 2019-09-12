@@ -7,38 +7,57 @@ import 'package:flutter/material.dart';
 
 // Manage the country flags dislayed for each region (AMER, APAC and EMEA).
 class RegionIndicatorsProvider with ChangeNotifier {
-  void init() {
-    for (String regionId in assetsService.config.regions.keys) {
-      _indicators[regionId] = storageService.getRegionIndicator(
-        regionId,
-        assetsService.config.region(regionId).defaultCountry,
-      );
-    }
+  RegionIndicatorsProvider() {
+    // Constraints:
+    // 1) Provider must be inserted in the widget tree above MaterialApp to be
+    //    accessible to the widgets created by onGenerateRoute().
+    // 2) Provider depends on the assets service, which is not available when
+    //    the provider is created.
+    _providerInitialized = false;
   }
 
-  final AssetsService assetsService = locator<AssetsService>();
-  final LocalStorageService storageService = locator<LocalStorageService>();
+  bool _providerInitialized;
+  final AssetsService _assetsService = locator<AssetsService>();
+  final LocalStorageService _storageService = locator<LocalStorageService>();
 
-  // Region -> Country.
+  // Region -> Default country.
   final Map<String, String> _indicators = <String, String>{};
 
-  Map<String, String> get indicators => _indicators;
+  Map<String, String> get indicators {
+    _performInitialization();
+    return _indicators;
+  }
 
   CountryModel country(String regionId) {
+    _performInitialization();
     assert(_indicators.containsKey(regionId));
     final String countryId = _indicators[regionId];
-    assert(assetsService.config.countries.containsKey(countryId));
-    return assetsService.config.countries[countryId];
+    assert(_assetsService.config.countries.containsKey(countryId));
+    return _assetsService.config.countries[countryId];
   }
 
   Image flag(String regionId) {
+    _performInitialization();
     return country(regionId).flag;
   }
 
   void indicator(String regionId, String countryId) {
+    _performInitialization();
     assert(_indicators.containsKey(regionId));
     _indicators[regionId] = countryId;
-    storageService.setRegionIndicator(regionId, countryId);
+    _storageService.setRegionIndicator(regionId, countryId);
     notifyListeners();
+  }
+
+  void _performInitialization() {
+    if (_providerInitialized == false) {
+      for (String regionId in _assetsService.config.regions.keys) {
+        _indicators[regionId] = _storageService.getRegionIndicator(
+          regionId,
+          _assetsService.config.region(regionId).defaultCountry,
+        );
+      }
+      _providerInitialized = true;
+    }
   }
 }

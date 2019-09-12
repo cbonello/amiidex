@@ -1,6 +1,8 @@
 import 'package:amiidex/UI/widgets/splash.dart';
+import 'package:amiidex/main.dart';
 import 'package:amiidex/models/config.dart';
 import 'package:amiidex/services/assets.dart';
+import 'package:amiidex/services/local_storage.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Brightness brightness = Theme.of(context).brightness;
+    final LocalStorageService storageService = locator<LocalStorageService>();
 
     return SafeArea(
       child: Scaffold(
@@ -17,7 +20,9 @@ class SplashView extends StatelessWidget {
           duration: const Duration(seconds: 8),
           backgroundWorker: loadConfig,
           routeName: '/home',
-          delegate: MyAnimationDelegate(),
+          delegate: storageService.getDisplaySplashScreen()
+              ? MyAnimationDelegate()
+              : null,
         ),
       ),
     );

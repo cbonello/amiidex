@@ -26,9 +26,10 @@ class SplashWidget<T> extends StatefulWidget {
     this.animationBehavior = AnimationBehavior.normal,
     this.backgroundWorker,
     @required this.routeName,
-    @required this.delegate,
+    this.delegate,
   })  : assert(() {
-          if (delegate.animationMayRepeat && delegate.animationMustComplete) {
+          if (delegate?.animationMayRepeat == true &&
+              delegate?.animationMustComplete == true) {
             throw FlutterError.fromParts(
               <DiagnosticsNode>[
                 ErrorSummary('Incompatible animation options in delegate.'),
@@ -63,56 +64,84 @@ class _SplashWidgetState<T> extends State<SplashWidget<T>>
   @override
   void initState() {
     isAnimationCompleted = isWorkerCompleted = false;
-    widget.backgroundWorker().then((dynamic v) {
-      isWorkerCompleted = true;
-      result = v;
-      if (isAnimationCompleted ||
-          widget.delegate.animationMayRepeat ||
-          widget.delegate.animationMustComplete == false) {
+
+    if (widget.delegate == null) {
+      // No animation.
+      widget.backgroundWorker().then((dynamic v) {
+        isWorkerCompleted = true;
+        result = v;
         WidgetsBinding.instance.scheduleFrameCallback((_) async {
-          Navigator.pushNamed(
+          Navigator.pushReplacementNamed(
             context,
             widget.routeName,
             arguments: result,
           );
         });
         setState(() {});
-      }
-    }).catchError((dynamic e) {
-      throw FlutterError.fromParts(
-        <DiagnosticsNode>[
-          ErrorSummary('An error occurred in the background worker function.'),
-          ErrorDescription(e.error),
-        ],
-      );
-    });
-    controller = AnimationController(
-      duration: widget.duration,
-      debugLabel: widget.debugLabel,
-      animationBehavior: widget.animationBehavior,
-      vsync: this,
-    )
-      ..addListener(() {
-        setState(() {});
-      })
-      ..addStatusListener((AnimationStatus status) {
-        if (status == AnimationStatus.completed) {
-          if (isWorkerCompleted && isAnimationCompleted == false) {
-            WidgetsBinding.instance.addPostFrameCallback((_) async {
-              Navigator.pushNamed(
-                context,
-                widget.routeName,
-                arguments: result,
-              );
-            });
-          }
-          isAnimationCompleted = true;
-        }
+      }).catchError((dynamic e) {
+        throw FlutterError.fromParts(
+          <DiagnosticsNode>[
+            ErrorSummary(
+              'An error occurred in the background worker function.',
+            ),
+            ErrorDescription(e.error),
+          ],
+        );
       });
-    if (widget.delegate.animationMayRepeat) {
-      controller.repeat(period: widget.duration);
     } else {
-      controller.forward();
+      widget.backgroundWorker().then((dynamic v) {
+        isWorkerCompleted = true;
+        result = v;
+        if (isAnimationCompleted ||
+            widget.delegate.animationMayRepeat == true ||
+            widget.delegate.animationMustComplete == false) {
+          WidgetsBinding.instance.scheduleFrameCallback((_) async {
+            Navigator.pushReplacementNamed(
+              context,
+              widget.routeName,
+              arguments: result,
+            );
+          });
+          setState(() {});
+        }
+      }).catchError((dynamic e) {
+        throw FlutterError.fromParts(
+          <DiagnosticsNode>[
+            ErrorSummary(
+              'An error occurred in the background worker function.',
+            ),
+            ErrorDescription(e.error),
+          ],
+        );
+      });
+      controller = AnimationController(
+        duration: widget.duration,
+        debugLabel: widget.debugLabel,
+        animationBehavior: widget.animationBehavior,
+        vsync: this,
+      )
+        ..addListener(() {
+          setState(() {});
+        })
+        ..addStatusListener((AnimationStatus status) {
+          if (status == AnimationStatus.completed) {
+            if (isWorkerCompleted && isAnimationCompleted == false) {
+              WidgetsBinding.instance.addPostFrameCallback((_) async {
+                Navigator.pushReplacementNamed(
+                  context,
+                  widget.routeName,
+                  arguments: result,
+                );
+              });
+            }
+            isAnimationCompleted = true;
+          }
+        });
+      if (widget.delegate.animationMayRepeat == true) {
+        controller.repeat(period: widget.duration);
+      } else {
+        controller.forward();
+      }
     }
 
     super.initState();
@@ -127,6 +156,10 @@ class _SplashWidgetState<T> extends State<SplashWidget<T>>
 
   @override
   Widget build(BuildContext context) {
+    if (widget.delegate == null) {
+      return Container();
+    }
+
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) {
         return LayoutBuilder(
@@ -135,7 +168,6 @@ class _SplashWidgetState<T> extends State<SplashWidget<T>>
                 Size(constraints.maxWidth, constraints.maxHeight);
 
             widget.delegate?.constraints(orientation, parentSize);
-
             return widget.delegate.build(context, controller.view);
           },
         );

@@ -20,6 +20,8 @@ class AssetsService {
     assert(_config == null);
     _config = cfg;
   }
+
+  bool get isLineupLoaded => _config != null;
 }
 
 Future<ConfigModel> loadConfig() async {

@@ -8,55 +8,69 @@ import 'package:amiidex/main.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:amiidex/services/local_storage.dart';
 
-// List of owned amiibo.
+// The list of amiibo owned.
 class OwnedProvider with ChangeNotifier {
   OwnedProvider() {
-    _owned.addAll(storageService.getOwned());
+    // Constraints:
+    // 1) Provider must be inserted in the widget tree above MaterialApp to be
+    //    accessible to the widgets created by onGenerateRoute().
+    // 2) Provider depends on the assets service, which is not available when
+    //    the provider is created.
+    _providerInitialized = false;
   }
 
-  void init(List<SerieModel> series) {
-    for (SerieModel s in series) {
-      _ownedCountBySerie[s.lKey] = s.amiibos
-          .where(
-            (AmiiboModel e) => _owned.contains(e.lKey),
-          )
-          .length;
-    }
-  }
-
-  final AssetsService assetsService = locator<AssetsService>();
-  final LocalStorageService storageService = locator<LocalStorageService>();
+  bool _providerInitialized;
+  final AssetsService _assetsService = locator<AssetsService>();
+  final LocalStorageService _storageService = locator<LocalStorageService>();
   final List<String> _owned = <String>[];
   final Map<String, int> _ownedCountBySerie = <String, int>{};
 
-  int get ownedCount => _owned.length;
+  int get ownedCount {
+    _performInitialization();
+    return _owned.length;
+  }
 
-  UnmodifiableListView<String> get ownedAmiiboIds =>
-      UnmodifiableListView<String>(_owned);
+  UnmodifiableListView<String> get ownedAmiiboIds {
+    _performInitialization();
+    return UnmodifiableListView<String>(_owned);
+  }
 
-  bool isOwned(String amiiboId) => _owned.contains(amiiboId);
-  bool isMissed(String amiiboId) => _owned.contains(amiiboId) == false;
+  bool isOwned(String amiiboId) {
+    _performInitialization();
+    return _owned.contains(amiiboId);
+  }
 
-  int ownedInSerie(SerieModel s) => _ownedCountBySerie[s.lKey];
+  bool isMissed(String amiiboId) {
+    _performInitialization();
+    return _owned.contains(amiiboId) == false;
+  }
+
+  int ownedCountInSerie(SerieModel s) {
+    _performInitialization();
+    return _ownedCountBySerie[s.lKey];
+  }
 
   double percentOwnedInSerie(SerieModel s) {
-    return ownedInSerie(s) / s.amiibos.length;
+    _performInitialization();
+    return ownedCountInSerie(s) / s.amiibos.length;
   }
 
   void setOwned(AmiiboModel a) {
+    _performInitialization();
     if (isMissed(a.lKey)) {
       _ownedCountBySerie[a.serieId]++;
       _owned.add(a.lKey);
       assert(_ownedCountBySerie[a.serieId] >= 0 &&
           _ownedCountBySerie[a.serieId] <=
-              assetsService.config.seriesMap[a.serieId].amiibos.length);
-      storageService.setOwned(_owned);
+              _assetsService.config.seriesMap[a.serieId].amiibos.length);
+      _storageService.setOwned(_owned);
       notifyListeners();
     }
   }
 
   void toggleAmiiboOwnership(String amiiboId) {
-    final AmiiboModel a = assetsService.config.amiibo(amiiboId);
+    _performInitialization();
+    final AmiiboModel a = _assetsService.config.amiibo(amiiboId);
 
     if (isOwned(amiiboId)) {
       _ownedCountBySerie[a.serieId]--;
@@ -67,16 +81,33 @@ class OwnedProvider with ChangeNotifier {
     }
     assert(_ownedCountBySerie[a.serieId] >= 0 &&
         _ownedCountBySerie[a.serieId] <=
-            assetsService.config.seriesMap[a.serieId].amiibos.length);
+            _assetsService.config.seriesMap[a.serieId].amiibos.length);
 
-    storageService.setOwned(_owned);
+    _storageService.setOwned(_owned);
     notifyListeners();
   }
 
   void reset() {
+    _performInitialization();
     _owned.clear();
     _ownedCountBySerie.updateAll((String k, int v) => 0);
-    storageService.setOwned(_owned);
+    _storageService.setOwned(_owned);
     notifyListeners();
+  }
+
+  void _performInitialization() {
+    if (_providerInitialized == false) {
+      _owned.addAll(_storageService.getOwned());
+      final List<SerieModel> series =
+          _assetsService.config.seriesMap.values.toList();
+      for (SerieModel s in series) {
+        _ownedCountBySerie[s.lKey] = s.amiibos
+            .where(
+              (AmiiboModel e) => _owned.contains(e.lKey),
+            )
+            .length;
+      }
+      _providerInitialized = true;
+    }
   }
 }

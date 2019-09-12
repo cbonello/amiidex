@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:amiidex/UI/views/amiibos_by_serie.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:amiidex/util/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/util/theme.dart';
@@ -30,12 +31,12 @@ class SerieGridItem extends StatelessWidget {
         await SystemSound.play(SystemSoundType.click);
         Navigator.push(
           context,
-          MaterialPageRoute<void>(
-            maintainState: true,
-            builder: (BuildContext context) => AmiibosBySerieView(
+          cupertinoRoute(
+            AmiibosBySerieView(
               series: series,
               serie: serie,
             ),
+            null,
           ),
         );
       },
@@ -84,7 +85,7 @@ class SerieGridItem extends StatelessWidget {
               id: 'caption',
               child: Center(
                 child: Text(
-                  '${ownedProvider.ownedInSerie(serie)}/${serie.amiibos.length}',
+                  '${ownedProvider.ownedCountInSerie(serie)}/${serie.amiibos.length}',
                   style: TextStyle(
                     color: itemCardData.color,
                     fontWeight: FontWeight.bold,
