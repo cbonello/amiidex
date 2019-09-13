@@ -37,7 +37,10 @@ class SettingsViewState extends State<SettingsView> {
     final PreferredLanguageProvider languageProvider =
         Provider.of<PreferredLanguageProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final LockProvider lockProvider = Provider.of<LockProvider>(context);
+    final LockProvider lockProvider = Provider.of<LockProvider>(
+      context,
+      listen: false,
+    );
     final RegionIndicatorsProvider regionIndicatorsProvider =
         Provider.of<RegionIndicatorsProvider>(context);
     final AssetsService assetsService = locator<AssetsService>();
@@ -109,23 +112,14 @@ class SettingsViewState extends State<SettingsView> {
           ListTile(
             title: Text(I18n.of(context).text('settings-splash-screen')),
           ),
-          Padding(
+          LabeledCheckbox(
+            label: I18n.of(context).text('settings-splash-screen-display'),
             padding: const EdgeInsets.only(left: 18.0, right: 20.0),
-            child: Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Checkbox(
-                  value: displaySplashScreen,
-                  onChanged: (bool display) {
-                    localStorageService.setDisplaySplashScreen(display);
-                    setState(() => displaySplashScreen = display);
-                  },
-                ),
-                Text(
-                  I18n.of(context).text('settings-splash-screen-display'),
-                ),
-              ],
-            ),
+            value: displaySplashScreen,
+            onChanged: (bool display) {
+              localStorageService.setDisplaySplashScreen(display);
+              setState(() => displaySplashScreen = display);
+            },
           ),
           ListTile(title: Text(I18n.of(context).text('settings-theme'))),
           LabeledRadio<Brightness>(
@@ -229,6 +223,39 @@ class SettingsViewState extends State<SettingsView> {
   }
 }
 
+class LabeledCheckbox extends StatelessWidget {
+  const LabeledCheckbox({
+    @required this.label,
+    @required this.padding,
+    @required this.value,
+    this.onChanged,
+  });
+
+  final String label;
+  final EdgeInsets padding;
+  final bool value;
+  final Function onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => onChanged(!value),
+      child: Padding(
+        padding: padding,
+        child: Row(
+          children: <Widget>[
+            Checkbox(
+              value: value,
+              onChanged: (bool newValue) => onChanged(newValue),
+            ),
+            Text(label),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class LabeledRadio<T> extends StatelessWidget {
   const LabeledRadio({
     @required this.label,
@@ -255,7 +282,6 @@ class LabeledRadio<T> extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Radio<T>(
               groupValue: groupValue,
