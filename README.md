@@ -47,9 +47,12 @@ Settings Screen (Dark Theme) | Settings Screen (Light Theme)
 ![Settings Screen](/docs/dark_settings.png?raw=true "Settings Screen") | ![Settings Screen](/docs/light_settings.png?raw=true "Settings Screen")
 
 ## Learn More on Flutter
-[Official Flutter documentation](https://flutter.dev/docs)
+Here are a few resources to get you started if you are new to Flutter:
 
-[Flutter youtube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw)
+- [Official Flutter documentation](https://flutter.dev/docs)
+- [Flutter youtube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw)
+- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
 
 ## Created & Maintained by
 [Christophe Bonello](https://github.com/cbonello)
