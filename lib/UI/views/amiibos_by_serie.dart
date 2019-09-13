@@ -77,10 +77,11 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
               );
               _scrollViewController.addListener(() {
                 if (_scrollViewController.position.userScrollDirection ==
-                    ScrollDirection.forward)
+                    ScrollDirection.forward) {
                   fabVisibility.visible = true;
-                else
+                } else {
                   fabVisibility.visible = false;
+                }
               });
 
               final SerieModel serie = widget.series[_index];

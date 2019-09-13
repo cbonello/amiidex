@@ -71,7 +71,7 @@ class _SplashWidgetState<T> extends State<SplashWidget<T>>
         isWorkerCompleted = true;
         result = v;
         WidgetsBinding.instance.scheduleFrameCallback((_) async {
-          Navigator.pushReplacementNamed(
+          await Navigator.pushReplacementNamed(
             context,
             widget.routeName,
             arguments: result,
@@ -96,7 +96,7 @@ class _SplashWidgetState<T> extends State<SplashWidget<T>>
             widget.delegate.animationMayRepeat == true ||
             widget.delegate.animationMustComplete == false) {
           WidgetsBinding.instance.scheduleFrameCallback((_) async {
-            Navigator.pushReplacementNamed(
+            await Navigator.pushReplacementNamed(
               context,
               widget.routeName,
               arguments: result,
@@ -127,7 +127,7 @@ class _SplashWidgetState<T> extends State<SplashWidget<T>>
           if (status == AnimationStatus.completed) {
             if (isWorkerCompleted && isAnimationCompleted == false) {
               WidgetsBinding.instance.addPostFrameCallback((_) async {
-                Navigator.pushReplacementNamed(
+                await Navigator.pushReplacementNamed(
                   context,
                   widget.routeName,
                   arguments: result,

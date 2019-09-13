@@ -67,7 +67,7 @@ class AmiiboGridItem extends StatelessWidget {
             child: GestureDetector(
               onTap: () async {
                 await SystemSound.play(SystemSoundType.click);
-                Navigator.pushNamed(
+                await Navigator.pushNamed(
                   context,
                   '/amiibo',
                   arguments: amiibo,
@@ -77,7 +77,7 @@ class AmiiboGridItem extends StatelessWidget {
                 if (await url_launcher.canLaunch(amiibo.url)) {
                   await url_launcher.launch(amiibo.url);
                 } else {
-                  errorDialog(
+                  await errorDialog(
                     context,
                     Text(I18n.of(context).text('error-dialog-title')),
                     <Widget>[

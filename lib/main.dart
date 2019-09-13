@@ -47,7 +47,7 @@ Future<void> main() async {
     }
   };
 
-  runZoned<Future<void>>(
+  await runZoned<Future<void>>(
     () async {
       runApp(Application());
     },

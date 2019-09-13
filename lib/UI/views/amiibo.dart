@@ -158,7 +158,7 @@ class RegionButton extends StatelessWidget {
               if (await url_launcher.canLaunch(country.url)) {
                 await url_launcher.launch(country.url);
               } else {
-                errorDialog(
+                await errorDialog(
                   context,
                   Text(I18n.of(context).text('error-dialog-title')),
                   <Widget>[

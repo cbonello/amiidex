@@ -29,7 +29,7 @@ class SerieGridItem extends StatelessWidget {
     return GestureDetector(
       onTap: () async {
         await SystemSound.play(SystemSoundType.click);
-        Navigator.push(
+        await Navigator.push(
           context,
           cupertinoRoute(
             AmiibosBySerieView(

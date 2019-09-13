@@ -68,7 +68,7 @@ class DrawerWidget extends StatelessWidget {
             title: Text(I18n.of(context).text('drawer-github-source-code')),
             onTap: () async {
               Navigator.pop(context);
-              _launchURL(context, 'https://github.com/cbonello/amiidex');
+              await _launchURL(context, 'https://github.com/cbonello/amiidex');
             },
           ),
           ListTile(
@@ -79,7 +79,8 @@ class DrawerWidget extends StatelessWidget {
             title: Text(I18n.of(context).text('drawer-github-issue')),
             onTap: () async {
               Navigator.pop(context);
-              _launchURL(context, 'https://github.com/cbonello/amiidex/issues');
+              await _launchURL(
+                  context, 'https://github.com/cbonello/amiidex/issues');
             },
           ),
           ListTile(
@@ -112,7 +113,7 @@ class DrawerWidget extends StatelessWidget {
     if (await url_launcher.canLaunch(url)) {
       await url_launcher.launch(url);
     } else {
-      errorDialog(
+      await errorDialog(
         context,
         Text(I18n.of(context).text('error-dialog-title')),
         <Widget>[

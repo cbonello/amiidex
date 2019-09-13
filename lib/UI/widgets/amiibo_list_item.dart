@@ -106,7 +106,7 @@ class __ItemState extends State<_Item> {
           child: GestureDetector(
             onTap: () async {
               await SystemSound.play(SystemSoundType.click);
-              Navigator.pushNamed(
+              await Navigator.pushNamed(
                 context,
                 '/amiibo',
                 arguments: widget.amiibo,
@@ -116,7 +116,7 @@ class __ItemState extends State<_Item> {
               if (await url_launcher.canLaunch(widget.amiibo.url)) {
                 await url_launcher.launch(widget.amiibo.url);
               } else {
-                errorDialog(
+                await errorDialog(
                   context,
                   Text(I18n.of(context).text('error-dialog-title')),
                   <Widget>[
