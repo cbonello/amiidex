@@ -1,3 +1,4 @@
+import 'package:amiidex/providers/series_filter.dart';
 import 'package:amiidex/util/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/UI/views/missing.dart';
@@ -50,6 +51,9 @@ class _ApplicationState extends State<Application> {
         ),
         ChangeNotifierProvider<ViewAsProvider>(
           builder: (_) => ViewAsProvider(ItemsDisplayed.searches),
+        ),
+        ChangeNotifierProvider<SeriesFilterProvider>(
+          builder: (_) => SeriesFilterProvider(),
         ),
         ChangeNotifierProvider<FABVisibility>(
           builder: (_) => FABVisibility(),

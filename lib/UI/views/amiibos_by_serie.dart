@@ -71,8 +71,10 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
             controller: _scrollViewController,
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
-              final FABVisibility fabVisibility =
-                  Provider.of<FABVisibility>(context);
+              final FABVisibility fabVisibility = Provider.of<FABVisibility>(
+                context,
+                listen: false,
+              );
               _scrollViewController.addListener(() {
                 if (_scrollViewController.position.userScrollDirection ==
                     ScrollDirection.forward)

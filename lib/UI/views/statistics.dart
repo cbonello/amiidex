@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:amiidex/UI/widgets/owned_missing_pie_chart.dart';
 import 'package:amiidex/UI/widgets/search_bar.dart';
 import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/providers/series_filter.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -18,7 +19,10 @@ import 'package:sprintf/sprintf.dart';
 class StatisticsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
+    final FABVisibility fabVisibility = Provider.of<FABVisibility>(
+      context,
+      listen: false,
+    );
     final ScrollController _controller = ScrollController();
 
     _controller.addListener(
@@ -28,9 +32,26 @@ class StatisticsView extends StatelessWidget {
 
     final AssetsService assetsService = locator<AssetsService>();
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final double ownedCount = ownedProvider.ownedCount.toDouble();
-    final double missingCount =
-        assetsService.config.amiibos.length.toDouble() - ownedCount;
+    final SeriesFilterProvider filterProvider =
+        Provider.of<SeriesFilterProvider>(context);
+
+    final List<AmiiboModel> ownedAmiibo = <AmiiboModel>[];
+    for (String id in ownedProvider.ownedAmiiboIds) {
+      final AmiiboModel a = assetsService.config.amiibo(id);
+      if (filterProvider.isFiltered(a.serieId)) {
+        ownedAmiibo.add(assetsService.config.amiibo(id));
+      }
+    }
+    final double ownedCount = ownedAmiibo.length.toDouble();
+
+    final List<AmiiboModel> missedAmiibo =
+        List<AmiiboModel>.from(assetsService.config.amiibos.values)
+            .where((AmiiboModel a) => filterProvider.isFiltered(a.serieId))
+            .toList();
+    for (String id in ownedProvider.ownedAmiiboIds) {
+      missedAmiibo.remove(assetsService.config.amiibo(id));
+    }
+    final double missingCount = missedAmiibo.length.toDouble() - ownedCount;
 
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
@@ -67,10 +88,17 @@ class StatisticsView extends StatelessWidget {
                 ),
                 style: Theme.of(context).textTheme.title,
               ),
-              OwnedMissingPieChart(
-                ownedCount: ownedCount,
-                missingCount: missingCount,
-              ),
+              ownedCount + missingCount > 0
+                  ? OwnedMissingPieChart(
+                      ownedCount: ownedCount,
+                      missingCount: missingCount,
+                    )
+                  : Expanded(
+                      child: Center(
+                        child: Text(
+                            I18n.of(context).text('master-nothing-to-display')),
+                      ),
+                    ),
             ],
           ),
         ),

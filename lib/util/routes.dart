@@ -2,6 +2,7 @@ import 'package:amiidex/UI/views/amiibo.dart';
 import 'package:amiidex/UI/views/privacy.dart';
 import 'package:amiidex/UI/views/settings.dart';
 import 'package:amiidex/UI/views/splash.dart';
+import 'package:amiidex/UI/widgets/series_filter.dart';
 import 'package:amiidex/application.dart';
 import 'package:amiidex/main.dart';
 import 'package:amiidex/services/assets.dart';
@@ -19,6 +20,8 @@ class Routes {
         return materialRoute(const HomeView(config: null), settings);
       case '/home':
         return materialRoute(HomeView(config: settings.arguments), settings);
+      case '/filter_series':
+        return cupertinoRoute(SeriesFiltersDialog(), settings);
       case '/settings':
         return materialRoute(SettingsView(), settings);
       case '/privacy':

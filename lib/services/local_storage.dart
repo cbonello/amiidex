@@ -127,42 +127,17 @@ class LocalStorageService {
     return _preferences.setStringList('owned', owned);
   }
 
-  // Map<String, List<String>> getOwned() {
-  //   final Map<String, List<String>> owned = <String, List<String>>{};
-  //   final List<String> encoded =
-  //       _preferences.getStringList('owned') ?? <String>[];
-  //   if (encoded.isNotEmpty) {
-  //     for (String s in encoded) {
-  //       final String amiiboId = _deserializeAmiiboId(s);
-  //       final List<String> regions = _deserializeRegions(s);
-  //       owned[amiiboId] = regions;
-  //     }
-  //   }
-  //   return owned;
-  // }
+  List<String> getSeriesFilter(List<String> dflt) {
+    List<String> filter;
+    try {
+      filter = _preferences.getStringList('series_filter') ?? dflt;
+    } catch (_) {
+      filter = dflt;
+    }
+    return filter;
+  }
 
-  // Future<bool> setOwned(Map<String, List<String>> owned) {
-  //   final List<String> encoded = <String>[];
-  //   for (String amiiboId in owned.keys) {
-  //     final String e = _serializeList(amiiboId, owned[amiiboId]);
-  //     encoded.add(e);
-  //   }
-  //   return _preferences.setStringList('owned', encoded);
-  // }
-
-  // String _serializeList(String amiiboId, List<String> regions) {
-  //   return amiiboId + '@' + regions.join('|');
-  // }
-
-  // String _deserializeAmiiboId(String encoded) {
-  //   assert(encoded.contains('@'));
-  //   return encoded.split('@')[0];
-  // }
-
-  // List<String> _deserializeRegions(String encoded) {
-  //   assert(encoded.contains('@'));
-  //   final String encodedRegions = encoded.split('@')[1];
-  //   assert(encodedRegions.length > 1);
-  //   return encodedRegions.split('|');
-  // }
+  Future<bool> setSeriesFilter(List<String> filter) {
+    return _preferences.setStringList('series_filter', filter);
+  }
 }

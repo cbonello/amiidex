@@ -87,8 +87,12 @@ class ConfigModel {
       UnmodifiableMapView<String, SerieModel>(_series);
 
   SerieModel serie(String serieId) {
-    assert(_series.containsKey(serieId));
+    assert(isValidSerieId(serieId));
     return _series[serieId];
+  }
+
+  bool isValidSerieId(String serieId) {
+    return _series.containsKey(serieId);
   }
 
   List<AmiiboModel> get amiiboList =>

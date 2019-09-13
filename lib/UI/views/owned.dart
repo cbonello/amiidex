@@ -4,6 +4,7 @@ import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
 import 'package:amiidex/UI/widgets/amiibos.dart';
 import 'package:amiidex/UI/widgets/search_bar.dart';
 import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/providers/series_filter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
@@ -19,7 +20,10 @@ import 'package:sprintf/sprintf.dart';
 class OwnedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
+    final FABVisibility fabVisibility = Provider.of<FABVisibility>(
+      context,
+      listen: false,
+    );
     final ScrollController _controller = ScrollController();
 
     _controller.addListener(
@@ -30,8 +34,13 @@ class OwnedView extends StatelessWidget {
     final AssetsService assetsService = locator<AssetsService>();
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
     final List<AmiiboModel> ownedAmiibo = <AmiiboModel>[];
+    final SeriesFilterProvider filterProvider =
+        Provider.of<SeriesFilterProvider>(context);
     for (String id in ownedProvider.ownedAmiiboIds) {
-      ownedAmiibo.add(assetsService.config.amiibo(id));
+      final AmiiboModel a = assetsService.config.amiibo(id);
+      if (filterProvider.isFiltered(a.serieId)) {
+        ownedAmiibo.add(assetsService.config.amiibo(id));
+      }
     }
 
     return MultiProvider(

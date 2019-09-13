@@ -4,6 +4,9 @@ import 'package:amiidex/UI/widgets/master.dart';
 import 'package:amiidex/UI/widgets/search_bar.dart';
 import 'package:amiidex/UI/widgets/serie_actionbar.dart';
 import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/models/serie.dart';
+import 'package:amiidex/providers/series_filter.dart';
+import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:amiidex/main.dart';
@@ -16,9 +19,17 @@ import 'package:provider/provider.dart';
 class SeriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
     final ScrollController _controller = ScrollController();
     final AssetsService assetsService = locator<AssetsService>();
+    final FABVisibility fabVisibility = Provider.of<FABVisibility>(
+      context,
+      listen: false,
+    );
+    final SeriesFilterProvider filterProvider =
+        Provider.of<SeriesFilterProvider>(context);
+    final List<SerieModel> series = assetsService.config.serieList
+        .where((SerieModel s) => filterProvider.isFiltered(s.lKey))
+        .toList();
 
     _controller.addListener(
       () => fabVisibility.visible =
@@ -49,7 +60,12 @@ class SeriesView extends StatelessWidget {
               SerieActionBar(),
             ];
           },
-          body: MasterWidget(series: assetsService.config.serieList),
+          body: series.isNotEmpty
+              ? MasterWidget(series: series)
+              : Center(
+                  child:
+                      Text(I18n.of(context).text('master-nothing-to-display')),
+                ),
         ),
       ),
     );

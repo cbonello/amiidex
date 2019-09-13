@@ -26,80 +26,104 @@ class SearchBar extends StatelessWidget {
     final LockProvider lockProvider = Provider.of<LockProvider>(context);
 
     return SliverFloatingBar(
-      floating: true,
-      snap: true,
-      leading: IconButton(
-        padding: const EdgeInsets.all(6.0),
-        icon: Icon(
-          Icons.menu,
-          color: themeData.iconTheme.color,
-          semanticLabel: I18n.of(context).text('sm-drawer'),
+        floating: true,
+        snap: true,
+        leading: IconButton(
+          padding: const EdgeInsets.all(6.0),
+          icon: Icon(
+            Icons.menu,
+            color: themeData.iconTheme.color,
+            semanticLabel: I18n.of(context).text('sm-drawer'),
+          ),
+          onPressed: () => Scaffold.of(context).openDrawer(),
         ),
-        onPressed: () => Scaffold.of(context).openDrawer(),
-      ),
-      title: GestureDetector(
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 2.0,
-            top: 16.0,
-            right: 2.0,
-            bottom: 16.0,
+        title: GestureDetector(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 2.0,
+              top: 16.0,
+              right: 2.0,
+              bottom: 16.0,
+            ),
+            child: Text(
+              I18n.of(context).text('collection-search'),
+              style: themeData.textTheme.subhead,
+            ),
           ),
-          child: Text(
-            I18n.of(context).text('collection-search'),
-            style: themeData.textTheme.subhead,
-          ),
+          onTap: () async {
+            await SystemSound.play(SystemSoundType.click);
+            await showSearch<AmiiboModel>(
+              context: context,
+              delegate: CustomSearchDelegate(amiibo),
+            );
+          },
         ),
-        onTap: () async {
-          await SystemSound.play(SystemSoundType.click);
-          await showSearch<AmiiboModel>(
-            context: context,
-            delegate: CustomSearchDelegate(amiibo),
-          );
-        },
-      ),
-      trailing: InkWell(
-        // Color must be explicitly set for light theme...
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 12.0,
-            top: 15.0,
-            right: 12.0,
-            bottom: 15.0,
-          ),
-          child: lockProvider.isLocked
-              ? Icon(
-                  Icons.lock,
-                  color: themeData.iconTheme.color,
-                  semanticLabel: I18n.of(context).text('sm-collection-locked'),
-                )
-              : Icon(
-                  Icons.lock_open,
-                  color: themeData.iconTheme.color,
-                  semanticLabel:
-                      I18n.of(context).text('sm-collection-unlocked'),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 12.0,
+                  top: 15.0,
+                  right: 5.0,
+                  bottom: 15.0,
                 ),
-        ),
-        onTap: () {
-          if (lockProvider.isLocked) {
-            Scaffold.of(context).removeCurrentSnackBar();
-            Scaffold.of(context).showSnackBar(
-              SnackBar(
-                content: Text(I18n.of(context).text('collection-locked')),
+                child: Icon(
+                  Icons.filter_list,
+                  color: themeData.iconTheme.color,
+                  semanticLabel: I18n.of(context).text('sm-filter-series'),
+                ),
               ),
-            );
-          } else {
-            Scaffold.of(context).removeCurrentSnackBar();
-            Scaffold.of(context).showSnackBar(
-              SnackBar(
-                content: Text(I18n.of(context).text('collection-unlocked')),
+              onTap: () {
+                Navigator.pushNamed(context, '/filter_series');
+              },
+            ),
+            InkWell(
+              // Color must be explicitly set for light theme...
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 5.0,
+                  top: 15.0,
+                  right: 12.0,
+                  bottom: 15.0,
+                ),
+                child: lockProvider.isLocked
+                    ? Icon(
+                        Icons.lock,
+                        color: themeData.iconTheme.color,
+                        semanticLabel:
+                            I18n.of(context).text('sm-collection-locked'),
+                      )
+                    : Icon(
+                        Icons.lock_open,
+                        color: themeData.iconTheme.color,
+                        semanticLabel:
+                            I18n.of(context).text('sm-collection-unlocked'),
+                      ),
               ),
-            );
-          }
-          lockProvider.toggleLock();
-        },
-      ),
-    );
+              onTap: () {
+                if (lockProvider.isLocked) {
+                  Scaffold.of(context).removeCurrentSnackBar();
+                  Scaffold.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(I18n.of(context).text('collection-locked')),
+                    ),
+                  );
+                } else {
+                  Scaffold.of(context).removeCurrentSnackBar();
+                  Scaffold.of(context).showSnackBar(
+                    SnackBar(
+                      content:
+                          Text(I18n.of(context).text('collection-unlocked')),
+                    ),
+                  );
+                }
+                lockProvider.toggleLock();
+              },
+            ),
+          ],
+        ));
   }
 }
 
