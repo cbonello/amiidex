@@ -66,7 +66,7 @@ class SerieModel {
           // We assume that value-packs only contain amiibo from the same serie,
           // which is true so far.
           v.amiibos
-              .map<AmiiboModel>((String amiiboId) => amiibo(amiiboId))
+              .map<AmiiboModel>((String amiiboID) => amiibo(amiiboID))
               .toList(),
         );
       }

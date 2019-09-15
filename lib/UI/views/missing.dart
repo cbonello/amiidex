@@ -4,15 +4,14 @@ import 'package:amiidex/UI/widgets/amiibo_actionbar.dart';
 import 'package:amiidex/UI/widgets/amiibos.dart';
 import 'package:amiidex/UI/widgets/search_bar.dart';
 import 'package:amiidex/models/amiibo.dart';
+import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/providers/series_filter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/main.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/owned.dart';
 import 'package:amiidex/providers/view_as.dart';
-import 'package:amiidex/services/assets.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:provider/provider.dart';
 import 'package:sprintf/sprintf.dart';
@@ -31,19 +30,6 @@ class MissingView extends StatelessWidget {
           _controller.position.userScrollDirection == ScrollDirection.forward,
     );
 
-    final AssetsService assetsService = locator<AssetsService>();
-    final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-
-    final SeriesFilterProvider filterProvider =
-        Provider.of<SeriesFilterProvider>(context);
-    final List<AmiiboModel> missedAmiibo =
-        List<AmiiboModel>.from(assetsService.config.amiibos.values)
-            .where((AmiiboModel a) => filterProvider.isFiltered(a.serieId))
-            .toList();
-    for (String id in ownedProvider.ownedAmiiboIds) {
-      missedAmiibo.remove(assetsService.config.amiibo(id));
-    }
-
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<AmiiboSortProvider>(
@@ -55,21 +41,49 @@ class MissingView extends StatelessWidget {
       ],
       child: Padding(
         padding: const EdgeInsets.only(top: 5.0),
-        child: NestedScrollView(
-          controller: _controller,
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              SearchBar(
-                amiibo: UnmodifiableListView<AmiiboModel>(missedAmiibo),
-              ),
-              AmiiboActionBar(),
-            ];
+        child: Consumer<OwnedProvider>(
+          builder: (BuildContext context, OwnedProvider ownedProvider, _) {
+            return Consumer<SeriesFilterProvider>(
+              builder: (
+                BuildContext context,
+                SeriesFilterProvider filterProvider,
+                _,
+              ) {
+                final List<AmiiboModel> missedAmiibo = <AmiiboModel>[];
+                for (SerieModel s in filterProvider.series) {
+                  for (AmiiboModel a in s.amiibos) {
+                    if (ownedProvider.isOwned(a.lKey) == false) {
+                      missedAmiibo.add(a);
+                    }
+                  }
+                }
+
+                return NestedScrollView(
+                  controller: _controller,
+                  headerSliverBuilder: (
+                    BuildContext context,
+                    bool innerBoxIsScrolled,
+                  ) {
+                    return <Widget>[
+                      SearchBar(
+                        amiibo: UnmodifiableListView<AmiiboModel>(
+                          missedAmiibo,
+                        ),
+                      ),
+                      AmiiboActionBar(),
+                    ];
+                  },
+                  body: AmiibosWidget(
+                    amiibos: missedAmiibo,
+                    helpMessageDelegate: (String amiiboName) => sprintf(
+                      I18n.of(context).text('missing-added'),
+                      <String>[amiiboName],
+                    ),
+                  ),
+                );
+              },
+            );
           },
-          body: AmiibosWidget(
-            amiibos: missedAmiibo,
-            helpMessageDelegate: (String amiiboName) => sprintf(
-                I18n.of(context).text('missing-added'), <String>[amiiboName]),
-          ),
         ),
       ),
     );

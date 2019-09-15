@@ -4,6 +4,7 @@ import 'package:amiidex/providers/series_filter.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:amiidex/util/form.dart';
 import 'package:amiidex/util/i18n.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,14 +24,14 @@ class _SeriesFiltersDialogState extends State<SeriesFiltersDialog> {
   Widget build(BuildContext context) {
     final SeriesFilterProvider filterProvider =
         Provider.of<SeriesFilterProvider>(context, listen: false);
-    final List<String> savedFilters = filterProvider.filters;
+    final List<String> savedFilters = filterProvider.seriesID;
 
-    return SeriesFilterWidget(savedFilters: savedFilters);
+    return _SeriesFilterWidget(savedFilters: savedFilters);
   }
 }
 
-class SeriesFilterWidget extends StatefulWidget {
-  const SeriesFilterWidget({
+class _SeriesFilterWidget extends StatefulWidget {
+  const _SeriesFilterWidget({
     Key key,
     @required this.savedFilters,
   }) : super(key: key);
@@ -41,18 +42,21 @@ class SeriesFilterWidget extends StatefulWidget {
   _SeriesFilterWidgetState createState() => _SeriesFilterWidgetState();
 }
 
-class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
-  bool _saveNeeded;
+class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
+  final AssetsService assetsService = locator<AssetsService>();
+  final List<String> filteredSeriesID = <String>[];
+  bool saveNeeded;
 
   @override
   void initState() {
-    _saveNeeded = false;
+    filteredSeriesID.addAll(widget.savedFilters);
+    saveNeeded = false;
     super.initState();
   }
 
   Future<bool> _onWillPop() async {
-    _saveNeeded = _saveNeeded;
-    if (!_saveNeeded) {
+    saveNeeded = saveNeeded;
+    if (!saveNeeded) {
       return true;
     }
 
@@ -60,8 +64,6 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
     final TextStyle dialogTextStyle = theme.textTheme.subhead.copyWith(
       color: theme.textTheme.caption.color,
     );
-    final SeriesFilterProvider filterProvider =
-        Provider.of<SeriesFilterProvider>(context, listen: false);
 
     return await showDialog<bool>(
           context: context,
@@ -79,7 +81,6 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
                 FlatButton(
                   child: Text(I18n.of(context).text('series-filter-discard')),
                   onPressed: () {
-                    filterProvider.filters = widget.savedFilters;
                     Navigator.of(context).pop(true);
                   },
                 ),
@@ -93,10 +94,9 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final AssetsService _assetsService = locator<AssetsService>();
     final SeriesFilterProvider filterProvider =
         Provider.of<SeriesFilterProvider>(context, listen: false);
-    final List<SerieModel> series = _assetsService.config.serieList;
+    final List<SerieModel> series = assetsService.config.serieList;
 
     series.sort((SerieModel a, SerieModel b) {
       final String aName = I18n.of(context).text(a.lKey);
@@ -111,9 +111,16 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
           FlatButton(
             child: Text(
               I18n.of(context).text('series-filter-save'),
-              style: theme.textTheme.body1.copyWith(color: Colors.white),
+              style: theme.textTheme.title,
             ),
             onPressed: () {
+              if (listEquals(
+                    filterProvider.seriesID,
+                    filteredSeriesID,
+                  ) ==
+                  false) {
+                filterProvider.seriesID = filteredSeriesID;
+              }
               Navigator.pop(context, DismissDialogAction.SAVE);
             },
           ),
@@ -128,23 +135,26 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
                   child:
                       Text(I18n.of(context).text('series-filter-select-all')),
                   onPressed: () {
-                    filterProvider.setAll();
-                    _saveNeeded = true;
+                    _setAll();
+                    saveNeeded = true;
                   },
                 ),
                 RaisedButton(
                   child:
                       Text(I18n.of(context).text('series-filter-deselect-all')),
                   onPressed: () {
-                    filterProvider.clear();
-                    _saveNeeded = true;
+                    _clear();
+                    saveNeeded = true;
                   },
                 ),
                 RaisedButton(
                   child: Text(I18n.of(context).text('series-filter-reset')),
                   onPressed: () {
-                    filterProvider.filters = widget.savedFilters;
-                    _saveNeeded = false;
+                    setState(() {
+                      filteredSeriesID.clear();
+                      filteredSeriesID.addAll(widget.savedFilters);
+                    });
+                    saveNeeded = false;
                   },
                 ),
               ]
@@ -175,11 +185,11 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
                     return LabeledCheckbox(
                       label: I18n.of(context).text(series[i].lKey),
                       padding: const EdgeInsets.all(2.0),
-                      value: provider.isFiltered(series[i].lKey),
+                      value: filteredSeriesID.contains(series[i].lKey),
                       onChanged: (bool value) {
                         setState(() {
-                          provider.toggleFilter(series[i].lKey);
-                          _saveNeeded = true;
+                          _toggleFilter(series[i].lKey);
+                          saveNeeded = true;
                         });
                       },
                     );
@@ -191,5 +201,31 @@ class _SeriesFilterWidgetState extends State<SeriesFilterWidget> {
         ),
       ),
     );
+  }
+
+  void _setAll() {
+    final List<String> serieIds = assetsService.config.serieList
+        .map<String>((SerieModel s) => s.lKey)
+        .toList();
+
+    setState(() {
+      filteredSeriesID
+        ..clear()
+        ..addAll(serieIds);
+    });
+  }
+
+  void _toggleFilter(String serieId) {
+    setState(() {
+      if (filteredSeriesID.contains(serieId)) {
+        filteredSeriesID.remove(serieId);
+      } else {
+        filteredSeriesID.add(serieId);
+      }
+    });
+  }
+
+  void _clear() {
+    setState(() => filteredSeriesID.clear());
   }
 }

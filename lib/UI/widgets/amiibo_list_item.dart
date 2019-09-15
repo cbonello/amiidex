@@ -181,7 +181,7 @@ class __ItemState extends State<_Item> {
                   semanticsLabel: I18n.of(context).text(widget.amiibo.lKey),
                 ),
                 Text(
-                  I18n.of(context).text(widget.amiibo.serieId),
+                  I18n.of(context).text(widget.amiibo.serieID),
                   style: TextStyle(
                     color: itemCardData.color,
                     fontSize: 16.0,

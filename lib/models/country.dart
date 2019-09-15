@@ -3,19 +3,19 @@ import 'package:amiidex/util/theme.dart';
 import 'package:flutter/material.dart';
 
 class CountryModel {
-  CountryModel.fromJson(String regionId, Map<String, dynamic> json)
+  CountryModel.fromJson(String regionID, Map<String, dynamic> json)
       : assert(json['lkey'] != null),
         assert(json['flag'] != null) {
     _lKey = json['lkey'];
-    _regionId = regionId;
+    _regionID = regionID;
     _url = json['url'];
     _flagAsset = json['flag'];
   }
 
-  String _lKey, _regionId, _url, _flagAsset;
+  String _lKey, _regionID, _url, _flagAsset;
 
   String get lKey => _lKey;
-  String get regionId => _regionId;
+  String get regionID => _regionID;
   String get url => _url;
   bool get hasURL => _url != null;
 

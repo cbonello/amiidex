@@ -134,10 +134,12 @@ class LocalStorageService {
     } catch (_) {
       filter = dflt;
     }
+    print('GET STORAGE: $filter');
     return filter;
   }
 
   Future<bool> setSeriesFilter(List<String> filter) {
+    print('SET STORAGE: $filter');
     return _preferences.setStringList('series_filter', filter);
   }
 }

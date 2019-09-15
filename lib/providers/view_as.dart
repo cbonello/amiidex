@@ -14,6 +14,7 @@ enum ItemsDisplayed {
   searches,
   missing,
   owned,
+  statictics,
 }
 
 // Display option (list or grid) for series and amiibo.

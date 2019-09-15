@@ -69,7 +69,7 @@ class AmiiboViewState extends State<AmiiboView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  I18n.of(context).text(widget.amiibo.serieId),
+                                  I18n.of(context).text(widget.amiibo.serieID),
                                   style: Theme.of(context).textTheme.body1,
                                   maxLines: 2,
                                 ),

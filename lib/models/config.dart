@@ -38,9 +38,9 @@ class ConfigModel {
   UnmodifiableMapView<String, RegionModel> get regions =>
       UnmodifiableMapView<String, RegionModel>(_regions);
 
-  RegionModel region(String regionId) {
-    assert(_regions.containsKey(regionId));
-    return _regions[regionId];
+  RegionModel region(String regionID) {
+    assert(_regions.containsKey(regionID));
+    return _regions[regionID];
   }
 
   RegionModel get defaultRegion => _regions.values.first;
@@ -48,21 +48,21 @@ class ConfigModel {
   UnmodifiableMapView<String, CountryModel> get countries =>
       UnmodifiableMapView<String, CountryModel>(_countries);
 
-  CountryModel country(String countryId) {
-    assert(_countries.containsKey(countryId));
-    return _countries[countryId];
+  CountryModel country(String countryID) {
+    assert(_countries.containsKey(countryID));
+    return _countries[countryID];
   }
 
-  UnmodifiableListView<CountryModel> countriesInRegion(String regionId) {
-    assert(_regions.containsKey(regionId));
-    return region(regionId).countries;
+  UnmodifiableListView<CountryModel> countriesInRegion(String regionID) {
+    assert(_regions.containsKey(regionID));
+    return region(regionID).countries;
   }
 
-  CountryModel defaultCountryInRegion(String regionId) {
-    assert(_regions.containsKey(regionId));
-    final String countryId = region(regionId).defaultCountry;
-    assert(_countries.containsKey(countryId));
-    return _countries[countryId];
+  CountryModel defaultCountryInRegion(String regionID) {
+    assert(_regions.containsKey(regionID));
+    final String countryID = region(regionID).defaultCountry;
+    assert(_countries.containsKey(countryID));
+    return _countries[countryID];
   }
 
   AmiiboBoxModel matchBarcode(String barcode) {
@@ -86,13 +86,13 @@ class ConfigModel {
   UnmodifiableMapView<String, SerieModel> get seriesMap =>
       UnmodifiableMapView<String, SerieModel>(_series);
 
-  SerieModel serie(String serieId) {
-    assert(isValidSerieId(serieId));
-    return _series[serieId];
+  SerieModel serie(String serieID) {
+    assert(isValidSerieID(serieID));
+    return _series[serieID];
   }
 
-  bool isValidSerieId(String serieId) {
-    return _series.containsKey(serieId);
+  bool isValidSerieID(String serieID) {
+    return _series.containsKey(serieID);
   }
 
   List<AmiiboModel> get amiiboList =>
@@ -101,13 +101,13 @@ class ConfigModel {
   UnmodifiableMapView<String, AmiiboModel> get amiibos =>
       UnmodifiableMapView<String, AmiiboModel>(_amiibo);
 
-  AmiiboModel amiibo(String amiiboId) {
-    assert(_amiibo.containsKey(amiiboId));
-    return _amiibo[amiiboId];
+  AmiiboModel amiibo(String amiiboID) {
+    assert(_amiibo.containsKey(amiiboID));
+    return _amiibo[amiiboID];
   }
 
-  UnmodifiableListView<AmiiboModel> amiiboInSerie(String serieId) {
-    assert(_series.containsKey(serieId));
-    return serie(serieId).amiibos;
+  UnmodifiableListView<AmiiboModel> amiiboInSerie(String serieID) {
+    assert(_series.containsKey(serieID));
+    return serie(serieID).amiibos;
   }
 }

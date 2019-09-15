@@ -25,23 +25,10 @@ class OwnedView extends StatelessWidget {
       listen: false,
     );
     final ScrollController _controller = ScrollController();
-
     _controller.addListener(
       () => fabVisibility.visible =
           _controller.position.userScrollDirection == ScrollDirection.forward,
     );
-
-    final AssetsService assetsService = locator<AssetsService>();
-    final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
-    final List<AmiiboModel> ownedAmiibo = <AmiiboModel>[];
-    final SeriesFilterProvider filterProvider =
-        Provider.of<SeriesFilterProvider>(context);
-    for (String id in ownedProvider.ownedAmiiboIds) {
-      final AmiiboModel a = assetsService.config.amiibo(id);
-      if (filterProvider.isFiltered(a.serieId)) {
-        ownedAmiibo.add(assetsService.config.amiibo(id));
-      }
-    }
 
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
@@ -54,19 +41,47 @@ class OwnedView extends StatelessWidget {
       ],
       child: Padding(
         padding: const EdgeInsets.only(top: 5.0),
-        child: NestedScrollView(
-          controller: _controller,
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              SearchBar(amiibo: UnmodifiableListView<AmiiboModel>(ownedAmiibo)),
-              AmiiboActionBar(),
-            ];
+        child: Consumer<OwnedProvider>(
+          builder: (BuildContext context, OwnedProvider ownedProvider, __) {
+            return Consumer<SeriesFilterProvider>(
+              builder: (
+                BuildContext context,
+                SeriesFilterProvider filterProvider,
+                __,
+              ) {
+                final AssetsService assetsService = locator<AssetsService>();
+                final List<AmiiboModel> ownedAmiibo = <AmiiboModel>[];
+                for (String id in ownedProvider.ownedAmiiboIds) {
+                  final AmiiboModel a = assetsService.config.amiibo(id);
+                  if (filterProvider.isFilteredIn(a.serieID)) {
+                    ownedAmiibo.add(a);
+                  }
+                }
+
+                return NestedScrollView(
+                  controller: _controller,
+                  headerSliverBuilder:
+                      (BuildContext context, bool innerBoxIsScrolled) {
+                    return <Widget>[
+                      SearchBar(
+                        amiibo: UnmodifiableListView<AmiiboModel>(
+                          ownedAmiibo,
+                        ),
+                      ),
+                      AmiiboActionBar(),
+                    ];
+                  },
+                  body: AmiibosWidget(
+                    amiibos: ownedAmiibo,
+                    helpMessageDelegate: (String amiiboName) => sprintf(
+                      I18n.of(context).text('owned-removed'),
+                      <String>[amiiboName],
+                    ),
+                  ),
+                );
+              },
+            );
           },
-          body: AmiibosWidget(
-            amiibos: ownedAmiibo,
-            helpMessageDelegate: (String amiiboName) => sprintf(
-                I18n.of(context).text('owned-removed'), <String>[amiiboName]),
-          ),
         ),
       ),
     );

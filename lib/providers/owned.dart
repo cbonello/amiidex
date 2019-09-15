@@ -58,11 +58,11 @@ class OwnedProvider with ChangeNotifier {
   void setOwned(AmiiboModel a) {
     _performInitialization();
     if (isMissed(a.lKey)) {
-      _ownedCountBySerie[a.serieId]++;
+      _ownedCountBySerie[a.serieID]++;
       _owned.add(a.lKey);
-      assert(_ownedCountBySerie[a.serieId] >= 0 &&
-          _ownedCountBySerie[a.serieId] <=
-              _assetsService.config.seriesMap[a.serieId].amiibos.length);
+      assert(_ownedCountBySerie[a.serieID] >= 0 &&
+          _ownedCountBySerie[a.serieID] <=
+              _assetsService.config.seriesMap[a.serieID].amiibos.length);
       _storageService.setOwned(_owned);
       notifyListeners();
     }
@@ -73,15 +73,15 @@ class OwnedProvider with ChangeNotifier {
     final AmiiboModel a = _assetsService.config.amiibo(amiiboId);
 
     if (isOwned(amiiboId)) {
-      _ownedCountBySerie[a.serieId]--;
+      _ownedCountBySerie[a.serieID]--;
       _owned.remove(amiiboId);
     } else {
-      _ownedCountBySerie[a.serieId]++;
+      _ownedCountBySerie[a.serieID]++;
       _owned.add(amiiboId);
     }
-    assert(_ownedCountBySerie[a.serieId] >= 0 &&
-        _ownedCountBySerie[a.serieId] <=
-            _assetsService.config.seriesMap[a.serieId].amiibos.length);
+    assert(_ownedCountBySerie[a.serieID] >= 0 &&
+        _ownedCountBySerie[a.serieID] <=
+            _assetsService.config.seriesMap[a.serieID].amiibos.length);
 
     _storageService.setOwned(_owned);
     notifyListeners();

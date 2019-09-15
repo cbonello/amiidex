@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:flutter/foundation.dart';
@@ -21,88 +19,64 @@ class SeriesFilterProvider with ChangeNotifier {
   bool _providerInitialized;
   final AssetsService _assetsService = locator<AssetsService>();
   final LocalStorageService _storageService = locator<LocalStorageService>();
-  final List<String> _series = <String>[];
+  final List<String> _seriesID = <String>[];
+  final List<SerieModel> _series = <SerieModel>[];
 
-  List<String> get filters {
+  List<String> get seriesID {
     _performInitialization();
-    return <String>[..._series];
+    return <String>[..._seriesID];
   }
 
-  set filters(List<String> serieIds) {
-    // Call to _performInitialization() not required since _series will be
-    // overwritten.
-    for (String id in serieIds) {
-      assert(_assetsService.config.isValidSerieId(id));
+  set seriesID(List<String> serieIDs) {
+    // Call to _performInitialization() not required since _seriesID and
+    // _series  will be overwritten.
+    for (String id in serieIDs) {
+      assert(_assetsService.config.isValidSerieID(id));
     }
-    _series
+
+    _seriesID
       ..clear()
-      ..addAll(serieIds);
+      ..addAll(serieIDs);
+    _setSeries();
+    _storageService.setSeriesFilter(_seriesID);
     notifyListeners();
   }
 
-  UnmodifiableListView<String> get filteredSerieIds {
+  List<SerieModel> get series {
     _performInitialization();
-    return UnmodifiableListView<String>(_series);
+    return <SerieModel>[..._series];
   }
 
-  bool isFiltered(String serieId) {
+  bool isFilteredIn(String serieId) {
     _performInitialization();
-    return _series.contains(serieId);
+    return _seriesID.contains(serieId);
   }
 
-  bool isUnfiltered(String serieId) {
+  bool isFilteredOut(String serieId) {
     _performInitialization();
-    return _series.contains(serieId) == false;
-  }
-
-  void addFilter(SerieModel s) {
-    _performInitialization();
-    if (isUnfiltered(s.lKey)) {
-      _series.add(s.lKey);
-      _storageService.setSeriesFilter(_series);
-      notifyListeners();
-    }
-  }
-
-  void toggleFilter(String serieId) {
-    _performInitialization();
-    if (isFiltered(serieId)) {
-      _series.remove(serieId);
-    } else {
-      _series.add(serieId);
-    }
-    _storageService.setSeriesFilter(_series);
-    notifyListeners();
-  }
-
-  void setAll() {
-    final List<String> serieIds = _assetsService.config.serieList
-        .map<String>((SerieModel s) => s.lKey)
-        .toList();
-
-    _series
-      ..clear()
-      ..addAll(serieIds);
-    notifyListeners();
-  }
-
-  void clear() {
-    _performInitialization();
-    _series.clear();
-    _storageService.setSeriesFilter(_series);
-    notifyListeners();
+    return isFilteredIn(serieId) == false;
   }
 
   void _performInitialization() {
     if (_providerInitialized == false) {
+      // Default value for shared preferences: all series.
       final List<String> serieIds = _assetsService.config.serieList
           .map<String>((SerieModel s) => s.lKey)
           .toList();
 
-      _series
+      _seriesID
         ..clear()
         ..addAll(_storageService.getSeriesFilter(serieIds));
+
+      _setSeries();
       _providerInitialized = true;
+    }
+  }
+
+  void _setSeries() {
+    _series.clear();
+    for (String id in _seriesID) {
+      _series.add(_assetsService.config.serie(id));
     }
   }
 }

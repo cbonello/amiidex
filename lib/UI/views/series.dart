@@ -9,27 +9,19 @@ import 'package:amiidex/providers/series_filter.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:amiidex/main.dart';
 import 'package:amiidex/providers/fab_visibility.dart';
 import 'package:amiidex/providers/series_sort.dart';
 import 'package:amiidex/providers/view_as.dart';
-import 'package:amiidex/services/assets.dart';
 import 'package:provider/provider.dart';
 
 class SeriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ScrollController _controller = ScrollController();
-    final AssetsService assetsService = locator<AssetsService>();
     final FABVisibility fabVisibility = Provider.of<FABVisibility>(
       context,
       listen: false,
     );
-    final SeriesFilterProvider filterProvider =
-        Provider.of<SeriesFilterProvider>(context);
-    final List<SerieModel> series = assetsService.config.serieList
-        .where((SerieModel s) => filterProvider.isFiltered(s.lKey))
-        .toList();
 
     _controller.addListener(
       () => fabVisibility.visible =
@@ -47,25 +39,37 @@ class SeriesView extends StatelessWidget {
       ],
       child: Padding(
         padding: const EdgeInsets.only(top: 5.0),
-        child: NestedScrollView(
-          controller: _controller,
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            final AssetsService assetsService = locator<AssetsService>();
-            return <Widget>[
-              SearchBar(
-                amiibo: UnmodifiableListView<AmiiboModel>(
-                  assetsService.config.amiiboList,
-                ),
-              ),
-              SerieActionBar(),
-            ];
+        child: Consumer<SeriesFilterProvider>(
+          builder: (
+            BuildContext context,
+            SeriesFilterProvider filterProvider,
+            __,
+          ) {
+            final List<AmiiboModel> amiibo2Search = <AmiiboModel>[];
+            for (SerieModel s in filterProvider.series) {
+              amiibo2Search.addAll(s.amiibos);
+            }
+
+            return NestedScrollView(
+              controller: _controller,
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  SearchBar(
+                    amiibo: UnmodifiableListView<AmiiboModel>(amiibo2Search),
+                  ),
+                  SerieActionBar(),
+                ];
+              },
+              body: filterProvider.series.isNotEmpty
+                  ? MasterWidget(series: filterProvider.series)
+                  : Center(
+                      child: Text(
+                        I18n.of(context).text('master-nothing-to-display'),
+                      ),
+                    ),
+            );
           },
-          body: series.isNotEmpty
-              ? MasterWidget(series: series)
-              : Center(
-                  child:
-                      Text(I18n.of(context).text('master-nothing-to-display')),
-                ),
         ),
       ),
     );

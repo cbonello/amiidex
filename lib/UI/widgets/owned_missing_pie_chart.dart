@@ -7,23 +7,23 @@ class OwnedMissingPieChart extends StatelessWidget {
   const OwnedMissingPieChart({
     Key key,
     @required this.ownedCount,
-    @required this.missingCount,
+    @required this.missedCount,
   }) : super(key: key);
 
-  final double ownedCount, missingCount;
+  final double ownedCount, missedCount;
 
   @override
   Widget build(BuildContext context) {
     List<PieChartSectionData> pieChartRawSections;
     List<PieChartSectionData> showingSections;
 
-    final double count = ownedCount + missingCount;
+    final double total = ownedCount + missedCount;
     pieChartRawSections = <PieChartSectionData>[];
     if (ownedCount > 0) {
       pieChartRawSections.add(PieChartSectionData(
         color: const Color(0xFF44B035),
         value: ownedCount,
-        title: '${(ownedCount / count * 100).toStringAsFixed(2)}%',
+        title: '${(ownedCount / total * 100).toStringAsFixed(2)}%',
         radius: 80,
         titleStyle: const TextStyle(
           fontSize: 16,
@@ -32,11 +32,11 @@ class OwnedMissingPieChart extends StatelessWidget {
         ),
       ));
     }
-    if (missingCount > 0) {
+    if (missedCount > 0) {
       pieChartRawSections.add(PieChartSectionData(
         color: const Color(0xFFE60012),
-        value: missingCount,
-        title: '${(missingCount / count * 100).toStringAsFixed(2)}%',
+        value: missedCount,
+        title: '${(missedCount / total * 100).toStringAsFixed(2)}%',
         radius: 80,
         titleStyle: const TextStyle(
           fontSize: 16,
@@ -60,9 +60,7 @@ class OwnedMissingPieChart extends StatelessWidget {
                     child: FlChart(
                       chart: PieChart(
                         PieChartData(
-                          borderData: FlBorderData(
-                            show: false,
-                          ),
+                          borderData: FlBorderData(show: false),
                           sectionsSpace: 0,
                           centerSpaceRadius: 40,
                           sections: showingSections,
@@ -89,15 +87,13 @@ class OwnedMissingPieChart extends StatelessWidget {
                   textColor: Theme.of(context).textTheme.title.color,
                   isSquare: true,
                 ),
-              const SizedBox(
-                width: 20.0,
-              ),
-              if (missingCount > 0)
+              const SizedBox(width: 20.0),
+              if (missedCount > 0)
                 Legend(
                   color: const Color(0xFFE60012),
                   text: sprintf(
                     I18n.of(context).text('piechart-missing'),
-                    <int>[missingCount.toInt()],
+                    <int>[missedCount.toInt()],
                   ),
                   textColor: Theme.of(context).textTheme.title.color,
                   isSquare: true,
@@ -146,7 +142,10 @@ class Legend extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: textColor,
+          ),
         )
       ],
     );
