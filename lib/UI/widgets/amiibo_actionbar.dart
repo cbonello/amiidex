@@ -71,9 +71,7 @@ class AmiiboActionBar extends StatelessWidget {
               children: <Widget>[
                 ListTile(
                   title: Text(
-                    I18n.of(context).text('amiibo-actionbar-sort-by'),
-                    semanticsLabel:
-                        I18n.of(context).text('sm-amiibo-actionbar-sort-by'),
+                    I18n.of(context).text('actionbar-sort-by'),
                   ),
                 ),
                 const Divider(height: 8),
@@ -130,7 +128,7 @@ class AmiiboActionBar extends StatelessWidget {
           children: <Widget>[
             InkWell(
               child: Semantics(
-                label: I18n.of(context).text('amiibo-actionbar-sort-by'),
+                label: I18n.of(context).text('sm-amiibo-actionbar-sort-by'),
                 button: true,
                 child: Padding(
                   padding: const EdgeInsets.only(

@@ -39,12 +39,7 @@ class SearchBar extends StatelessWidget {
         ),
         title: GestureDetector(
           child: Padding(
-            padding: const EdgeInsets.only(
-              left: 2.0,
-              top: 16.0,
-              right: 2.0,
-              bottom: 16.0,
-            ),
+            padding: const EdgeInsets.fromLTRB(2.0,16.0,2.0,16.0),
             child: Text(
               I18n.of(context).text('collection-search'),
               style: themeData.textTheme.subhead,
@@ -63,12 +58,7 @@ class SearchBar extends StatelessWidget {
           children: <Widget>[
             InkWell(
               child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 12.0,
-                  top: 15.0,
-                  right: 5.0,
-                  bottom: 15.0,
-                ),
+                padding: const EdgeInsets.fromLTRB(12.0, 16.0, 15.0, 16.0),
                 child: Icon(
                   Icons.filter_list,
                   color: themeData.iconTheme.color,
@@ -82,12 +72,7 @@ class SearchBar extends StatelessWidget {
             InkWell(
               // Color must be explicitly set for light theme...
               child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 5.0,
-                  top: 15.0,
-                  right: 12.0,
-                  bottom: 15.0,
-                ),
+                padding: const EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 16.0),
                 child: lockProvider.isLocked
                     ? Icon(
                         Icons.lock,

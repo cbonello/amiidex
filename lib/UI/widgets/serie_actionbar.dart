@@ -26,7 +26,7 @@ class SerieActionBar extends StatelessWidget {
           children: <Widget>[
             InkWell(
               child: Semantics(
-                label: I18n.of(context).text('amiibo-actionbar-sort-by'),
+                label: I18n.of(context).text('sm-series-actionbar-sort-by'),
                 button: true,
                 child: Padding(
                   padding: const EdgeInsets.all(14.0),
@@ -54,24 +54,6 @@ class SerieActionBar extends StatelessWidget {
                 sortProvider.toggleSortOrder();
               },
             ),
-            // InkWell(
-            //   child: Semantics(
-            //     label: I18n.of(context).text('actionbar-region-title'),
-            //     button: true,
-            //     child: Padding(
-            //       padding: const EdgeInsets.all(14.0),
-            //       child: ExcludeSemantics(
-            //         child: Text(
-            //           I18n.of(context).text(regionProvider.regionId),
-            //           style: Theme.of(context).textTheme.subhead,
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            //   onTap: () {
-            //     showRegionsBottomSheet(context, regionProvider.regionId);
-            //   },
-            // ),
             InkWell(
               child: Semantics(
                 label: I18n.of(context).text('actionbar-viewas-title'),

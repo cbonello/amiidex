@@ -108,21 +108,25 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
       appBar: AppBar(
         title: Text(I18n.of(context).text('series-filter-title')),
         actions: <Widget>[
-          FlatButton(
-            child: Text(
-              I18n.of(context).text('series-filter-save'),
-              style: theme.textTheme.title,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: FlatButton(
+              child: Text(
+                I18n.of(context).text('series-filter-save'),
+                style: theme.textTheme.title,
+              ),
+              onPressed: () {
+                if (listEquals(
+                      filterProvider.seriesID,
+                      filteredSeriesID,
+                    ) ==
+                    false) {
+                  filterProvider.seriesID = filteredSeriesID;
+                }
+                Navigator.pop(context, DismissDialogAction.SAVE);
+              },
+              padding: const EdgeInsets.symmetric(vertical: 3.0),
             ),
-            onPressed: () {
-              if (listEquals(
-                    filterProvider.seriesID,
-                    filteredSeriesID,
-                  ) ==
-                  false) {
-                filterProvider.seriesID = filteredSeriesID;
-              }
-              Navigator.pop(context, DismissDialogAction.SAVE);
-            },
           ),
         ],
         bottom: PreferredSize(
@@ -132,23 +136,33 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 RaisedButton(
-                  child:
-                      Text(I18n.of(context).text('series-filter-select-all')),
+                  child: Text(
+                    I18n.of(context).text(
+                      'series-filter-select-all',
+                    ),
+                  ),
                   onPressed: () {
                     _setAll();
                     saveNeeded = true;
                   },
                 ),
                 RaisedButton(
-                  child:
-                      Text(I18n.of(context).text('series-filter-deselect-all')),
+                  child: Text(
+                    I18n.of(context).text(
+                      'series-filter-deselect-all',
+                    ),
+                  ),
                   onPressed: () {
                     _clear();
                     saveNeeded = true;
                   },
                 ),
                 RaisedButton(
-                  child: Text(I18n.of(context).text('series-filter-reset')),
+                  child: Text(
+                    I18n.of(context).text(
+                      'series-filter-reset',
+                    ),
+                  ),
                   onPressed: () {
                     setState(() {
                       filteredSeriesID.clear();
@@ -182,16 +196,24 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
               itemBuilder: (BuildContext context, int i) {
                 return Consumer<SeriesFilterProvider>(
                   builder: (_, SeriesFilterProvider provider, Widget child) {
-                    return LabeledCheckbox(
-                      label: I18n.of(context).text(series[i].lKey),
-                      padding: const EdgeInsets.all(2.0),
-                      value: filteredSeriesID.contains(series[i].lKey),
-                      onChanged: (bool value) {
-                        setState(() {
-                          _toggleFilter(series[i].lKey);
-                          saveNeeded = true;
-                        });
-                      },
+                    final String label = I18n.of(context).text(series[i].lKey);
+                    final bool value = filteredSeriesID.contains(
+                      series[i].lKey,
+                    );
+                    return Semantics(
+                      label: label,
+                      checked: value,
+                      child: LabeledCheckbox(
+                        label: label,
+                        padding: const EdgeInsets.all(2.0),
+                        value: value,
+                        onChanged: (bool value) {
+                          setState(() {
+                            _toggleFilter(series[i].lKey);
+                            saveNeeded = true;
+                          });
+                        },
+                      ),
                     );
                   },
                 );

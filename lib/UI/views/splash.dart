@@ -77,7 +77,12 @@ class MyAnimationDelegate implements AnimationDelegate {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(child: Image.asset(asset, fit: BoxFit.cover))
+                Expanded(
+                    child: Image.asset(
+                  asset,
+                  semanticLabel: I18n.of(context).text('sm-splash-controller'),
+                  fit: BoxFit.cover,
+                ))
               ],
             ),
           ),
@@ -187,6 +192,7 @@ class _MarioState extends State<Mario> with SingleTickerProviderStateMixin {
           alignment: Alignment.bottomCenter,
           child: Image.asset(
             'assets/images/splash/mario.png',
+            semanticLabel: I18n.of(context).text('ssb_mario'),
             width: marioWidth,
             height: marioHeight,
           ),
@@ -291,6 +297,7 @@ class _LootBoxState extends State<LootBox> {
               opacity: _transparency.value,
               child: Image.asset(
                 'assets/images/ssb/box_mario.png',
+                semanticLabel: I18n.of(context).text('sm-splash-loot-box'),
                 width: boxWidth,
                 height: boxHeight,
               ),
@@ -321,6 +328,9 @@ class _LootBoxState extends State<LootBox> {
                       textAlign: TextAlign.right,
                       overflow: TextOverflow.clip,
                       maxLines: 1,
+                      semanticsLabel: I18n.of(context).text(
+                        'sm-splash-loading',
+                      ),
                     ),
                   ),
                 ),

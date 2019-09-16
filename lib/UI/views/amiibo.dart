@@ -55,8 +55,24 @@ class AmiiboViewState extends State<AmiiboView> {
                           flex: 2,
                           child: Column(
                             children: <Widget>[
-                              widget.amiibo.box,
-                              widget.amiibo.image,
+                              Semantics(
+                                label: I18n.of(context).text(
+                                  'sm-amiibo-detail-box',
+                                ),
+                                image: true,
+                                child: ExcludeSemantics(
+                                  child: widget.amiibo.box,
+                                ),
+                              ),
+                              Semantics(
+                                label: I18n.of(context).text(
+                                  'sm-amiibo-detail-image',
+                                ),
+                                image: true,
+                                child: ExcludeSemantics(
+                                  child: widget.amiibo.image,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -75,7 +91,9 @@ class AmiiboViewState extends State<AmiiboView> {
                                 ),
                                 const SizedBox(height: 10.0),
                                 Text(
-                                  'Release Date',
+                                  I18n.of(context).text(
+                                    'amiibo-detail-release-date',
+                                  ),
                                   style: Theme.of(context).textTheme.body1,
                                 ),
                                 for (String regionId
@@ -139,19 +157,23 @@ class RegionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final RegionIndicatorsProvider regionIndicatorsProvider =
-        Provider.of<RegionIndicatorsProvider>(context);
+        Provider.of<RegionIndicatorsProvider>(context, listen: false);
     final CountryModel country = regionIndicatorsProvider.country(regionId);
 
     return InkWell(
-      child: Container(
-        margin: const EdgeInsets.all(15.0),
-        padding: const EdgeInsets.all(3.0),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: country.hasURL ? lightBlueColor : Colors.transparent,
+      child: Semantics(
+        label: I18n.of(context).text(country.lKey),
+        button: true,
+        child: Container(
+          margin: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(3.0),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: country.hasURL ? lightBlueColor : Colors.transparent,
+            ),
           ),
+          child: country.flag,
         ),
-        child: country.flag,
       ),
       onTap: country.hasURL
           ? () async {
