@@ -38,13 +38,13 @@ class MasterWidget extends StatelessWidget {
       series.sort((SerieModel a, SerieModel b) {
         final String aName = I18n.of(context).text(a.lKey);
         final String bName = I18n.of(context).text(b.lKey);
-        return bName.compareTo(aName);
+        return aName.compareTo(bName);
       });
     } else {
       series.sort((SerieModel a, SerieModel b) {
         final String aName = I18n.of(context).text(a.lKey);
         final String bName = I18n.of(context).text(b.lKey);
-        return aName.compareTo(bName);
+        return bName.compareTo(aName);
       });
     }
 
