@@ -137,6 +137,10 @@ flutter:
     - assets/images/ac/rover.png
     - assets/images/ac/timmy_tommy.png
     - assets/images/ac/tom_nook.png
+    - assets/images/dbl/header.jpg
+    - assets/images/dbl/logo.png
+    - assets/images/dbl/box_loot_goblin.png
+    - assets/images/dbl/loot_goblin.png
     - assets/images/bb/header.jpg
     - assets/images/bb/logo.png
     - assets/images/bb/box_qbby.png

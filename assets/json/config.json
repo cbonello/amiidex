@@ -4355,6 +4355,29 @@
             ]
         },
         {
+            "lkey": "dbl",
+            "header": "assets/images/dbl/header.jpg",
+            "logo": "assets/images/dbl/logo.png",
+            "amiibo": [
+                {
+                    "lkey": "dbl_loot_goblin",
+                    "image": "assets/images/dbl/loot_goblin.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/dbl/box_loot_goblin.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/loot-goblin-amiibo-diablo-3-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2018-12-31"
+                        }
+                    },
+                    "barcodes": [
+                        "020626154864",
+                        "5030917262869"
+                    ]
+                }
+            ]
+        },
+        {
             "lkey": "bb",
             "header": "assets/images/bb/header.jpg",
             "logo": "assets/images/bb/logo.png",
