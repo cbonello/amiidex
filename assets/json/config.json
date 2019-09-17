@@ -215,6 +215,7 @@
                 {
                     "lkey": "ssb_mario",
                     "image": "assets/images/ssb/mario.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mario.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mario-amiibo-super-smash-bros-series/",
                     "releases": {
@@ -236,6 +237,7 @@
                 {
                     "lkey": "ssb_peach",
                     "image": "assets/images/ssb/peach.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_peach.png",
                     "url": "https://www.nintendo.com/amiibo/detail/peach-amiibo-super-smash-bros-series",
                     "releases": {
@@ -258,6 +260,7 @@
                 {
                     "lkey": "ssb_yoshi",
                     "image": "assets/images/ssb/yoshi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_yoshi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/yoshi-amiibo-super-smash-bros-series",
                     "releases": {
@@ -280,6 +283,7 @@
                 {
                     "lkey": "ssb_donkey_kong",
                     "image": "assets/images/ssb/donkey_kong.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_donkey_kong.png",
                     "url": "https://www.nintendo.com/amiibo/detail/donkey-kong-amiibo-super-smash-bros-series",
                     "releases": {
@@ -307,6 +311,7 @@
                 {
                     "lkey": "ssb_link",
                     "image": "assets/images/ssb/link.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_link.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-amiibo-super-smash-bros-series",
                     "releases": {
@@ -329,6 +334,7 @@
                 {
                     "lkey": "ssb_fox",
                     "image": "assets/images/ssb/fox.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_fox.png",
                     "url": "https://www.nintendo.com/amiibo/detail/fox-amiibo-super-smash-bros-series",
                     "releases": {
@@ -351,6 +357,7 @@
                 {
                     "lkey": "ssb_samus",
                     "image": "assets/images/ssb/samus.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_samus.png",
                     "url": "https://www.nintendo.com/amiibo/detail/samus-amiibo-super-smash-bros-series",
                     "releases": {
@@ -373,6 +380,7 @@
                 {
                     "lkey": "ssb_wii_fit_trainer",
                     "image": "assets/images/ssb/wii_fit_trainer.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_wii_fit_trainer.png",
                     "url": "https://www.nintendo.com/amiibo/detail/wii-fit-trainer-amiibo-super-smash-bros-series",
                     "releases": {
@@ -395,6 +403,7 @@
                 {
                     "lkey": "ssb_villager",
                     "image": "assets/images/ssb/villager.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_villager.png",
                     "url": "https://www.nintendo.com/amiibo/detail/villager-amiibo-super-smash-bros-series",
                     "releases": {
@@ -417,6 +426,7 @@
                 {
                     "lkey": "ssb_pikachu",
                     "image": "assets/images/ssb/pikachu.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_pikachu.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pikachu-amiibo-super-smash-bros-series",
                     "releases": {
@@ -439,6 +449,7 @@
                 {
                     "lkey": "ssb_kirby",
                     "image": "assets/images/ssb/kirby.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_kirby.png",
                     "url": "https://www.nintendo.com/amiibo/detail/kirby-amiibo-super-smash-bros-series",
                     "releases": {
@@ -461,6 +472,7 @@
                 {
                     "lkey": "ssb_marth",
                     "image": "assets/images/ssb/marth.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_marth.png",
                     "url": "https://www.nintendo.com/amiibo/detail/marth-amiibo-super-smash-bros-series",
                     "releases": {
@@ -483,6 +495,7 @@
                 {
                     "lkey": "ssb_zelda",
                     "image": "assets/images/ssb/zelda.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_zelda.png",
                     "url": "https://www.nintendo.com/amiibo/detail/zelda-amiibo-super-smash-bros-series",
                     "releases": {
@@ -505,6 +518,7 @@
                 {
                     "lkey": "ssb_diddy_kong",
                     "image": "assets/images/ssb/diddy_kong.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_diddy_kong.png",
                     "url": "https://www.nintendo.com/amiibo/detail/diddy-kong-amiibo-super-smash-bros-series",
                     "releases": {
@@ -527,6 +541,7 @@
                 {
                     "lkey": "ssb_luigi",
                     "image": "assets/images/ssb/luigi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_luigi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/luigi-amiibo-super-mario-series",
                     "releases": {
@@ -549,6 +564,7 @@
                 {
                     "lkey": "ssb_little_mac",
                     "image": "assets/images/ssb/little_mac.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_little_mac.png",
                     "url": "https://www.nintendo.com/amiibo/detail/little-mac-amiibo-super-smash-bros-series",
                     "releases": {
@@ -571,6 +587,7 @@
                 {
                     "lkey": "ssb_pit",
                     "image": "assets/images/ssb/pit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_pit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pit-amiibo-super-smash-bros-series",
                     "releases": {
@@ -593,6 +610,7 @@
                 {
                     "lkey": "ssb_captain_falcon",
                     "image": "assets/images/ssb/captain_falcon.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_captain_falcon.png",
                     "url": "https://www.nintendo.com/amiibo/detail/captain-falcon-amiibo-super-smash-bros-series",
                     "releases": {
@@ -616,6 +634,7 @@
                 {
                     "lkey": "ssb_rosalina",
                     "image": "assets/images/ssb/rosalina_luma.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_rosalina_luma.png",
                     "url": "https://www.nintendo.com/amiibo/detail/rosalina-amiibo-super-smash-bros-series",
                     "releases": {
@@ -638,6 +657,7 @@
                 {
                     "lkey": "ssb_bowser",
                     "image": "assets/images/ssb/bowser.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_bowser.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bowser-amiibo-super-smash-bros-series",
                     "releases": {
@@ -660,6 +680,7 @@
                 {
                     "lkey": "ssb_lucario",
                     "image": "assets/images/ssb/lucario.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_lucario.png",
                     "url": "https://www.nintendo.com/amiibo/detail/lucario-amiibo-super-smash-bros-series",
                     "releases": {
@@ -682,6 +703,7 @@
                 {
                     "lkey": "ssb_toon_link",
                     "image": "assets/images/ssb/toon_link.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_toon_link.png",
                     "url": "https://www.nintendo.com/amiibo/detail/toon-link-amiibo-super-smash-bros-series",
                     "releases": {
@@ -705,6 +727,7 @@
                 {
                     "lkey": "ssb_sheik",
                     "image": "assets/images/ssb/sheik.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_sheik.png",
                     "url": "https://www.nintendo.com/amiibo/detail/sheik-amiibo-super-smash-bros-series",
                     "releases": {
@@ -727,6 +750,7 @@
                 {
                     "lkey": "ssb_ike",
                     "image": "assets/images/ssb/ike.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ike.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ike-amiibo-super-smash-bros-series",
                     "releases": {
@@ -749,6 +773,7 @@
                 {
                     "lkey": "ssb_shulk",
                     "image": "assets/images/ssb/shulk.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_shulk.png",
                     "url": "https://www.nintendo.com/amiibo/detail/shulk-amiibo-super-smash-bros-series",
                     "releases": {
@@ -771,6 +796,7 @@
                 {
                     "lkey": "ssb_sonic",
                     "image": "assets/images/ssb/sonic.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_sonic.png",
                     "url": "https://www.nintendo.com/amiibo/detail/sonic-amiibo-super-smash-bros-series",
                     "releases": {
@@ -793,6 +819,7 @@
                 {
                     "lkey": "ssb_megaman",
                     "image": "assets/images/ssb/mega_man.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mega_man.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mega-man-amiibo-super-smash-bros-series",
                     "releases": {
@@ -815,6 +842,7 @@
                 {
                     "lkey": "ssb_king_dedede",
                     "image": "assets/images/ssb/king_dedede.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_king_dedede.png",
                     "url": "https://www.nintendo.com/amiibo/detail/king-dedede-amiibo-super-smash-bros-series",
                     "releases": {
@@ -837,6 +865,7 @@
                 {
                     "lkey": "ssb_meta_knight",
                     "image": "assets/images/ssb/meta_knight.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_meta_knight.png",
                     "url": "https://www.nintendo.com/amiibo/detail/meta-knight-amiibo-kirby-series",
                     "releases": {
@@ -862,6 +891,7 @@
                 {
                     "lkey": "ssb_robin",
                     "image": "assets/images/ssb/robin.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_robin.png",
                     "url": "https://www.nintendo.com/amiibo/detail/robin-amiibo-super-smash-bros-series",
                     "releases": {
@@ -884,6 +914,7 @@
                 {
                     "lkey": "ssb_lucina",
                     "image": "assets/images/ssb/lucina.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_lucina.png",
                     "url": "https://www.nintendo.com/amiibo/detail/lucina-amiibo-super-smash-bros-series",
                     "releases": {
@@ -906,6 +937,7 @@
                 {
                     "lkey": "ssb_wario",
                     "image": "assets/images/ssb/wario.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_wario.png",
                     "url": "https://www.nintendo.com/amiibo/detail/wario-amiibo-super-smash-bros-series",
                     "releases": {
@@ -928,6 +960,7 @@
                 {
                     "lkey": "ssb_charizard",
                     "image": "assets/images/ssb/charizard.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_charizard.png",
                     "url": "https://www.nintendo.com/amiibo/detail/charizard-amiibo-super-smash-bros-series",
                     "releases": {
@@ -950,6 +983,7 @@
                 {
                     "lkey": "ssb_ness",
                     "image": "assets/images/ssb/ness.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ness.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ness-amiibo-super-smash-bros-series",
                     "releases": {
@@ -972,6 +1006,7 @@
                 {
                     "lkey": "ssb_pacman",
                     "image": "assets/images/ssb/pac_man.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_pac_man.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pac-man-amiibo-super-smash-bros-series",
                     "releases": {
@@ -994,6 +1029,7 @@
                 {
                     "lkey": "ssb_greninja",
                     "image": "assets/images/ssb/greninja.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_greninja.png",
                     "url": "https://www.nintendo.com/amiibo/detail/greninja-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1016,6 +1052,7 @@
                 {
                     "lkey": "ssb_jigglypuff",
                     "image": "assets/images/ssb/jigglypuff.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_jigglypuff.png",
                     "url": "https://www.nintendo.com/amiibo/detail/jigglypuff-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1038,6 +1075,7 @@
                 {
                     "lkey": "ssb_palutena",
                     "image": "assets/images/ssb/palutena.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_palutena.png",
                     "url": "https://www.nintendo.com/amiibo/detail/palutena-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1060,6 +1098,7 @@
                 {
                     "lkey": "ssb_dark_pit",
                     "image": "assets/images/ssb/dark_pit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_dark_pit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/dark-pit-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1082,6 +1121,7 @@
                 {
                     "lkey": "ssb_zero_suit_samus",
                     "image": "assets/images/ssb/zero_suit_samus.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_zero_suit_samus.png",
                     "url": "https://www.nintendo.com/amiibo/detail/zero-suit-samus-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1104,6 +1144,7 @@
                 {
                     "lkey": "ssb_ganondorf",
                     "image": "assets/images/ssb/ganondorf.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ganondorf.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ganondorf-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1126,6 +1167,7 @@
                 {
                     "lkey": "ssb_dr_mario",
                     "image": "assets/images/ssb/dr_mario.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_dr_mario.png",
                     "url": "https://www.nintendo.com/amiibo/detail/dr-mario-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1148,6 +1190,7 @@
                 {
                     "lkey": "ssb_bowser_jr",
                     "image": "assets/images/ssb/bowser_jr.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_bowser_jr.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bowser-jr-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1170,6 +1213,7 @@
                 {
                     "lkey": "ssb_olimar",
                     "image": "assets/images/ssb/olimar.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_olimar.png",
                     "url": "https://www.nintendo.com/amiibo/detail/olimar-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1195,6 +1239,7 @@
                 {
                     "lkey": "ssb_mr_game_watch",
                     "image": "assets/images/ssb/mr_game_watch.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mr_game_watch.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mr-game-and-watch-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1216,6 +1261,7 @@
                 {
                     "lkey": "ssb_rob_ness",
                     "image": "assets/images/ssb/rob_nes.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_rob_nes.png",
                     "url": "https://www.nintendo.com/amiibo/detail/rob-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1236,6 +1282,7 @@
                 {
                     "lkey": "ssb_duck_hunt",
                     "image": "assets/images/ssb/duck_hunt.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_duck_hunt.png",
                     "url": "https://www.nintendo.com/amiibo/detail/duck-hunt-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1256,6 +1303,7 @@
                 {
                     "lkey": "ssb_mii_brawler",
                     "image": "assets/images/ssb/mii_brawler.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mii_brawler.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mii-brawler-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1276,6 +1324,7 @@
                 {
                     "lkey": "ssb_mii_swordfighter",
                     "image": "assets/images/ssb/mii_swordfighter.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mii_swordfighter.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mii-swordfighter-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1296,6 +1345,7 @@
                 {
                     "lkey": "ssb_mii_gunner",
                     "image": "assets/images/ssb/mii_gunner.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mii_gunner.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mii-gunner-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1316,6 +1366,7 @@
                 {
                     "lkey": "ssb_mewtwo",
                     "image": "assets/images/ssb/mewtwo.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_mewtwo.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mewtwo-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1337,6 +1388,7 @@
                 {
                     "lkey": "ssb_falco",
                     "image": "assets/images/ssb/falco.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_falco.png",
                     "url": "https://www.nintendo.com/amiibo/detail/falco-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1357,6 +1409,7 @@
                 {
                     "lkey": "ssb_lucas",
                     "image": "assets/images/ssb/lucas.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_lucas.png",
                     "url": "https://www.nintendo.com/amiibo/detail/lucas-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1382,6 +1435,7 @@
                 {
                     "lkey": "ssb_rob_famicom",
                     "image": "assets/images/ssb/rob_famicom.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_rob_famicom.png",
                     "url": "https://www.nintendo.com/amiibo/detail/rob-famicom-colors-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1403,6 +1457,7 @@
                 {
                     "lkey": "ssb_roy",
                     "image": "assets/images/ssb/roy.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_roy.png",
                     "url": "https://www.nintendo.com/amiibo/detail/roy-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1425,6 +1480,7 @@
                 {
                     "lkey": "ssb_ryu",
                     "image": "assets/images/ssb/ryu.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ryu.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ryu-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1446,6 +1502,7 @@
                 {
                     "lkey": "ssb_cloud",
                     "image": "assets/images/ssb/cloud.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_cloud.png",
                     "url": "https://www.nintendo.com/amiibo/detail/cloud-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1467,6 +1524,7 @@
                 {
                     "lkey": "ssb_cloud_player_2",
                     "image": "assets/images/ssb/cloud_player_2.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_cloud_player_2.png",
                     "url": "https://www.nintendo.com/amiibo/detail/cloud-player-2-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1487,6 +1545,7 @@
                 {
                     "lkey": "ssb_corrin",
                     "image": "assets/images/ssb/corrin.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_corrin.png",
                     "url": "https://www.nintendo.com/amiibo/detail/corrin-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1508,6 +1567,7 @@
                 {
                     "lkey": "ssb_corrin_player_2",
                     "image": "assets/images/ssb/corrin_player_2.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_corrin_player_2.png",
                     "url": "https://www.nintendo.com/amiibo/detail/corrin-player-2-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1530,6 +1590,7 @@
                 {
                     "lkey": "ssb_bayonetta",
                     "image": "assets/images/ssb/bayonetta.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_bayonetta.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bayonetta-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1550,6 +1611,7 @@
                 {
                     "lkey": "ssb_bayonetta_player_2",
                     "image": "assets/images/ssb/bayonetta_player_2.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_bayonetta_player_2.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bayonetta-player-2-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1570,6 +1632,7 @@
                 {
                     "lkey": "ssb_inkling",
                     "image": "assets/images/ssb/inkling.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_inkling.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1591,6 +1654,7 @@
                 {
                     "lkey": "ssb_ridley",
                     "image": "assets/images/ssb/ridley.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ridley.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ridley-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1618,6 +1682,7 @@
                 {
                     "lkey": "ssb_wolf",
                     "image": "assets/images/ssb/wolf.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_wolf.png",
                     "url": "https://www.nintendo.com/amiibo/detail/wolf-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1642,6 +1707,7 @@
                 {
                     "lkey": "ssb_piranha_plant",
                     "image": "assets/images/ssb/piranha_plant.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_piranha_plant.png",
                     "url": "https://www.nintendo.com/amiibo/detail/piranha-plant-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1666,6 +1732,7 @@
                 {
                     "lkey": "ssb_king_k_rool",
                     "image": "assets/images/ssb/king_k_rool.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_king_k_rool.png",
                     "url": "https://www.nintendo.com/amiibo/detail/king-k-rool-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1692,6 +1759,7 @@
                 {
                     "lkey": "ssb_ice_climbers",
                     "image": "assets/images/ssb/ice_climbers.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ice_climbers.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ice-climbers-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1723,6 +1791,7 @@
                 {
                     "lkey": "ssb_ken",
                     "image": "assets/images/ssb/ken.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ken.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ken-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1746,6 +1815,7 @@
                 {
                     "lkey": "ssb_young_link",
                     "image": "assets/images/ssb/young_link.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_young_link.png",
                     "url": "https://www.nintendo.com/amiibo/detail/young-link-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1773,6 +1843,7 @@
                 {
                     "lkey": "ssb_daisy",
                     "image": "assets/images/ssb/daisy.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_daisy.png",
                     "url": "https://www.nintendo.com/amiibo/detail/daisy-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1797,6 +1868,7 @@
                 {
                     "lkey": "ssb_pokémon_trainer",
                     "image": "assets/images/ssb/pokémon_trainer.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_pokémon_trainer.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pokemon-trainer-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1819,6 +1891,7 @@
                 {
                     "lkey": "ssb_pichu",
                     "image": "assets/images/ssb/pichu.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_pichu.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pichu-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1841,6 +1914,7 @@
                 {
                     "lkey": "ssb_isabelle",
                     "image": "assets/images/ssb/isabelle.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_isabelle.png",
                     "url": "https://www.nintendo.com/amiibo/detail/isabelle-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1862,6 +1936,7 @@
                 {
                     "lkey": "ssb_squirtle",
                     "image": "assets/images/ssb/squirtle.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_squirtle.png",
                     "url": "https://www.nintendo.com/amiibo/detail/squirtle-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1883,6 +1958,7 @@
                 {
                     "lkey": "ssb_ivysaur",
                     "image": "assets/images/ssb/ivysaur.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_ivysaur.png",
                     "url": "https://www.nintendo.com/amiibo/detail/ivysaur-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1904,6 +1980,7 @@
                 {
                     "lkey": "ssb_snake",
                     "image": "assets/images/ssb/snake.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ssb/box_snake.png",
                     "url": "https://www.nintendo.com/amiibo/detail/snake-amiibo-super-smash-bros-series",
                     "releases": {
@@ -1932,6 +2009,7 @@
                 {
                     "lkey": "sm_mario",
                     "image": "assets/images/sm/mario.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_mario.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mario-amiibo-super-mario-series",
                     "releases": {
@@ -1954,6 +2032,7 @@
                 {
                     "lkey": "sm_luigi",
                     "image": "assets/images/sm/luigi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_luigi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/luigi-amiibo-super-mario-series",
                     "releases": {
@@ -1976,6 +2055,7 @@
                 {
                     "lkey": "sm_peach",
                     "image": "assets/images/sm/peach.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_peach.png",
                     "url": "https://www.nintendo.com/amiibo/detail/peach-amiibo-super-mario-series",
                     "releases": {
@@ -1998,6 +2078,7 @@
                 {
                     "lkey": "sm_yoshi",
                     "image": "assets/images/sm/yoshi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_yoshi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/yoshi-amiibo-super-mario-series",
                     "releases": {
@@ -2020,6 +2101,7 @@
                 {
                     "lkey": "sm_toad",
                     "image": "assets/images/sm/toad.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_toad.png",
                     "url": "https://www.nintendo.com/amiibo/detail/toad-amiibo-super-mario-series",
                     "releases": {
@@ -2042,6 +2124,7 @@
                 {
                     "lkey": "sm_bowser",
                     "image": "assets/images/sm/bowser.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_bowser.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bowser-amiibo-super-smash-bros-series",
                     "releases": {
@@ -2064,6 +2147,7 @@
                 {
                     "lkey": "sm_mario_gold_edition",
                     "image": "assets/images/sm/mario_gold_edition.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_mario_gold_edition.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mario-gold-edition-amiibo-super-mario-series",
                     "releases": {
@@ -2082,6 +2166,7 @@
                 {
                     "lkey": "sm_mario_silver_edition",
                     "image": "assets/images/sm/mario_silver_edition.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_mario_silver_edition.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mario-silver-edition-amiibo-super-mario-series",
                     "releases": {
@@ -2096,6 +2181,7 @@
                 {
                     "lkey": "sm_wario",
                     "image": "assets/images/sm/wario.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_wario.png",
                     "url": "https://www.nintendo.com/amiibo/detail/wario-amiibo-super-mario-series",
                     "releases": {
@@ -2117,6 +2203,7 @@
                 {
                     "lkey": "sm_waluigi",
                     "image": "assets/images/sm/waluigi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_waluigi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/waluigi-amiibo-super-mario-series",
                     "releases": {
@@ -2140,6 +2227,7 @@
                 {
                     "lkey": "sm_daisy",
                     "image": "assets/images/sm/daisy.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_daisy.png",
                     "url": "https://www.nintendo.com/amiibo/detail/daisy-amiibo-super-mario-series",
                     "releases": {
@@ -2161,6 +2249,7 @@
                 {
                     "lkey": "sm_rosalina",
                     "image": "assets/images/sm/rosalina.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_rosalina.png",
                     "url": "https://www.nintendo.com/amiibo/detail/rosalina-amiibo-super-mario-series",
                     "releases": {
@@ -2182,6 +2271,7 @@
                 {
                     "lkey": "sm_boo",
                     "image": "assets/images/sm/boo.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_boo.png",
                     "url": "https://www.nintendo.com/amiibo/detail/boo-amiibo-super-mario-series",
                     "releases": {
@@ -2203,6 +2293,7 @@
                 {
                     "lkey": "sm_donkey_kong",
                     "image": "assets/images/sm/donkey_kong.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_donkey_kong.png",
                     "url": "https://www.nintendo.com/amiibo/detail/donkey-kong-amiibo-super-mario-series",
                     "releases": {
@@ -2224,6 +2315,7 @@
                 {
                     "lkey": "sm_diddy_kong",
                     "image": "assets/images/sm/diddy_kong.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_diddy_kong.png",
                     "url": "https://www.nintendo.com/amiibo/detail/diddy-kong-amiibo-super-mario-series",
                     "releases": {
@@ -2246,6 +2338,7 @@
                 {
                     "lkey": "sm_goomba",
                     "image": "assets/images/sm/goomba.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_goomba.png",
                     "url": "https://www.nintendo.com/amiibo/detail/goomba-amiibo-super-mario-series",
                     "releases": {
@@ -2271,6 +2364,7 @@
                 {
                     "lkey": "sm_koopa_troopa",
                     "image": "assets/images/sm/koopa_troopa.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sm/box_koopa_troopa.png",
                     "url": "https://www.nintendo.com/amiibo/detail/koopa-troopa-amiibo-super-mario-series",
                     "releases": {
@@ -2299,6 +2393,7 @@
                 {
                     "lkey": "smo_mario_wedding_outfit",
                     "image": "assets/images/smo/mario_wedding_outfit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/smo/box_mario_wedding_outfit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mario-wedding-outfit-amiibo-super-mario-odyssey-series",
                     "releases": {
@@ -2322,6 +2417,7 @@
                 {
                     "lkey": "smo_peach_wedding_outfit",
                     "image": "assets/images/smo/peach_wedding_outfit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/smo/box_peach_wedding_outfit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/peach-wedding-outfit-amiibo-super-mario-odyssey-series",
                     "releases": {
@@ -2346,6 +2442,7 @@
                 {
                     "lkey": "smo_bowser_wedding_outfit",
                     "image": "assets/images/smo/bowser_wedding_outfit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/smo/box_bowser_wedding_outfit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bowser-wedding-outfit-amiibo-super-mario-odyssey-series",
                     "releases": {
@@ -2366,6 +2463,27 @@
                         "4902370537499",
                         "696554198128"
                     ]
+                },
+                {
+                    "lkey": "smo_mario_cereal",
+                    "image": "assets/images/smo/mario_cereal.png",
+                    "display_amiibo": false,
+                    "box": "assets/images/smo/box_mario_cereal.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/delicious-amiibo",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2017-12-11"
+                        }
+                    },
+                    "barcodes": [
+                        "038000176159",
+                        "038000198236",
+                        "689994960080",
+                        "689739304469",
+                        "689551243748",
+                        "690000470561",
+                        "705353619151"
+                    ]
                 }
             ]
         },
@@ -2377,6 +2495,7 @@
                 {
                     "lkey": "smb30_mario_classic_color",
                     "image": "assets/images/smb30/mario_classic_color.png",
+                    "display_amiibo": true,
                     "box": "assets/images/smb30/box_mario_classic_color.png",
                     "url": "https://www.nintendo.com/amiibo/detail/30th-anniversary-mario-classic-color-amiibo-30th-anniversary-series",
                     "releases": {
@@ -2403,6 +2522,7 @@
                 {
                     "lkey": "smb30_mario_modern_color",
                     "image": "assets/images/smb30/mario_modern_color.png",
+                    "display_amiibo": true,
                     "box": "assets/images/smb30/box_mario_modern_color.png",
                     "url": "https://www.nintendo.com/amiibo/detail/30th-anniversary-mario-classic-color-amiibo-30th-anniversary-series",
                     "releases": {
@@ -2436,6 +2556,7 @@
                 {
                     "lkey": "zld_wolf_link",
                     "image": "assets/images/zld/wolf_link.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_wolf_link.png",
                     "url": "https://www.nintendo.com/amiibo/detail/wolf-link-amiibo",
                     "releases": {
@@ -2460,6 +2581,7 @@
                 {
                     "lkey": "zld_link_archer",
                     "image": "assets/images/zld/link_archer.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_archer.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-archer-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2485,6 +2607,7 @@
                 {
                     "lkey": "zld_link_rider",
                     "image": "assets/images/zld/link_rider.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_rider.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-rider-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2516,6 +2639,7 @@
                 {
                     "lkey": "zld_guardian",
                     "image": "assets/images/zld/guardian.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_guardian.png",
                     "url": "https://www.nintendo.com/amiibo/detail/guardian-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2547,6 +2671,7 @@
                 {
                     "lkey": "zld_zelda",
                     "image": "assets/images/zld/zelda.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_zelda.png",
                     "url": "https://www.nintendo.com/amiibo/detail/zelda-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2568,6 +2693,7 @@
                 {
                     "lkey": "zld_bokoblin",
                     "image": "assets/images/zld/bokoblin.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_bokoblin.png",
                     "url": "https://www.nintendo.com/amiibo/detail/bokoblin-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2599,6 +2725,7 @@
                 {
                     "lkey": "zld_revali",
                     "image": "assets/images/zld/revali.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_revali.png",
                     "url": "https://www.nintendo.com/amiibo/detail/revali-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2631,6 +2758,7 @@
                 {
                     "lkey": "zld_mipha",
                     "image": "assets/images/zld/mipha.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_mipha.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mipha-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2659,6 +2787,7 @@
                 {
                     "lkey": "zld_daruk",
                     "image": "assets/images/zld/daruk.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_daruk.png",
                     "url": "https://www.nintendo.com/amiibo/detail/daruk-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2687,6 +2816,7 @@
                 {
                     "lkey": "zld_urbosa",
                     "image": "assets/images/zld/urbosa.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_urbosa.png",
                     "url": "https://www.nintendo.com/amiibo/detail/urbosa-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2719,6 +2849,7 @@
                 {
                     "lkey": "zld_link_ocarina_of_time",
                     "image": "assets/images/zld/link_ocarina_of_time.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_ocarina_of_time.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-ocarina-of-time-amiibo-30th-anniversary-series",
                     "releases": {
@@ -2742,6 +2873,7 @@
                 {
                     "lkey": "zld_link_the_legend_of_zelda",
                     "image": "assets/images/zld/link_the_legend_of_zelda.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_the_legend_of_zelda.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-the-legend-of-zelda-amiibo-30th-anniversary-series",
                     "releases": {
@@ -2763,6 +2895,7 @@
                 {
                     "lkey": "zld_toon_link_the_wind_waker",
                     "image": "assets/images/zld/toon_link_the_wind_waker.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_toon_link_the_wind_waker.png",
                     "url": "https://www.nintendo.com/amiibo/detail/toon-link-the-wind-waker-amiibo-30th-anniversary-series",
                     "releases": {
@@ -2784,6 +2917,7 @@
                 {
                     "lkey": "zld_zelda_the_wind_waker",
                     "image": "assets/images/zld/zelda_the_wind_waker.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_zelda_the_wind_waker.png",
                     "url": "https://www.nintendo.com/amiibo/detail/toon-zelda-the-wind-waker-amiibo-30th-anniversary-series",
                     "releases": {
@@ -2805,6 +2939,7 @@
                 {
                     "lkey": "zld_link_majora_s_mask",
                     "image": "assets/images/zld/link_majora_s_mask.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_majora_s_mask.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-majoras-mask-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2831,6 +2966,7 @@
                 {
                     "lkey": "zld_link_twilight_princess",
                     "image": "assets/images/zld/link_twilight_princess.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_twilight_princess.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-twilight-princess-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2855,6 +2991,7 @@
                 {
                     "lkey": "zld_link_skyward_sword",
                     "image": "assets/images/zld/link_skyward_sword.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_skyward_sword.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-skyward-sword-amiibo-the-legend-of-zelda-series",
                     "releases": {
@@ -2883,6 +3020,7 @@
                 {
                     "lkey": "zld_link_awakening",
                     "image": "assets/images/zld/link_awakening.png",
+                    "display_amiibo": true,
                     "box": "assets/images/zld/box_link_awakening.png",
                     "url": "https://www.nintendo.com/amiibo/detail/link-amiibo-the-legend-of-zelda-links-awakening-series",
                     "releases": {
@@ -2910,6 +3048,7 @@
                 {
                     "lkey": "spl_inkling_girl_1",
                     "image": "assets/images/spl/inkling_girl_1.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_girl_1.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-girl-amiibo-splatoon-series",
                     "releases": {
@@ -2930,6 +3069,7 @@
                 {
                     "lkey": "spl_inkling_boy_1",
                     "image": "assets/images/spl/inkling_boy_1.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_boy_1.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-boy-amiibo-splatoon-series",
                     "releases": {
@@ -2953,6 +3093,7 @@
                 {
                     "lkey": "spl_inkling_squid_1",
                     "image": "assets/images/spl/inkling_squid_1.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_squid_1.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-squid-amiibo-splatoon-series",
                     "releases": {
@@ -2975,6 +3116,7 @@
                 {
                     "lkey": "spl_callie",
                     "image": "assets/images/spl/callie.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_callie.png",
                     "url": "https://www.nintendo.com/amiibo/detail/callie-amiibo-splatoon-series",
                     "releases": {
@@ -2997,6 +3139,7 @@
                 {
                     "lkey": "spl_marie",
                     "image": "assets/images/spl/marie.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_marie.png",
                     "url": "https://www.nintendo.com/amiibo/detail/marie-amiibo-splatoon-series",
                     "releases": {
@@ -3021,6 +3164,7 @@
                 {
                     "lkey": "spl_inkling_girl_2",
                     "image": "assets/images/spl/inkling_girl_2.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_girl_2.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-girl-2-amiibo-splatoon-series",
                     "releases": {
@@ -3044,6 +3188,7 @@
                 {
                     "lkey": "spl_inkling_boy_2",
                     "image": "assets/images/spl/inkling_boy_2.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_boy_2.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-boy-2-amiibo-splatoon-series",
                     "releases": {
@@ -3065,6 +3210,7 @@
                 {
                     "lkey": "spl_inkling_squid_2",
                     "image": "assets/images/spl/inkling_squid_2.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_squid_2.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-squid-2-amiibo-splatoon-series",
                     "releases": {
@@ -3085,6 +3231,7 @@
                 {
                     "lkey": "spl_inkling_girl_3",
                     "image": "assets/images/spl/inkling_girl_3.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_girl_3.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-girl-3-amiibo-splatoon-series",
                     "releases": {
@@ -3106,6 +3253,7 @@
                 {
                     "lkey": "spl_inkling_boy_3",
                     "image": "assets/images/spl/inkling_boy_3.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_boy_3.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-boy-3-amiibo-splatoon-series",
                     "releases": {
@@ -3127,6 +3275,7 @@
                 {
                     "lkey": "spl_inkling_squid_3",
                     "image": "assets/images/spl/inkling_squid_3.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_inkling_squid_3.png",
                     "url": "https://www.nintendo.com/amiibo/detail/inkling-squid-3-amiibo-splatoon-series",
                     "releases": {
@@ -3147,6 +3296,7 @@
                 {
                     "lkey": "spl_pearl",
                     "image": "assets/images/spl/pearl.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_pearl.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pearl_amiibo-splatoon-series",
                     "releases": {
@@ -3171,6 +3321,7 @@
                 {
                     "lkey": "spl_marina",
                     "image": "assets/images/spl/marina.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_marina.png",
                     "url": "https://www.nintendo.com/amiibo/detail/marina-amiibo-splatoon-series",
                     "releases": {
@@ -3192,6 +3343,7 @@
                 {
                     "lkey": "spl_octoling_girl",
                     "image": "assets/images/spl/octoling_girl.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_octoling_girl.png",
                     "url": "https://www.nintendo.com/amiibo/detail/octoling-girl-amiibo-splatoon-series",
                     "releases": {
@@ -3215,6 +3367,7 @@
                 {
                     "lkey": "spl_octoling_boy",
                     "image": "assets/images/spl/octoling_boy.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_octoling_boy.png",
                     "url": "https://www.nintendo.com/amiibo/detail/octoling-boy-amiibo-splatoon-series",
                     "releases": {
@@ -3241,6 +3394,7 @@
                 {
                     "lkey": "spl_octoling_octopus",
                     "image": "assets/images/spl/octoling_octopus.png",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_octoling_octopus.png",
                     "url": "https://www.nintendo.com/amiibo/detail/octoling-octopus-amiibo-splatoon-series",
                     "releases": {
@@ -3262,6 +3416,7 @@
             "value_packs": [
                 {
                     "lkey": "spl_bdl_pearl_marina",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_bdl_pearl_marina.png",
                     "amiibo": [
                         "spl_pearl",
@@ -3273,6 +3428,7 @@
                 },
                 {
                     "lkey": "spl_bdl_inkling_boy_girl_squid",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_bdl_inkling_boy_girl_squid.png",
                     "amiibo": [
                         "spl_inkling_boy_1",
@@ -3285,6 +3441,7 @@
                 },
                 {
                     "lkey": "spl_bdl_octoling_boy_girl_octopus",
+                    "display_amiibo": true,
                     "box": "assets/images/spl/box_bdl_octoling_boy_girl_octopus.png",
                     "amiibo": [
                         "spl_octoling_boy",
@@ -3305,6 +3462,7 @@
                 {
                     "lkey": "ac_isabelle_winter_outfit",
                     "image": "assets/images/ac/isabelle_winter_outfit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_isabelle_winter_outfit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/isabelle-amiibo-animal-crossing-series",
                     "releases": {
@@ -3330,6 +3488,7 @@
                 {
                     "lkey": "ac_tom_nook",
                     "image": "assets/images/ac/tom_nook.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_tom_nook.png",
                     "url": "https://www.nintendo.com/amiibo/detail/tom-nook-amiibo-animal-crossing-series",
                     "releases": {
@@ -3354,6 +3513,7 @@
                 {
                     "lkey": "ac_kk",
                     "image": "assets/images/ac/kk.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_kk.png",
                     "url": "https://www.nintendo.com/amiibo/detail/kk-amiibo-animal-crossing-series",
                     "releases": {
@@ -3375,6 +3535,7 @@
                 {
                     "lkey": "ac_mabel",
                     "image": "assets/images/ac/mabel.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_mabel.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mabel-amiibo-animal-crossing-series",
                     "releases": {
@@ -3398,6 +3559,7 @@
                 {
                     "lkey": "ac_digby",
                     "image": "assets/images/ac/digby.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_digby.png",
                     "url": "https://www.nintendo.com/amiibo/detail/digby-amiibo-animal-crossing-series",
                     "releases": {
@@ -3422,6 +3584,7 @@
                 {
                     "lkey": "ac_lottie",
                     "image": "assets/images/ac/lottie.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_lottie.png",
                     "url": "https://www.nintendo.com/amiibo/detail/lottie-amiibo-animal-crossing-series",
                     "releases": {
@@ -3447,6 +3610,7 @@
                 {
                     "lkey": "ac_cyrus",
                     "image": "assets/images/ac/cyrus.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_cyrus.png",
                     "url": "https://www.nintendo.com/amiibo/detail/cyrus-amiibo-animal-crossing-series",
                     "releases": {
@@ -3468,6 +3632,7 @@
                 {
                     "lkey": "ac_reese",
                     "image": "assets/images/ac/reese.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_reese.png",
                     "url": "https://www.nintendo.com/amiibo/detail/reese-amiibo-animal-crossing-series",
                     "releases": {
@@ -3489,6 +3654,7 @@
                 {
                     "lkey": "ac_blathers",
                     "image": "assets/images/ac/blathers.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_blathers.png",
                     "url": "https://www.nintendo.com/amiibo/detail/blathers-amiibo-animal-crossing-series",
                     "releases": {
@@ -3512,6 +3678,7 @@
                 {
                     "lkey": "ac_celeste",
                     "image": "assets/images/ac/celeste.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_celeste.png",
                     "url": "https://www.nintendo.com/amiibo/detail/celeste-amiibo-animal-crossing-series",
                     "releases": {
@@ -3537,6 +3704,7 @@
                 {
                     "lkey": "ac_resetti",
                     "image": "assets/images/ac/resetti.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_resetti.png",
                     "url": "https://www.nintendo.com/amiibo/detail/resetti-amiibo-animal-crossing-series",
                     "releases": {
@@ -3562,6 +3730,7 @@
                 {
                     "lkey": "ac_kicks",
                     "image": "assets/images/ac/kicks.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_kicks.png",
                     "url": "https://www.nintendo.com/amiibo/detail/kicks-amiibo-animal-crossing-series",
                     "releases": {
@@ -3587,6 +3756,7 @@
                 {
                     "lkey": "ac_timmy_tommy",
                     "image": "assets/images/ac/timmy_tommy.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_timmy_tommy.png",
                     "url": "https://www.nintendo.com/amiibo/detail/timmy-and-tommy-amiibo-animal-crossing-series",
                     "releases": {
@@ -3610,6 +3780,7 @@
                 {
                     "lkey": "ac_kapp_n",
                     "image": "assets/images/ac/kapp_n.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_kapp_n.png",
                     "url": "https://www.nintendo.com/amiibo/detail/kappn-amiibo-animal-crossing-series",
                     "releases": {
@@ -3633,6 +3804,7 @@
                 {
                     "lkey": "ac_rover",
                     "image": "assets/images/ac/rover.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_rover.png",
                     "url": "https://www.nintendo.com/amiibo/detail/rover-amiibo-animal-crossing-series",
                     "releases": {
@@ -3653,6 +3825,7 @@
                 {
                     "lkey": "ac_isabelle_summer_outfit",
                     "image": "assets/images/ac/isabelle_summer_outfit.png",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_isabelle_summer_outfit.png",
                     "url": "https://www.nintendo.com/amiibo/detail/isabelle-summer-outfit-amiibo-animal-crossing-series",
                     "releases": {
@@ -3679,6 +3852,7 @@
             "value_packs": [
                 {
                     "lkey": "ac_bdl_cyrus_kk_reese",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_bdl_cyrus_kk_reese.png",
                     "amiibo": [
                         "ac_cyrus",
@@ -3691,6 +3865,7 @@
                 },
                 {
                     "lkey": "ac_bdl_digby_isabelle_winter_outfit",
+                    "display_amiibo": true,
                     "box": "assets/images/ac/box_bdl_digby_isabelle_winter_outfit.png",
                     "amiibo": [
                         "ac_digby",
@@ -3710,6 +3885,7 @@
                 {
                     "lkey": "yww_green_yarn_yoshi",
                     "image": "assets/images/yww/green_yarn_yoshi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/yww/box_green_yarn_yoshi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/green-yarn-yoshi-amiibo-yoshis-woolly-world-series",
                     "releases": {
@@ -3733,6 +3909,7 @@
                 {
                     "lkey": "yww_pink_yarn_yoshi",
                     "image": "assets/images/yww/pink_yarn_yoshi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/yww/box_pink_yarn_yoshi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pink-yarn-yoshi-amiibo-yoshis-woolly-world-series",
                     "releases": {
@@ -3759,6 +3936,7 @@
                 {
                     "lkey": "yww_light_blue_yarn_yoshi",
                     "image": "assets/images/yww/light_blue_yarn_yoshi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/yww/box_light_blue_yarn_yoshi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/light-blue-yarn-yoshi-amiibo-yoshis-woolly-world-series",
                     "releases": {
@@ -3793,6 +3971,7 @@
                 {
                     "lkey": "yww_mega_yarn_yoshi",
                     "image": "assets/images/yww/mega_yarn_yoshi.png",
+                    "display_amiibo": true,
                     "box": "assets/images/yww/box_mega_yarn_yoshi.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mega-yarn-yoshi-amiibo-yoshis-woolly-world-series",
                     "releases": {
@@ -3817,6 +3996,7 @@
                 {
                     "lkey": "yww_poochy",
                     "image": "assets/images/yww/poochy.png",
+                    "display_amiibo": true,
                     "box": "assets/images/yww/box_poochy.png",
                     "url": "https://www.nintendo.com/amiibo/detail/poochy-amiibo-yoshis-woolly-world-series",
                     "releases": {
@@ -3853,6 +4033,7 @@
                 {
                     "lkey": "krb_kirby",
                     "image": "assets/images/krb/kirby.png",
+                    "display_amiibo": true,
                     "box": "assets/images/krb/box_kirby.png",
                     "url": "https://www.nintendo.com/amiibo/detail/kirby-amiibo-kirby-series",
                     "releases": {
@@ -3875,6 +4056,7 @@
                 {
                     "lkey": "krb_meta_knight",
                     "image": "assets/images/krb/meta_knight.png",
+                    "display_amiibo": true,
                     "box": "assets/images/krb/box_meta_knight.png",
                     "url": "https://www.nintendo.com/amiibo/detail/meta-knight-amiibo-kirby-series",
                     "releases": {
@@ -3897,6 +4079,7 @@
                 {
                     "lkey": "krb_king_dedede",
                     "image": "assets/images/krb/king_dedede.png",
+                    "display_amiibo": true,
                     "box": "assets/images/krb/box_king_dedede.png",
                     "url": "https://www.nintendo.com/amiibo/detail/king-dedede-amiibo-kirby-series",
                     "releases": {
@@ -3918,6 +4101,7 @@
                 {
                     "lkey": "krb_waddle_dee",
                     "image": "assets/images/krb/waddle_dee.png",
+                    "display_amiibo": true,
                     "box": "assets/images/krb/box_waddle_dee.png",
                     "url": "https://www.nintendo.com/amiibo/detail/waddle-dee-amiibo-kirby-series",
                     "releases": {
@@ -3953,6 +4137,7 @@
                 {
                     "lkey": "fe_alm",
                     "image": "assets/images/fe/alm.png",
+                    "display_amiibo": true,
                     "box": "assets/images/fe/box_alm.png",
                     "url": "https://www.nintendo.com/amiibo/detail/alm-amiibo-fire-emblem-series",
                     "releases": {
@@ -3973,6 +4158,7 @@
                 {
                     "lkey": "fe_celica",
                     "image": "assets/images/fe/celica.png",
+                    "display_amiibo": true,
                     "box": "assets/images/fe/box_celica.png",
                     "url": "https://www.nintendo.com/amiibo/detail/celica-amiibo-fire-emblem-series",
                     "releases": {
@@ -3996,6 +4182,7 @@
                 {
                     "lkey": "fe_chrom",
                     "image": "assets/images/fe/chrom.png",
+                    "display_amiibo": true,
                     "box": "assets/images/fe/box_chrom.png",
                     "url": "https://www.nintendo.com/amiibo/detail/chrom-amiibo-fire-emblem-series",
                     "releases": {
@@ -4025,6 +4212,7 @@
                 {
                     "lkey": "fe_tiki",
                     "image": "assets/images/fe/tiki.png",
+                    "display_amiibo": true,
                     "box": "assets/images/fe/box_tiki.png",
                     "url": "https://www.nintendo.com/amiibo/detail/tiki-amiibo-fire-emblem-series",
                     "releases": {
@@ -4055,6 +4243,7 @@
                 {
                     "lkey": "mtr_samus_aran",
                     "image": "assets/images/mtr/samus_aran.png",
+                    "display_amiibo": true,
                     "box": "assets/images/mtr/box_samus_aran.png",
                     "url": "https://www.nintendo.com/amiibo/detail/samus-aran-amiibo-metroid-series",
                     "releases": {
@@ -4078,6 +4267,7 @@
                 {
                     "lkey": "mtr_metroid",
                     "image": "assets/images/mtr/metroid.png",
+                    "display_amiibo": true,
                     "box": "assets/images/mtr/box_metroid.png",
                     "url": "https://www.nintendo.com/amiibo/detail/metroid-amiibo-metroid-series",
                     "releases": {
@@ -4108,6 +4298,7 @@
                 {
                     "lkey": "sk_shovel_knight",
                     "image": "assets/images/sk/shovel_knight.png",
+                    "display_amiibo": true,
                     "box": "assets/images/sk/box_shovel_knight.png",
                     "url": "https://www.nintendo.com/amiibo/detail/shovel-knight-amiibo-shovel-knight-series",
                     "releases": {
@@ -4137,6 +4328,7 @@
                 {
                     "lkey": "cr_chibi_robo",
                     "image": "assets/images/cr/chibi_robo.png",
+                    "display_amiibo": true,
                     "box": "assets/images/cr/box_chibi_robo.png",
                     "url": "https://www.nintendo.com/amiibo/detail/chibi-robo-amiibo-chibi-robo-series",
                     "releases": {
@@ -4170,6 +4362,7 @@
                 {
                     "lkey": "bb_qbby",
                     "image": "assets/images/bb/qbby.png",
+                    "display_amiibo": true,
                     "box": "assets/images/bb/box_qbby.png",
                     "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/anaa/index.html",
                     "releases": {
@@ -4193,6 +4386,7 @@
                 {
                     "lkey": "pkm_pikmin",
                     "image": "assets/images/pkm/pikmin.png",
+                    "display_amiibo": true,
                     "box": "assets/images/pkm/box_pikmin.png",
                     "url": "https://www.nintendo.com/amiibo/detail/pikmin-amiibo-pikmin-series",
                     "releases": {
@@ -4226,6 +4420,7 @@
                 {
                     "lkey": "dpk_detective_pikachu",
                     "image": "assets/images/dpk/detective_pikachu.png",
+                    "display_amiibo": true,
                     "box": "assets/images/dpk/box_detective_pikachu.png",
                     "url": "https://www.nintendo.com/amiibo/detail/detective-pikachu-amiibo",
                     "releases": {
@@ -4263,6 +4458,7 @@
                 {
                     "lkey": "dks_solaire_of_astora",
                     "image": "assets/images/dks/solaire_of_astora.png",
+                    "display_amiibo": true,
                     "box": "assets/images/dks/box_solaire_of_astora.png",
                     "url": "https://www.nintendo.com/amiibo/detail/solaire-of-astora-amiibo-dark-souls-series",
                     "releases": {
@@ -4295,6 +4491,7 @@
                 {
                     "lkey": "mgmce_megaman_gold",
                     "image": "assets/images/mgmce/mega_man_gold.png",
+                    "display_amiibo": true,
                     "box": "assets/images/mgmce/box_mega_man_gold.png",
                     "url": "https://www.nintendo.com/amiibo/detail/mega-man-amiibo-super-smash-bros-series",
                     "releases": {

@@ -64,15 +64,17 @@ class AmiiboViewState extends State<AmiiboView> {
                                   child: widget.amiibo.box,
                                 ),
                               ),
-                              Semantics(
-                                label: I18n.of(context).text(
-                                  'sm-amiibo-detail-image',
-                                ),
-                                image: true,
-                                child: ExcludeSemantics(
-                                  child: widget.amiibo.image,
-                                ),
-                              ),
+                              widget.amiibo.displayAmiibo
+                                  ? Semantics(
+                                      label: I18n.of(context).text(
+                                        'sm-amiibo-detail-image',
+                                      ),
+                                      image: true,
+                                      child: ExcludeSemantics(
+                                        child: widget.amiibo.image,
+                                      ),
+                                    )
+                                  : Container(),
                             ],
                           ),
                         ),

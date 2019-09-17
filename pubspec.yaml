@@ -236,9 +236,11 @@ flutter:
     - assets/images/smo/header.jpg
     - assets/images/smo/logo.png
     - assets/images/smo/box_bowser_wedding_outfit.png
+    - assets/images/smo/box_mario_cereal.png
     - assets/images/smo/box_mario_wedding_outfit.png
     - assets/images/smo/box_peach_wedding_outfit.png
     - assets/images/smo/bowser_wedding_outfit.png
+    - assets/images/smo/mario_cereal.png
     - assets/images/smo/mario_wedding_outfit.png
     - assets/images/smo/peach_wedding_outfit.png
     - assets/images/spl/header.jpg

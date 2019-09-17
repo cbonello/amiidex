@@ -11,12 +11,16 @@ class AmiiboModel {
     Map<String, dynamic> json,
   )   : assert(json['lkey'] != null && json['lkey'] is String),
         assert(json['image'] != null && json['image'] is String),
+        assert(
+          json['display_amiibo'] != null && json['display_amiibo'] is bool,
+        ),
         assert(json['box'] != null && json['box'] is String),
         assert(json['url'] != null && json['url'] is String),
         assert(json['releases'] != null && json['releases'] is Map),
         assert(json['barcodes'] != null) {
     _lKey = json['lkey'];
     _image = Image.asset(json['image']);
+    _displayAmiibo = json['display_amiibo'];
     _box = json['box'];
     _serieID = serieID;
     _url = json['url'];
@@ -32,6 +36,7 @@ class AmiiboModel {
   Image _image;
   final Map<String, ReleaseModel> _releases = <String, ReleaseModel>{};
   List<String> _barcodes;
+  bool _displayAmiibo;
 
   String get lKey => _lKey;
   Image get image => _image;
@@ -39,6 +44,9 @@ class AmiiboModel {
   Image get box => Image.asset(_box);
   String get serieID => _serieID;
   String get url => _url;
+  // If the box and amiibo are the same, which is true for the Delicious Amiibo,
+  // we will only display the box in the amiibo detail page.
+  bool get displayAmiibo => _displayAmiibo;
 
   UnmodifiableMapView<String, ReleaseModel> get releases =>
       UnmodifiableMapView<String, ReleaseModel>(_releases);
