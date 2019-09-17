@@ -17,14 +17,14 @@ class OnboardingView extends StatelessWidget {
     'assets/images/onboarding/double_tap.png',
   ];
 
-  final List<String> _title = <String>[
+  final List<String> _titles = <String>[
     'onboarding-series-filter-title',
     'onboarding-lock-title',
     'onboarding-long-press-title',
     'onboarding-double-tap-title',
   ];
 
-  final List<String> _text = <String>[
+  final List<String> _descriptions = <String>[
     'onboarding-series-filter',
     'onboarding-lock',
     'onboarding-long-press',
@@ -52,8 +52,8 @@ class OnboardingView extends StatelessWidget {
         pages: <PageViewModel>[
           for (int index = 0; index < _assets.length; index++)
             PageViewModel(
-              title: I18n.of(context).text(_title[index]),
-              body: I18n.of(context).text(_text[index]),
+              title: I18n.of(context).text(_titles[index]),
+              body: I18n.of(context).text(_descriptions[index]),
               image: Image.asset(
                 _assets[index],
                 fit: BoxFit.fill,
