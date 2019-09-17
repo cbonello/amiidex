@@ -108,8 +108,9 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
                         padding: const EdgeInsets.all(15.0),
                         icon: Icon(
                           Icons.search,
-                          semanticLabel:
-                              I18n.of(context).text('collection-search'),
+                          semanticLabel: I18n.of(context).text(
+                            'collection-search',
+                          ),
                         ),
                         onPressed: () async {
                           await showSearch<AmiiboModel>(
@@ -128,15 +129,15 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
             },
             body: Container(
               color: Theme.of(context).canvasColor,
-              child: PageView(
+              child: PageView.builder(
                 controller: _pageController,
-                onPageChanged: (int index) {
-                  setState(() => _index = index);
+                itemCount: widget.series.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return AmiibosWidget(
+                    amiibos: widget.series[index].amiiboList,
+                  );
                 },
-                children: <Widget>[
-                  for (SerieModel serie in widget.series)
-                    AmiibosWidget(amiibos: serie.amiiboList),
-                ],
+                onPageChanged: (int index) => setState(() => _index = index),
               ),
             ),
           ),
