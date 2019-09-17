@@ -80,8 +80,21 @@ class _I18nEnUS extends I18n {
           'Do you want to reset your amiibo collection?',
       'settings-collection-reset-cancel-button': 'Cancel',
       'settings-collection-reset-reset-button': 'Reset',
-      'settings-splash-screen': 'Splash Screen',
-      'settings-splash-screen-display': 'Display during startup',
+      'settings-startup': 'Startup',
+      'settings-display-splash-screen': 'Display splash screen',
+      'settings-display-onboarding': 'Display onboarding',
+      'onboarding-series-filter-title': 'Series Filter',
+      'onboarding-lock-title': 'Lock/Unlock',
+      'onboarding-long-press-title': 'Long Press',
+      'onboarding-double-tap-title': 'Double Tap',
+      'onboarding-series-filter':
+          'Filter out amiibo series you don\'t collect.',
+      'onboarding-lock':
+          'Lock your amiibo collection to prevent unintentional updates.',
+      'onboarding-long-press':
+          'Long press to add/remove an amiibo from your collection.',
+      'onboarding-double-tap':
+          'Double tap to open corresponding amiibo page on www.nintendo.com',
       'settings-theme': 'Theme',
       'settings-light-theme': 'Light Theme',
       'settings-dark-theme': 'Dark Theme',
@@ -427,8 +440,21 @@ class _I18nFrFR extends I18n {
           'Voulez-vous réinitialiser votre collection d\'amiibo ?',
       'settings-collection-reset-cancel-button': 'Annuler',
       'settings-collection-reset-reset-button': 'Réinitialiser',
-      'settings-splash-screen': 'Ecran de démarrage',
-      'settings-splash-screen-display': 'Afficher au démarrage',
+      'settings-startup': 'Démarrage',
+      'settings-display-splash-screen': 'Afficher écran de démarrage',
+      'settings-display-onboarding': 'Afficher écran d\'aide',
+      'onboarding-series-filter-title': 'Filtre des séries',
+      'onboarding-lock-title': 'Verrouiller / Déverrouiller',
+      'onboarding-long-press-title': 'Appui long',
+      'onboarding-double-tap-title': 'Appui double',
+      'onboarding-series-filter':
+          'Filtrez les séries d\'amiibo que vous ne collectionnez pas.',
+      'onboarding-lock':
+          'Verrouillez votre collection d\'amiibo pour empêcher les mises à jour involontaires.',
+      'onboarding-long-press':
+          'Appui long pour ajouter ou supprimer un amiibo de votre collection.',
+      'onboarding-double-tap':
+          'Appui double pour ouvrir la page amiibo correspondante sur www.nintendo.com',
       'settings-theme': 'Thème',
       'settings-light-theme': 'Thème clair',
       'settings-dark-theme': 'Thème sombre',

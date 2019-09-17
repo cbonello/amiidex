@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   barcode_scan: ^1.0.0
+  cupertino_icons: ^0.1.2
   dynamic_theme: ^1.0.1
   fl_chart: ^0.2.2
   floating_search_bar: ^0.2.0
@@ -21,16 +22,13 @@ dependencies:
   flutter_markdown: ^0.2.0
   get_it: ^3.0.0+1
   intl: ^0.15.8
+  introduction_screen: ^1.0.6
   launch_review: ^2.0.0
   package_info: ^0.4.0+6
   provider: ^3.1.0
   shared_preferences: ^0.5.3+4
   sprintf: ^4.0.2
   url_launcher: ^5.1.2
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +60,10 @@ flutter:
     - assets/images/splash/controller_dark.png
     - assets/images/splash/controller_light.png
     - assets/images/splash/mario.png
+    - assets/images/onboarding/series_filter.png
+    - assets/images/onboarding/lock.png
+    - assets/images/onboarding/long_press.png
+    - assets/images/onboarding/double_tap.png
     - assets/images/regions/ar.png
     - assets/images/regions/at.png
     - assets/images/regions/au.png

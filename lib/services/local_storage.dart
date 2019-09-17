@@ -14,6 +14,14 @@ class LocalStorageService {
     return _instance;
   }
 
+  bool getDisplayOnboarding() {
+    return _preferences.getBool('onboarding') ?? true;
+  }
+
+  Future<bool> setDisplayOnboarding(bool status) {
+    return _preferences.setBool('onboarding', status);
+  }
+
   String getPreferredLanguage() {
     return _preferences.getString('preferred_language') ?? 'en_US';
   }

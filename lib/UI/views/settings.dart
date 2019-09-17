@@ -22,12 +22,13 @@ class SettingsView extends StatefulWidget {
 class SettingsViewState extends State<SettingsView> {
   final LocalStorageService localStorageService =
       locator<LocalStorageService>();
-  bool displaySplashScreen;
+  bool displaySplashScreen, displayOnboarding;
   Brightness _brightness;
 
   @override
   void initState() {
     displaySplashScreen = localStorageService.getDisplaySplashScreen();
+    displayOnboarding = localStorageService.getDisplayOnboarding();
     _brightness = DynamicTheme.of(context).brightness;
     super.initState();
   }
@@ -110,18 +111,6 @@ class SettingsViewState extends State<SettingsView> {
               ],
             ),
           ),
-          ListTile(
-            title: Text(I18n.of(context).text('settings-splash-screen')),
-          ),
-          LabeledCheckbox(
-            label: I18n.of(context).text('settings-splash-screen-display'),
-            padding: const EdgeInsets.only(left: 18.0, right: 20.0),
-            value: displaySplashScreen,
-            onChanged: (bool display) {
-              localStorageService.setDisplaySplashScreen(display);
-              setState(() => displaySplashScreen = display);
-            },
-          ),
           ListTile(title: Text(I18n.of(context).text('settings-theme'))),
           LabeledRadio<Brightness>(
             label: I18n.of(context).text('settings-light-theme'),
@@ -179,6 +168,27 @@ class SettingsViewState extends State<SettingsView> {
                 ],
               ),
             ),
+          ListTile(
+            title: Text(I18n.of(context).text('settings-startup')),
+          ),
+          LabeledCheckbox(
+            label: I18n.of(context).text('settings-display-splash-screen'),
+            padding: const EdgeInsets.only(left: 18.0, right: 20.0),
+            value: displaySplashScreen,
+            onChanged: (bool display) {
+              localStorageService.setDisplaySplashScreen(display);
+              setState(() => displaySplashScreen = display);
+            },
+          ),
+          LabeledCheckbox(
+            label: I18n.of(context).text('settings-display-onboarding'),
+            padding: const EdgeInsets.only(left: 18.0, right: 20.0),
+            value: displayOnboarding,
+            onChanged: (bool display) {
+              localStorageService.setDisplayOnboarding(display);
+              setState(() => displayOnboarding = display);
+            },
+          ),
         ],
       ),
     );

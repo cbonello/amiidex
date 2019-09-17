@@ -1,4 +1,5 @@
 import 'package:amiidex/UI/views/amiibo.dart';
+import 'package:amiidex/UI/views/onboarding.dart';
 import 'package:amiidex/UI/views/privacy.dart';
 import 'package:amiidex/UI/views/settings.dart';
 import 'package:amiidex/UI/views/splash.dart';
@@ -18,6 +19,11 @@ class Routes {
           return materialRoute(SplashView(), settings);
         }
         return materialRoute(const HomeView(config: null), settings);
+      case '/onboarding':
+        return materialRoute(
+          OnboardingView(config: settings.arguments),
+          settings,
+        );
       case '/home':
         return materialRoute(HomeView(config: settings.arguments), settings);
       case '/filter_series':

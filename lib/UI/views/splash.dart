@@ -11,6 +11,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     final Brightness brightness = Theme.of(context).brightness;
     final LocalStorageService storageService = locator<LocalStorageService>();
+    final bool onboarding = storageService.getDisplayOnboarding();
 
     return SafeArea(
       child: Scaffold(
@@ -19,7 +20,7 @@ class SplashView extends StatelessWidget {
         body: SplashWidget<ConfigModel>(
           duration: const Duration(seconds: 8),
           backgroundWorker: loadConfig,
-          routeName: '/home',
+          routeName: onboarding ? '/onboarding' : '/home',
           delegate: storageService.getDisplaySplashScreen()
               ? MyAnimationDelegate()
               : null,
