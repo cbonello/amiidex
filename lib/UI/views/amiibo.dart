@@ -64,6 +64,7 @@ class AmiiboViewState extends State<AmiiboView> {
                                   child: widget.amiibo.box,
                                 ),
                               ),
+                              const SizedBox(height: 5.0),
                               widget.amiibo.displayAmiibo
                                   ? Semantics(
                                       label: I18n.of(context).text(
