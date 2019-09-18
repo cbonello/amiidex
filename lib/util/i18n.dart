@@ -80,6 +80,11 @@ class _I18nEnUS extends I18n {
           'Do you want to reset your amiibo collection?',
       'settings-collection-reset-cancel-button': 'Cancel',
       'settings-collection-reset-reset-button': 'Reset',
+      'settings-collection-own-all': 'Complete Collection',
+      'settings-collection-own-all-question':
+          'Is your amiibo collection complete?',
+      'settings-collection-own-all-no-button': 'No',
+      'settings-collection-own-all-yes-button': 'Yes',
       'settings-startup': 'Startup',
       'settings-display-splash-screen': 'Display splash screen',
       'settings-display-onboarding': 'Display onboarding',
@@ -449,6 +454,11 @@ class _I18nFrFR extends I18n {
           'Voulez-vous réinitialiser votre collection d\'amiibo ?',
       'settings-collection-reset-cancel-button': 'Annuler',
       'settings-collection-reset-reset-button': 'Réinitialiser',
+      'settings-collection-own-all': 'Collection',
+      'settings-collection-own-all-question':
+          'Votre collection d\'amiibo est-elle complète ?',
+      'settings-collection-own-all-no-button': 'Non',
+      'settings-collection-own-all-yes-button': 'Oui',
       'settings-startup': 'Démarrage',
       'settings-display-splash-screen': 'Afficher écran de démarrage',
       'settings-display-onboarding': 'Afficher écran d\'aide',

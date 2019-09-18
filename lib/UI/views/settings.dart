@@ -82,34 +82,32 @@ class SettingsViewState extends State<SettingsView> {
               ],
             ),
           ),
-          Padding(
+          LabeledButton(
+            label: I18n.of(context).text('settings-collection'),
             padding: const EdgeInsets.only(left: 30.0, right: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: Text(I18n.of(context).text('settings-collection')),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: RaisedButton(
-                    onPressed:
-                        // Cannot reset collection if it is locked.
-                        lockProvider.isOpened && ownedProvider.ownedCount > 0
-                            ? () async {
-                                final bool reset = await _resetDialog(context);
-                                if (reset) {
-                                  ownedProvider.reset();
-                                }
-                              }
-                            : null,
-                    child: Text(
-                      I18n.of(context).text('settings-collection-reset'),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            buttonLabel: I18n.of(context).text('settings-collection-reset'),
+            // Cannot reset collection if it is locked.
+            onPressed: lockProvider.isOpened && ownedProvider.ownedCount > 0
+                ? () async {
+                    final bool reset = await _resetDialog(context);
+                    if (reset) {
+                      ownedProvider.reset();
+                    }
+                  }
+                : null,
+          ),
+          LabeledButton(
+            padding: const EdgeInsets.only(left: 30.0, right: 20.0),
+            buttonLabel: I18n.of(context).text('settings-collection-own-all'),
+            onPressed: lockProvider.isOpened &&
+                    ownedProvider.isCollectionComplete() == false
+                ? () async {
+                    final bool ownAll = await _ownAllDialog(context);
+                    if (ownAll) {
+                      ownedProvider.setCollectionComplete();
+                    }
+                  }
+                : null,
           ),
           ListTile(title: Text(I18n.of(context).text('settings-theme'))),
           LabeledRadio<Brightness>(
@@ -222,6 +220,44 @@ class SettingsViewState extends State<SettingsView> {
               textColor: Colors.white,
               child: Text(
                 I18n.of(context).text('settings-collection-reset-reset-button'),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<bool> _ownAllDialog(BuildContext context) async {
+    return showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(I18n.of(context).text('settings-collection-own-all')),
+          content: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              I18n.of(context).text('settings-collection-own-all-question'),
+            ),
+          ),
+          actions: <Widget>[
+            RaisedButton(
+              textColor: Colors.white,
+              child: Text(
+                I18n.of(context).text('settings-collection-own-all-no-button'),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            RaisedButton(
+              textColor: Colors.white,
+              child: Text(
+                I18n.of(context).text('settings-collection-own-all-yes-button'),
               ),
               onPressed: () {
                 Navigator.of(context).pop(true);

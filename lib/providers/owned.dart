@@ -95,11 +95,29 @@ class OwnedProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void setCollectionComplete() {
+    _performInitialization();
+    _owned.clear();
+    final List<SerieModel> series = _assetsService.config.serieList;
+    for (final SerieModel s in series) {
+      for (final AmiiboModel a in s.amiibos) {
+        _owned.add(a.lKey);
+      }
+      _ownedCountBySerie[s.lKey] = s.amiibos.length;
+    }
+    _storageService.setOwned(_owned);
+    notifyListeners();
+  }
+
+  bool isCollectionComplete() {
+    _performInitialization();
+    return ownedCount == _assetsService.config.amiiboList.length;
+  }
+
   void _performInitialization() {
     if (_providerInitialized == false) {
       _owned.addAll(_storageService.getOwned());
-      final List<SerieModel> series =
-          _assetsService.config.seriesMap.values.toList();
+      final List<SerieModel> series = _assetsService.config.serieList;
       for (final SerieModel s in series) {
         _ownedCountBySerie[s.lKey] = s.amiibos
             .where(

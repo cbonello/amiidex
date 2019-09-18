@@ -1,5 +1,37 @@
 import 'package:flutter/material.dart';
 
+class LabeledButton extends StatelessWidget {
+  const LabeledButton({
+    this.label = '',
+    @required this.padding,
+    @required this.buttonLabel,
+    this.onPressed,
+  });
+
+  final String label, buttonLabel;
+  final EdgeInsets padding;
+  final Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: padding,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Expanded(
+            child: Text(label),
+          ),
+          Expanded(
+            flex: 2,
+            child: RaisedButton(onPressed: onPressed, child: Text(buttonLabel)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class LabeledCheckbox extends StatelessWidget {
   const LabeledCheckbox({
     @required this.label,
@@ -11,7 +43,7 @@ class LabeledCheckbox extends StatelessWidget {
   final String label;
   final EdgeInsets padding;
   final bool value;
-  final Function onChanged;
+  final Function(bool) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +78,7 @@ class LabeledRadio<T> extends StatelessWidget {
   final EdgeInsets padding;
   final T groupValue;
   final T value;
-  final Function onChanged;
+  final Function(T) onChanged;
 
   @override
   Widget build(BuildContext context) {
