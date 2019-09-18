@@ -132,53 +132,56 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
         bottom: PreferredSize(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20.0, 10.0, 15.0, 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                RaisedButton(
-                  child: Text(
-                    I18n.of(context).text(
-                      'series-filter-select-all',
+            child: Container(
+              height: 48.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text(
+                      I18n.of(context).text(
+                        'series-filter-select-all',
+                      ),
                     ),
+                    onPressed: () {
+                      _setAll();
+                      saveNeeded = true;
+                    },
                   ),
-                  onPressed: () {
-                    _setAll();
-                    saveNeeded = true;
-                  },
-                ),
-                RaisedButton(
-                  child: Text(
-                    I18n.of(context).text(
-                      'series-filter-deselect-all',
+                  RaisedButton(
+                    child: Text(
+                      I18n.of(context).text(
+                        'series-filter-deselect-all',
+                      ),
                     ),
+                    onPressed: () {
+                      _clear();
+                      saveNeeded = true;
+                    },
                   ),
-                  onPressed: () {
-                    _clear();
-                    saveNeeded = true;
-                  },
-                ),
-                RaisedButton(
-                  child: Text(
-                    I18n.of(context).text(
-                      'series-filter-reset',
+                  RaisedButton(
+                    child: Text(
+                      I18n.of(context).text(
+                        'series-filter-reset',
+                      ),
                     ),
+                    onPressed: () {
+                      setState(() {
+                        filteredSeriesID.clear();
+                        filteredSeriesID.addAll(widget.savedFilters);
+                      });
+                      saveNeeded = false;
+                    },
                   ),
-                  onPressed: () {
-                    setState(() {
-                      filteredSeriesID.clear();
-                      filteredSeriesID.addAll(widget.savedFilters);
-                    });
-                    saveNeeded = false;
-                  },
-                ),
-              ]
-                  .map<Widget>(
-                    (Widget w) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: w,
-                    ),
-                  )
-                  .toList(),
+                ]
+                    .map<Widget>(
+                      (Widget w) => Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: w,
+                      ),
+                    )
+                    .toList(),
+              ),
             ),
           ),
           preferredSize: const Size(0.0, 50.0),

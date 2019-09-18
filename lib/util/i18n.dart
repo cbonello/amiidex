@@ -147,7 +147,7 @@ class _I18nEnUS extends I18n {
       'detail-nothing-to-display': 'No amiibo to display!',
       'sm-drawer': 'Open drawer',
       'sm-header-logo': 'Logo',
-      'series-filter-title': 'Series filter',
+      'series-filter-title': 'Series Filter',
       'series-filter-discard-question': 'Discard filters?',
       'series-filter-cancel': 'Cancel',
       'series-filter-discard': 'Discard',
