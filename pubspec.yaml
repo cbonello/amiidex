@@ -292,6 +292,7 @@ flutter:
     - assets/images/ssb/box_bowser.png
     - assets/images/ssb/box_bowser_jr.png
     - assets/images/ssb/box_captain_falcon.png
+    - assets/images/ssb/box_chrom.png
     - assets/images/ssb/box_cloud_player_2.png
     - assets/images/ssb/box_cloud.png
     - assets/images/ssb/box_corrin_player_2.png
@@ -309,6 +310,7 @@ flutter:
     - assets/images/ssb/box_greninja.png
     - assets/images/ssb/box_ice_climbers.png
     - assets/images/ssb/box_ike.png
+    - assets/images/ssb/box_incineroar.png
     - assets/images/ssb/box_inkling.png
     - assets/images/ssb/box_isabelle.png
     - assets/images/ssb/box_ivysaur.png
@@ -352,6 +354,7 @@ flutter:
     - assets/images/ssb/box_samus.png
     - assets/images/ssb/box_sheik.png
     - assets/images/ssb/box_shulk.png
+    - assets/images/ssb/box_simon.png
     - assets/images/ssb/box_snake.png
     - assets/images/ssb/box_sonic.png
     - assets/images/ssb/box_squirtle.png
@@ -369,6 +372,7 @@ flutter:
     - assets/images/ssb/bowser.png
     - assets/images/ssb/bowser_jr.png
     - assets/images/ssb/captain_falcon.png
+    - assets/images/ssb/chrom.png
     - assets/images/ssb/cloud_player_2.png
     - assets/images/ssb/cloud.png
     - assets/images/ssb/corrin_player_2.png
@@ -386,6 +390,7 @@ flutter:
     - assets/images/ssb/greninja.png
     - assets/images/ssb/ice_climbers.png
     - assets/images/ssb/ike.png
+    - assets/images/ssb/incineroar.png
     - assets/images/ssb/inkling.png 
     - assets/images/ssb/isabelle.png
     - assets/images/ssb/ivysaur.png
@@ -429,6 +434,7 @@ flutter:
     - assets/images/ssb/samus.png
     - assets/images/ssb/sheik.png
     - assets/images/ssb/shulk.png
+    - assets/images/ssb/simon.png
     - assets/images/ssb/snake.png
     - assets/images/ssb/sonic.png
     - assets/images/ssb/squirtle.png

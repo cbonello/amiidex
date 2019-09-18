@@ -1998,6 +1998,54 @@
                         "4902370541816",
                         "045496594060"
                     ]
+                },
+                {
+                    "lkey": "ssb_simon",
+                    "image": "assets/images/ssb/simon.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/ssb/box_simon.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/simon-amiibo-super-smash-bros-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2019-11-15"
+                        },
+                        "region_APAC": {
+                            "release_date": "2019-11-08"
+                        }
+                    },
+                    "barcodes": [
+                        ""
+                    ]
+                },
+                {
+                    "lkey": "ssb_chrom",
+                    "image": "assets/images/ssb/chrom.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/ssb/box_chrom.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/chrom-amiibo-super-smash-bros-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2019-11-15"
+                        }
+                    },
+                    "barcodes": [
+                        ""
+                    ]
+                },
+                {
+                    "lkey": "ssb_incineroar",
+                    "image": "assets/images/ssb/incineroar.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/ssb/box_incineroar.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/incineroar-amiibo-super-smash-bros-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2019-11-15"
+                        }
+                    },
+                    "barcodes": [
+                        ""
+                    ]
                 }
             ]
         },
