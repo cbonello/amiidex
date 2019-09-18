@@ -96,7 +96,7 @@ class DrawerWidget extends StatelessWidget {
               showAboutDialog(
                 context: context,
                 applicationName: I18n.of(context).text('appname'),
-                applicationVersion: info.version,
+                applicationVersion: '${info.version}+${info.buildNumber}',
                 applicationIcon: LimitedBox(
                   maxHeight: 75.0,
                   maxWidth: 75.0,
