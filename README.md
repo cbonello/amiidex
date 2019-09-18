@@ -21,12 +21,13 @@ Click on the image below to download
 - Support for English and French languages.
 - Support for light and dark themes.
 - Option to Lock your amiibo collection to prevent unintentional updates.
+- Option to filter out series you are not collecting.
 - A single tap on an amiibo opens the amiibo detail page.
 - A double tap on an amiibo opens the page of this amiibo on the Nintendo website.
-- A long tap on an amiibo adds/ removes it to/ from your collection.
-- View of series/ amiibo as list, small icons or large icons.
+- A long tap on an amiibo adds/removes it to/from your collection.
+- View of series/amiibo as list, small icons or large icons.
 - Sort of amiibo by name or release date.
-- Scan of amiibo-boxes barcode to quickly add new amiibo to your collection.
+- Scan of amiibo-boxes barcode to quickly add new amiibo or check your collection.
 
 ## App Screenshots
 
