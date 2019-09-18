@@ -26,14 +26,20 @@ void main() {
     for (SerieModel s in config.seriesMap.values) {
       for (AmiiboModel a in s.amiibos) {
         for (String b in a.barcodes) {
-          expect(allBarcodes.contains(b), isFalse);
-          allBarcodes.add(b);
+          // New releases may be added to the database before they are assigned
+          // a barcode.
+          if (b.isNotEmpty) {
+            expect(allBarcodes.contains(b), isFalse);
+            allBarcodes.add(b);
+          }
         }
       }
       for (ValuePackModel v in s.valuePacks) {
         for (String b in v.barcodes) {
-          expect(allBarcodes.contains(b), isFalse);
-          allBarcodes.add(b);
+          if (b.isNotEmpty) {
+            expect(allBarcodes.contains(b), isFalse);
+            allBarcodes.add(b);
+          }
         }
       }
     }
