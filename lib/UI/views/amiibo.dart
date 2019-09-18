@@ -4,7 +4,6 @@ import 'package:amiidex/models/country.dart';
 import 'package:amiidex/providers/region_indicators.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:amiidex/util/dialogs.dart';
-import 'package:amiidex/util/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:intl/intl.dart';
@@ -163,41 +162,34 @@ class RegionButton extends StatelessWidget {
         Provider.of<RegionIndicatorsProvider>(context, listen: false);
     final CountryModel country = regionIndicatorsProvider.country(regionId);
 
-    return InkWell(
-      child: Semantics(
-        label: I18n.of(context).text(country.lKey),
-        button: true,
-        child: Container(
-          margin: const EdgeInsets.all(15.0),
-          padding: const EdgeInsets.all(3.0),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: country.hasURL ? lightBlueColor : Colors.transparent,
-            ),
-          ),
-          child: country.flag,
+    return Semantics(
+      label: I18n.of(context).text(country.lKey),
+      button: true,
+      child: Container(
+        margin: const EdgeInsets.all(15.0),
+        child: country.flag(
+          country.hasURL
+              ? () async {
+                  if (await url_launcher.canLaunch(country.url)) {
+                    await url_launcher.launch(country.url);
+                  } else {
+                    await errorDialog(
+                      context,
+                      Text(I18n.of(context).text('error-dialog-title')),
+                      <Widget>[
+                        Text(
+                          sprintf(
+                            I18n.of(context).text('error-url-launch'),
+                            <String>[country.url],
+                          ),
+                        )
+                      ],
+                    );
+                  }
+                }
+              : null,
         ),
       ),
-      onTap: country.hasURL
-          ? () async {
-              if (await url_launcher.canLaunch(country.url)) {
-                await url_launcher.launch(country.url);
-              } else {
-                await errorDialog(
-                  context,
-                  Text(I18n.of(context).text('error-dialog-title')),
-                  <Widget>[
-                    Text(
-                      sprintf(
-                        I18n.of(context).text('error-url-launch'),
-                        <String>[country.url],
-                      ),
-                    )
-                  ],
-                );
-              }
-            }
-          : null,
     );
   }
 }

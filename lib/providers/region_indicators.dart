@@ -36,9 +36,9 @@ class RegionIndicatorsProvider with ChangeNotifier {
     return _assetsService.config.countries[countryId];
   }
 
-  Image flag(String regionId) {
+  Widget flag(String regionId) {
     _performInitialization();
-    return country(regionId).flag;
+    return country(regionId).flag(null);
   }
 
   void indicator(String regionId, String countryId) {

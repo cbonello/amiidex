@@ -172,21 +172,13 @@ class AmiiboActionBar extends StatelessWidget {
                   child: ExcludeSemantics(
                     child: Row(
                       children: <Widget>[
-                        Container(
-                          padding: const EdgeInsets.all(3.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: lightBlueColor,
-                            ),
-                          ),
-                          child: regionIndicatorsProvider.flag(
-                            regionProvider.regionId,
-                          ),
-                        ),
+                        regionIndicatorsProvider.flag(regionProvider.regionId),
                         const SizedBox(width: 5.0),
                         Text(
-                          I18n.of(context).text(assetsService.config
-                              .regions[regionProvider.regionId].lKeyShort),
+                          I18n.of(context).text(
+                            assetsService.config
+                                .regions[regionProvider.regionId].lKeyShort,
+                          ),
                           style: Theme.of(context).textTheme.subhead,
                         ),
                       ],
