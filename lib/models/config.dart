@@ -14,7 +14,7 @@ class ConfigModel {
       final RegionModel r = RegionModel.fromJson(region);
       assert(_regions.containsKey(r.lKey) == false);
       _regions[r.lKey] = r;
-      for (CountryModel country in r.countries) {
+      for (final CountryModel country in r.countries) {
         assert(_countries.containsKey(country.lKey) == false);
         _countries[country.lKey] = country;
       }
@@ -24,7 +24,7 @@ class ConfigModel {
       final SerieModel s = SerieModel.fromJson(regions, serie);
       assert(_series.containsKey(s.lKey) == false);
       _series[s.lKey] = s;
-      for (AmiiboModel a in s.amiibos) {
+      for (final AmiiboModel a in s.amiibos) {
         _amiibo[a.lKey] = a;
       }
     });
@@ -66,7 +66,7 @@ class ConfigModel {
   }
 
   AmiiboBoxModel matchBarcode(String barcode) {
-    for (SerieModel serie in _series.values) {
+    for (final SerieModel serie in _series.values) {
       final AmiiboBoxModel match = serie.matchBarcode(barcode);
       if (match != null) {
         return match;

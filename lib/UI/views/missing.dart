@@ -50,8 +50,8 @@ class MissingView extends StatelessWidget {
                 _,
               ) {
                 final List<AmiiboModel> missedAmiibo = <AmiiboModel>[];
-                for (SerieModel s in filterProvider.series) {
-                  for (AmiiboModel a in s.amiibos) {
+                for (final SerieModel s in filterProvider.series) {
+                  for (final AmiiboModel a in s.amiibos) {
                     if (ownedProvider.isOwned(a.lKey) == false) {
                       missedAmiibo.add(a);
                     }

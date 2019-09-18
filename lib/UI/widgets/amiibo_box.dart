@@ -25,7 +25,7 @@ class AmiiboBoxWidget extends StatelessWidget {
       child: PageView(
         children: <Widget>[
           box.box,
-          for (AmiiboModel a in box.amiibos)
+          for (final AmiiboModel a in box.amiibos)
             Column(
               children: <Widget>[
                 Container(height: 200, child: a.image),

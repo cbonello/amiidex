@@ -51,7 +51,7 @@ class RegionIndicatorsProvider with ChangeNotifier {
 
   void _performInitialization() {
     if (_providerInitialized == false) {
-      for (String regionId in _assetsService.config.regions.keys) {
+      for (final String regionId in _assetsService.config.regions.keys) {
         _indicators[regionId] = _storageService.getRegionIndicator(
           regionId,
           _assetsService.config.region(regionId).defaultCountry,

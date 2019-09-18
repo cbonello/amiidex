@@ -238,7 +238,7 @@ Future<void> showRegionsBottomSheet(
               title: Text(I18n.of(context).text('actionbar-region-title')),
             ),
             const Divider(height: 8),
-            for (String regionId in assetsService.config.regions.keys)
+            for (final String regionId in assetsService.config.regions.keys)
               ActionBarBottomSheetItem(
                 displayIcon: false,
                 titleIcon: regionIndicatorsProvider.flag(regionId),

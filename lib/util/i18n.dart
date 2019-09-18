@@ -787,7 +787,7 @@ class GeneratedLocalizationsDelegate
     final String lang = locale != null ? locale.toString() : '';
     final String languageCode = locale != null ? locale.languageCode : '';
 
-    for (Locale l in supportedLocales) {
+    for (final Locale l in supportedLocales) {
       if (lang == l.toString() || languageCode == l.languageCode) {
         return SynchronousFuture<WidgetsLocalizations>(_locales[l]);
       }

@@ -98,7 +98,7 @@ class AmiiboViewState extends State<AmiiboView> {
                                   ),
                                   style: Theme.of(context).textTheme.body1,
                                 ),
-                                for (String regionId
+                                for (final String regionId
                                     in assetsService.config.regions.keys)
                                   if (widget.amiibo
                                       .wasReleasedInRegion(regionId))

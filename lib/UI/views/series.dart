@@ -46,7 +46,7 @@ class SeriesView extends StatelessWidget {
             __,
           ) {
             final List<AmiiboModel> amiibo2Search = <AmiiboModel>[];
-            for (SerieModel s in filterProvider.series) {
+            for (final SerieModel s in filterProvider.series) {
               amiibo2Search.addAll(s.amiibos);
             }
 

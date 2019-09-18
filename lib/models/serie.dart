@@ -54,12 +54,12 @@ class SerieModel {
       UnmodifiableListView<ValuePackModel>(_valuePacks);
 
   AmiiboBoxModel matchBarcode(String barcode) {
-    for (AmiiboModel a in _amiibo) {
+    for (final AmiiboModel a in _amiibo) {
       if (a.matchBarcode(barcode)) {
         return AmiiboBoxModel.fromAmiibo(a);
       }
     }
-    for (ValuePackModel v in _valuePacks) {
+    for (final ValuePackModel v in _valuePacks) {
       if (v.matchBarcode(barcode)) {
         return AmiiboBoxModel.fromValuePack(
           v,

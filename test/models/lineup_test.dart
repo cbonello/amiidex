@@ -23,9 +23,9 @@ void main() {
     final ConfigModel config = ConfigModel.fromJson(json);
     final List<String> allBarcodes = <String>[];
 
-    for (SerieModel s in config.seriesMap.values) {
-      for (AmiiboModel a in s.amiibos) {
-        for (String b in a.barcodes) {
+    for (final SerieModel s in config.seriesMap.values) {
+      for (final AmiiboModel a in s.amiibos) {
+        for (final String b in a.barcodes) {
           // New releases may be added to the database before they are assigned
           // a barcode.
           if (b.isNotEmpty) {
@@ -34,8 +34,8 @@ void main() {
           }
         }
       }
-      for (ValuePackModel v in s.valuePacks) {
-        for (String b in v.barcodes) {
+      for (final ValuePackModel v in s.valuePacks) {
+        for (final String b in v.barcodes) {
           if (b.isNotEmpty) {
             expect(allBarcodes.contains(b), isFalse);
             allBarcodes.add(b);
@@ -50,9 +50,9 @@ void main() {
     final Map<String, dynamic> json = jsonDecode(await file.readAsString());
     final ConfigModel config = ConfigModel.fromJson(json);
 
-    for (SerieModel s in config.seriesMap.values) {
-      for (ValuePackModel v in s.valuePacks) {
-        for (String a in v.amiibos) {
+    for (final SerieModel s in config.seriesMap.values) {
+      for (final ValuePackModel v in s.valuePacks) {
+        for (final String a in v.amiibos) {
           expect(() => config.amiibo(a), returnsNormally);
         }
       }

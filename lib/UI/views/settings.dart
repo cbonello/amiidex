@@ -71,7 +71,7 @@ class SettingsViewState extends State<SettingsView> {
                       languageProvider.language = newLang.toString();
                     },
                     items: <DropdownMenuItem<Locale>>[
-                      for (Locale l in I18n.delegate.supportedLocales)
+                      for (final Locale l in I18n.delegate.supportedLocales)
                         DropdownMenuItem<Locale>(
                           value: l,
                           child: Text(I18n.of(context).text(l.toString())),
@@ -139,7 +139,7 @@ class SettingsViewState extends State<SettingsView> {
           ListTile(
             title: Text(I18n.of(context).text('settings-region-indicator')),
           ),
-          for (String regionId in assetsService.config.regions.keys)
+          for (final String regionId in assetsService.config.regions.keys)
             Padding(
               padding: const EdgeInsets.only(left: 30.0, right: 20.0),
               child: Row(
@@ -261,7 +261,7 @@ class _CountryPickerDropdownState extends State<CountryPickerDropdown> {
         widget.onChanged(c);
       },
       items: <DropdownMenuItem<CountryModel>>[
-        for (CountryModel c in widget.countries)
+        for (final CountryModel c in widget.countries)
           DropdownMenuItem<CountryModel>(
             value: c,
             child: c.label(context),

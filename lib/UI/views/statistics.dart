@@ -53,8 +53,8 @@ class StatisticsView extends StatelessWidget {
             ) {
               final List<AmiiboModel> amiibo2Search = <AmiiboModel>[];
               double ownedCount = 0;
-              for (SerieModel s in filterProvider.series) {
-                for (AmiiboModel a in s.amiibos) {
+              for (final SerieModel s in filterProvider.series) {
+                for (final AmiiboModel a in s.amiibos) {
                   amiibo2Search.add(a);
                   if (ownedProvider.isOwned(a.lKey)) {
                     ownedCount++;

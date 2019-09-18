@@ -30,7 +30,7 @@ class SeriesFilterProvider with ChangeNotifier {
   set seriesID(List<String> serieIDs) {
     // Call to _performInitialization() not required since _seriesID and
     // _series  will be overwritten.
-    for (String id in serieIDs) {
+    for (final String id in serieIDs) {
       assert(_assetsService.config.isValidSerieID(id));
     }
 
@@ -75,7 +75,7 @@ class SeriesFilterProvider with ChangeNotifier {
 
   void _setSeries() {
     _series.clear();
-    for (String id in _seriesID) {
+    for (final String id in _seriesID) {
       _series.add(_assetsService.config.serie(id));
     }
   }

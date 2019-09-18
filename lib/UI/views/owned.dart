@@ -51,7 +51,7 @@ class OwnedView extends StatelessWidget {
               ) {
                 final AssetsService assetsService = locator<AssetsService>();
                 final List<AmiiboModel> ownedAmiibo = <AmiiboModel>[];
-                for (String id in ownedProvider.ownedAmiiboIds) {
+                for (final String id in ownedProvider.ownedAmiiboIds) {
                   final AmiiboModel a = assetsService.config.amiibo(id);
                   if (filterProvider.isFilteredIn(a.serieID)) {
                     ownedAmiibo.add(a);

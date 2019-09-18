@@ -100,7 +100,7 @@ class OwnedProvider with ChangeNotifier {
       _owned.addAll(_storageService.getOwned());
       final List<SerieModel> series =
           _assetsService.config.seriesMap.values.toList();
-      for (SerieModel s in series) {
+      for (final SerieModel s in series) {
         _ownedCountBySerie[s.lKey] = s.amiibos
             .where(
               (AmiiboModel e) => _owned.contains(e.lKey),
