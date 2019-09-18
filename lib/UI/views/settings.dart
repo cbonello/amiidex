@@ -195,7 +195,7 @@ class SettingsViewState extends State<SettingsView> {
   }
 
   Future<bool> _resetDialog(BuildContext context) async {
-    return await showDialog<bool>(
+    return showDialog<bool>(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {

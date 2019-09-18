@@ -65,7 +65,7 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
       color: theme.textTheme.caption.color,
     );
 
-    return await showDialog<bool>(
+    return showDialog<bool>(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(

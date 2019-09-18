@@ -7,8 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 class PrivacyView extends StatelessWidget {
   Future<String> _loadAsset(BuildContext context) async {
     // TODO(cbonello): Localized privacy.
-    return await DefaultAssetBundle.of(context)
-        .loadString('assets/text/privacy.md');
+    return DefaultAssetBundle.of(context).loadString('assets/text/privacy.md');
   }
 
   @override
