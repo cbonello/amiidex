@@ -87,6 +87,7 @@ class _I18nEnUS extends I18n {
       'onboarding-lock-title': 'Lock/Unlock',
       'onboarding-long-press-title': 'Long Press',
       'onboarding-double-tap-title': 'Double Tap',
+      'onboarding-barcode-scan-title': 'Barcode Scan',
       'onboarding-series-filter':
           'Filter out amiibo series you don\'t collect.',
       'onboarding-lock':
@@ -95,6 +96,8 @@ class _I18nEnUS extends I18n {
           'Long press to add/remove an amiibo from your collection.',
       'onboarding-double-tap':
           'Double tap to open corresponding amiibo page on www.nintendo.com',
+      'onboarding-barcode-scan':
+          'Scan amiibo-box barcodes to quickly add to, or check your collection.',
       'settings-theme': 'Theme',
       'settings-light-theme': 'Light Theme',
       'settings-dark-theme': 'Dark Theme',
@@ -450,6 +453,7 @@ class _I18nFrFR extends I18n {
       'onboarding-lock-title': 'Verrouiller / Déverrouiller',
       'onboarding-long-press-title': 'Appui long',
       'onboarding-double-tap-title': 'Appui double',
+      'onboarding-barcode-scan-title': 'Scan de code-barres',
       'onboarding-series-filter':
           'Filtrez les séries d\'amiibo que vous ne collectionnez pas.',
       'onboarding-lock':
@@ -458,6 +462,8 @@ class _I18nFrFR extends I18n {
           'Appui long pour ajouter ou supprimer un amiibo de votre collection.',
       'onboarding-double-tap':
           'Appui double pour ouvrir la page amiibo correspondante sur www.nintendo.com',
+      'onboarding-barcode-scan':
+          'Scan du code-barres d\'une boîte amiibo pour ajouter ou vérifier votre collection.',
       'settings-theme': 'Thème',
       'settings-light-theme': 'Thème clair',
       'settings-dark-theme': 'Thème sombre',
@@ -526,7 +532,7 @@ class _I18nFrFR extends I18n {
       'fab-scan-add-dialog-owned': 'Aucun nouvel amiibo n\'a été détecté !',
       'fab-scan-add-dialog-add':
           'Voulez-vous ajouter l\'amiibo à votre collection ?',
-      'fab-scan-barcode': 'Code barre: %s',
+      'fab-scan-barcode': 'Code-barres: %s',
       'fab-scan-amiibo-name': 'Nom: %s',
       'fab-scan-amiibo-status': 'Status: ',
       'fab-scan-amiibo-status-owned': 'Possédé',

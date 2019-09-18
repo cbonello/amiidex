@@ -15,6 +15,7 @@ class OnboardingView extends StatelessWidget {
     'assets/images/onboarding/lock.png',
     'assets/images/onboarding/long_press.png',
     'assets/images/onboarding/double_tap.png',
+    'assets/images/onboarding/barcode_scan.png',
   ];
 
   final List<String> _titles = <String>[
@@ -22,6 +23,7 @@ class OnboardingView extends StatelessWidget {
     'onboarding-lock-title',
     'onboarding-long-press-title',
     'onboarding-double-tap-title',
+    'onboarding-barcode-scan-title',
   ];
 
   final List<String> _descriptions = <String>[
@@ -29,6 +31,7 @@ class OnboardingView extends StatelessWidget {
     'onboarding-lock',
     'onboarding-long-press',
     'onboarding-double-tap',
+    'onboarding-barcode-scan',
   ];
 
   Future<void> _onSkipEnd(BuildContext context) async {

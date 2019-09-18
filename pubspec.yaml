@@ -64,6 +64,7 @@ flutter:
     - assets/images/onboarding/lock.png
     - assets/images/onboarding/long_press.png
     - assets/images/onboarding/double_tap.png
+    - assets/images/onboarding/barcode_scan.png
     - assets/images/regions/ar.png
     - assets/images/regions/at.png
     - assets/images/regions/au.png
