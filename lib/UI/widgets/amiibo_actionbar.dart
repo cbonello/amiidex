@@ -84,11 +84,11 @@ class AmiiboActionBar extends StatelessWidget {
                   selected: isNameSort(current),
                   onTap: () {
                     sortProvider.setOrder(
-                        context,
-                        isNameSort(current)
-                            ? reverseSort[current.index]
-                            : AmiiboSortOrder.name_ascending,
-                        regionProvider.regionId);
+                      context,
+                      isNameSort(current)
+                          ? reverseSort[current.index]
+                          : AmiiboSortOrder.name_ascending,
+                    );
                     Navigator.pop<void>(context);
                   },
                 ),
@@ -106,7 +106,6 @@ class AmiiboActionBar extends StatelessWidget {
                       isReleaseDateSort(current)
                           ? reverseSort[current.index]
                           : AmiiboSortOrder.release_date_ascending,
-                      regionProvider.regionId,
                     );
                     Navigator.pop<void>(context);
                   },

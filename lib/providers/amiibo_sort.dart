@@ -21,7 +21,7 @@ class AmiiboSortProvider with ChangeNotifier {
 
   AmiiboSortOrder get order => _order;
 
-  void setOrder(BuildContext context, AmiiboSortOrder order, String regionId) {
+  void setOrder(BuildContext context, AmiiboSortOrder order) {
     _order = order;
     storageService.setAmiiboSort(_order);
     notifyListeners();
