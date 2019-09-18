@@ -1,7 +1,9 @@
+import 'package:amiidex/main.dart';
 import 'package:amiidex/providers/amiibo_sort.dart';
 import 'package:amiidex/providers/lock.dart';
 import 'package:amiidex/providers/series_sort.dart';
 import 'package:amiidex/providers/view_as.dart';
+import 'package:amiidex/services/package_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorageService {
@@ -15,11 +17,18 @@ class LocalStorageService {
   }
 
   bool getDisplayOnboarding() {
-    return _preferences.getBool('onboarding') ?? true;
+    // To force display of onboarding pages whenver a new release is
+    // installed.
+    final PackageInfoService info = locator<PackageInfoService>();
+    final String savedVersion =
+        _preferences.getString('display_onboarding') ?? '';
+    return savedVersion != info.version;
   }
 
-  Future<bool> setDisplayOnboarding(bool status) {
-    return _preferences.setBool('onboarding', status);
+  Future<bool> setDisplayOnboarding(bool display) {
+    final PackageInfoService info = locator<PackageInfoService>();
+    final String value = display ? '' : info.version;
+    return _preferences.setString('display_onboarding', value);
   }
 
   String getPreferredLanguage() {
