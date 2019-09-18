@@ -80,7 +80,9 @@ class DrawerWidget extends StatelessWidget {
             onTap: () async {
               Navigator.pop(context);
               await _launchURL(
-                  context, 'https://github.com/cbonello/amiidex/issues');
+                context,
+                'https://github.com/cbonello/amiidex/issues',
+              );
             },
           ),
           ListTile(
@@ -96,11 +98,13 @@ class DrawerWidget extends StatelessWidget {
                 applicationName: I18n.of(context).text('appname'),
                 applicationVersion: info.version,
                 applicationIcon: LimitedBox(
-                  maxWidth: 50.0,
+                  maxHeight: 75.0,
+                  maxWidth: 75.0,
                   child: Image.asset('assets/images/logo_app.png'),
                 ),
-                applicationLegalese:
-                    I18n.of(context).text('drawer-about-copyright'),
+                applicationLegalese: I18n.of(context).text(
+                  'drawer-about-copyright',
+                ),
               );
             },
           ),
