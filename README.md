@@ -65,6 +65,9 @@ Here are a few resources to get you started if you are new to Flutter:
 ## Contribution Guidelines
 This project is a fully open source project, and contributions are welcome. Information on how to get started can be found in the [contributor's guide](https://github.com/cbonello/amiidex/blob/master/CONTRIBUTING.md).
 
+## Credits
+Thanks to [Hampus Joakim Nilsson](https://github.com/hjnilsson) for his [country-flags](https://github.com/hjnilsson/country-flags) repository.
+
 ## License
 
 ```
