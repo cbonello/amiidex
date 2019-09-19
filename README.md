@@ -1,10 +1,8 @@
 # AmiiDex
 
-Picture this. You are in a shop in front of a rack full of Nintendo amiibo and they are all beautiful and tempting. In the back of your head you know that your spouse will tell you to leave them. But as true amiibo collector you just can't pass on! 
+Picture this! You are in a shop in front of a rack full of Nintendo amiibo. They are all beautiful and tempting and you feel like heaven. In the back of your head you know that your spouse will tell you to leave them. But as true amiibo collector you just can't pass on! There is just one small problem though. Which ones do you own, and which ones do you miss?
 
-There is just one small problem though. Which ones do you own, and which ones do you miss? 
-
-I have been there and that's why I created Amiidex. It manages your Nintendo Amiibo collection easily and it has a unique feature: it allows you to scan amiibo boxes barcodes to quickly find whether you own an amiibo.
+I have been there and that's why I created AmiiDex. It manages your Nintendo Amiibo collection easily and has a unique feature: it allows you to scan amiibo boxes barcodes to quickly add amiibo or check the status of your collection.
 
 AmiiDex is an unofficial app for amiibo collectors and is intended to be used for informational and educational purposes only.
 AmiiDex is fully compliant with all US copyright laws and is protected under 'fair use'.
