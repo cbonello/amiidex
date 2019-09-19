@@ -236,10 +236,16 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
         pattern += '|' + keywords[i];
       }
     }
-    return RegExp(
-      pattern,
-      caseSensitive: false,
-      multiLine: false,
-    );
+    RegExp regex;
+    try {
+      regex = RegExp(
+        pattern,
+        caseSensitive: false,
+        multiLine: false,
+      );
+    } catch (_) {
+      regex = RegExp('');
+    }
+    return regex;
   }
 }
