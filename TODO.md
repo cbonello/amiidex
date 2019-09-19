@@ -1,0 +1,2 @@
+- Tests!
+- Sharing of owned/missing amiibo lists.
