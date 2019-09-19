@@ -20,19 +20,27 @@ class LocalStorageService {
     // To force display of onboarding pages whenver a new release is
     // installed.
     final PackageInfoService info = locator<PackageInfoService>();
-    final String savedVersion =
-        _preferences.getString('display_onboarding') ?? '';
-    return savedVersion != info.version;
+    String savedVersion;
+    try {
+      savedVersion = _preferences.getString('display_onboarding') ?? '';
+    } catch (_) {
+      savedVersion = '';
+    }
+    return savedVersion != '${info.version}+${info.buildNumber}';
   }
 
   Future<bool> setDisplayOnboarding(bool display) {
     final PackageInfoService info = locator<PackageInfoService>();
-    final String value = display ? '' : info.version;
+    final String value = display ? '' : '${info.version}+${info.buildNumber}';
     return _preferences.setString('display_onboarding', value);
   }
 
   String getPreferredLanguage() {
-    return _preferences.getString('preferred_language') ?? 'en_US';
+    try {
+      return _preferences.getString('preferred_language') ?? 'en_US';
+    } catch (_) {
+      return 'en_US';
+    }
   }
 
   Future<bool> setPreferredLanguage(String lang) {
@@ -40,7 +48,11 @@ class LocalStorageService {
   }
 
   bool getDisplaySplashScreen() {
-    return _preferences.getBool('display_plash_screen') ?? false;
+    try {
+      return _preferences.getBool('display_plash_screen') ?? false;
+    } catch (_) {
+      return false;
+    }
   }
 
   Future<bool> setDisplaySplashScreen(bool display) {
@@ -72,11 +84,13 @@ class LocalStorageService {
   }
 
   LockStatus getLockStatus() {
-    final int val = _preferences.getInt('lock_status');
-    if (val == null) {
-      return LockStatus.opened;
+    int status;
+    try {
+      status = _preferences.getInt('lock_status') ?? LockStatus.opened.index;
+    } catch (_) {
+      status = LockStatus.opened.index;
     }
-    return LockStatus.values[val];
+    return LockStatus.values[status];
   }
 
   Future<bool> setLockStatus(LockStatus status) {
@@ -86,7 +100,8 @@ class LocalStorageService {
   SeriesSortOrder getSeriesSort() {
     SeriesSortOrder sort;
     try {
-      final int v = _preferences.getInt('series_sort') ?? 0;
+      final int v = _preferences.getInt('series_sort') ??
+          SeriesSortOrder.name_ascending.index;
       sort = SeriesSortOrder.values[v];
     } catch (_) {
       sort = SeriesSortOrder.name_ascending;
@@ -101,7 +116,8 @@ class LocalStorageService {
   AmiiboSortOrder getAmiiboSort() {
     AmiiboSortOrder sort;
     try {
-      final int v = _preferences.getInt('amiibo_sort') ?? 0;
+      final int v = _preferences.getInt('amiibo_sort') ??
+          AmiiboSortOrder.name_ascending.index;
       sort = AmiiboSortOrder.values[v];
     } catch (_) {
       sort = AmiiboSortOrder.name_ascending;
@@ -117,7 +133,8 @@ class LocalStorageService {
     final String label = '$items'.split('.').last; // Enum to string.
     DisplayType type;
     try {
-      final int v = _preferences.getInt('${label}_view_as') ?? 1;
+      final int v = _preferences.getInt('${label}_view_as') ??
+          DisplayType.grid_small.index;
       type = DisplayType.values[v];
     } catch (_) {
       type = DisplayType.grid_small;
