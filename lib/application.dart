@@ -137,6 +137,8 @@ class _HomeViewState extends State<HomeView> {
       child: SafeArea(
         child: Scaffold(
           drawer: DrawerWidget(),
+          // An IndexedStack allows us to keep the scroll positions when switching
+          // from one stack item to the other.
           body: IndexedStack(
             index: currentIndex,
             children: _views,
