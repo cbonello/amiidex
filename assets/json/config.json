@@ -2009,6 +2009,9 @@
                         "region_AMER": {
                             "release_date": "2019-11-15"
                         },
+                        "region_EMEA": {
+                            "release_date": "2019-11-15"
+                        },
                         "region_APAC": {
                             "release_date": "2019-11-08"
                         }
