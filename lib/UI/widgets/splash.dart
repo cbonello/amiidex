@@ -56,7 +56,7 @@ class SplashWidget<T> extends StatefulWidget {
 }
 
 class _SplashWidgetState<T> extends State<SplashWidget<T>>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   bool isAnimationCompleted, isWorkerCompleted;
   T result;
   AnimationController controller;
