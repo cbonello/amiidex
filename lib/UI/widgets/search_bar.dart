@@ -172,8 +172,13 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
   Widget buildResults(BuildContext context) {
     assert(context != null);
     final List<AmiiboModel> results = _search(context, query);
-    if (results.isEmpty) {
+    if (query.isEmpty) {
       return Container();
+    }
+    if (results.isEmpty) {
+      return Center(
+        child: Text(I18n.of(context).text('collection-search-nothing-found')),
+      );
     }
     return _displayMatches(results);
   }
