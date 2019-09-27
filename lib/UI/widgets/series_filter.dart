@@ -55,7 +55,6 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
   }
 
   Future<bool> _onWillPop() async {
-    saveNeeded = saveNeeded;
     if (!saveNeeded) {
       return true;
     }
@@ -71,7 +70,6 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
             return AlertDialog(
               content: Text(
                 I18n.of(context).text('series-filter-discard-question'),
-                style: dialogTextStyle,
               ),
               actions: <Widget>[
                 FlatButton(
