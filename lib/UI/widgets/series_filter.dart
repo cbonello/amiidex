@@ -58,12 +58,6 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
     if (!saveNeeded) {
       return true;
     }
-
-    final ThemeData theme = Theme.of(context);
-    final TextStyle dialogTextStyle = theme.textTheme.subhead.copyWith(
-      color: theme.textTheme.caption.color,
-    );
-
     return showDialog<bool>(
           context: context,
           builder: (BuildContext context) {
