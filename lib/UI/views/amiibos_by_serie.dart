@@ -101,11 +101,17 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
                       background: serie.header,
                     ),
                   ),
+                  leading: Padding(
+                    padding: const EdgeInsets.all(7.0),
+                    child: VisibleIconButton(
+                      icon: Icon(Icons.arrow_back),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ),
                   actions: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(right: 15.0),
-                      child: IconButton(
-                        padding: const EdgeInsets.all(15.0),
+                      child: VisibleIconButton(
                         icon: Icon(
                           Icons.search,
                           semanticLabel: I18n.of(context).text(
@@ -143,6 +149,35 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
           ),
           floatingActionButton: const FABWdiget(),
         ),
+      ),
+    );
+  }
+}
+
+class VisibleIconButton extends StatelessWidget {
+  const VisibleIconButton({
+    Key key,
+    @required this.icon,
+    this.onPressed,
+  }) : super(key: key);
+
+  final Icon icon;
+  final Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40.0,
+      width: 40.0,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Theme.of(context).appBarTheme.color ??
+            Theme.of(context).primaryColor,
+      ),
+      alignment: Alignment.center,
+      child: RawMaterialButton(
+        onPressed: onPressed,
+        child: icon,
       ),
     );
   }
