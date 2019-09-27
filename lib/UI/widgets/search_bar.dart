@@ -92,15 +92,18 @@ class SearchBar extends StatelessWidget {
                   Scaffold.of(context).removeCurrentSnackBar();
                   Scaffold.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(I18n.of(context).text('collection-locked')),
+                      content: Text(
+                        I18n.of(context).text('collection-locked'),
+                      ),
                     ),
                   );
                 } else {
                   Scaffold.of(context).removeCurrentSnackBar();
                   Scaffold.of(context).showSnackBar(
                     SnackBar(
-                      content:
-                          Text(I18n.of(context).text('collection-unlocked')),
+                      content: Text(
+                        I18n.of(context).text('collection-unlocked'),
+                      ),
                     ),
                   );
                 }
