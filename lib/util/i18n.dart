@@ -387,7 +387,14 @@ class _I18nEnUS extends I18n {
       'dks': 'Dark Souls',
       'dks_solaire_of_astora': 'Solaire of Astora',
       'mgmce': 'Mega Man Collector\'s Edition',
-      'mgmce_megaman_gold': 'Mega Man - Gold Edition'
+      'mgmce_megaman_gold': 'Mega Man - Gold Edition',
+      'cmh': 'Monster Hunter',
+      'cmh_berioros_and_ayuria': 'Berioros & Ayuria',
+      'cmh_lioleia_and_cheval': 'Lioleia & Cheval',
+      'cmh_navirou': 'Navirou',
+      'cmh_one_eyed_liolaeus_and_rider_boy': 'One Eyed Liolæus & Rider (Boy)',
+      'cmh_one_eyed_liolaeus_and_rider_girl': 'One Eyed Liolæus & Rider (Girl)',
+      'cmh_qurupeco_and_dan': 'Qurupeco & Dan'
     };
   }
 
@@ -763,7 +770,14 @@ class _I18nFrFR extends I18n {
       'dks': 'Dark Souls',
       'dks_solaire_of_astora': 'Solaire d\'Astora',
       'mgmce': 'Mega Man Collector\'s Edition',
-      'mgmce_megaman_gold': 'Mega Man (édition or)'
+      'mgmce_megaman_gold': 'Mega Man (édition or)',
+      'cmh': 'Monster Hunter',
+      'cmh_berioros_and_ayuria': 'Berioros & Ayuria',
+      'cmh_lioleia_and_cheval': 'Lioleia & Cheval',
+      'cmh_navirou': 'Navirou',
+      'cmh_one_eyed_liolaeus_and_rider_boy': 'One Eyed Liolæus & Rider (Boy)',
+      'cmh_one_eyed_liolaeus_and_rider_girl': 'One Eyed Liolæus & Rider (Girl)',
+      'cmh_qurupeco_and_dan': 'Qurupeco & Dan'
     };
   }
 

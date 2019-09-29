@@ -147,6 +147,20 @@ flutter:
     - assets/images/bb/logo.png
     - assets/images/bb/box_qbby.png
     - assets/images/bb/qbby.png
+    - assets/images/cmh/header.jpg
+    - assets/images/cmh/logo.png
+    - assets/images/cmh/box_berioros_and_ayuria.png
+    - assets/images/cmh/box_lioleia_and_cheval.png
+    - assets/images/cmh/box_navirou.png
+    - assets/images/cmh/box_one_eyed_liolaeus_and_rider_boy.png
+    - assets/images/cmh/box_one_eyed_liolaeus_and_rider_girl.png
+    - assets/images/cmh/box_qurupeco_and_dan.png
+    - assets/images/cmh/berioros_and_ayuria.png
+    - assets/images/cmh/lioleia_and_cheval.png
+    - assets/images/cmh/navirou.png
+    - assets/images/cmh/one_eyed_liolaeus_and_rider_boy.png
+    - assets/images/cmh/one_eyed_liolaeus_and_rider_girl.png
+    - assets/images/cmh/qurupeco_and_dan.png
     - assets/images/cr/header.jpg
     - assets/images/cr/logo.png
     - assets/images/cr/box_chibi_robo.png

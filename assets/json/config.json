@@ -4580,6 +4580,105 @@
                     ]
                 }
             ]
+        },
+        {
+            "lkey": "cmh",
+            "header": "assets/images/cmh/header.jpg",
+            "logo": "assets/images/cmh/logo.png",
+            "amiibo": [
+                {
+                    "lkey": "cmh_navirou",
+                    "image": "assets/images/cmh/navirou.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/cmh/box_navirou.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/amac/index.html",
+                    "releases": {
+                        "region_APAC": {
+                            "release_date": "2016-10-08"
+                        }
+                    },
+                    "barcodes": [
+                        "4976219076340",
+                        "744759743466",
+                        "4571209314442"
+                    ]
+                },
+                {
+                    "lkey": "cmh_one_eyed_liolaeus_and_rider_boy",
+                    "image": "assets/images/cmh/one_eyed_liolaeus_and_rider_boy.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/cmh/box_one_eyed_liolaeus_and_rider_boy.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/amaa/index.html",
+                    "releases": {
+                        "region_APAC": {
+                            "release_date": "2016-10-08"
+                        }
+                    },
+                    "barcodes": [
+                        "4976219076326"
+                    ]
+                },
+                {
+                    "lkey": "cmh_one_eyed_liolaeus_and_rider_girl",
+                    "image": "assets/images/cmh/one_eyed_liolaeus_and_rider_girl.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/cmh/box_one_eyed_liolaeus_and_rider_girl.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/amab/index.html",
+                    "releases": {
+                        "region_APAC": {
+                            "release_date": "2016-10-08"
+                        }
+                    },
+                    "barcodes": [
+                        "4976219076333"
+                    ]
+                },
+                {
+                    "lkey": "cmh_qurupeco_and_dan",
+                    "image": "assets/images/cmh/qurupeco_and_dan.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/cmh/box_qurupeco_and_dan.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/amaf/index.html",
+                    "releases": {
+                        "region_APAC": {
+                            "release_date": "2016-12-08"
+                        }
+                    },
+                    "barcodes": [
+                        "4976219076371"
+                    ]
+                },
+                {
+                    "lkey": "cmh_berioros_and_ayuria",
+                    "image": "assets/images/cmh/berioros_and_ayuria.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/cmh/box_berioros_and_ayuria.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/amae/index.html",
+                    "releases": {
+                        "region_APAC": {
+                            "release_date": "2016-12-08"
+                        }
+                    },
+                    "barcodes": [
+                        "4976219076371"
+                    ]
+                },
+                {
+                    "lkey": "cmh_lioleia_and_cheval",
+                    "image": "assets/images/cmh/lioleia_and_cheval.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/cmh/box_lioleia_and_cheval.png",
+                    "url": "https://www.nintendo.co.jp/hardware/amiibo/lineup/amad/index.html",
+                    "releases": {
+                        "region_APAC": {
+                            "release_date": "2016-12-08"
+                        }
+                    },
+                    "barcodes": [
+                        "4976219076357"
+                    ]
+                }
+            ]
         }
     ]
 }
