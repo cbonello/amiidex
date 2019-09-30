@@ -81,6 +81,14 @@
                     "lkey": "country_nz",
                     "url": "http://www.nintendo.co.nz/",
                     "flag": "assets/images/regions/nz.png"
+                },
+                {
+                    "lkey": "country_cn",
+                    "flag": "assets/images/regions/cn.png"
+                },
+                {
+                    "lkey": "country_sg",
+                    "flag": "assets/images/regions/sg.png"
                 }
             ]
         },

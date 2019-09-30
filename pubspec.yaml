@@ -95,6 +95,8 @@ flutter:
     - assets/images/regions/nl.png
     - assets/images/regions/no.png
     - assets/images/regions/nz.png
+    - assets/images/regions/cn.png
+    - assets/images/regions/sg.png
     - assets/images/regions/pe.png
     - assets/images/regions/pl.png
     - assets/images/regions/pt.png
