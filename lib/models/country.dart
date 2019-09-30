@@ -18,6 +18,7 @@ class CountryModel {
   String get regionID => _regionID;
   String get url => _url;
   bool get hasURL => _url != null;
+  String get flagAsset => _flagAsset;
 
   // Not used frequently so not cached by default.
   Flag flag(Function() onTap) => Flag(asset: _flagAsset, onTap: onTap);
