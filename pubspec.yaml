@@ -213,6 +213,12 @@ flutter:
     - assets/images/sk/logo.png
     - assets/images/sk/box_shovel_knight.png
     - assets/images/sk/shovel_knight.png
+    - assets/images/skl/header.jpg
+    - assets/images/skl/logo.png
+    - assets/images/skl/box_hammer_slam_bowser.png
+    - assets/images/skl/box_turbo_charge_donkey_kong.png
+    - assets/images/skl/hammer_slam_bowser.png
+    - assets/images/skl/turbo_charge_donkey_kong.png
     - assets/images/sm/header.jpg
     - assets/images/sm/logo.png
     - assets/images/sm/box_boo.png

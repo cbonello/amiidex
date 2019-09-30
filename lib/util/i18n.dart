@@ -396,7 +396,10 @@ class _I18nEnUS extends I18n {
       'cmh_navirou': 'Navirou',
       'cmh_one_eyed_liolaeus_and_rider_boy': 'One Eyed Liolæus & Rider (Boy)',
       'cmh_one_eyed_liolaeus_and_rider_girl': 'One Eyed Liolæus & Rider (Girl)',
-      'cmh_qurupeco_and_dan': 'Qurupeco & Dan'
+      'cmh_qurupeco_and_dan': 'Qurupeco & Dan',
+      'skl': 'Skylanders SuperChargers',
+      'skl_turbo_charge_donkey_kong': 'Turbo Charge Donkey Kong',
+      'skl_hammer_slam_bowser': 'Hammer Slam Bowser'
     };
   }
 
@@ -781,7 +784,10 @@ class _I18nFrFR extends I18n {
       'cmh_navirou': 'Navirou',
       'cmh_one_eyed_liolaeus_and_rider_boy': 'One Eyed Liolæus & Rider (Boy)',
       'cmh_one_eyed_liolaeus_and_rider_girl': 'One Eyed Liolæus & Rider (Girl)',
-      'cmh_qurupeco_and_dan': 'Qurupeco & Dan'
+      'cmh_qurupeco_and_dan': 'Qurupeco & Dan',
+      'skl': 'Skylanders SuperChargers',
+      'skl_turbo_charge_donkey_kong': 'Turbo Charge Donkey Kong',
+      'skl_hammer_slam_bowser': 'Hammer Slam Bowser'
     };
   }
 

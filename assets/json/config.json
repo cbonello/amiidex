@@ -4689,6 +4689,52 @@
                     ]
                 }
             ]
+        },
+        {
+            "lkey": "skl",
+            "header": "assets/images/skl/header.jpg",
+            "logo": "assets/images/skl/logo.png",
+            "amiibo": [
+                {
+                    "lkey": "skl_turbo_charge_donkey_kong",
+                    "image": "assets/images/skl/turbo_charge_donkey_kong.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/skl/box_turbo_charge_donkey_kong.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/turbo-charge-donkey-kong-amiibo-skylanders-superchargers-series/",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2015-09-20"
+                        },
+                        "region_EMEA": {
+                            "release_date": "2015-09-25"
+                        }
+                    },
+                    "barcodes": [
+                        "047875877443",
+                        "714833396666",
+                        "7869368392508"
+                    ]
+                },
+                {
+                    "lkey": "skl_hammer_slam_bowser",
+                    "image": "assets/images/skl/hammer_slam_bowser.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/skl/box_hammer_slam_bowser.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/hammer-slam-bowser-amiibo-skylanders-superchargers-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2015-09-20"
+                        },
+                        "region_EMEA": {
+                            "release_date": "2015-09-25"
+                        }
+                    },
+                    "barcodes": [
+                        "7869368392515",
+                        "696545037801"
+                    ]
+                }
+            ]
         }
     ]
 }
