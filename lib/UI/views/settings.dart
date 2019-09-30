@@ -290,6 +290,15 @@ class CountryPickerDropdown extends StatefulWidget {
 class _CountryPickerDropdownState extends State<CountryPickerDropdown> {
   @override
   Widget build(BuildContext context) {
+    final List<CountryModel> sortedCountries = <CountryModel>[
+      ...widget.countries
+    ];
+    sortedCountries.sort((CountryModel a, CountryModel b) {
+      final String aName = I18n.of(context).text(a.lKey);
+      final String bName = I18n.of(context).text(b.lKey);
+      return aName.compareTo(bName);
+    });
+
     return DropdownButton<CountryModel>(
       value: widget.countries
           .firstWhere((CountryModel c) => c.lKey == widget.value),
@@ -297,7 +306,7 @@ class _CountryPickerDropdownState extends State<CountryPickerDropdown> {
         widget.onChanged(c);
       },
       items: <DropdownMenuItem<CountryModel>>[
-        for (final CountryModel c in widget.countries)
+        for (final CountryModel c in sortedCountries)
           DropdownMenuItem<CountryModel>(
             value: c,
             child: c.label(context),
