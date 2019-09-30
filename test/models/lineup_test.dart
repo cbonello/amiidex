@@ -7,6 +7,7 @@ import 'package:amiidex/models/country.dart';
 import 'package:amiidex/models/region.dart';
 import 'package:amiidex/models/serie.dart';
 import 'package:amiidex/models/value_pack.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
@@ -66,21 +67,17 @@ void main() {
     }
   });
 
-  // test('Countries flag should point to a valid image asset', () async {
-  //   final File file = File(CONFIG);
-  //   final Map<String, dynamic> json = jsonDecode(await file.readAsString());
-  //   final ConfigModel config = ConfigModel.fromJson(json);
+  test('Countries flag should point to a valid image asset', () async {
+    final File file = File(CONFIG);
+    final Map<String, dynamic> json = jsonDecode(await file.readAsString());
+    final ConfigModel config = ConfigModel.fromJson(json);
 
-  //   for (final RegionModel r in config.regions.values) {
-  //     // final List<String> allURLs = <String>[];
-  //     for (final CountryModel c in r.countries) {
-  //       print(c.lKey);
-  //       final Image img = Image.asset(c.flagAsset);
-  //       print(img);
-  //       // expect(allURLs.contains(c.lKey), isFalse);
-  //     }
-  //   }
-  // });
+    for (final RegionModel r in config.regions.values) {
+      for (final CountryModel c in r.countries) {
+        expect(Image.asset(c.flagAsset), isNotNull);
+      }
+    }
+  });
 
   test('Amiibo database should not contain country duplicates', () async {
     final File file = File(CONFIG);
