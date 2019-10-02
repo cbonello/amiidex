@@ -1,3 +1,8 @@
+# 1.0.0+11
+- Add new onboarding pages.
+- Add 'Monster Hunter' and 'Skylanders SuperChargers' series.
+- Add China and Singapore in APAC region.
+
 # 1.0.0+10
 - Add onboarding pages.
 - Add 'Delicious Amiibo' in super Mario Odyssey serie.
