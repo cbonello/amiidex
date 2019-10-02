@@ -95,16 +95,18 @@ class _I18nEnUS extends I18n {
       'onboarding-long-press-title': 'Long Press',
       'onboarding-double-tap-title': 'Double Tap',
       'onboarding-barcode-scan-title': 'Barcode Scan',
+      'onboarding-swipe-title': 'Swipe',
       'onboarding-series-filter':
           'Filter out amiibo series you don\'t collect.',
       'onboarding-lock':
           'Lock your amiibo collection to prevent unintentional updates.',
       'onboarding-long-press':
-          'Long press to add/remove an amiibo from your collection.',
+          'Long press to add/remove an amiibo to/from your collection.',
       'onboarding-double-tap':
           'Double tap to open corresponding amiibo page on www.nintendo.com',
+      'onboarding-swipe': 'Swipe left or right to move between series.',
       'onboarding-barcode-scan':
-          'Scan amiibo-box barcodes to quickly add to, or check your collection.',
+          'Scan amiibo-box barcodes to quickly add new amiibo to your collection.',
       'settings-theme': 'Theme',
       'settings-light-theme': 'Light Theme',
       'settings-dark-theme': 'Dark Theme',
@@ -482,6 +484,7 @@ class _I18nFrFR extends I18n {
       'onboarding-long-press-title': 'Appui long',
       'onboarding-double-tap-title': 'Appui double',
       'onboarding-barcode-scan-title': 'Scan de code-barres',
+      'onboarding-swipe-title': 'Parcours des séries.',
       'onboarding-series-filter':
           'Filtrez les séries d\'amiibo que vous ne collectionnez pas.',
       'onboarding-lock':
@@ -490,8 +493,10 @@ class _I18nFrFR extends I18n {
           'Appui long pour ajouter ou supprimer un amiibo de votre collection.',
       'onboarding-double-tap':
           'Appui double pour ouvrir la page amiibo correspondante sur www.nintendo.com',
+      'onboarding-swipe':
+          'Faites glisser votre doigt vers la gauche ou la droite pour parcourir les séries.',
       'onboarding-barcode-scan':
-          'Scan du code-barres d\'une boîte amiibo pour ajouter ou vérifier votre collection.',
+          'Scan du code-barres d\'une boîte amiibo pour ajouter un amiibo à votre collection.',
       'settings-theme': 'Thème',
       'settings-light-theme': 'Thème clair',
       'settings-dark-theme': 'Thème sombre',

@@ -15,6 +15,7 @@ class OnboardingView extends StatelessWidget {
     'assets/images/onboarding/lock.png',
     'assets/images/onboarding/long_press.png',
     'assets/images/onboarding/double_tap.png',
+    'assets/images/onboarding/swipe.png',
     'assets/images/onboarding/barcode_scan.png',
   ];
 
@@ -23,6 +24,7 @@ class OnboardingView extends StatelessWidget {
     'onboarding-lock-title',
     'onboarding-long-press-title',
     'onboarding-double-tap-title',
+    'onboarding-swipe-title',
     'onboarding-barcode-scan-title',
   ];
 
@@ -31,6 +33,7 @@ class OnboardingView extends StatelessWidget {
     'onboarding-lock',
     'onboarding-long-press',
     'onboarding-double-tap',
+    'onboarding-swipe',
     'onboarding-barcode-scan',
   ];
 
