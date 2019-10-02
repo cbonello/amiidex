@@ -11,6 +11,7 @@ class OnboardingView extends StatelessWidget {
   final ConfigModel config;
 
   final List<String> _assets = <String>[
+    'assets/images/onboarding/whats_new.png',
     'assets/images/onboarding/series_filter.png',
     'assets/images/onboarding/lock.png',
     'assets/images/onboarding/long_press.png',
@@ -20,6 +21,7 @@ class OnboardingView extends StatelessWidget {
   ];
 
   final List<String> _titles = <String>[
+    'onboarding-whats-new-title',
     'onboarding-series-filter-title',
     'onboarding-lock-title',
     'onboarding-long-press-title',
@@ -29,6 +31,7 @@ class OnboardingView extends StatelessWidget {
   ];
 
   final List<String> _descriptions = <String>[
+    'onboarding-whats-new',
     'onboarding-series-filter',
     'onboarding-lock',
     'onboarding-long-press',

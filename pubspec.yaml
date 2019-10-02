@@ -61,6 +61,7 @@ flutter:
     - assets/images/splash/controller_dark.png
     - assets/images/splash/controller_light.png
     - assets/images/splash/mario.png
+    - assets/images/onboarding/whats_new.png
     - assets/images/onboarding/series_filter.png
     - assets/images/onboarding/lock.png
     - assets/images/onboarding/long_press.png

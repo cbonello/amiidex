@@ -90,12 +90,15 @@ class _I18nEnUS extends I18n {
       'settings-startup': 'Startup',
       'settings-display-splash-screen': 'Display splash screen',
       'settings-display-onboarding': 'Display onboarding',
+      'onboarding-whats-new-title': 'What\'s new with 1.0.0+11?',
       'onboarding-series-filter-title': 'Series Filter',
       'onboarding-lock-title': 'Lock/Unlock',
       'onboarding-long-press-title': 'Long Press',
       'onboarding-double-tap-title': 'Double Tap',
       'onboarding-barcode-scan-title': 'Barcode Scan',
       'onboarding-swipe-title': 'Swipe',
+      'onboarding-whats-new':
+          'Added \'Monster Hunter\' and \'Skylanders SuperChargers\' series. Update your series filter to see them.',
       'onboarding-series-filter':
           'Filter out amiibo series you don\'t collect.',
       'onboarding-lock':
@@ -479,12 +482,15 @@ class _I18nFrFR extends I18n {
       'settings-startup': 'Démarrage',
       'settings-display-splash-screen': 'Afficher écran de démarrage',
       'settings-display-onboarding': 'Afficher écran d\'aide',
+      'onboarding-whats-new-title': 'Nouveautés avec 1.0.0+11 ?',
       'onboarding-series-filter-title': 'Filtre des séries',
       'onboarding-lock-title': 'Verrouiller / Déverrouiller',
       'onboarding-long-press-title': 'Appui long',
       'onboarding-double-tap-title': 'Appui double',
       'onboarding-barcode-scan-title': 'Scan de code-barres',
       'onboarding-swipe-title': 'Parcours des séries.',
+      'onboarding-whats-new':
+          'Ajout des séries "Monster Hunter" et "Skylanders SuperChargers". Mettez à jour vos filtres des séries pour les voir.',
       'onboarding-series-filter':
           'Filtrez les séries d\'amiibo que vous ne collectionnez pas.',
       'onboarding-lock':
