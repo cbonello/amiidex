@@ -45,6 +45,11 @@ Settings Screen (Dark Theme) | Settings Screen (Light Theme)
 --- | ---
 ![Settings Screen](/docs/dark_settings.png?raw=true "Settings Screen") | ![Settings Screen](/docs/light_settings.png?raw=true "Settings Screen")
 
+## Roadmap
+- NFC support.
+- Code cleanup and rewrite.
+- Add support for Amiibo cards.
+
 ## Learn More on Flutter
 Here are a few resources to get you started if you are new to Flutter:
 
