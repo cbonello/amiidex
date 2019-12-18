@@ -1,3 +1,0 @@
-- Tests!
-- Display Amiibo by serie in Owned and Missing tabs.
-- Sharing of owned/missing amiibo lists.
