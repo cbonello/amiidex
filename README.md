@@ -49,6 +49,8 @@ Settings Screen (Dark Theme) | Settings Screen (Light Theme)
 - NFC support.
 - Code cleanup and rewrite.
 - Add support for Amiibo cards.
+- Display Amiibo by serie in Owned and Missing tabs.
+- Sharing of owned/missing amiibo lists.
 
 ## Learn More on Flutter
 Here are a few resources to get you started if you are new to Flutter:
