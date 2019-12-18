@@ -29,8 +29,14 @@ class FABWdiget extends StatelessWidget {
           Icons.camera_enhance,
           semanticLabel: I18n.of(context).text('sm-fab-scan'),
         ),
-        onPressed: () {
-          scan(context);
+        onPressed: () async {
+          await scan(context);
+          // await Navigator.push<void>(
+          //   context,
+          //   MaterialPageRoute<void>(
+          //     builder: (_) => ReadPage(),
+          //   ),
+          // );
         },
       ),
     );

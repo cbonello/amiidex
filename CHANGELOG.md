@@ -1,3 +1,17 @@
+# 1.0.0+12
+- Add missing amiibo:
+    - Megaman 11
+    - Dark Hammer Slam Bowser
+    - Dark Turbo Charge Donkey Kong
+- Add newly released Amiibo:
+    - King Knight
+    - Plague Knight
+    - Specter Knight
+    - Shovel Knight Gold Edition
+- Add future Amiibo:
+    - Dark Samus
+    - Richter
+
 # 1.0.0+11
 - Add new onboarding pages.
 - Add 'Monster Hunter' and 'Skylanders SuperChargers' series.

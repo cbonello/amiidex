@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:amiidex/application.dart';
 import 'package:amiidex/services/assets.dart';
 import 'package:amiidex/services/local_storage.dart';
 import 'package:amiidex/services/package_info.dart';
+import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 bool get isInDebugMode {
   bool inDebugMode = false;
@@ -30,12 +30,13 @@ Future<void> setupLocator() async {
   final AssetsService iAssetsService = await AssetsService.getInstance();
   locator.registerSingleton<AssetsService>(iAssetsService);
 
-  final PackageInfoService iPackageInfoService =
-      await PackageInfoService.getInstance();
+  final PackageInfoService iPackageInfoService = await PackageInfoService.getInstance();
   locator.registerSingleton<PackageInfoService>(iPackageInfoService);
 }
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await setupLocator();
 
   // Captures errors reported by the Flutter framework.

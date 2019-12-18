@@ -4,8 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 abstract class I18n implements WidgetsLocalizations {
-  static GeneratedLocalizationsDelegate delegate =
-      GeneratedLocalizationsDelegate();
+  static GeneratedLocalizationsDelegate delegate = GeneratedLocalizationsDelegate();
 
   static I18n of(BuildContext context) =>
       Localizations.of<I18n>(context, WidgetsLocalizations);
@@ -83,26 +82,22 @@ class _I18nEnUS extends I18n {
       'settings-collection-reset-cancel-button': 'Cancel',
       'settings-collection-reset-reset-button': 'Reset',
       'settings-collection-own-all': 'Complete Collection',
-      'settings-collection-own-all-question':
-          'Is your amiibo collection complete?',
+      'settings-collection-own-all-question': 'Is your amiibo collection complete?',
       'settings-collection-own-all-no-button': 'No',
       'settings-collection-own-all-yes-button': 'Yes',
       'settings-startup': 'Startup',
       'settings-display-splash-screen': 'Display splash screen',
       'settings-display-onboarding': 'Display onboarding',
-      'onboarding-whats-new-title': 'What\'s new with 1.0.0+11?',
+      'onboarding-whats-new-title': 'What\'s new with 1.0.0+12?',
       'onboarding-series-filter-title': 'Series Filter',
       'onboarding-lock-title': 'Lock/Unlock',
       'onboarding-long-press-title': 'Long Press',
       'onboarding-double-tap-title': 'Double Tap',
       'onboarding-barcode-scan-title': 'Barcode Scan',
       'onboarding-swipe-title': 'Swipe',
-      'onboarding-whats-new':
-          'Added \'Monster Hunter\' and \'Skylanders SuperChargers\' series. Update your series filter to see them.',
-      'onboarding-series-filter':
-          'Filter out amiibo series you don\'t collect.',
-      'onboarding-lock':
-          'Lock your amiibo collection to prevent unintentional updates.',
+      'onboarding-whats-new': 'Added missing and new Amiibo.',
+      'onboarding-series-filter': 'Filter out amiibo series you don\'t collect.',
+      'onboarding-lock': 'Lock your amiibo collection to prevent unintentional updates.',
       'onboarding-long-press':
           'Long press to add/remove an amiibo to/from your collection.',
       'onboarding-double-tap':
@@ -281,6 +276,8 @@ class _I18nEnUS extends I18n {
       'ssb_simon': 'Simon',
       'ssb_chrom': 'Chrom',
       'ssb_incineroar': 'Incineroar',
+      'ssb_richter': 'Richter',
+      'ssb_dark_samus': 'Darkr Samus',
       'sm': 'Super Mario',
       'sm_mario': 'Mario',
       'sm_luigi': 'Luigi',
@@ -381,6 +378,10 @@ class _I18nEnUS extends I18n {
       'mtr_metroid': 'Metroid',
       'sk': 'Shovel Knight',
       'sk_shovel_knight': 'Shovel Knight',
+      'sk_plague_knight': 'Plague Knight',
+      'sk_specter_knight': 'Specter Knight',
+      'sk_king_knight': 'King Knight',
+      'sk_shovel_knight_gold_edition': 'Shovel Knight - Gold Edition',
       'cr': 'Chibi-Robo',
       'cr_chibi_robo': 'Chibi-Robo',
       'dbl': 'Diablo',
@@ -395,6 +396,7 @@ class _I18nEnUS extends I18n {
       'dks_solaire_of_astora': 'Solaire of Astora',
       'mgmce': 'Mega Man Collector\'s Edition',
       'mgmce_megaman_gold': 'Mega Man - Gold Edition',
+      'mgmce_megaman_11': 'Mega Man 11',
       'cmh': 'Monster Hunter',
       'cmh_berioros_and_ayuria': 'Berioros & Ayuria',
       'cmh_lioleia_and_cheval': 'Lioleia & Cheval',
@@ -404,7 +406,9 @@ class _I18nEnUS extends I18n {
       'cmh_qurupeco_and_dan': 'Qurupeco & Dan',
       'skl': 'Skylanders SuperChargers',
       'skl_turbo_charge_donkey_kong': 'Turbo Charge Donkey Kong',
-      'skl_hammer_slam_bowser': 'Hammer Slam Bowser'
+      'skl_hammer_slam_bowser': 'Hammer Slam Bowser',
+      'skl_dark_turbo_charge_donkey_kong': 'Dark Turbo Charge Donkey Kong',
+      'skl_dark_hammer_slam_bowser': 'Dark Hammer Slam Bowser'
     };
   }
 
@@ -482,15 +486,14 @@ class _I18nFrFR extends I18n {
       'settings-startup': 'Démarrage',
       'settings-display-splash-screen': 'Afficher écran de démarrage',
       'settings-display-onboarding': 'Afficher écran d\'aide',
-      'onboarding-whats-new-title': 'Nouveautés avec 1.0.0+11 ?',
+      'onboarding-whats-new-title': 'Nouveautés avec 1.0.0+12 ?',
       'onboarding-series-filter-title': 'Filtre des séries',
       'onboarding-lock-title': 'Verrouiller / Déverrouiller',
       'onboarding-long-press-title': 'Appui long',
       'onboarding-double-tap-title': 'Appui double',
       'onboarding-barcode-scan-title': 'Scan de code-barres',
       'onboarding-swipe-title': 'Parcours des séries.',
-      'onboarding-whats-new':
-          'Ajout des séries "Monster Hunter" et "Skylanders SuperChargers". Mettez à jour vos filtres des séries pour les voir.',
+      'onboarding-whats-new': 'Ajout des amiibo manquant et nouveaux.',
       'onboarding-series-filter':
           'Filtrez les séries d\'amiibo que vous ne collectionnez pas.',
       'onboarding-lock':
@@ -570,8 +573,7 @@ class _I18nFrFR extends I18n {
       'sm-amiibo-detail-image': 'Amiibo',
       'fab-scan-add-dialog-title': 'Ajouter amiibo',
       'fab-scan-add-dialog-owned': 'Aucun nouvel amiibo n\'a été détecté !',
-      'fab-scan-add-dialog-add':
-          'Voulez-vous ajouter l\'amiibo à votre collection ?',
+      'fab-scan-add-dialog-add': 'Voulez-vous ajouter l\'amiibo à votre collection ?',
       'fab-scan-barcode': 'Code-barres: %s',
       'fab-scan-amiibo-name': 'Nom: %s',
       'fab-scan-amiibo-status': 'Status: ',
@@ -674,7 +676,9 @@ class _I18nFrFR extends I18n {
       'ssb_snake': 'Snake',
       'ssb_simon': 'Simon',
       'ssb_chrom': 'Chrom',
-      'ssb_incineroar': 'Incineroar',
+      'ssb_incineroar': 'Félinferno',
+      'ssb_richter': 'Richter',
+      'ssb_dark_samus': 'Samus sombre',
       'sm': 'Super Mario',
       'sm_mario': 'Mario',
       'sm_luigi': 'Luigi',
@@ -775,6 +779,10 @@ class _I18nFrFR extends I18n {
       'mtr_metroid': 'Metroid',
       'sk': 'Shovel Knight',
       'sk_shovel_knight': 'Shovel Knight',
+      'sk_plague_knight': 'Plague Knight',
+      'sk_specter_knight': 'Specter Knight',
+      'sk_king_knight': 'King Knight',
+      'sk_shovel_knight_gold_edition': 'Shovel Knight (édition or)',
       'cr': 'Chibi-Robo',
       'cr_chibi_robo': 'Chibi-Robo',
       'dbl': 'Diablo',
@@ -789,6 +797,7 @@ class _I18nFrFR extends I18n {
       'dks_solaire_of_astora': 'Solaire d\'Astora',
       'mgmce': 'Mega Man Collector\'s Edition',
       'mgmce_megaman_gold': 'Mega Man (édition or)',
+      'mgmce_megaman_11': 'Mega Man 11',
       'cmh': 'Monster Hunter',
       'cmh_berioros_and_ayuria': 'Berioros & Ayuria',
       'cmh_lioleia_and_cheval': 'Lioleia & Cheval',
@@ -798,7 +807,9 @@ class _I18nFrFR extends I18n {
       'cmh_qurupeco_and_dan': 'Qurupeco & Dan',
       'skl': 'Skylanders SuperChargers',
       'skl_turbo_charge_donkey_kong': 'Turbo Charge Donkey Kong',
-      'skl_hammer_slam_bowser': 'Hammer Slam Bowser'
+      'skl_hammer_slam_bowser': 'Hammer Slam Bowser',
+      'skl_dark_turbo_charge_donkey_kong': 'Dark Turbo Charge Donkey Kong',
+      'skl_dark_hammer_slam_bowser': 'Dark Hammer Slam Bowser'
     };
   }
 
@@ -806,8 +817,7 @@ class _I18nFrFR extends I18n {
   TextDirection get textDirection => TextDirection.ltr;
 }
 
-class GeneratedLocalizationsDelegate
-    extends LocalizationsDelegate<WidgetsLocalizations> {
+class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocalizations> {
   GeneratedLocalizationsDelegate();
 
   final Map<Locale, I18n> _locales = <Locale, I18n>{

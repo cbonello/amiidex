@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:typed_data';
 
 import 'package:amiidex/models/region.dart';
 import 'package:amiidex/models/release.dart';
@@ -14,10 +15,11 @@ class AmiiboModel {
         assert(
           json['display_amiibo'] != null && json['display_amiibo'] is bool,
         ),
-        assert(json['box'] != null && json['box'] is String),
-        assert(json['url'] != null && json['url'] is String),
         assert(json['releases'] != null && json['releases'] is Map),
-        assert(json['barcodes'] != null) {
+        assert(json['barcodes'] != null),
+        assert(json['nfc'] != null &&
+            json['nfc'] is String &&
+            (json['nfc'].length == 0 || json['nfc'].length == 16)) {
     _lKey = json['lkey'];
     _image = Image.asset(json['image']);
     _displayAmiibo = json['display_amiibo'];
@@ -30,17 +32,24 @@ class AmiiboModel {
       _releases[regionID] = r;
     });
     _barcodes = json['barcodes'].cast<String>();
+    for (int i = 0; i < json['nfc'].length / 2; i++) {
+      final String s = json['nfc'].substring(2 * i, 2 * i + 2);
+      final int value = int.parse(s, radix: 16);
+      _nfc[i] = value;
+    }
   }
 
   String _lKey, _box, _serieID, _url;
   Image _image;
   final Map<String, ReleaseModel> _releases = <String, ReleaseModel>{};
   List<String> _barcodes;
+  final Uint8List _nfc = Uint8List(8);
   bool _displayAmiibo;
 
   String get lKey => _lKey;
   Image get image => _image;
   // Not used frequently so not cached by default.
+  bool get boxExists => _box != null;
   Image get box => Image.asset(_box);
   String get serieID => _serieID;
   String get url => _url;
@@ -58,8 +67,7 @@ class AmiiboModel {
     return _releases[regionID].releaseDate;
   }
 
-  UnmodifiableListView<String> get barcodes =>
-      UnmodifiableListView<String>(_barcodes);
+  UnmodifiableListView<String> get barcodes => UnmodifiableListView<String>(_barcodes);
 
   bool matchBarcode(String barcode) {
     return _barcodes.contains(barcode);

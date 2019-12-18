@@ -43,8 +43,7 @@ class SerieGridItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: CustomMultiChildLayout(
-          delegate:
-              _LayoutDelegate(serie, ownedProvider.percentOwnedInSerie(serie)),
+          delegate: _LayoutDelegate(serie, ownedProvider.percentOwnedInSerie(serie)),
           children: <Widget>[
             LayoutId(
               id: 'image-background-box',
@@ -132,8 +131,7 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
       final double height = size.height * 0.25;
       layoutChild(
         'text-background-box2',
-        BoxConstraints.tightFor(
-            width: size.width * percentOwned, height: height),
+        BoxConstraints.tightFor(width: size.width * percentOwned, height: height),
       );
       positionChild('text-background-box2', Offset(0, size.height - height));
     }
@@ -146,8 +144,7 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
       );
       positionChild(
         'image',
-        Offset((size.width - layoutSize.width) / 2,
-            (height - layoutSize.height) / 2),
+        Offset((size.width - layoutSize.width) / 2, (height - layoutSize.height) / 2),
       );
     }
 

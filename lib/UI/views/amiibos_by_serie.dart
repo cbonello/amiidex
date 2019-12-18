@@ -69,8 +69,7 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
           backgroundColor: const Color(0xFFF5F5F6),
           body: NestedScrollView(
             controller: _scrollViewController,
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
+            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
               final FABVisibility fabVisibility = Provider.of<FABVisibility>(
                 context,
                 listen: false,
@@ -91,7 +90,7 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
                   centerTitle: true,
                   title: Semantics(
                     label: I18n.of(context).text('sm-detail-logo'),
-                    child: serie.logo,
+                    child: SizedBox(height: kToolbarHeight, child: serie.logo),
                   ),
                   expandedHeight: 200.0,
                   floating: false,
@@ -171,8 +170,7 @@ class VisibleIconButton extends StatelessWidget {
       width: 40.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Theme.of(context).appBarTheme.color ??
-            Theme.of(context).primaryColor,
+        color: Theme.of(context).appBarTheme.color ?? Theme.of(context).primaryColor,
       ),
       alignment: Alignment.center,
       child: RawMaterialButton(

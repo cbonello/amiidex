@@ -40,8 +40,7 @@ class AmiiboViewState extends State<AmiiboView> {
           body: Padding(
             padding: const EdgeInsets.all(40.0),
             child: LayoutBuilder(
-              builder:
-                  (BuildContext context, BoxConstraints viewportConstraints) {
+              builder: (BuildContext context, BoxConstraints viewportConstraints) {
                 return SingleChildScrollView(
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
@@ -54,16 +53,18 @@ class AmiiboViewState extends State<AmiiboView> {
                           flex: 2,
                           child: Column(
                             children: <Widget>[
-                              Semantics(
-                                label: I18n.of(context).text(
-                                  'sm-amiibo-detail-box',
+                              if (widget.amiibo.boxExists) ...<Widget>[
+                                Semantics(
+                                  label: I18n.of(context).text(
+                                    'sm-amiibo-detail-box',
+                                  ),
+                                  image: true,
+                                  child: ExcludeSemantics(
+                                    child: widget.amiibo.box,
+                                  ),
                                 ),
-                                image: true,
-                                child: ExcludeSemantics(
-                                  child: widget.amiibo.box,
-                                ),
-                              ),
-                              const SizedBox(height: 5.0),
+                                const SizedBox(height: 5.0),
+                              ],
                               widget.amiibo.displayAmiibo
                                   ? Semantics(
                                       label: I18n.of(context).text(
@@ -81,8 +82,7 @@ class AmiiboViewState extends State<AmiiboView> {
                         Expanded(
                           flex: 4,
                           child: Padding(
-                            padding:
-                                const EdgeInsets.only(left: 10.0, right: 5.0),
+                            padding: const EdgeInsets.only(left: 10.0, right: 5.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
@@ -100,11 +100,9 @@ class AmiiboViewState extends State<AmiiboView> {
                                 ),
                                 for (final String regionId
                                     in assetsService.config.regions.keys)
-                                  if (widget.amiibo
-                                      .wasReleasedInRegion(regionId))
+                                  if (widget.amiibo.wasReleasedInRegion(regionId))
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 10.0),
+                                      padding: const EdgeInsets.only(left: 10.0),
                                       child: Row(
                                         children: <Widget>[
                                           RegionButton(regionId: regionId),
@@ -121,9 +119,7 @@ class AmiiboViewState extends State<AmiiboView> {
                                                 widget.amiibo.releases[regionId]
                                                     .releaseDate,
                                               ),
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .body1,
+                                              style: Theme.of(context).textTheme.body1,
                                             ),
                                           ),
                                         ],

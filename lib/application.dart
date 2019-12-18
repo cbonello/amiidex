@@ -70,10 +70,10 @@ class _ApplicationState extends State<Application> {
           return GestureDetector(
             // See https://flutter360.dev/dismiss-keyboard-form-lose-focus/
             onTap: () {
-              final FocusScopeNode currentFocus = FocusScope.of(context);
-              if (!currentFocus.hasPrimaryFocus) {
-                currentFocus.unfocus();
-              }
+              // final FocusScopeNode currentFocus = FocusScope.of(context);
+              // if (!currentFocus.hasPrimaryFocus) {
+              //   currentFocus.unfocus();
+              // }
             },
             child: MaterialApp(
               title: 'AmiiDex',
@@ -86,12 +86,11 @@ class _ApplicationState extends State<Application> {
                 GlobalWidgetsLocalizations.delegate,
               ],
               supportedLocales: languageProvider.i18n.supportedLocales,
-              localeResolutionCallback: languageProvider.i18n
-                  .resolution(fallback: languageProvider.locale),
+              localeResolutionCallback:
+                  languageProvider.i18n.resolution(fallback: languageProvider.locale),
               theme: theme,
               initialRoute: '/',
-              onGenerateRoute: (RouteSettings settings) =>
-                  Routes.getRoute(settings),
+              onGenerateRoute: (RouteSettings settings) => Routes.getRoute(settings),
             ),
           );
         },

@@ -57,14 +57,12 @@ class OwnedMissingPieChart extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 1.2,
                   child: ExcludeSemantics(
-                    child: FlChart(
-                      chart: PieChart(
-                        PieChartData(
-                          borderData: FlBorderData(show: false),
-                          sectionsSpace: 0,
-                          centerSpaceRadius: 40,
-                          sections: showingSections,
-                        ),
+                    child: PieChart(
+                      PieChartData(
+                        borderData: FlBorderData(show: false),
+                        sectionsSpace: 0,
+                        centerSpaceRadius: 40,
+                        sections: showingSections,
                       ),
                     ),
                   ),

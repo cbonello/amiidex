@@ -1,4 +1,4 @@
-package com.example.amiidex
+package com.happytracebook.amiidex
 
 import android.os.Bundle
 

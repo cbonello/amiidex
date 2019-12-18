@@ -24,6 +24,9 @@ class AmiiboListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LockProvider lockProvider = Provider.of<LockProvider>(context);
+    final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
+
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Row(
@@ -32,8 +35,55 @@ class AmiiboListItem extends StatelessWidget {
           Expanded(
             child: Container(
               height: 100,
-              child: _Item(
-                  amiibo: amiibo, helpMessageDelegate: helpMessageDelegate),
+              child: GestureDetector(
+                onTap: () async {
+                  await SystemSound.play(SystemSoundType.click);
+                  await Navigator.pushNamed(
+                    context,
+                    '/amiibo',
+                    arguments: amiibo,
+                  );
+                },
+                onDoubleTap: () async {
+                  if (amiibo.url != null) {
+                    if (await url_launcher.canLaunch(amiibo.url)) {
+                      await url_launcher.launch(amiibo.url);
+                    } else {
+                      await errorDialog(
+                        context,
+                        Text(I18n.of(context).text('error-dialog-title')),
+                        <Widget>[
+                          Text(
+                            sprintf(
+                              I18n.of(context).text('error-url-launch'),
+                              <String>[amiibo.url],
+                            ),
+                          )
+                        ],
+                      );
+                    }
+                  }
+                },
+                onLongPress: () async {
+                  if (lockProvider.isOpened) {
+                    if (helpMessageDelegate != null) {
+                      Scaffold.of(context).removeCurrentSnackBar();
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            helpMessageDelegate(
+                              I18n.of(context).text(amiibo.lKey),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    await SystemSound.play(SystemSoundType.click);
+                    ownedProvider.toggleAmiiboOwnership(amiibo.lKey);
+                  }
+                },
+                child: _Item(amiibo: amiibo, helpMessageDelegate: helpMessageDelegate),
+              ),
             ),
           ),
         ],
@@ -63,7 +113,6 @@ class __ItemState extends State<_Item> {
     final ItemCardThemeData itemCardData = ItemCardThemeData(data: themeData);
     final SelectedRegionProvider regionProvider =
         Provider.of<SelectedRegionProvider>(context);
-    final LockProvider lockProvider = Provider.of<LockProvider>(context);
     final OwnedProvider ownedProvider = Provider.of<OwnedProvider>(context);
 
     return CustomMultiChildLayout(
@@ -103,61 +152,15 @@ class __ItemState extends State<_Item> {
         ),
         LayoutId(
           id: 'image',
-          child: GestureDetector(
-            onTap: () async {
-              await SystemSound.play(SystemSoundType.click);
-              await Navigator.pushNamed(
-                context,
-                '/amiibo',
-                arguments: widget.amiibo,
-              );
-            },
-            onDoubleTap: () async {
-              if (await url_launcher.canLaunch(widget.amiibo.url)) {
-                await url_launcher.launch(widget.amiibo.url);
-              } else {
-                await errorDialog(
-                  context,
-                  Text(I18n.of(context).text('error-dialog-title')),
-                  <Widget>[
-                    Text(
-                      sprintf(
-                        I18n.of(context).text('error-url-launch'),
-                        <String>[widget.amiibo.url],
-                      ),
-                    )
-                  ],
-                );
-              }
-            },
-            onLongPress: () async {
-              if (lockProvider.isOpened) {
-                if (widget.helpMessageDelegate != null) {
-                  Scaffold.of(context).removeCurrentSnackBar();
-                  Scaffold.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        widget.helpMessageDelegate(
-                          I18n.of(context).text(widget.amiibo.lKey),
-                        ),
-                      ),
-                    ),
-                  );
-                }
-                await SystemSound.play(SystemSoundType.click);
-                ownedProvider.toggleAmiiboOwnership(widget.amiibo.lKey);
-              }
-            },
-            child: Container(
-              foregroundDecoration: ownedProvider.isOwned(widget.amiibo.lKey)
-                  ? null
-                  : BoxDecoration(
-                      color: itemCardData.saturationColor,
-                      backgroundBlendMode: BlendMode.saturation,
-                    ),
-              child: Center(
-                child: widget.amiibo.image,
-              ),
+          child: Container(
+            foregroundDecoration: ownedProvider.isOwned(widget.amiibo.lKey)
+                ? null
+                : BoxDecoration(
+                    color: itemCardData.saturationColor,
+                    backgroundBlendMode: BlendMode.saturation,
+                  ),
+            child: Center(
+              child: widget.amiibo.image,
             ),
           ),
         ),
@@ -195,8 +198,7 @@ class __ItemState extends State<_Item> {
                   widget.amiibo.wasReleasedInRegion(regionProvider.regionId)
                       ? DateFormat.yMMMd(
                           Localizations.localeOf(context).toString(),
-                        ).format(
-                          widget.amiibo.releaseDate(regionProvider.regionId))
+                        ).format(widget.amiibo.releaseDate(regionProvider.regionId))
                       : 'N/A',
                   style: TextStyle(
                     color: itemCardData.color,
@@ -245,8 +247,10 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
       );
       positionChild(
         'image',
-        Offset(((size.width - textBackgroundWidth) - img.width) / 2,
-            (size.height - img.height) / 2.0),
+        Offset(
+          ((size.width - textBackgroundWidth) - img.width) / 2,
+          (size.height - img.height) / 2.0,
+        ),
       );
     }
 

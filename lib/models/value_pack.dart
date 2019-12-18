@@ -7,7 +7,8 @@ class ValuePackModel {
       : assert(json['lkey'] != null),
         assert(json['box'] != null),
         assert(json['amiibo'] != null),
-        assert(json['barcodes'] != null) {
+        assert(json['barcodes'] != null),
+        assert(json['nfc'] == null) {
     _lKey = json['lkey'];
     _box = json['box'];
     _serieID = serieID;

@@ -20,8 +20,7 @@ class MasterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
-    final SeriesSortProvider sortProvider =
-        Provider.of<SeriesSortProvider>(context);
+    final SeriesSortProvider sortProvider = Provider.of<SeriesSortProvider>(context);
     final ViewAsProvider viewAsProvider = Provider.of<ViewAsProvider>(context);
 
     // _controller.addListener(() {

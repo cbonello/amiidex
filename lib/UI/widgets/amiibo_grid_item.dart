@@ -74,21 +74,23 @@ class AmiiboGridItem extends StatelessWidget {
                 );
               },
               onDoubleTap: () async {
-                if (await url_launcher.canLaunch(amiibo.url)) {
-                  await url_launcher.launch(amiibo.url);
-                } else {
-                  await errorDialog(
-                    context,
-                    Text(I18n.of(context).text('error-dialog-title')),
-                    <Widget>[
-                      Text(
-                        sprintf(
-                          I18n.of(context).text('error-url-launch'),
-                          <String>[amiibo.url],
-                        ),
-                      )
-                    ],
-                  );
+                if (amiibo.url != null) {
+                  if (await url_launcher.canLaunch(amiibo.url)) {
+                    await url_launcher.launch(amiibo.url);
+                  } else {
+                    await errorDialog(
+                      context,
+                      Text(I18n.of(context).text('error-dialog-title')),
+                      <Widget>[
+                        Text(
+                          sprintf(
+                            I18n.of(context).text('error-url-launch'),
+                            <String>[amiibo.url],
+                          ),
+                        )
+                      ],
+                    );
+                  }
                 }
               },
               onLongPress: () async {
@@ -98,8 +100,7 @@ class AmiiboGridItem extends StatelessWidget {
                     Scaffold.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          helpMessageDelegate(
-                              I18n.of(context).text(amiibo.lKey)),
+                          helpMessageDelegate(I18n.of(context).text(amiibo.lKey)),
                         ),
                       ),
                     );

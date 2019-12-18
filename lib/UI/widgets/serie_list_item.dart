@@ -97,8 +97,7 @@ class _Item extends StatelessWidget {
               //   topRight: Radius.circular(6.0),
               //   bottomRight: Radius.circular(6.0),
               // ),
-              color: (ownedProvider.ownedCountInSerie(serie) ==
-                      serie.amiibos.length)
+              color: (ownedProvider.ownedCountInSerie(serie) == serie.amiibos.length)
                   ? itemCardData.missedColor
                   : itemCardData.ownedColor,
             ),
@@ -106,9 +105,7 @@ class _Item extends StatelessWidget {
         ),
         LayoutId(
           id: 'image',
-          child: Center(
-            child: serie.logo,
-          ),
+          child: serie.logo,
         ),
         LayoutId(
           id: 'caption',
@@ -163,8 +160,7 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
         'text-background-box',
         BoxConstraints.expand(width: textBackgroundWidth, height: size.height),
       );
-      positionChild(
-          'text-background-box', Offset(size.width - textBackgroundWidth, 0));
+      positionChild('text-background-box', Offset(size.width - textBackgroundWidth, 0));
     }
 
     if (hasChild('image')) {
@@ -173,9 +169,12 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
         BoxConstraints.loose(Size(imageWidth, imageHeight)),
       );
       positionChild(
-          'image',
-          Offset(((size.width - textBackgroundWidth) - img.width) / 2,
-              (size.height - img.height) / 2.0));
+        'image',
+        Offset(
+          ((size.width - textBackgroundWidth) - img.width) / 2,
+          (size.height - img.height) / 2.0,
+        ),
+      );
     }
 
     if (hasChild('caption')) {
@@ -185,9 +184,9 @@ class _LayoutDelegate extends MultiChildLayoutDelegate {
         BoxConstraints(maxWidth: textBackgroundWidth, maxHeight: height),
       );
       positionChild(
-          'caption',
-          Offset(
-              size.width - textBackgroundWidth, (size.height - height) / 2.0));
+        'caption',
+        Offset(size.width - textBackgroundWidth, (size.height - height) / 2.0),
+      );
     }
   }
 

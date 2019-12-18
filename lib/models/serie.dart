@@ -7,15 +7,15 @@ import 'package:amiidex/models/value_pack.dart';
 import 'package:flutter/material.dart';
 
 class SerieModel {
-  SerieModel.fromJson(UnmodifiableMapView<String, RegionModel> regions,
-      Map<String, dynamic> json)
+  SerieModel.fromJson(
+      UnmodifiableMapView<String, RegionModel> regions, Map<String, dynamic> json)
       : assert(json['lkey'] != null),
         assert(json['header'] != null),
         assert(json['logo'] != null),
         assert(json['amiibo'] != null) {
     _lKey = json['lkey'];
     _header = Image.asset(json['header'], fit: BoxFit.cover);
-    _logo = Image.asset(json['logo']);
+    _logo = Image.asset(json['logo'], fit: BoxFit.cover);
     json['amiibo'].forEach((dynamic amiibo) {
       final AmiiboModel a = AmiiboModel.fromJson(regions, _lKey, amiibo);
       _amiibo.add(a);
@@ -65,9 +65,7 @@ class SerieModel {
           v,
           // We assume that value-packs only contain amiibo from the same serie,
           // which is true so far.
-          v.amiibos
-              .map<AmiiboModel>((String amiiboID) => amiibo(amiiboID))
-              .toList(),
+          v.amiibos.map<AmiiboModel>((String amiiboID) => amiibo(amiiboID)).toList(),
         );
       }
     }
