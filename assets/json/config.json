@@ -1324,9 +1324,6 @@
                         },
                         "region_EMEA": {
                             "release_date": "2015-09-25"
-                        },
-                        "region_APAC": {
-                            "release_date": "2015-10-29"
                         }
                     },
                     "barcodes": [
@@ -2129,7 +2126,7 @@
                     "barcodes": [
                         "045496893651"
                     ],
-                    "nfc": ""
+                    "nfc": "2108000003880002"
                 },
                 {
                     "lkey": "ssb_incineroar",
@@ -2153,7 +2150,7 @@
                         "4902370542967",
                         "400063520864"
                     ],
-                    "nfc": ""
+                    "nfc": "1BD7000003860002"
                 },
                 {
                     "lkey": "ssb_richter",
@@ -2182,7 +2179,7 @@
                     "image": "assets/images/ssb/dark_samus.png",
                     "display_amiibo": true,
                     "box": "assets/images/ssb/box_dark_samus.png",
-                    "url": "https://www.nintendo.com/amiibo/detail/dark-samus-amiibo-super-smash-bros-series/",
+                    "url": "https://www.nintendo.com/amiibo/detail/dark-samus-amiibo-super-smash-bros-series",
                     "releases": {
                         "region_AMER": {
                             "release_date": "2020-01-17"
@@ -2196,6 +2193,52 @@
                     },
                     "barcodes": [
                         "045496893637"
+                    ],
+                    "nfc": ""
+                },
+                {
+                    "lkey": "ssb_joker",
+                    "image": "assets/images/ssb/joker.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/ssb/box_joker.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/joker-amiibo-super-smash-bros-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2020-10-02"
+                        },
+                        "region_EMEA": {
+                            "release_date": "2020-09-25"
+                        },
+                        "region_APAC": {
+                            "release_date": "2020-09-25"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594183",
+                        "4902370546125"
+                    ],
+                    "nfc": ""
+                },
+                {
+                    "lkey": "ssb_hero",
+                    "image": "assets/images/ssb/hero.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/ssb/box_hero.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/hero-amiibo-super-smash-bros-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2020-10-02"
+                        },
+                        "region_EMEA": {
+                            "release_date": "2020-09-25"
+                        },
+                        "region_APAC": {
+                            "release_date": "2020-09-25"
+                        }
+                    },
+                    "barcodes": [
+                        "045496594176",
+                        "4902370546132"
                     ],
                     "nfc": ""
                 }
@@ -2599,6 +2642,64 @@
                         "696231211454"
                     ],
                     "nfc": "0023000003680102"
+                },
+                {
+                    "lkey": "sm_cat_mario",
+                    "image": "assets/images/sm/cat_mario.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/sm/box_cat_mario.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/cat-mario-amiibo-super-mario-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2021-02-12"
+                        },
+                        "region_EMEA": {
+                            "release_date": "2021-02-12"
+                        },
+                        "region_APAC": {
+                            "release_date": "2021-02-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893736"
+                    ],
+                    "nfc": ""
+                },
+                {
+                    "lkey": "sm_cat_peach",
+                    "image": "assets/images/sm/cat_peach.png",
+                    "display_amiibo": true,
+                    "box": "assets/images/sm/box_cat_peach.png",
+                    "url": "https://www.nintendo.com/amiibo/detail/cat-peach-amiibo-super-mario-series",
+                    "releases": {
+                        "region_AMER": {
+                            "release_date": "2021-02-12"
+                        },
+                        "region_EMEA": {
+                            "release_date": "2021-02-12"
+                        },
+                        "region_APAC": {
+                            "release_date": "2021-02-12"
+                        }
+                    },
+                    "barcodes": [
+                        "045496893743"
+                    ],
+                    "nfc": ""
+                }
+            ],
+            "value_packs": [
+                {
+                    "lkey": "sm_cat_mario_cat_peach",
+                    "display_amiibo": true,
+                    "box": "assets/images/spl/box_cat_mario_cat_peach.png",
+                    "amiibo": [
+                        "sm_cat_mario",
+                        "sm_cat_peach"
+                    ],
+                    "barcodes": [
+                        "4902370545722"
+                    ]
                 }
             ]
         },
@@ -2746,7 +2847,7 @@
                     "image": "assets/images/smb30/mario_modern_color.png",
                     "display_amiibo": true,
                     "box": "assets/images/smb30/box_mario_modern_color.png",
-                    "url": "https://www.nintendo.com/amiibo/detail/30th-anniversary-mario-classic-color-amiibo-30th-anniversary-series",
+                    "url": "https://www.nintendo.com/amiibo/detail/30th-anniversary-mario-modern-color-amiibo-30th-anniversary-series",
                     "releases": {
                         "region_AMER": {
                             "release_date": "2015-09-10"
