@@ -33,10 +33,10 @@ class MissingView extends StatelessWidget {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<AmiiboSortProvider>(
-          builder: (_) => AmiiboSortProvider(),
+          create: (_) => AmiiboSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.missing),
+          create: (_) => ViewAsProvider(ItemsDisplayed.missing),
         ),
       ],
       child: Padding(

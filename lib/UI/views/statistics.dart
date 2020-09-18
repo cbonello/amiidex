@@ -32,10 +32,10 @@ class StatisticsView extends StatelessWidget {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<AmiiboSortProvider>(
-          builder: (_) => AmiiboSortProvider(),
+          create: (_) => AmiiboSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.statictics),
+          create: (_) => ViewAsProvider(ItemsDisplayed.statictics),
         ),
       ],
       child: Padding(

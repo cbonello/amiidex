@@ -33,10 +33,10 @@ class OwnedView extends StatelessWidget {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<AmiiboSortProvider>(
-          builder: (_) => AmiiboSortProvider(),
+          create: (_) => AmiiboSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.owned),
+          create: (_) => ViewAsProvider(ItemsDisplayed.owned),
         ),
       ],
       child: Padding(

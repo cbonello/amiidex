@@ -56,20 +56,21 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
       child: MultiProvider(
         providers: <SingleChildCloneableWidget>[
           ChangeNotifierProvider<AmiiboSortProvider>(
-            builder: (_) => AmiiboSortProvider(),
+            create: (_) => AmiiboSortProvider(),
           ),
           ChangeNotifierProvider<ViewAsProvider>(
-            builder: (_) => ViewAsProvider(ItemsDisplayed.amiibo),
+            create: (_) => ViewAsProvider(ItemsDisplayed.amiibo),
           ),
           ChangeNotifierProvider<FABVisibility>(
-            builder: (_) => FABVisibility(),
+            create: (_) => FABVisibility(),
           ),
         ],
         child: Scaffold(
           backgroundColor: const Color(0xFFF5F5F6),
           body: NestedScrollView(
             controller: _scrollViewController,
-            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
               final FABVisibility fabVisibility = Provider.of<FABVisibility>(
                 context,
                 listen: false,
@@ -170,7 +171,8 @@ class VisibleIconButton extends StatelessWidget {
       width: 40.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Theme.of(context).appBarTheme.color ?? Theme.of(context).primaryColor,
+        color: Theme.of(context).appBarTheme.color ??
+            Theme.of(context).primaryColor,
       ),
       alignment: Alignment.center,
       child: RawMaterialButton(

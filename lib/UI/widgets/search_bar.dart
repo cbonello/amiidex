@@ -212,10 +212,10 @@ class CustomSearchDelegate extends SearchDelegate<AmiiboModel> {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<AmiiboSortProvider>(
-          builder: (_) => AmiiboSortProvider(),
+          create: (_) => AmiiboSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.searches),
+          create: (_) => ViewAsProvider(ItemsDisplayed.searches),
         ),
       ],
       child: NestedScrollView(

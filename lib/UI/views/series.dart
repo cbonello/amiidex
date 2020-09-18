@@ -31,10 +31,10 @@ class SeriesView extends StatelessWidget {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<SeriesSortProvider>(
-          builder: (_) => SeriesSortProvider(),
+          create: (_) => SeriesSortProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.series),
+          create: (_) => ViewAsProvider(ItemsDisplayed.series),
         ),
       ],
       child: Padding(
