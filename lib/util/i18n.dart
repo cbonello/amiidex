@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 abstract class I18n implements WidgetsLocalizations {
-  static GeneratedLocalizationsDelegate delegate = GeneratedLocalizationsDelegate();
+  static GeneratedLocalizationsDelegate delegate =
+      GeneratedLocalizationsDelegate();
 
   static I18n of(BuildContext context) =>
       Localizations.of<I18n>(context, WidgetsLocalizations);
@@ -82,7 +83,8 @@ class _I18nEnUS extends I18n {
       'settings-collection-reset-cancel-button': 'Cancel',
       'settings-collection-reset-reset-button': 'Reset',
       'settings-collection-own-all': 'Complete Collection',
-      'settings-collection-own-all-question': 'Is your amiibo collection complete?',
+      'settings-collection-own-all-question':
+          'Is your amiibo collection complete?',
       'settings-collection-own-all-no-button': 'No',
       'settings-collection-own-all-yes-button': 'Yes',
       'settings-startup': 'Startup',
@@ -96,8 +98,10 @@ class _I18nEnUS extends I18n {
       'onboarding-barcode-scan-title': 'Barcode Scan',
       'onboarding-swipe-title': 'Swipe',
       'onboarding-whats-new': 'Added missing and new Amiibo.',
-      'onboarding-series-filter': 'Filter out amiibo series you don\'t collect.',
-      'onboarding-lock': 'Lock your amiibo collection to prevent unintentional updates.',
+      'onboarding-series-filter':
+          'Filter out amiibo series you don\'t collect.',
+      'onboarding-lock':
+          'Lock your amiibo collection to prevent unintentional updates.',
       'onboarding-long-press':
           'Long press to add/remove an amiibo to/from your collection.',
       'onboarding-double-tap':
@@ -277,7 +281,9 @@ class _I18nEnUS extends I18n {
       'ssb_chrom': 'Chrom',
       'ssb_incineroar': 'Incineroar',
       'ssb_richter': 'Richter',
-      'ssb_dark_samus': 'Darkr Samus',
+      'ssb_dark_samus': 'Dark Samus',
+      'ssb_hero': 'Hero',
+      'ssb_joker': 'Joker',
       'sm': 'Super Mario',
       'sm_mario': 'Mario',
       'sm_luigi': 'Luigi',
@@ -296,6 +302,8 @@ class _I18nEnUS extends I18n {
       'sm_diddy_kong': 'Diddy Kong',
       'sm_goomba': 'Goomba',
       'sm_koopa_troopa': 'Koopa Troopa',
+      'sm_cat_mario': 'Cat Mario',
+      'sm_cat_peach': 'Cat Peach',
       'smo': 'Super Mario Odyssey',
       'smo_mario_cereal': 'Delicious amiibo',
       'smo_mario_wedding_outfit': 'Mario (Wedding Outfit)',
@@ -573,7 +581,8 @@ class _I18nFrFR extends I18n {
       'sm-amiibo-detail-image': 'Amiibo',
       'fab-scan-add-dialog-title': 'Ajouter amiibo',
       'fab-scan-add-dialog-owned': 'Aucun nouvel amiibo n\'a été détecté !',
-      'fab-scan-add-dialog-add': 'Voulez-vous ajouter l\'amiibo à votre collection ?',
+      'fab-scan-add-dialog-add':
+          'Voulez-vous ajouter l\'amiibo à votre collection ?',
       'fab-scan-barcode': 'Code-barres: %s',
       'fab-scan-amiibo-name': 'Nom: %s',
       'fab-scan-amiibo-status': 'Status: ',
@@ -679,6 +688,8 @@ class _I18nFrFR extends I18n {
       'ssb_incineroar': 'Félinferno',
       'ssb_richter': 'Richter',
       'ssb_dark_samus': 'Samus sombre',
+      'ssb_hero': 'Hero',
+      'ssb_joker': 'Joker',
       'sm': 'Super Mario',
       'sm_mario': 'Mario',
       'sm_luigi': 'Luigi',
@@ -697,6 +708,8 @@ class _I18nFrFR extends I18n {
       'sm_diddy_kong': 'Diddy Kong',
       'sm_goomba': 'Goomba',
       'sm_koopa_troopa': 'Koopa',
+      'sm_cat_mario': 'Cat Mario',
+      'sm_cat_peach': 'Cat Peach',
       'smo': 'Super Mario Odyssey',
       'smo_mario_cereal': 'Délicieux amiibo',
       'smo_mario_wedding_outfit': 'Mario',
@@ -817,7 +830,8 @@ class _I18nFrFR extends I18n {
   TextDirection get textDirection => TextDirection.ltr;
 }
 
-class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocalizations> {
+class GeneratedLocalizationsDelegate
+    extends LocalizationsDelegate<WidgetsLocalizations> {
   GeneratedLocalizationsDelegate();
 
   final Map<Locale, I18n> _locales = <Locale, I18n>{
