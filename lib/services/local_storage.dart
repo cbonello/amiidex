@@ -17,7 +17,7 @@ class LocalStorageService {
   }
 
   bool getDisplayOnboarding() {
-    // To force display of onboarding pages whenver a new release is
+    // To force display of onboarding pages whenever a new release is
     // installed.
     final PackageInfoService info = locator<PackageInfoService>();
     String savedVersion;
