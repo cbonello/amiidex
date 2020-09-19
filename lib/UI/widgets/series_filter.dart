@@ -105,7 +105,7 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
             child: FlatButton(
               child: Text(
                 I18n.of(context).text('series-filter-save'),
-                style: theme.textTheme.title,
+                style: theme.textTheme.headline6,
               ),
               onPressed: () {
                 if (listEquals(
@@ -186,7 +186,8 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
           child: Scrollbar(
             child: ListView.separated(
               itemCount: series.length,
-              separatorBuilder: (BuildContext context, int index) => const Divider(),
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
               itemBuilder: (BuildContext context, int i) {
                 return Consumer<SeriesFilterProvider>(
                   builder: (_, SeriesFilterProvider provider, Widget child) {
@@ -220,8 +221,9 @@ class _SeriesFilterWidgetState extends State<_SeriesFilterWidget> {
   }
 
   void _setAll() {
-    final List<String> serieIds =
-        assetsService.config.serieList.map<String>((SerieModel s) => s.lKey).toList();
+    final List<String> serieIds = assetsService.config.serieList
+        .map<String>((SerieModel s) => s.lKey)
+        .toList();
 
     setState(() {
       filteredSeriesID
