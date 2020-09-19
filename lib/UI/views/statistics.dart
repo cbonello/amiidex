@@ -66,8 +66,10 @@ class StatisticsView extends StatelessWidget {
 
               return NestedScrollView(
                 controller: _controller,
-                headerSliverBuilder:
-                    (BuildContext context, bool innerBoxIsScrolled) {
+                headerSliverBuilder: (
+                  BuildContext context,
+                  bool innerBoxIsScrolled,
+                ) {
                   return <Widget>[
                     SearchBar(
                       amiibo: UnmodifiableListView<AmiiboModel>(amiibo2Search),
@@ -80,9 +82,7 @@ class StatisticsView extends StatelessWidget {
                     Text(
                       sprintf(
                         I18n.of(context).text('stats-amiibo-count'),
-                        <int>[
-                          amiibo2Search.length.toInt(),
-                        ],
+                        <int>[amiibo2Search.length.toInt()],
                       ),
                       style: Theme.of(context).textTheme.headline6,
                     ),
