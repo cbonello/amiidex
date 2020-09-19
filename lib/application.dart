@@ -37,28 +37,28 @@ class _ApplicationState extends State<Application> {
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider<PreferredLanguageProvider>(
-          builder: (_) => PreferredLanguageProvider(),
+          create: (_) => PreferredLanguageProvider(),
         ),
         ChangeNotifierProvider<RegionIndicatorsProvider>(
-          builder: (_) => RegionIndicatorsProvider(),
+          create: (_) => RegionIndicatorsProvider(),
         ),
         ChangeNotifierProvider<SelectedRegionProvider>(
-          builder: (_) => SelectedRegionProvider(),
+          create: (_) => SelectedRegionProvider(),
         ),
         ChangeNotifierProvider<LockProvider>(
-          builder: (_) => LockProvider(),
+          create: (_) => LockProvider(),
         ),
         ChangeNotifierProvider<OwnedProvider>(
-          builder: (_) => OwnedProvider(),
+          create: (_) => OwnedProvider(),
         ),
         ChangeNotifierProvider<ViewAsProvider>(
-          builder: (_) => ViewAsProvider(ItemsDisplayed.searches),
+          create: (_) => ViewAsProvider(ItemsDisplayed.searches),
         ),
         ChangeNotifierProvider<SeriesFilterProvider>(
-          builder: (_) => SeriesFilterProvider(),
+          create: (_) => SeriesFilterProvider(),
         ),
         ChangeNotifierProvider<FABVisibility>(
-          builder: (_) => FABVisibility(),
+          create: (_) => FABVisibility(),
         ),
       ],
       child: DynamicTheme(
@@ -86,11 +86,12 @@ class _ApplicationState extends State<Application> {
                 GlobalWidgetsLocalizations.delegate,
               ],
               supportedLocales: languageProvider.i18n.supportedLocales,
-              localeResolutionCallback:
-                  languageProvider.i18n.resolution(fallback: languageProvider.locale),
+              localeResolutionCallback: languageProvider.i18n
+                  .resolution(fallback: languageProvider.locale),
               theme: theme,
               initialRoute: '/',
-              onGenerateRoute: (RouteSettings settings) => Routes.getRoute(settings),
+              onGenerateRoute: (RouteSettings settings) =>
+                  Routes.getRoute(settings),
             ),
           );
         },
