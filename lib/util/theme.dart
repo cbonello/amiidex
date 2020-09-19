@@ -21,8 +21,9 @@ class ActionBarThemeData {
 
   Color get selectedItemColor => darkBlueColor;
 
-  Color get selectedItemBackgroundColor =>
-      (data.brightness == Brightness.light) ? Colors.blue[50] : Colors.blue[100];
+  Color get selectedItemBackgroundColor => (data.brightness == Brightness.light)
+      ? Colors.blue[50]
+      : Colors.blue[100];
 }
 
 class ItemCardThemeData {
@@ -34,8 +35,9 @@ class ItemCardThemeData {
 
   Color get backgroundColor => Colors.blue[50];
 
-  Color get shadowColor =>
-      (data.brightness == Brightness.light) ? Colors.grey[300] : Colors.grey[600];
+  Color get shadowColor => (data.brightness == Brightness.light)
+      ? Colors.grey[300]
+      : Colors.grey[600];
 
   Color get saturationColor => Colors.blue[50];
 
@@ -108,8 +110,8 @@ ThemeData buildTheme(Brightness brightness) {
         iconTheme: IconThemeData(color: lightBlueColor),
         actionsIconTheme: IconThemeData(color: lightBlueColor),
         textTheme: TextTheme(
-          title: TextStyle(color: Colors.black, fontSize: 18.0),
-          headline: TextStyle(color: Colors.black),
+          headline6: TextStyle(color: Colors.black, fontSize: 18.0),
+          headline5: TextStyle(color: Colors.black),
         ),
       ),
       // Radio buttons (Settings page).
