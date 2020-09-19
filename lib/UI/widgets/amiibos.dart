@@ -50,35 +50,37 @@ class AmiibosWidget extends StatelessWidget {
       regionProvider.regionId,
     );
 
-    return viewAsProvider.viewAs == DisplayType.list
-        ? ListView.builder(
-            // controller: _controller,
-            itemCount: amiibos.length,
-            itemBuilder: (BuildContext context, int position) {
-              return AmiiboListItem(
-                amiibo: amiibos[position],
-                helpMessageDelegate: helpMessageDelegate,
-              );
-            },
-          )
-        : GridView.count(
-            // controller: _controller,
-            shrinkWrap: true,
-            primary: true,
-            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-            crossAxisCount: columnsCount(context, viewAsProvider),
-            childAspectRatio: 0.9,
-            mainAxisSpacing: 1.0,
-            crossAxisSpacing: 1.0,
-            children: amiibos
-                .map<AmiiboGridItem>(
-                  (AmiiboModel a) => AmiiboGridItem(
-                    amiibo: a,
-                    helpMessageDelegate: helpMessageDelegate,
-                  ),
-                )
-                .toList(),
-          );
+    return Scrollbar(
+      child: viewAsProvider.viewAs == DisplayType.list
+          ? ListView.builder(
+              // controller: _controller,
+              itemCount: amiibos.length,
+              itemBuilder: (BuildContext context, int position) {
+                return AmiiboListItem(
+                  amiibo: amiibos[position],
+                  helpMessageDelegate: helpMessageDelegate,
+                );
+              },
+            )
+          : GridView.count(
+              // controller: _controller,
+              shrinkWrap: true,
+              primary: true,
+              padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+              crossAxisCount: columnsCount(context, viewAsProvider),
+              childAspectRatio: 0.9,
+              mainAxisSpacing: 1.0,
+              crossAxisSpacing: 1.0,
+              children: amiibos
+                  .map<AmiiboGridItem>(
+                    (AmiiboModel a) => AmiiboGridItem(
+                      amiibo: a,
+                      helpMessageDelegate: helpMessageDelegate,
+                    ),
+                  )
+                  .toList(),
+            ),
+    );
   }
 
   void _sortAmiiboByNameRegion(
