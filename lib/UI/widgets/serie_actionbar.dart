@@ -35,7 +35,7 @@ class SerieActionBar extends StatelessWidget {
                       ExcludeSemantics(
                         child: Text(
                           I18n.of(context).text('actionbar-sort-name'),
-                          style: Theme.of(context).textTheme.subhead,
+                          style: Theme.of(context).textTheme.subtitle1,
                         ),
                       ),
                       const SizedBox(width: 2.0),
