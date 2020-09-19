@@ -84,7 +84,7 @@ class StatisticsView extends StatelessWidget {
                           amiibo2Search.length.toInt(),
                         ],
                       ),
-                      style: Theme.of(context).textTheme.title,
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                     amiibo2Search.isNotEmpty
                         ? OwnedMissingPieChart(
