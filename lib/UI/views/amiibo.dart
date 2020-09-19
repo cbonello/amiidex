@@ -40,7 +40,10 @@ class AmiiboViewState extends State<AmiiboView> {
           body: Padding(
             padding: const EdgeInsets.all(40.0),
             child: LayoutBuilder(
-              builder: (BuildContext context, BoxConstraints viewportConstraints) {
+              builder: (
+                BuildContext context,
+                BoxConstraints viewportConstraints,
+              ) {
                 return SingleChildScrollView(
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
@@ -82,13 +85,16 @@ class AmiiboViewState extends State<AmiiboView> {
                         Expanded(
                           flex: 4,
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 10.0, right: 5.0),
+                            padding: const EdgeInsets.only(
+                              left: 10.0,
+                              right: 5.0,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
                                   I18n.of(context).text(widget.amiibo.serieID),
-                                  style: Theme.of(context).textTheme.body1,
+                                  style: Theme.of(context).textTheme.bodyText2,
                                   maxLines: 2,
                                 ),
                                 const SizedBox(height: 10.0),
@@ -96,13 +102,15 @@ class AmiiboViewState extends State<AmiiboView> {
                                   I18n.of(context).text(
                                     'amiibo-detail-release-date',
                                   ),
-                                  style: Theme.of(context).textTheme.body1,
+                                  style: Theme.of(context).textTheme.bodyText2,
                                 ),
                                 for (final String regionId
                                     in assetsService.config.regions.keys)
-                                  if (widget.amiibo.wasReleasedInRegion(regionId))
+                                  if (widget.amiibo
+                                      .wasReleasedInRegion(regionId))
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 10.0),
+                                      padding:
+                                          const EdgeInsets.only(left: 10.0),
                                       child: Row(
                                         children: <Widget>[
                                           RegionButton(regionId: regionId),
@@ -119,7 +127,9 @@ class AmiiboViewState extends State<AmiiboView> {
                                                 widget.amiibo.releases[regionId]
                                                     .releaseDate,
                                               ),
-                                              style: Theme.of(context).textTheme.body1,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText2,
                                             ),
                                           ),
                                         ],
