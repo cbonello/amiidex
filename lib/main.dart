@@ -30,7 +30,8 @@ Future<void> setupLocator() async {
   final AssetsService iAssetsService = await AssetsService.getInstance();
   locator.registerSingleton<AssetsService>(iAssetsService);
 
-  final PackageInfoService iPackageInfoService = await PackageInfoService.getInstance();
+  final PackageInfoService iPackageInfoService =
+      await PackageInfoService.getInstance();
   locator.registerSingleton<PackageInfoService>(iPackageInfoService);
 }
 
