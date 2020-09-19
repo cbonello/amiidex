@@ -29,7 +29,7 @@ class PrivacyView extends StatelessWidget {
                   MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
                 h1: Theme.of(context)
                     .textTheme
-                    .headline
+                    .headline5
                     .copyWith(fontSize: 18.0),
               ),
               onTapLink: (String url) async {
