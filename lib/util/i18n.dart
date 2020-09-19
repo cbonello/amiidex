@@ -97,7 +97,7 @@ class _I18nEnUS extends I18n {
       'onboarding-double-tap-title': 'Double Tap',
       'onboarding-barcode-scan-title': 'Barcode Scan',
       'onboarding-swipe-title': 'Swipe',
-      'onboarding-whats-new': 'Added missing and new Amiibo.',
+      'onboarding-whats-new': 'Added new Amiibo.',
       'onboarding-series-filter':
           'Filter out amiibo series you don\'t collect.',
       'onboarding-lock':
@@ -109,6 +109,9 @@ class _I18nEnUS extends I18n {
       'onboarding-swipe': 'Swipe left or right to move between series.',
       'onboarding-barcode-scan':
           'Scan amiibo-box barcodes to quickly add new amiibo to your collection.',
+      'onboarding-skip': 'Skip',
+      'onboarding-tutorial': 'Tutorial',
+      'onboarding-done': 'Done',
       'settings-theme': 'Theme',
       'settings-light-theme': 'Light Theme',
       'settings-dark-theme': 'Dark Theme',
@@ -501,7 +504,7 @@ class _I18nFrFR extends I18n {
       'onboarding-double-tap-title': 'Appui double',
       'onboarding-barcode-scan-title': 'Scan de code-barres',
       'onboarding-swipe-title': 'Parcours des séries.',
-      'onboarding-whats-new': 'Ajout des amiibo manquant et nouveaux.',
+      'onboarding-whats-new': 'Ajout des nouveaux amiibo.',
       'onboarding-series-filter':
           'Filtrez les séries d\'amiibo que vous ne collectionnez pas.',
       'onboarding-lock':
@@ -514,6 +517,9 @@ class _I18nFrFR extends I18n {
           'Faites glisser votre doigt vers la gauche ou la droite pour parcourir les séries.',
       'onboarding-barcode-scan':
           'Scan du code-barres d\'une boîte amiibo pour ajouter un amiibo à votre collection.',
+      'onboarding-skip': 'Passer',
+      'onboarding-tutorial': 'Didacticiel',
+      'onboarding-done': 'Fin',
       'settings-theme': 'Thème',
       'settings-light-theme': 'Thème clair',
       'settings-dark-theme': 'Thème sombre',
