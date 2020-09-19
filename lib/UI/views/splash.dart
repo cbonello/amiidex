@@ -15,13 +15,15 @@ class SplashView extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: brightness == Brightness.light ? Colors.white : Colors.black,
+        backgroundColor:
+            brightness == Brightness.light ? Colors.white : Colors.black,
         body: SplashWidget<ConfigModel>(
           duration: const Duration(seconds: 8),
           backgroundWorker: loadConfig,
           routeName: onboarding ? '/onboarding' : '/home',
-          delegate:
-              storageService.getDisplaySplashScreen() ? MyAnimationDelegate() : null,
+          delegate: storageService.getDisplaySplashScreen()
+              ? MyAnimationDelegate()
+              : null,
         ),
       ),
     );
@@ -130,7 +132,7 @@ class _MarioState extends State<Mario> with SingleTickerProviderStateMixin {
     ).animate(
       CurvedAnimation(
         parent: widget.controller,
-        curve: Interval(
+        curve: const Interval(
           MARIO_TRANSLATE_START,
           MARIO_TRANSLATE_END,
           curve: Curves.easeIn,
@@ -226,7 +228,7 @@ class _LootBoxState extends State<LootBox> {
     ).animate(
       CurvedAnimation(
         parent: widget.controller,
-        curve: Interval(
+        curve: const Interval(
           LOOT_BOX_TRANSLATE_START,
           LOOT_BOX_TRANSLATE_END,
           curve: Curves.bounceOut,
@@ -239,7 +241,7 @@ class _LootBoxState extends State<LootBox> {
     ).animate(
       CurvedAnimation(
         parent: widget.controller,
-        curve: Interval(
+        curve: const Interval(
           LOOT_BOX_VISIBILITY_START,
           LOOT_BOX_VISIBILITY_END,
           curve: Curves.easeInCirc,
@@ -252,7 +254,7 @@ class _LootBoxState extends State<LootBox> {
     ).animate(
       CurvedAnimation(
         parent: widget.controller,
-        curve: Interval(
+        curve: const Interval(
           LOOT_BOX_TRANSPARENCY_START,
           LOOT_BOX_TRANSPARENCY_END,
           curve: Curves.easeOut,
@@ -281,9 +283,10 @@ class _LootBoxState extends State<LootBox> {
     final double boxWidth = (widget.parentSize.width / 3) * 0.8;
     final double boxHeight = boxWidth * 168.0 / 232.0;
 
-    final double boxX = (2.7) * (widget.parentSize.width / 3) - (boxWidth / 2.0);
-    final double boxY =
-        _translation.value * ((widget.parentSize.height * 0.6) - boxHeight / 2.0);
+    final double boxX =
+        (2.7) * (widget.parentSize.width / 3) - (boxWidth / 2.0);
+    final double boxY = _translation.value *
+        ((widget.parentSize.height * 0.6) - boxHeight / 2.0);
 
     return Stack(
       children: <Widget>[
@@ -310,13 +313,15 @@ class _LootBoxState extends State<LootBox> {
               Padding(
                 padding: EdgeInsets.only(right: boxWidth * 0.3),
                 child: Opacity(
-                  opacity: widget.controller.value >= LOADING_OPACITY_START ? 1.0 : 0.0,
+                  opacity: widget.controller.value >= LOADING_OPACITY_START
+                      ? 1.0
+                      : 0.0,
                   child: Container(
                     width: _textWidth.value * 200,
                     child: Text(
                       I18n.of(context).text('splash_loading'),
-                      style: TextStyle(
-                        color: const Color(0xFF4E7CD2),
+                      style: const TextStyle(
+                        color: Color(0xFF4E7CD2),
                         backgroundColor: Colors.transparent,
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,
