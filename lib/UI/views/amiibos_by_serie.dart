@@ -104,7 +104,7 @@ class _AmiibosBySerieViewState extends State<AmiibosBySerieView> {
                   leading: Padding(
                     padding: const EdgeInsets.all(7.0),
                     child: VisibleIconButton(
-                      icon: Icon(Icons.arrow_back),
+                      icon: const Icon(Icons.arrow_back),
                       onPressed: () => Navigator.pop(context),
                     ),
                   ),
