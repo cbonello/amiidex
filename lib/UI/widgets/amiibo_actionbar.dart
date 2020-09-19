@@ -141,7 +141,7 @@ class AmiiboActionBar extends StatelessWidget {
                       ExcludeSemantics(
                         child: Text(
                           sortLabels[sortProvider.order.index],
-                          style: Theme.of(context).textTheme.subhead,
+                          style: Theme.of(context).textTheme.subtitle1,
                         ),
                       ),
                       const SizedBox(width: 2.0),
@@ -178,7 +178,7 @@ class AmiiboActionBar extends StatelessWidget {
                             assetsService.config
                                 .regions[regionProvider.regionId].lKeyShort,
                           ),
-                          style: Theme.of(context).textTheme.subhead,
+                          style: Theme.of(context).textTheme.subtitle1,
                         ),
                       ],
                     ),
