@@ -20,7 +20,8 @@ class MasterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final FABVisibility fabVisibility = Provider.of<FABVisibility>(context);
-    final SeriesSortProvider sortProvider = Provider.of<SeriesSortProvider>(context);
+    final SeriesSortProvider sortProvider =
+        Provider.of<SeriesSortProvider>(context);
     final ViewAsProvider viewAsProvider = Provider.of<ViewAsProvider>(context);
 
     // _controller.addListener(() {
@@ -49,32 +50,34 @@ class MasterWidget extends StatelessWidget {
 
     // Pass "series" to SerieListItem()/ SerieGridItem() to allow swipping
     // of series in current sort order.
-    return viewAsProvider.viewAs == DisplayType.list
-        ? ListView.builder(
-            // controller: _controller,
-            itemCount: series.length,
-            itemBuilder: (BuildContext context, int position) {
-              return SerieListItem(
-                series: UnmodifiableListView<SerieModel>(series),
-                serie: series[position],
-              );
-            },
-          )
-        : GridView.count(
-            // controller: _controller,
-            shrinkWrap: true,
-            // primary: true,
-            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-            crossAxisCount: columnsCount(context, viewAsProvider),
-            childAspectRatio: 1.0,
-            mainAxisSpacing: 1.0,
-            crossAxisSpacing: 1.0,
-            children: series
-                .map<SerieGridItem>((SerieModel s) => SerieGridItem(
-                      series: UnmodifiableListView<SerieModel>(series),
-                      serie: s,
-                    ))
-                .toList(),
-          );
+    return Scrollbar(
+      child: viewAsProvider.viewAs == DisplayType.list
+          ? ListView.builder(
+              // controller: _controller,
+              itemCount: series.length,
+              itemBuilder: (BuildContext context, int position) {
+                return SerieListItem(
+                  series: UnmodifiableListView<SerieModel>(series),
+                  serie: series[position],
+                );
+              },
+            )
+          : GridView.count(
+              // controller: _controller,
+              shrinkWrap: true,
+              // primary: true,
+              padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+              crossAxisCount: columnsCount(context, viewAsProvider),
+              childAspectRatio: 1.0,
+              mainAxisSpacing: 1.0,
+              crossAxisSpacing: 1.0,
+              children: series
+                  .map<SerieGridItem>((SerieModel s) => SerieGridItem(
+                        series: UnmodifiableListView<SerieModel>(series),
+                        serie: s,
+                      ))
+                  .toList(),
+            ),
+    );
   }
 }
