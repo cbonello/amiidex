@@ -42,7 +42,7 @@ class SearchBar extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(2.0, 16.0, 2.0, 16.0),
             child: Text(
               I18n.of(context).text('collection-search'),
-              style: themeData.textTheme.subhead,
+              style: themeData.textTheme.subtitle1,
             ),
           ),
           onTap: () async {
