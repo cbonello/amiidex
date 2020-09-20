@@ -26,7 +26,7 @@ dependencies:
   intl: ^0.16.0
   introduction_screen: ^1.0.0
   launch_review: ^2.0.0
-  package_info: 0.4.0+13
+  package_info: ^0.4.0
   provider: ^3.1.0
   shared_preferences: '>=0.5.10 <2.0.0'
   sprintf: ^4.1.0
