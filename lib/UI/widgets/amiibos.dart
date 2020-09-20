@@ -54,7 +54,7 @@ class AmiibosWidget extends StatelessWidget {
       child: viewAsProvider.viewAs == DisplayType.list
           ? ListView.builder(
               // controller: _controller,
-              key: const PageStorageKey<String>('amiiboListView'),
+              // key: const PageStorageKey<String>('amiiboListView'),
               itemCount: amiibos.length,
               itemBuilder: (BuildContext context, int position) {
                 return AmiiboListItem(
@@ -65,11 +65,10 @@ class AmiibosWidget extends StatelessWidget {
             )
           : GridView.builder(
               // controller: _controller,
-              key: const PageStorageKey<String>('amiiboGridView'),
+              // key: const PageStorageKey<String>('amiiboGridView'),
               shrinkWrap: true,
               primary: true,
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-
               itemCount: amiibos.length,
               itemBuilder: (BuildContext context, int position) {
                 return AmiiboGridItem(

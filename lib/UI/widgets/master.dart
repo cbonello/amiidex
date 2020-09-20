@@ -54,7 +54,7 @@ class MasterWidget extends StatelessWidget {
       child: viewAsProvider.viewAs == DisplayType.list
           ? ListView.builder(
               // controller: _controller,
-              key: const PageStorageKey<String>('seriesListView'),
+              // key: const PageStorageKey<String>('seriesListView'),
               itemCount: series.length,
               itemBuilder: (BuildContext context, int position) {
                 return SerieListItem(
@@ -65,9 +65,9 @@ class MasterWidget extends StatelessWidget {
             )
           : GridView.builder(
               // controller: _controller,
-              key: const PageStorageKey<String>('seriesGridView'),
+              // key: const PageStorageKey<String>('seriesGridView'),
               shrinkWrap: true,
-              // primary: true,
+              primary: true,
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
               itemCount: series.length,
               itemBuilder: (BuildContext context, int position) {
