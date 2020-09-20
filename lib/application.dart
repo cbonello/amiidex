@@ -67,32 +67,22 @@ class _ApplicationState extends State<Application> {
         themedWidgetBuilder: (BuildContext context, ThemeData theme) {
           final PreferredLanguageProvider languageProvider =
               Provider.of<PreferredLanguageProvider>(context);
-          return GestureDetector(
-            // See https://flutter360.dev/dismiss-keyboard-form-lose-focus/
-            onTap: () {
-              // final FocusScopeNode currentFocus = FocusScope.of(context);
-              // if (!currentFocus.hasPrimaryFocus) {
-              //   currentFocus.unfocus();
-              // }
-            },
-            child: MaterialApp(
-              title: 'AmiiDex',
-              // showSemanticsDebugger: true,
-              locale: languageProvider.locale,
-              debugShowCheckedModeBanner: false,
-              localizationsDelegates: <LocalizationsDelegate<dynamic>>[
-                languageProvider.i18n,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
-              supportedLocales: languageProvider.i18n.supportedLocales,
-              localeResolutionCallback: languageProvider.i18n
-                  .resolution(fallback: languageProvider.locale),
-              theme: theme,
-              initialRoute: '/',
-              onGenerateRoute: (RouteSettings settings) =>
-                  Routes.getRoute(settings),
-            ),
+          return MaterialApp(
+            title: 'AmiiDex',
+            locale: languageProvider.locale,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+              languageProvider.i18n,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: languageProvider.i18n.supportedLocales,
+            localeResolutionCallback: languageProvider.i18n
+                .resolution(fallback: languageProvider.locale),
+            theme: theme,
+            initialRoute: '/',
+            onGenerateRoute: (RouteSettings settings) =>
+                Routes.getRoute(settings),
           );
         },
       ),
