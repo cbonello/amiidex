@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:amiidex/util/i18n.dart';
 import 'package:sprintf/sprintf.dart';
 
-class OwnedMissingPieChart extends StatelessWidget {
+class OwnedMissingPieChart extends StatefulWidget {
   const OwnedMissingPieChart({
     Key key,
     @required this.ownedCount,
@@ -13,56 +13,78 @@ class OwnedMissingPieChart extends StatelessWidget {
   final double ownedCount, missedCount;
 
   @override
-  Widget build(BuildContext context) {
-    List<PieChartSectionData> pieChartRawSections;
-    List<PieChartSectionData> showingSections;
+  _OwnedMissingPieChartState createState() => _OwnedMissingPieChartState();
+}
 
-    final double total = ownedCount + missedCount;
-    pieChartRawSections = <PieChartSectionData>[];
-    if (ownedCount > 0) {
+class _OwnedMissingPieChartState extends State<OwnedMissingPieChart> {
+  int touchedIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    final List<PieChartSectionData> pieChartRawSections =
+        <PieChartSectionData>[];
+    final double total = widget.ownedCount + widget.missedCount;
+
+    if (widget.ownedCount > 0) {
+      final bool isTouched = touchedIndex == 0;
       pieChartRawSections.add(PieChartSectionData(
         color: const Color(0xFF44B035),
-        value: ownedCount,
-        title: '${(ownedCount / total * 100).toStringAsFixed(2)}%',
-        radius: 80,
-        titleStyle: const TextStyle(
-          fontSize: 16,
+        value: widget.ownedCount,
+        title: '${(widget.ownedCount / total * 100).toStringAsFixed(2)}%',
+        radius: isTouched ? 100 : 80,
+        titleStyle: TextStyle(
+          fontSize: isTouched ? 25 : 16,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
       ));
     }
-    if (missedCount > 0) {
+    if (widget.missedCount > 0) {
+      final bool isTouched =
+          (pieChartRawSections.isEmpty && touchedIndex == 0) ||
+              touchedIndex == 1;
       pieChartRawSections.add(PieChartSectionData(
         color: const Color(0xFFE60012),
-        value: missedCount,
-        title: '${(missedCount / total * 100).toStringAsFixed(2)}%',
-        radius: 80,
-        titleStyle: const TextStyle(
-          fontSize: 16,
+        value: widget.missedCount,
+        title: '${(widget.missedCount / total * 100).toStringAsFixed(2)}%',
+        radius: isTouched ? 100 : 80,
+        titleStyle: TextStyle(
+          fontSize: isTouched ? 25 : 16,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
       ));
     }
 
-    showingSections = pieChartRawSections;
-
-    Widget pie() {
-      return Column(
+    return Center(
+      child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
               Expanded(
                 child: AspectRatio(
-                  aspectRatio: 1.2,
+                  aspectRatio: 1.3,
                   child: ExcludeSemantics(
                     child: PieChart(
                       PieChartData(
+                        pieTouchData: PieTouchData(touchCallback: (
+                          PieTouchResponse pieTouchResponse,
+                        ) {
+                          setState(() {
+                            if (pieTouchResponse.touchInput is FlLongPressEnd ||
+                                pieTouchResponse.touchInput is FlPanEnd) {
+                              touchedIndex = -1;
+                            } else {
+                              touchedIndex =
+                                  pieTouchResponse.touchedSectionIndex;
+                            }
+                            print(touchedIndex);
+                          });
+                        }),
                         borderData: FlBorderData(show: false),
                         sectionsSpace: 0,
-                        centerSpaceRadius: 40,
-                        sections: showingSections,
+                        centerSpaceRadius: 30,
+                        sections: pieChartRawSections,
                       ),
                     ),
                   ),
@@ -75,23 +97,23 @@ class OwnedMissingPieChart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              if (ownedCount > 0)
+              if (widget.ownedCount > 0)
                 Legend(
                   color: const Color(0xFF44B035),
                   text: sprintf(
                     I18n.of(context).text('piechart-owned'),
-                    <int>[ownedCount.toInt()],
+                    <int>[widget.ownedCount.toInt()],
                   ),
                   textColor: Theme.of(context).textTheme.headline6.color,
                   isSquare: true,
                 ),
               const SizedBox(width: 20.0),
-              if (missedCount > 0)
+              if (widget.missedCount > 0)
                 Legend(
                   color: const Color(0xFFE60012),
                   text: sprintf(
                     I18n.of(context).text('piechart-missing'),
-                    <int>[missedCount.toInt()],
+                    <int>[widget.missedCount.toInt()],
                   ),
                   textColor: Theme.of(context).textTheme.headline6.color,
                   isSquare: true,
@@ -99,11 +121,7 @@ class OwnedMissingPieChart extends StatelessWidget {
             ],
           ),
         ],
-      );
-    }
-
-    return Center(
-      child: pie(),
+      ),
     );
   }
 }
