@@ -1,3 +1,11 @@
+# 1.0.1
+- Add upcoming amiibo:
+    - Hero
+    - Joker
+    - Cat Mario
+    - Cat Peach
+- Improvements and bug fixing
+
 # 1.0.0+12
 - Add missing amiibo:
     - Megaman 11
