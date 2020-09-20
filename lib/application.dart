@@ -124,28 +124,30 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,
-      child: SafeArea(
-        child: Scaffold(
-          drawer: DrawerWidget(),
-          // An IndexedStack allows us to keep the scroll positions when switching
-          // from one stack item to the other.
-          body: IndexedStack(
+      child: Scaffold(
+        drawer: DrawerWidget(),
+        // An IndexedStack allows us to keep the scroll positions when switching
+        // from one stack item to the other.
+        body: SafeArea(
+          child: IndexedStack(
             index: currentIndex,
             children: _views,
           ),
-          bottomNavigationBar: BottomNavbar(
-            currentIndex: currentIndex,
-            onTap: (int index) {
-              setState(() {
-                final FABVisibility fabVisibility =
-                    Provider.of<FABVisibility>(context, listen: false);
-                fabVisibility.visible = true;
-                currentIndex = index;
-              });
-            },
-          ),
-          floatingActionButton: const FABWdiget(),
         ),
+        bottomNavigationBar: BottomNavbar(
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              final FABVisibility fabVisibility = Provider.of<FABVisibility>(
+                context,
+                listen: false,
+              );
+              fabVisibility.visible = true;
+              currentIndex = index;
+            });
+          },
+        ),
+        floatingActionButton: const FABWdiget(),
       ),
     );
   }

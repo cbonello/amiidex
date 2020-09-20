@@ -31,13 +31,13 @@ class AmiiboViewState extends State<AmiiboView> {
         Navigator.pop(context);
         return false;
       },
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            iconTheme: theme.appBarTheme.iconTheme,
-            title: Text(I18n.of(context).text(widget.amiibo.lKey)),
-          ),
-          body: Padding(
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: theme.appBarTheme.iconTheme,
+          title: Text(I18n.of(context).text(widget.amiibo.lKey)),
+        ),
+        body: SafeArea(
+          child: Padding(
             padding: const EdgeInsets.all(40.0),
             child: LayoutBuilder(
               builder: (
