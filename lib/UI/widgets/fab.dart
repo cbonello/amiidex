@@ -44,10 +44,21 @@ class FABWdiget extends StatelessWidget {
 
   Future<void> scan(BuildContext context) async {
     try {
-      final String barcode = await BarcodeScanner.scan();
-      await _addAmiiboDialog(context, barcode);
+      final ScanOptions options = ScanOptions(
+        strings: <String, String>{
+          'cancel': I18n.of(context).text('cancel-button'),
+          'flash_on': I18n.of(context).text('flash-on'),
+          'flash_off': I18n.of(context).text('flash-off'),
+        },
+      );
+      final ScanResult result = await BarcodeScanner.scan(options: options);
+      final ResultType type = result.type;
+      if (type == ResultType.Barcode) {
+        final String barcode = result.rawContent;
+        await _addAmiiboDialog(context, barcode);
+      }
     } on PlatformException catch (e) {
-      if (e.code != BarcodeScanner.CameraAccessDenied) {
+      if (e.code != BarcodeScanner.cameraAccessDenied) {
         await okDialog(
           context,
           Text(I18n.of(context).text('error-dialog-title')),

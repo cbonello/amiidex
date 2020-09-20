@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  barcode_scan: ^1.0.0
+  barcode_scan: ^3.0.0
   cupertino_icons: ^0.1.0
   dynamic_theme: ^1.0.0
   fl_chart: ^0.11.0
