@@ -30,7 +30,7 @@ dependencies:
   provider: ^3.1.0
   shared_preferences: '>=0.5.10 <2.0.0'
   sprintf: ^4.1.0
-  url_launcher: ^5.1.4
+  url_launcher: ^5.6.0
 
 dev_dependencies:
   flutter_test:
