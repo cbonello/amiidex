@@ -20,6 +20,7 @@ class BottomNavbar extends StatelessWidget {
         BottomNavBarThemeData(data: themeData);
 
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       selectedItemColor: navBarData.selectedItemColor,
       unselectedItemColor: navBarData.unselectedItemColor,
       currentIndex: currentIndex,
