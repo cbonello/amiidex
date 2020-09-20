@@ -54,6 +54,7 @@ class AmiibosWidget extends StatelessWidget {
       child: viewAsProvider.viewAs == DisplayType.list
           ? ListView.builder(
               // controller: _controller,
+              key: const PageStorageKey<String>('amiiboListView'),
               itemCount: amiibos.length,
               itemBuilder: (BuildContext context, int position) {
                 return AmiiboListItem(
@@ -62,23 +63,26 @@ class AmiibosWidget extends StatelessWidget {
                 );
               },
             )
-          : GridView.count(
+          : GridView.builder(
               // controller: _controller,
+              key: const PageStorageKey<String>('amiiboGridView'),
               shrinkWrap: true,
               primary: true,
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-              crossAxisCount: columnsCount(context, viewAsProvider),
-              childAspectRatio: 0.9,
-              mainAxisSpacing: 1.0,
-              crossAxisSpacing: 1.0,
-              children: amiibos
-                  .map<AmiiboGridItem>(
-                    (AmiiboModel a) => AmiiboGridItem(
-                      amiibo: a,
-                      helpMessageDelegate: helpMessageDelegate,
-                    ),
-                  )
-                  .toList(),
+
+              itemCount: amiibos.length,
+              itemBuilder: (BuildContext context, int position) {
+                return AmiiboGridItem(
+                  amiibo: amiibos[position],
+                  helpMessageDelegate: helpMessageDelegate,
+                );
+              },
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: columnsCount(context, viewAsProvider),
+                childAspectRatio: 0.9,
+                mainAxisSpacing: 1.0,
+                crossAxisSpacing: 1.0,
+              ),
             ),
     );
   }

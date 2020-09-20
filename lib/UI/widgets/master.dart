@@ -54,6 +54,7 @@ class MasterWidget extends StatelessWidget {
       child: viewAsProvider.viewAs == DisplayType.list
           ? ListView.builder(
               // controller: _controller,
+              key: const PageStorageKey<String>('seriesListView'),
               itemCount: series.length,
               itemBuilder: (BuildContext context, int position) {
                 return SerieListItem(
@@ -62,21 +63,25 @@ class MasterWidget extends StatelessWidget {
                 );
               },
             )
-          : GridView.count(
+          : GridView.builder(
               // controller: _controller,
+              key: const PageStorageKey<String>('seriesGridView'),
               shrinkWrap: true,
               // primary: true,
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-              crossAxisCount: columnsCount(context, viewAsProvider),
-              childAspectRatio: 1.0,
-              mainAxisSpacing: 1.0,
-              crossAxisSpacing: 1.0,
-              children: series
-                  .map<SerieGridItem>((SerieModel s) => SerieGridItem(
-                        series: UnmodifiableListView<SerieModel>(series),
-                        serie: s,
-                      ))
-                  .toList(),
+              itemCount: series.length,
+              itemBuilder: (BuildContext context, int position) {
+                return SerieGridItem(
+                  series: UnmodifiableListView<SerieModel>(series),
+                  serie: series[position],
+                );
+              },
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: columnsCount(context, viewAsProvider),
+                childAspectRatio: 1.0,
+                mainAxisSpacing: 1.0,
+                crossAxisSpacing: 1.0,
+              ),
             ),
     );
   }
