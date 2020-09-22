@@ -78,7 +78,6 @@ class _OwnedMissingPieChartState extends State<OwnedMissingPieChart> {
                               touchedIndex =
                                   pieTouchResponse.touchedSectionIndex;
                             }
-                            print(touchedIndex);
                           });
                         }),
                         borderData: FlBorderData(show: false),
