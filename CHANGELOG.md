@@ -1,4 +1,4 @@
-# 1.0.1
+# 1.0.1+1
 - Add upcoming amiibo:
     - Hero
     - Joker
