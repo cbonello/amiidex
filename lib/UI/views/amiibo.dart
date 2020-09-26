@@ -74,8 +74,12 @@ class AmiiboViewState extends State<AmiiboView> {
                                         'sm-amiibo-detail-image',
                                       ),
                                       image: true,
-                                      child: ExcludeSemantics(
-                                        child: widget.amiibo.image,
+                                      child: InteractiveViewer(
+                                        minScale: 1.0,
+                                        maxScale: 4.0,
+                                        child: ExcludeSemantics(
+                                          child: widget.amiibo.image,
+                                        ),
                                       ),
                                     )
                                   : Container(),
