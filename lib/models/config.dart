@@ -82,7 +82,6 @@ class ConfigModel {
   List<SerieModel> get serieList =>
       List<SerieModel>.from(_series.values.toList());
 
-  // TOO(bonello): not required.
   UnmodifiableMapView<String, SerieModel> get seriesMap =>
       UnmodifiableMapView<String, SerieModel>(_series);
 
