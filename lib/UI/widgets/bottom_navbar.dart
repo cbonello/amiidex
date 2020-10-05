@@ -28,29 +28,19 @@ class BottomNavbar extends StatelessWidget {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: const Icon(Icons.home),
-          title: Text(I18n.of(context).text('bottom-navbar-collection')),
+          label: I18n.of(context).text('bottom-navbar-collection'),
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.thumb_up),
-          title: Text(
-            I18n.of(context).text('bottom-navbar-owned'),
-            semanticsLabel: I18n.of(context).text('sm-bottom-navbar-owned'),
-          ),
+          label: I18n.of(context).text('bottom-navbar-owned'),
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.thumb_down),
-          title: Text(
-            I18n.of(context).text('bottom-navbar-missing'),
-            semanticsLabel: I18n.of(context).text('sm-bottom-navbar-missing'),
-          ),
+          label: I18n.of(context).text('bottom-navbar-missing'),
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.insert_chart),
-          title: Text(
-            I18n.of(context).text('bottom-navbar-statistics'),
-            semanticsLabel:
-                I18n.of(context).text('sm-bottom-navbar-statistics'),
-          ),
+          label: I18n.of(context).text('bottom-navbar-statistics'),
         ),
       ],
       onTap: onTap,
