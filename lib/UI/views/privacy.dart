@@ -25,16 +25,17 @@ class PrivacyView extends StatelessWidget {
             }
             return Markdown(
               data: snapshot.data,
-              styleSheet:
-                  MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
+              styleSheet: MarkdownStyleSheet.fromTheme(
+                Theme.of(context),
+              ).copyWith(
                 h1: Theme.of(context)
                     .textTheme
                     .headline5
                     .copyWith(fontSize: 18.0),
               ),
-              onTapLink: (String url) async {
-                if (await canLaunch(url)) {
-                  await launch(url);
+              onTapLink: (String text, String href, String title) async {
+                if (await canLaunch(href)) {
+                  await launch(href);
                 }
               },
             );
