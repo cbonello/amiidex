@@ -1,6 +1,8 @@
 # AmiiDex
- 
-[AmiiDex 2 Preview.](https://cbonello.github.io/projects/amiidex2/index.html#/)
+
+[AmiiDex 2](https://cbonello.github.io/projects/amiidex2/index.html#/) is coming and will support mobile, web and desktop.
+
+---
 
 Picture this! You are in a shop in front of a rack full of Nintendo amiibo. They are all beautiful and tempting and you feel like heaven. In the back of your head you know that your spouse will tell you to leave them. But as true amiibo collector you just can't pass on! There is just one small problem though. Which ones do you own, and which ones do you miss?
 
@@ -80,7 +82,7 @@ Thanks to [Hampus Joakim Nilsson](https://github.com/hjnilsson) for his [country
 ## License
 
 ```
-Copyright (c) 2019 Christophe Bonello
+Copyright (c) 2019-2021 Christophe Bonello
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
