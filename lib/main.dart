@@ -49,11 +49,11 @@ Future<void> main() async {
     }
   };
 
-  await runZoned<Future<void>>(
+  await runZonedGuarded<Future<void>>(
     () async {
       runApp(Application());
     },
-    onError: (dynamic error, dynamic stackTrace) {
+    (dynamic error, dynamic stackTrace) {
       _reportError(error, stackTrace);
     },
   );
