@@ -2,7 +2,7 @@
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/cbonello/amiidex)
 
-[AmiiDex 2](https://cbonello.github.io/projects/amiidex2/index.html#/) is coming and will support mobile, web and desktop.
+[AmiiDex 2](https://www.cbonello.com/projects/amiidex_v2) is coming and will support mobile, web and desktop.
 
 ---
 
